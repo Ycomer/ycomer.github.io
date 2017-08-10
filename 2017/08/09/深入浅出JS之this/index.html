@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="深入浅出JS," />
 
 
 
@@ -102,16 +102,25 @@
 
 
 
-<meta name="description" content="一个正在填坑的font-ender">
+<meta name="description" content="this 的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
+使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
+
+绑定this的方法1.function.prototype.call(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出JS之this">
 <meta property="og:url" content="http://ycomer.com/2017/08/09/深入浅出JS之this/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="一个正在填坑的font-ender">
-<meta property="og:updated_time" content="2017-08-09T15:57:02.000Z">
+<meta property="og:description" content="this 的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
+使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
+
+绑定this的方法1.function.prototype.call(">
+<meta property="og:updated_time" content="2017-08-10T16:03:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出JS之this">
-<meta name="twitter:description" content="一个正在填坑的font-ender">
+<meta name="twitter:description" content="this 的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
+使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
+
+绑定this的方法1.function.prototype.call(">
 
 
 
@@ -338,7 +347,12 @@
       
 
       
-        
+        <h1 id="this-的使用场合"><a href="#this-的使用场合" class="headerlink" title="this 的使用场合"></a>this 的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
+<h1 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h1><p>1.避免多层this<br>2.避免数组处理方法中的this<br>  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。<br>3.避免回调函数中的this</p>
+<blockquote>
+<p>绑定this的方法<br>1.function.prototype.call():函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。如果call方法的参数是一个原始值，那么这个原始值会自动转成对应的包装对象，然后传入call方法。call方法还可以接受多个参数。call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。<br>2.function.prototype.apply():</p>
+</blockquote>
+
       
     </div>
 
@@ -358,6 +372,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深入浅出JS/" rel="tag"># 深入浅出JS</a>
+          
+        </div>
       
 
       
@@ -419,8 +439,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -441,7 +470,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -495,6 +524,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#this-的使用场合"><span class="nav-number">1.</span> <span class="nav-text">this 的使用场合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用注意点"><span class="nav-number">2.</span> <span class="nav-text">使用注意点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
