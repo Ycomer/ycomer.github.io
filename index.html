@@ -344,7 +344,7 @@
       
         
           
-            <h1 id="this-的使用场合"><a href="#this-的使用场合" class="headerlink" title="this 的使用场合"></a>this 的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
+            <h1 id="this的使用场合"><a href="#this的使用场合" class="headerlink" title="this的使用场合"></a>this的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
 <h1 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h1><p>1.避免多层this<br>2.避免数组处理方法中的this<br>  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。<br>3.避免回调函数中的this</p>
 <blockquote>
 <p>绑定this的方法<br>1.function.prototype.call():函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。如果call方法的参数是一个原始值，那么这个原始值会自动转成对应的包装对象，然后传入call方法。call方法还可以接受多个参数。call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。<br>2.function.prototype.apply():</p>
