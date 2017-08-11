@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS魔法," />
 
 
 
@@ -102,15 +102,22 @@
 
 
 
-<meta name="description" content="一个正在填坑的font-ender">
-<meta property="og:type" content="website">
-<meta property="og:title" content="东方猿BLog">
-<meta property="og:url" content="http://ycomer.com/index.html">
+<meta name="description" content="传统布局传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。一、先从display(显示)说起。MDN上关于display的定义：
+
+The display CSS property specifies the type of rendering bo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS魔法之传布局">
+<meta property="og:url" content="http://ycomer.com/2017/08/02/CSS魔法之布局篇/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="一个正在填坑的font-ender">
+<meta property="og:description" content="传统布局传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。一、先从display(显示)说起。MDN上关于display的定义：
+
+The display CSS property specifies the type of rendering bo">
+<meta property="og:updated_time" content="2017-08-11T11:10:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="东方猿BLog">
-<meta name="twitter:description" content="一个正在填坑的font-ender">
+<meta name="twitter:title" content="CSS魔法之传布局">
+<meta name="twitter:description" content="传统布局传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。一、先从display(显示)说起。MDN上关于display的定义：
+
+The display CSS property specifies the type of rendering bo">
 
 
 
@@ -138,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/08/02/CSS魔法之布局篇/"/>
 
 
 
 
 
-  <title> 东方猿BLog </title>
+  <title> CSS魔法之传布局 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,9 +172,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,515 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之负值/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/CSS魔法之负值/" itemprop="url">
-                  CSS魔法之负值
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:38:59+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/11/CSS魔法之负值/" class="leancloud_visitors" data-flag-title="CSS魔法之负值">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之经典布局实现/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/CSS魔法之经典布局实现/" itemprop="url">
-                  CSS魔法之经典布局实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:37:41+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/11/CSS魔法之经典布局实现/" class="leancloud_visitors" data-flag-title="CSS魔法之经典布局实现">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="CSS经典布局之圣杯和双飞翼"><a href="#CSS经典布局之圣杯和双飞翼" class="headerlink" title="CSS经典布局之圣杯和双飞翼"></a>CSS经典布局之圣杯和双飞翼</h1>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之传统布局/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/CSS魔法之传统布局/" itemprop="url">
-                  CSS魔法之传统布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:37:11+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/11/CSS魔法之传统布局/" class="leancloud_visitors" data-flag-title="CSS魔法之传统布局">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p># </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/09/深入浅出JS之this/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/09/深入浅出JS之this/" itemprop="url">
-                  深入浅出JS之this
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T23:57:02+08:00">
-                2017-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/09/深入浅出JS之this/" class="leancloud_visitors" data-flag-title="深入浅出JS之this">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="this的使用场合"><a href="#this的使用场合" class="headerlink" title="this的使用场合"></a>this的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
-<h1 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h1><p>1.避免多层this<br>2.避免数组处理方法中的this<br>  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。<br>3.避免回调函数中的this</p>
-<blockquote>
-<p>绑定this的方法<br>1.function.prototype.call():函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。如果call方法的参数是一个原始值，那么这个原始值会自动转成对应的包装对象，然后传入call方法。call方法还可以接受多个参数。call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。<br>2.function.prototype.apply():</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -787,10 +286,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/08/02/CSS魔法之布局篇/" itemprop="url">
-                  CSS魔法之传布局
-                </a>
+                CSS魔法之传布局
               
             
           </h1>
@@ -848,9 +344,7 @@
       
 
       
-        
-          
-            <h1 id="传统布局"><a href="#传统布局" class="headerlink" title="传统布局"></a>传统布局</h1><p>传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。<br>一、先从display(显示)说起。<br>MDN上关于display的定义：</p>
+        <h1 id="传统布局"><a href="#传统布局" class="headerlink" title="传统布局"></a>传统布局</h1><p>传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。<br>一、先从display(显示)说起。<br>MDN上关于display的定义：</p>
 <blockquote>
 <p>The display CSS property specifies the type of rendering box used for an element. </p>
 </blockquote>
@@ -887,41 +381,66 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">1.grid-template-columns,grid-template-rows:&lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;使用fr为基本单位，如果fr单位和实际值一起使用，设置fr的行或列将分(除了实际值)剩余部分。</div><div class="line">确定网格的大小，其中可以为每一个网格轨道确定大小，不同的是确定的方法有很多。首先第一种是直接为每一个网格轨道从起始位置水平和垂直方向指定大小依次排序。第二种是以网格线为基准并给每个网格线起名字后，每一个网格轨道在垂直和水平方向确定大小（ps:网格线的起点和终点之间为一个网格轨道，同一条线会有不同的名字但是都是代表一条线）如果你定义包含重复部分，可以使用repeat()简化。</div><div class="line">2.grid-template-areas:</div><div class="line">        &quot;&lt;grid-area-name&gt; | . | none | ...&quot;</div><div class="line">        &quot;...&quot;;</div><div class="line"> 其中点为空。none表示没有网格区</div><div class="line"> </div><div class="line">3.grid-column-gap:&lt;line-size&gt;; 和 grid-row-gap: &lt;line-size&gt; ;网格单元间距。其中的line-size：为网格线间距。注：间隔仅仅作用在网格单元之间，不作用在容器边缘。</div><div class="line"></div><div class="line">4.grid-gap：&lt;grid-column-gap&gt; &lt;grid-row-gap&gt;;</div><div class="line">   是grid-column-gap 和 grid-row-gap简写。</div><div class="line">注：如果只设置一个值，那么grid-column-gap 和 grid-row-gap都为那个值。</div><div class="line">5.justify-items: start | end | center | stretch（默认） ;</div><div class="line">垂直于列网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满（默认）。</div><div class="line">6.align-items: start | end | center | stretch ;</div><div class="line">垂直于行网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start： 顶部对齐。</div><div class="line">end： 底部对齐。</div><div class="line">center： 居中对齐。</div><div class="line">stretch：填满（默认）。</div><div class="line">7.justify-content: start | end | center | stretch | space-around | space-between | space-evenly </div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于列网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">8.align-content: start | end | center | stretch | space-around | space-between | space-evenly ;</div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于行网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 顶部对齐。</div><div class="line">end: 底部对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">9.grid-auto-columns: &lt;track-size&gt; ... ; 和 grid-auto-rows: &lt;track-size&gt; ... ;</div><div class="line">自动生成隐式网格轨道（列和行），当你定位网格项超出网格容器范围时，将自动创建隐式网格轨道。</div><div class="line">属性值：</div><div class="line">track-size: 网格轨道大小,可以是固定值，百分比或者是分数（fr单位）。</div><div class="line">10. grid-auto-flow : row（默认） | column | dense ;</div><div class="line">在没有设置网格项的位置时，这个属性控制网格项怎样排列。</div><div class="line">属性值：</div><div class="line">row: 按照行依次从左到右排列。</div><div class="line">column: 按照列依次从上倒下排列。</div><div class="line">dense: 按先后顺序排列。</div><div class="line">11.12. grid: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt; | &lt;grid-auto-flow&gt; [&lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ];</div><div class="line">是一种简写形式，设置网格容器所有属性。</div><div class="line">属性值：</div><div class="line">none: 设置为所有属性的默认值。</div><div class="line">&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;: 设置行和列的值，其他属性为默认值。</div><div class="line">&lt;grid-auto-flow&gt; [ &lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ] : 设置网格自动流、网格自动行、网格自动列的值，其他未设置则为默认值。</div><div class="line">四、设置在网格项上的属性</div><div class="line">grid-column-start</div><div class="line">grid-column-end</div><div class="line">grid-row-start</div><div class="line">grid-row-end</div><div class="line">grid-column</div><div class="line">grid-row</div><div class="line">grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt; ;定义网格项名字，以便创建模块</div><div class="line">justify-self:justify-self: start | end | center | stretch;定义单个网格项垂直于列网格线的对齐方式。</div><div class="line">align-self: start | end | center | stretch;定义单个网格项垂直于行网格线的对齐方式。</div></pre></td></tr></table></figure>
 <p>#总结<br>通过对传统布局，和弹性布局（flexbox）网格系统的了解。加之对css盒模型的总体的认识。基本上形成了对目前css在网页布局方面的所有。但是要实现一个好的布局不是只靠一种就能完美的。结合起来往往是最佳的选择。在结合的时候我们要明白，那些需要的那些事不需要的，比如在传统布局中设置了浮动又设置绝对定位的情况，太荒唐了。关于css布局的实践和摸索一直不会停止，always do it!</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/CSS魔法/" rel="tag"># CSS魔法</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/01/读书笔记之《学习之道》/" rel="next" title="读书笔记之《学习之道》">
+                <i class="fa fa-chevron-left"></i> 读书笔记之《学习之道》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/09/深入浅出JS之this/" rel="prev" title="深入浅出JS之this">
+                深入浅出JS之this <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -929,6 +448,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -948,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -1024,6 +556,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统布局"><span class="nav-number">1.</span> <span class="nav-text">传统布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒布局-Flexbox"><span class="nav-number">2.</span> <span class="nav-text">弹性盒布局(Flexbox)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -1122,6 +670,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
