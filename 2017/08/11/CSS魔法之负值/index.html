@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="负值是如何影响页面的负值实现的基本应用">
+<meta name="description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS魔法之负值">
 <meta property="og:url" content="http://ycomer.com/2017/08/11/CSS魔法之负值/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="负值是如何影响页面的负值实现的基本应用">
-<meta property="og:updated_time" content="2017-08-11T11:10:20.000Z">
+<meta property="og:description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
+<meta property="og:updated_time" content="2017-08-15T15:32:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS魔法之负值">
-<meta name="twitter:description" content="负值是如何影响页面的负值实现的基本应用">
+<meta name="twitter:description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
 
 
 
@@ -338,7 +338,10 @@
       
 
       
-        <h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1>
+        <h1 id="margin基础"><a href="#margin基础" class="headerlink" title="margin基础"></a>margin基础</h1><p>定义：<br>CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。<br>边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南<br>外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, margin-right.来设置他们的值。</p>
+<p>####垂直外边距<br>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。<br>eg1:当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。<br>eg2:当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。<br>eg3:假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并。如果这个外边距遇到另一个元素的外边距，它还会发生合并<br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br>根据规范：一个盒子如果没有上补白(padding-top)和上边框(border-top)，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
+<h4 id="用margin还是padding"><a href="#用margin还是padding" class="headerlink" title="用margin还是padding"></a>用margin还是padding</h4><p><strong>何时应当使用margin</strong>：<br>需要在border外侧添加空白时。<br>空白处不需要背景（色）时。<br>上下相连的两个盒子之间的空白，需要相互抵消时<br><strong>何时应当时用padding</strong>：<br>需要在border内测添加空白时。<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</p>
+<h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1>
       
     </div>
 
@@ -524,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#负值是如何影响页面的"><span class="nav-number">1.</span> <span class="nav-text">负值是如何影响页面的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#负值实现的基本应用"><span class="nav-number">2.</span> <span class="nav-text">负值实现的基本应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#margin基础"><span class="nav-number">1.</span> <span class="nav-text">margin基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用margin还是padding"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">用margin还是padding</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#负值是如何影响页面的"><span class="nav-number">2.</span> <span class="nav-text">负值是如何影响页面的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#负值实现的基本应用"><span class="nav-number">3.</span> <span class="nav-text">负值实现的基本应用</span></a></li></ol></div>
             
 
           </div>
