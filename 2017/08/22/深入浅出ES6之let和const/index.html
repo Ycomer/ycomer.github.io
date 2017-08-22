@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="深入浅出JS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -102,22 +102,19 @@
 
 
 
-<meta name="description" content="this的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
-使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
-绑定this的方法1.function.prototype.call():">
+<meta name="description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入浅出JS之this">
-<meta property="og:url" content="http://ycomer.com/2017/08/09/深入浅出JS之this/index.html">
+<meta property="og:title" content="东方猿BLog">
+<meta property="og:url" content="http://ycomer.com/2017/08/22/深入浅出ES6之let和const/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="this的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
-使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
-绑定this的方法1.function.prototype.call():">
-<meta property="og:updated_time" content="2017-08-13T09:21:29.000Z">
+<meta property="og:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
+<meta property="og:updated_time" content="2017-08-22T04:44:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入浅出JS之this">
-<meta name="twitter:description" content="this的使用场合1.全局变量2.构造函数中this指向实例对象3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。
-使用注意点1.避免多层this2.避免数组处理方法中的this  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。3.避免回调函数中的this
-绑定this的方法1.function.prototype.call():">
+<meta name="twitter:title" content="东方猿BLog">
+<meta name="twitter:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
 
 
 
@@ -145,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/08/09/深入浅出JS之this/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/08/22/深入浅出ES6之let和const/"/>
 
 
 
 
 
-  <title> 深入浅出JS之this | 东方猿BLog </title>
+  <title>  | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/09/深入浅出JS之this/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/22/深入浅出ES6之let和const/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -286,7 +283,7 @@
             
             
               
-                深入浅出JS之this
+                
               
             
           </h1>
@@ -299,8 +296,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T23:57:02+08:00">
-                2017-08-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-22T11:18:56+08:00">
+                2017-08-22
               </time>
             
 
@@ -319,7 +316,7 @@
 
           
           
-             <span id="/2017/08/09/深入浅出JS之this/" class="leancloud_visitors" data-flag-title="深入浅出JS之this">
+             <span id="/2017/08/22/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,16 +341,19 @@
       
 
       
-        <h1 id="this的使用场合"><a href="#this的使用场合" class="headerlink" title="this的使用场合"></a>this的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
-<h1 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h1><p>1.避免多层this<br>2.避免数组处理方法中的this<br>  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。<br>3.避免回调函数中的this</p>
-<h1 id="绑定this的方法"><a href="#绑定this的方法" class="headerlink" title="绑定this的方法"></a>绑定this的方法</h1><p>1.function.prototype.call():函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。如果call方法的参数是一个原始值，那么这个原始值会自动转成对应的包装对象，然后传入call方法。call方法还可以接受多个参数。call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。<br>2.function.prototype.apply():apply方法的作用与call方法类似，也是改变this指向，然后再调用该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数,apply方法的第一个参数也是this所要指向的那个对象，如果设为null或undefined，则等同于指定全局对象。第二个参数则是一个数组.</p>
+        <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>1.找出数组最大元素:JavaScript不提供找出数组最大元素的函数。结合使用apply方法和Math.max方法，就可以返回数组的最大元素。<br>2.将数组的空元素变为undefined:通过apply方法，利用Array构造函数将数组的空元素变成undefined,空数组与undefined的差别在于，数组的forEach方法会跳过空元素，但是不会跳过undefined。因此，遍历内部元素的时候，会得到不同的结果。。<br>3.转换类似数组的对象:另外，利用数组对象的slice方法，可以将一个类似数组的对象（比如arguments对象）转为真正的数组。</p>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
 </blockquote>
-<p>3.function.prototype.bind()<br>1.bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。<br>2.bind比call方法和apply方法更进一步的是，除了绑定this以外，还可以绑定原函数的参数。<br>3.如果bind方法的第一个参数是null或undefined，等于将this绑定到全局对象，函数运行时this指向顶层对象</p>
-<blockquote>
-<p>bind方法有一些使用注意点。<br>①每一次返回一个新函数<br>②结合回调函数使用<br>③结合call方法使用</p>
-</blockquote>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
 
       
     </div>
@@ -375,19 +375,13 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/深入浅出JS/" rel="tag"># 深入浅出JS</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/02/CSS魔法之布局篇/" rel="next" title="CSS魔法之传布局">
-                <i class="fa fa-chevron-left"></i> CSS魔法之传布局
+              <a href="/2017/08/13/CSS魔法之经典布局/" rel="next" title="CSS魔法之经典布局">
+                <i class="fa fa-chevron-left"></i> CSS魔法之经典布局
               </a>
             
           </div>
@@ -396,8 +390,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/11/CSS魔法之负值/" rel="prev" title="CSS魔法之负值">
-                CSS魔法之负值 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/22/深入浅出ES6之变量解构/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -540,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#this的使用场合"><span class="nav-number">1.</span> <span class="nav-text">this的使用场合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用注意点"><span class="nav-number">2.</span> <span class="nav-text">使用注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定this的方法"><span class="nav-number">3.</span> <span class="nav-text">绑定this的方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const"><span class="nav-number">1.0.1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.0.2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">1.0.3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量的方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">声明变量的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象和global对象"><span class="nav-number">1.0.5.</span> <span class="nav-text">顶层对象和global对象</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
