@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
+<meta name="description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM">
-<meta property="og:url" content="http://ycomer.com/2017/07/30/DOM/index.html">
+<meta property="og:title" content="深入浅出ES6之let和const">
+<meta property="og:url" content="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
-<meta property="og:updated_time" content="2017-08-02T15:53:58.000Z">
+<meta property="og:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
+<meta property="og:updated_time" content="2017-08-24T15:43:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM">
-<meta name="twitter:description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
+<meta name="twitter:title" content="深入浅出ES6之let和const">
+<meta name="twitter:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
+②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
 
 
 
@@ -142,13 +142,13 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/07/30/DOM/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/"/>
 
 
 
 
 
-  <title> DOM | 东方猿BLog </title>
+  <title> 深入浅出ES6之let和const | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +259,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/DOM/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -283,7 +283,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
             
             
               
-                DOM
+                深入浅出ES6之let和const
               
             
           </h1>
@@ -296,8 +296,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T23:42:59+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
               </time>
             
 
@@ -316,7 +316,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
           
           
-             <span id="/2017/07/30/DOM/" class="leancloud_visitors" data-flag-title="DOM">
+             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,18 +341,19 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
       
 
       
-        <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>对arguements对象使用Array.prototype.slice()可以将其转化为数组。</p>
-<h3 id="node类型"><a href="#node类型" class="headerlink" title="node类型"></a>node类型</h3><p>节点属性:<br>childNodes, parentNode, previousSibling, nextSibling,<br>firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,<br><br>操作节点（必须先取得父节点）:</p>
+        <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>appendChild(）向childNodes列表末尾添加节点。<br>insertBefore() 向childNodes中不特定位置插入某个节点。<br>replaceChild() 替换节点<br>removeChild() 删除节点</p>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
 </blockquote>
-<p>cloneNode() 复制节点 ture为深复制 false为浅复制。<br>normalize() 处理文档树中的文本节点。只有一个则删除，两个则合并</p>
-<h3 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h3><p>①属性<br>document.documentElement<br>document.body<br>document.doctype<br>document.title<br>document.domain<br>document.referrer<br>document.URL<br>document.anchors<br>document.applets(不建议)<br>document.forms<br>document.images<br>document.links<br>②方法<br>getElementById() 取得元素的id<br>getElementByTagName() 取得元素的标签名<br>getElementByName() 返回带有给定name特性的所有元素<br>③文档写入<br>write(), writeln(), open(), close()</p>
-<h3 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h3><p>①html元素<br>属性<br>id, title, lang, dir, className</p>
-<p>特性(名称不区分大小写):<br>getAttribute(), setAttribute(), removeAttribute()</p>
-<p>②创建元素<br>document.createElement()<br>createElement() IE浏览器中使用此法</p>
-<h3 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h3><p>document.createTextNode()<br>normalize()<br>splitText()与上面的相反，刚好分开文本。<br>document.createComment() 传递注释文本并创建注释节点<br>document.createCDataSection() 只针对xml的文档</p>
-<h3 id="选择符API"><a href="#选择符API" class="headerlink" title="选择符API"></a>选择符API</h3><p>querySelector()接受一个css选择符，返回与该模式匹配的第一个元素。<br>querySelectorAll() 返回所有匹配的元素。<br>matchesSelector() 接受一个参数，<br>getElementByClassName()<br>add()<br>contains()<br>remove()<br>toggle()<br>document.activeElement()<br>document.hasFocus() 焦点管理<br>插入标记:<br>innerHTML()<br>outerHTML()<br>insertAdjacentHTML()<br>scrollIntoView(）</p>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
 
       
     </div>
@@ -376,7 +377,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -385,8 +386,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/表单/" rel="next" title="表单">
-                <i class="fa fa-chevron-left"></i> 表单
+              <a href="/2017/08/23/深入浅出ES6之变量解构/" rel="next" title="深入浅出之ES6之变量解构">
+                <i class="fa fa-chevron-left"></i> 深入浅出之ES6之变量解构
               </a>
             
           </div>
@@ -395,8 +396,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/30/读书笔记之《算法图解》/" rel="prev" title="读书笔记之《算法图解》">
-                读书笔记之《算法图解》 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/厉害的jQuery/" rel="prev" title="厉害的jQuery">
+                厉害的jQuery <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +540,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node类型"><span class="nav-number">2.</span> <span class="nav-text">node类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document类型"><span class="nav-number">3.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element类型"><span class="nav-number">4.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text类型"><span class="nav-number">5.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择符API"><span class="nav-number">6.</span> <span class="nav-text">选择符API</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const"><span class="nav-number">1.0.1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.0.2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">1.0.3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量的方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">声明变量的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象和global对象"><span class="nav-number">1.0.5.</span> <span class="nav-text">顶层对象和global对象</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

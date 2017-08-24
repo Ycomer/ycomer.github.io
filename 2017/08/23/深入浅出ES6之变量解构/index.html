@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -102,19 +102,22 @@
 
 
 
-<meta name="description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
+<meta name="description" content="数组ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。
+1234let [a, b, c] = [1, 2, 3];//左右相等的完全结构let [x, y] = [1, 2, 3];//左右不相等的不完全结构
+链式结构12let first, second, all;all = [first, second] = [1,2,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM">
-<meta property="og:url" content="http://ycomer.com/2017/07/30/DOM/index.html">
+<meta property="og:title" content="深入浅出之ES6之变量解构">
+<meta property="og:url" content="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
-<meta property="og:updated_time" content="2017-08-02T15:53:58.000Z">
+<meta property="og:description" content="数组ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。
+1234let [a, b, c] = [1, 2, 3];//左右相等的完全结构let [x, y] = [1, 2, 3];//左右不相等的不完全结构
+链式结构12let first, second, all;all = [first, second] = [1,2,">
+<meta property="og:updated_time" content="2017-08-24T15:44:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM">
-<meta name="twitter:description" content="DOM对arguements对象使用Array.prototype.slice()可以将其转化为数组。
-node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,操作节点（必">
+<meta name="twitter:title" content="深入浅出之ES6之变量解构">
+<meta name="twitter:description" content="数组ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。
+1234let [a, b, c] = [1, 2, 3];//左右相等的完全结构let [x, y] = [1, 2, 3];//左右不相等的不完全结构
+链式结构12let first, second, all;all = [first, second] = [1,2,">
 
 
 
@@ -142,13 +145,13 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/07/30/DOM/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/"/>
 
 
 
 
 
-  <title> DOM | 东方猿BLog </title>
+  <title> 深入浅出之ES6之变量解构 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +262,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/DOM/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -283,7 +286,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
             
             
               
-                DOM
+                深入浅出之ES6之变量解构
               
             
           </h1>
@@ -296,8 +299,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T23:42:59+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
               </time>
             
 
@@ -316,7 +319,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
           
           
-             <span id="/2017/07/30/DOM/" class="leancloud_visitors" data-flag-title="DOM">
+             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,18 +344,13 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
       
 
       
-        <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>对arguements对象使用Array.prototype.slice()可以将其转化为数组。</p>
-<h3 id="node类型"><a href="#node类型" class="headerlink" title="node类型"></a>node类型</h3><p>节点属性:<br>childNodes, parentNode, previousSibling, nextSibling,<br>firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,<br><br>操作节点（必须先取得父节点）:</p>
-<blockquote>
-<p>appendChild(）向childNodes列表末尾添加节点。<br>insertBefore() 向childNodes中不特定位置插入某个节点。<br>replaceChild() 替换节点<br>removeChild() 删除节点</p>
-</blockquote>
-<p>cloneNode() 复制节点 ture为深复制 false为浅复制。<br>normalize() 处理文档树中的文本节点。只有一个则删除，两个则合并</p>
-<h3 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h3><p>①属性<br>document.documentElement<br>document.body<br>document.doctype<br>document.title<br>document.domain<br>document.referrer<br>document.URL<br>document.anchors<br>document.applets(不建议)<br>document.forms<br>document.images<br>document.links<br>②方法<br>getElementById() 取得元素的id<br>getElementByTagName() 取得元素的标签名<br>getElementByName() 返回带有给定name特性的所有元素<br>③文档写入<br>write(), writeln(), open(), close()</p>
-<h3 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h3><p>①html元素<br>属性<br>id, title, lang, dir, className</p>
-<p>特性(名称不区分大小写):<br>getAttribute(), setAttribute(), removeAttribute()</p>
-<p>②创建元素<br>document.createElement()<br>createElement() IE浏览器中使用此法</p>
-<h3 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h3><p>document.createTextNode()<br>normalize()<br>splitText()与上面的相反，刚好分开文本。<br>document.createComment() 传递注释文本并创建注释节点<br>document.createCDataSection() 只针对xml的文档</p>
-<h3 id="选择符API"><a href="#选择符API" class="headerlink" title="选择符API"></a>选择符API</h3><p>querySelector()接受一个css选择符，返回与该模式匹配的第一个元素。<br>querySelectorAll() 返回所有匹配的元素。<br>matchesSelector() 接受一个参数，<br>getElementByClassName()<br>add()<br>contains()<br>remove()<br>toggle()<br>document.activeElement()<br>document.hasFocus() 焦点管理<br>插入标记:<br>innerHTML()<br>outerHTML()<br>insertAdjacentHTML()<br>scrollIntoView(）</p>
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
+<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
+<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>真正被赋值的是变量</p>
 
       
     </div>
@@ -376,7 +374,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -385,8 +383,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/表单/" rel="next" title="表单">
-                <i class="fa fa-chevron-left"></i> 表单
+              <a href="/2017/08/23/深入浅出JS之事件/" rel="next" title="深入浅出JS之事件">
+                <i class="fa fa-chevron-left"></i> 深入浅出JS之事件
               </a>
             
           </div>
@@ -395,8 +393,8 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/30/读书笔记之《算法图解》/" rel="prev" title="读书笔记之《算法图解》">
-                读书笔记之《算法图解》 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/深入浅出ES6之let和const/" rel="prev" title="深入浅出ES6之let和const">
+                深入浅出ES6之let和const <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +537,7 @@ node类型节点属性:childNodes, parentNode, previousSibling, nextSibling,firs
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">1.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node类型"><span class="nav-number">2.</span> <span class="nav-text">node类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document类型"><span class="nav-number">3.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Element类型"><span class="nav-number">4.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text类型"><span class="nav-number">5.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择符API"><span class="nav-number">6.</span> <span class="nav-text">选择符API</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象"><span class="nav-number">2.</span> <span class="nav-text">对象</span></a></li></ol></div>
             
 
           </div>
