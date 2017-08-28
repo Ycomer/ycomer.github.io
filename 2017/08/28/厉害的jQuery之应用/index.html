@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="东方猿BLog">
 <meta property="og:description" content="#jQuery与Ajax
 1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成">
-<meta property="og:updated_time" content="2017-08-28T06:57:17.000Z">
+<meta property="og:updated_time" content="2017-08-28T15:48:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="厉害的jQuery之应用">
 <meta name="twitter:description" content="#jQuery与Ajax
@@ -352,14 +352,16 @@
 <li>get请求的数据会被浏览器缓存起来，带来严重的安全问题</li>
 <li>两种方式传递的数据在服务器端的获取也不同。</li>
 </ul>
-<p>3.$.ajax()最底层的ajax实现方法，能实现上述三个方式都能实现的功能。而且还可以设定<br>  $.ajax(options)<br>  options: url、type、timeout、data、dataType、beforeSend、complete、success、error、global</p>
-<p>  <em>beforeSend(提交前回调函数)
+<p>3.$.ajax()最底层的ajax实现方法，能实现上述三个方式都能实现的功能。<br>  $.ajax(options)<br>  options: url、type、timeout、data、dataType、beforeSend、complete、success、error、global。<br> 而且还可以设定<br>  <em>beforeSend(提交前回调函数)
   </em>error(请求失败后处理)<br>  <em>success(请求成功还能处理)
-  </em>complete(请求完成后处理)<br>4.$.getScript()和$.getJson()<br>①$.getScript()直接加载.js文件，他也有回调函数，在函数成功载入后执行。<br>②$.getJSON()用于加载json文件，方法和上面一样。</p>
+  </em>complete(请求完成后处理)</p>
+<p>4.$.getScript()和$.getJson()<br>①$.getScript()直接加载.js文件，他也有回调函数，在函数成功载入后执行。<br>②$.getJSON()用于加载json文件，方法和上面一样。</p>
 <ul>
 <li>$.each()函数不同于jquery中的each()方法。不操作jquery对象。而是以一个数组或者对象作为第一个参数，以一个回调函数作为第二个参数。回调函数拥有两个参数，第一个参数为对象的成员或数组的索引， 第二个为对应的变量或内容。 </li>
-<li>还可以获取其他网站的json数据。<br>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。<br>6.全局事件<br>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</li>
+<li>还可以获取其他网站的json数据。<br>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。</li>
 </ul>
+<p>6.全局事件</p>
+<p>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
 
       
     </div>
