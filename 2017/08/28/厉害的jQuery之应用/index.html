@@ -102,19 +102,16 @@
 
 
 
-<meta name="description" content="#jQuery与Ajax
-1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成">
+<meta name="description" content="jQuery与Ajax1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成时的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="厉害的jQuery之应用">
 <meta property="og:url" content="http://ycomer.com/2017/08/28/厉害的jQuery之应用/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="#jQuery与Ajax
-1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成">
-<meta property="og:updated_time" content="2017-08-28T15:48:22.000Z">
+<meta property="og:description" content="jQuery与Ajax1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成时的">
+<meta property="og:updated_time" content="2017-08-29T04:16:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="厉害的jQuery之应用">
-<meta name="twitter:description" content="#jQuery与Ajax
-1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成">
+<meta name="twitter:description" content="jQuery与Ajax1.load()从服务器获取静态的数据文件load(url [, data] [,callback])url: 字符串 请求html页面的url地址url(‘url selector’)选择 url中的一部分内容是显示data: 对象 发送至服务器的key/value数据根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。callback: 函数 请求完成时的">
 
 
 
@@ -341,11 +338,7 @@
       
 
       
-        <p>#jQuery与Ajax</p>
-<p>1.load()从服务器获取静态的数据文件<br>load(url [, data] [,callback])<br>url: 字符串 请求html页面的url地址<br>url(‘url selector’)选择 url中的一部分内容是显示<br>data: 对象 发送至服务器的key/value数据<br>根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。<br>callback: 函数 请求完成时的回调函数，无论请求成功或失败。<br>callback(responseText:请求返回内容, textStatus:请求返回状态(success、error、notmodified、timeout), XMLHttpRequset)</p>
-<p>2.$.get()和$.post()传递一些参数给服务器中的页面，都是使用GET和POST方式进行异步请求。</p>
-<p>①$.get/$.post(url [, data] [, callback] [, type])<br>url: 字符串 请求html页的url地址<br>data: 对象 发送至服务器的key/value数据会作为QueryString附加到请求url中。<br>callback: 函数 载入成功时回调函数(只有response的返回状态是success才调用改函数)自动将请求结果和状态返回给该方法。<br>type: 字符串 服务器返回内容的格式，包括xml、html、script、json、text、_default</p>
-<p>②区别：</p>
+        <h1 id="jQuery与Ajax"><a href="#jQuery与Ajax" class="headerlink" title="jQuery与Ajax"></a>jQuery与Ajax</h1><p>1.load()从服务器获取静态的数据文件<br>load(url [, data] [,callback])<br>url: 字符串 请求html页面的url地址<br>url(‘url selector’)选择 url中的一部分内容是显示<br>data: 对象 发送至服务器的key/value数据<br>根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。<br>callback: 函数 请求完成时的回调函数，无论请求成功或失败。<br>callback(responseText:请求返回内容, textStatus:请求返回状态(success、error、notmodified、timeout), XMLHttpRequset)<br>2.$.get()和$.post()传递一些参数给服务器中的页面，都是使用GET和POST方式进行异步请求。<br>①$.get/$.post(url [, data] [, callback] [, type])<br>url: 字符串 请求html页的url地址<br>data: 对象 发送至服务器的key/value数据会作为QueryString附加到请求url中。<br>callback: 函数 载入成功时回调函数(只有response的返回状态是success才调用改函数)自动将请求结果和状态返回给该方法。<br>type: 字符串 服务器返回内容的格式，包括xml、html、script、json、text、_default<br>②区别：</p>
 <ul>
 <li>get的请求会跟在url后进行传递。post请求则是作为http消息的实体内容发送给web服务器。</li>
 <li>get方式对传输的数据大小有限制，而使用post方式传递的参数两要比get大很多</li>
@@ -358,10 +351,10 @@
 <p>4.$.getScript()和$.getJson()<br>①$.getScript()直接加载.js文件，他也有回调函数，在函数成功载入后执行。<br>②$.getJSON()用于加载json文件，方法和上面一样。</p>
 <ul>
 <li>$.each()函数不同于jquery中的each()方法。不操作jquery对象。而是以一个数组或者对象作为第一个参数，以一个回调函数作为第二个参数。回调函数拥有两个参数，第一个参数为对象的成员或数组的索引， 第二个为对应的变量或内容。 </li>
-<li>还可以获取其他网站的json数据。<br>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。</li>
+<li>还可以获取其他网站的json数据。</li>
 </ul>
-<p>6.全局事件</p>
-<p>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
+<p>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。</p>
+<p>6.全局事件<br>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
 
       
     </div>
@@ -449,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -525,6 +527,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery与Ajax"><span class="nav-number">1.</span> <span class="nav-text">jQuery与Ajax</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

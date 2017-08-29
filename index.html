@@ -344,11 +344,7 @@
       
         
           
-            <p>#jQuery与Ajax</p>
-<p>1.load()从服务器获取静态的数据文件<br>load(url [, data] [,callback])<br>url: 字符串 请求html页面的url地址<br>url(‘url selector’)选择 url中的一部分内容是显示<br>data: 对象 发送至服务器的key/value数据<br>根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。<br>callback: 函数 请求完成时的回调函数，无论请求成功或失败。<br>callback(responseText:请求返回内容, textStatus:请求返回状态(success、error、notmodified、timeout), XMLHttpRequset)</p>
-<p>2.$.get()和$.post()传递一些参数给服务器中的页面，都是使用GET和POST方式进行异步请求。</p>
-<p>①$.get/$.post(url [, data] [, callback] [, type])<br>url: 字符串 请求html页的url地址<br>data: 对象 发送至服务器的key/value数据会作为QueryString附加到请求url中。<br>callback: 函数 载入成功时回调函数(只有response的返回状态是success才调用改函数)自动将请求结果和状态返回给该方法。<br>type: 字符串 服务器返回内容的格式，包括xml、html、script、json、text、_default</p>
-<p>②区别：</p>
+            <h1 id="jQuery与Ajax"><a href="#jQuery与Ajax" class="headerlink" title="jQuery与Ajax"></a>jQuery与Ajax</h1><p>1.load()从服务器获取静态的数据文件<br>load(url [, data] [,callback])<br>url: 字符串 请求html页面的url地址<br>url(‘url selector’)选择 url中的一部分内容是显示<br>data: 对象 发送至服务器的key/value数据<br>根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。<br>callback: 函数 请求完成时的回调函数，无论请求成功或失败。<br>callback(responseText:请求返回内容, textStatus:请求返回状态(success、error、notmodified、timeout), XMLHttpRequset)<br>2.$.get()和$.post()传递一些参数给服务器中的页面，都是使用GET和POST方式进行异步请求。<br>①$.get/$.post(url [, data] [, callback] [, type])<br>url: 字符串 请求html页的url地址<br>data: 对象 发送至服务器的key/value数据会作为QueryString附加到请求url中。<br>callback: 函数 载入成功时回调函数(只有response的返回状态是success才调用改函数)自动将请求结果和状态返回给该方法。<br>type: 字符串 服务器返回内容的格式，包括xml、html、script、json、text、_default<br>②区别：</p>
 <ul>
 <li>get的请求会跟在url后进行传递。post请求则是作为http消息的实体内容发送给web服务器。</li>
 <li>get方式对传输的数据大小有限制，而使用post方式传递的参数两要比get大很多</li>
@@ -361,10 +357,10 @@
 <p>4.$.getScript()和$.getJson()<br>①$.getScript()直接加载.js文件，他也有回调函数，在函数成功载入后执行。<br>②$.getJSON()用于加载json文件，方法和上面一样。</p>
 <ul>
 <li>$.each()函数不同于jquery中的each()方法。不操作jquery对象。而是以一个数组或者对象作为第一个参数，以一个回调函数作为第二个参数。回调函数拥有两个参数，第一个参数为对象的成员或数组的索引， 第二个为对应的变量或内容。 </li>
-<li>还可以获取其他网站的json数据。<br>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。</li>
+<li>还可以获取其他网站的json数据。</li>
 </ul>
-<p>6.全局事件</p>
-<p>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
+<p>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。</p>
+<p>6.全局事件<br>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
 
           
         
@@ -802,7 +798,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -827,8 +823,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
-                  深入浅出ES6之let和const
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
+                  深入浅出之ES6之变量解构
                 </a>
               
             
@@ -862,7 +858,7 @@
 
           
           
-             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
+             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -889,19 +885,13 @@
       
         
           
-            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
-<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
-<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
-<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
-</blockquote>
-<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
-<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
-<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
-<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
+<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
+<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>真正被赋值的是变量</p>
 
           
         
