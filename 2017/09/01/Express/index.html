@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS魔法," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
+<meta name="description" content="一个正在填坑的font-ender">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS魔法之负值">
-<meta property="og:url" content="http://ycomer.com/2017/08/11/CSS魔法之负值/index.html">
+<meta property="og:title" content="express">
+<meta property="og:url" content="http://ycomer.com/2017/09/01/Express/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
-<meta property="og:updated_time" content="2017-08-20T15:49:49.000Z">
+<meta property="og:description" content="一个正在填坑的font-ender">
+<meta property="og:updated_time" content="2017-09-01T15:57:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS魔法之负值">
-<meta name="twitter:description" content="margin基础定义：CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, ma">
+<meta name="twitter:title" content="express">
+<meta name="twitter:description" content="一个正在填坑的font-ender">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/08/11/CSS魔法之负值/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/09/01/Express/"/>
 
 
 
 
 
-  <title> CSS魔法之负值 | 东方猿BLog </title>
+  <title> express | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之负值/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/01/Express/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -280,7 +280,7 @@
             
             
               
-                CSS魔法之负值
+                express
               
             
           </h1>
@@ -293,8 +293,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:38:59+08:00">
-                2017-08-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T23:57:02+08:00">
+                2017-09-01
               </time>
             
 
@@ -313,7 +313,7 @@
 
           
           
-             <span id="/2017/08/11/CSS魔法之负值/" class="leancloud_visitors" data-flag-title="CSS魔法之负值">
+             <span id="/2017/09/01/Express/" class="leancloud_visitors" data-flag-title="express">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,73 +338,7 @@
       
 
       
-        <h1 id="margin基础"><a href="#margin基础" class="headerlink" title="margin基础"></a>margin基础</h1><p>定义：<br>CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。<br>边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南<br>外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, margin-right.来设置他们的值。</p>
-<h4 id="垂直外边距"><a href="#垂直外边距" class="headerlink" title="垂直外边距"></a>垂直外边距</h4><p>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。<br>eg1:当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。<br>eg2:当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。<br>eg3:假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并。如果这个外边距遇到另一个元素的外边距，它还会发生合并<br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br>根据规范：一个盒子如果没有上补白(padding-top)和上边框(border-top)，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
-<h4 id="用margin还是padding"><a href="#用margin还是padding" class="headerlink" title="用margin还是padding"></a>用margin还是padding</h4><p><strong>何时应当使用margin</strong>：<br>需要在border外侧添加空白时。<br>空白处不需要背景（色）时。<br>上下相连的两个盒子之间的空白，需要相互抵消时<br><strong>何时应当时用padding</strong>：<br>需要在border内测添加空白时。<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</p>
-<h4 id="margin在块元素、内联元素中的区别"><a href="#margin在块元素、内联元素中的区别" class="headerlink" title="margin在块元素、内联元素中的区别"></a>margin在块元素、内联元素中的区别</h4><p>在页面文档中block元素另起一行开始，并独占一行。inline元素则同其他inline元素共处一行。<br>block元素:</p>
-<ul>
-<li>address - 地址 <ul>
-<li>blockquote - 块引用 </li>
-<li>center - 举中对齐块 </li>
-<li>dir - 目录列表 </li>
-<li>div - 常用块级容易，也是css layout的主要标签 </li>
-<li>dl - 定义列表 </li>
-<li>fieldset - form控制组 </li>
-<li>form - 交互表单 （只能用来容纳其它块元素） </li>
-<li>h1 - 大标题 </li>
-<li>h2 - 副标题 </li>
-<li>h3 - 3级标题 </li>
-<li>h4 - 4级标题 </li>
-<li>h5 - 5级标题 </li>
-<li>h6 - 6级标题 </li>
-<li>hr - 水平分隔线 </li>
-<li>isindex - input prompt </li>
-<li>menu - 菜单列表 </li>
-<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容 </li>
-<li>noscript - 可选脚本内容（对于不支持script的浏览器显示此内容） </li>
-<li>ol - 排序表单 </li>
-<li>p - 段落 </li>
-<li>pre - 格式化文本 </li>
-<li>table - 表格 </li>
-<li>ul - 非排序列表<br>inline元素：</li>
-<li>a - 锚点 </li>
-<li>abbr - 缩写 </li>
-<li>acronym - 首字 </li>
-<li>b - 粗体(不推荐) </li>
-<li>bdo - bidi override </li>
-<li>big - 大字体 </li>
-<li>br - 换行 </li>
-<li>cite - 引用 </li>
-<li>code - 计算机代码(在引用源码的时候需要) </li>
-<li>dfn - 定义字段 </li>
-<li>em - 强调 </li>
-<li>font - 字体设定(不推荐) </li>
-<li>i - 斜体 </li>
-<li>img - 图片 </li>
-<li>input - 输入框 </li>
-<li>kbd - 定义键盘文本 </li>
-<li>label - 表格标签 </li>
-<li>q - 短引用 </li>
-<li>s - 中划线(不推荐) </li>
-<li>samp - 定义范例计算机代码 </li>
-<li>select - 项目选择 </li>
-<li>small - 小字体文本 </li>
-<li>span - 常用内联容器，定义文本内区块 </li>
-<li>strike - 中划线 </li>
-<li>strong - 粗体强调 </li>
-<li>sub - 下标 </li>
-<li>sup - 上标 </li>
-<li>textarea - 多行文本输入框 </li>
-<li>tt - 电传文本 </li>
-<li>u - 下划线 </li>
-<li>var - 定义变量</li>
-</ul>
-</li>
-</ul>
-<h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><p>当元素margin的top和left是负值时会引起元素的向上或向左位置移动。而当元素margin的bottom和right是负值时会影响右边和下边相邻元素的参考线,即其右边和下边的相邻元素会进入覆盖它的一部分。</p>
-<h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1><p>一、左右列固定，中间自适应，也就是圣杯和双飞翼布局<br>二、去除列表右边框。<br>项目中经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（margin-right）,当父元素的宽度固定式，每一行的最右端的li元素的右边距就多余了。使用margin负值就可以轻松搞定。<br>三、水平垂直居中<br>通过绝对定位和负边距，把div元素的中心拉回到body的中心。负边距为content的一半。<br>四、去除列表最后一个li元素的border-bottom。border-bottom与外边框重合看起来很丑。通过设置border-bottom为负值，解决重合问题<br>五、多列等高<br>给每个框设置大的底部内边距，然后用数值相似的负外边距消除这个高度。这会导致每一列溢出容器元素，如果把外包容器的overflow属性设为hidden，列就在最高点被裁切。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>负值的应用很广泛，在了解其原理的基础上，方能游刃有余，但是负值是用来解决问题的，那么会有更好的东西来替代他。需要我们继续挖掘。</p>
-
+        
       
     </div>
 
@@ -425,19 +359,13 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CSS魔法/" rel="tag"># CSS魔法</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/深入浅出JS之this/" rel="next" title="深入浅出JS之this">
-                <i class="fa fa-chevron-left"></i> 深入浅出JS之this
+              <a href="/2017/09/01/Node-js专题/" rel="next" title="Node.js专题">
+                <i class="fa fa-chevron-left"></i> Node.js专题
               </a>
             
           </div>
@@ -445,10 +373,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/13/CSS魔法之经典布局/" rel="prev" title="CSS魔法之经典布局">
-                CSS魔法之经典布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -495,17 +419,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -580,22 +495,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#margin基础"><span class="nav-number">1.</span> <span class="nav-text">margin基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#垂直外边距"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">垂直外边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用margin还是padding"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">用margin还是padding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin在块元素、内联元素中的区别"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">margin在块元素、内联元素中的区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#负值是如何影响页面的"><span class="nav-number">2.</span> <span class="nav-text">负值是如何影响页面的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#负值实现的基本应用"><span class="nav-number">3.</span> <span class="nav-text">负值实现的基本应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
