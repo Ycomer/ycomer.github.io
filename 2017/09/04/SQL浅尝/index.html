@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="sql," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="AjaxXHR是Ajax的一个对象，用法如下:1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。2.send(null)发送特定请求。其中不需要发送数据则设为null3.abort()取消异步请求setRequestHeader()自定义头部信息。FormData()getResponseHeader()取得相应的响应头部信息getAllRespon">
+<meta name="description" content="非关系型数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax">
-<meta property="og:url" content="http://ycomer.com/2017/07/31/Ajax/index.html">
+<meta property="og:title" content="SQL浅尝">
+<meta property="og:url" content="http://ycomer.com/2017/09/04/SQL浅尝/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="AjaxXHR是Ajax的一个对象，用法如下:1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。2.send(null)发送特定请求。其中不需要发送数据则设为null3.abort()取消异步请求setRequestHeader()自定义头部信息。FormData()getResponseHeader()取得相应的响应头部信息getAllRespon">
-<meta property="og:updated_time" content="2017-08-02T15:53:57.000Z">
+<meta property="og:description" content="非关系型数据库">
+<meta property="og:updated_time" content="2017-09-04T15:37:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax">
-<meta name="twitter:description" content="AjaxXHR是Ajax的一个对象，用法如下:1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。2.send(null)发送特定请求。其中不需要发送数据则设为null3.abort()取消异步请求setRequestHeader()自定义头部信息。FormData()getResponseHeader()取得相应的响应头部信息getAllRespon">
+<meta name="twitter:title" content="SQL浅尝">
+<meta name="twitter:description" content="非关系型数据库">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/07/31/Ajax/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/09/04/SQL浅尝/"/>
 
 
 
 
 
-  <title> Ajax | 东方猿BLog </title>
+  <title> SQL浅尝 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/31/Ajax/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/04/SQL浅尝/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -280,7 +280,7 @@
             
             
               
-                Ajax
+                SQL浅尝
               
             
           </h1>
@@ -293,8 +293,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T23:48:36+08:00">
-                2017-07-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T23:36:38+08:00">
+                2017-09-04
               </time>
             
 
@@ -313,7 +313,7 @@
 
           
           
-             <span id="/2017/07/31/Ajax/" class="leancloud_visitors" data-flag-title="Ajax">
+             <span id="/2017/09/04/SQL浅尝/" class="leancloud_visitors" data-flag-title="SQL浅尝">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,12 +338,7 @@
       
 
       
-        <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>XHR是Ajax的一个对象，用法如下:<br>1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。<br>2.send(null)发送特定请求。其中不需要发送数据则设为null<br>3.abort()取消异步请求<br>setRequestHeader()自定义头部信息。<br>FormData()<br>getResponseHeader()取得相应的响应头部信息<br>getAllResponseHeader() 取得包含所有头部信息的长字符串。</p>
-<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>向服务器查询某些信息</p>
-<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>向服务器发送应该被保存的数据</p>
-<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">createCORSRequest</span>(<span class="params">method, url</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">   <span class="keyword">if</span> (<span class="string">"withCredentials"</span> <span class="keyword">in</span> xhr) &#123;</div><div class="line">     xhr.open(meth, url, <span class="literal">true</span>);</div><div class="line">   &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> XDomainRequest != <span class="string">"undefined"</span>)&#123;</div><div class="line">     xhr = <span class="keyword">new</span> XDomainRequest();</div><div class="line">     xhr.open(method, url);</div><div class="line">   &#125;<span class="keyword">else</span> &#123;</div><div class="line">   xhr = <span class="literal">null</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> xhr;</div><div class="line">   &#125;</div><div class="line"><span class="keyword">var</span> request = createCORSRequest(<span class="string">"get"</span>, <span class="string">"http://www.somewhere-else.com/page/"</span>);</div><div class="line"><span class="keyword">if</span>(request)&#123;</div><div class="line">    request.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//对request.responseText 处理</span></div><div class="line">    &#125;;</div><div class="line">    request.send();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>图像ping:与服务器进行简单的，单向的跨域通讯方式。<br>jsonp: 通过动态<code>&lt;script&gt;</code>元素使用。能够直接访问响应文本，支持在浏览器和服务器之间双向通信。<br>服务器向页面推送数据的技术。<br>①长轮询<br>②HTTP流<br>XHR对象实现http流的典型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createStreamingClient</span>(<span class="params">url, progress, finished</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),</div><div class="line">        received = <span class="number">0</span>;</div><div class="line">    xhr.open(<span class="string">"get"</span>, url, <span class="literal">true</span>);</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> result;</div><div class="line">        <span class="keyword">if</span> (xhr.readyState == <span class="number">3</span>)&#123;</div><div class="line">            <span class="comment">//只取得最新数据并调整计数器</span></div><div class="line">            result = xhr.responseText.substring(received);</div><div class="line">            received += result.length;</div><div class="line">            <span class="comment">//调用progress回调函数</span></div><div class="line">            progress(result);</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">            finished(xhr.responseText);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    xhr.send(<span class="literal">null</span>);</div><div class="line">    <span class="keyword">return</span> xhr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> client = createStreamingClient(<span class="string">"streaming.php"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Received: "</span> + data);</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Done!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-
+        <h1 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h1>
       
     </div>
 
@@ -366,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/sql/" rel="tag"># sql</a>
           
         </div>
       
@@ -375,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/30/读书笔记之《算法图解》/" rel="next" title="读书笔记之《算法图解》">
-                <i class="fa fa-chevron-left"></i> 读书笔记之《算法图解》
+              <a href="/2017/09/01/Express/" rel="next" title="express">
+                <i class="fa fa-chevron-left"></i> express
               </a>
             
           </div>
@@ -384,10 +379,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/01/读书笔记之《学习之道》/" rel="prev" title="读书笔记之《学习之道》">
-                读书笔记之《学习之道》 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +520,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求"><span class="nav-number">1.0.1.</span> <span class="nav-text">get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post请求"><span class="nav-number">1.0.2.</span> <span class="nav-text">post请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">1.0.3.</span> <span class="nav-text">CORS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">1.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></div>
             
 
           </div>
