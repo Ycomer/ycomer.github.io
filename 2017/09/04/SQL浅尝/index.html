@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="非关系型数据库">
+<meta name="description" content="数据库(Database)数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.关系型数据库是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL浅尝">
 <meta property="og:url" content="http://ycomer.com/2017/09/04/SQL浅尝/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="非关系型数据库">
-<meta property="og:updated_time" content="2017-09-04T15:37:45.000Z">
+<meta property="og:description" content="数据库(Database)数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.关系型数据库是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各">
+<meta property="og:updated_time" content="2017-09-05T15:09:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL浅尝">
-<meta name="twitter:description" content="非关系型数据库">
+<meta name="twitter:description" content="数据库(Database)数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.关系型数据库是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各">
 
 
 
@@ -338,7 +338,21 @@
       
 
       
-        <h1 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h1>
+        <h1 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库(Database)"></a>数据库(Database)</h1><p>数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.<br>关系型数据库<br>是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各个数据库之间得以互相集成。<br>非关系型数据库（NoSQL）<br>当代典型的关系数据库在一些数据敏感的应用中表现了糟糕的性能，例如为巨量文档创建索引、高流量网站的网页服务，以及发送流式媒体。关系型数据库的典型实现主要被调整用于执行规模小而读写频繁，或者大批量极少写访问的事务。</p>
+<h1 id="数据库模型"><a href="#数据库模型" class="headerlink" title="数据库模型"></a>数据库模型</h1><p>数据库模型描述了在数据库中结构化和操纵数据的方法，模型的结构部分规定了数据如何被描述（例如树、表等）。数据库模型的分类如下：<br>对象模型<br>层次模型（轻量级数据访问协议）<br>网状模型（大型数据储存）<br>关系模型<br>面向对象模型<br>半结构化模型<br>平面模型（表格模型，一般在形式上是一个二维数组。如表格模型数据Excel)</p>
+<p>数据库技术<br>是为了更加有效的管理和存取大量的数据资源。简单的来讲，数据库技术主要包括数据库系统，SQL语言，数据库访问技术。<br>数据库</p>
+<blockquote>
+<p>数据库（Database System）：用于存储数据的地方。<br>数据库管理系统<br>数据库管理系统（Database Management System，DBMS）：用户管理数据库的软件。<br>数据库应用程序<br>数据库应用程序（Database Application）：为了提高数据库系统的处理能力所使用的管理数据库的软件补充。<br>SQL语言<br>SQL，(Structured Query Language)即结构化查询语言，数据库管理系统专门通过SQL语言来管理数据库中的数据，与数据库通信。</p>
+</blockquote>
+<p>SQL为数据库管理系统提供的功能<br>SQL语言是一种数据库查询和程序设计语言，其主要用于存取数据，查询数据，更新数据和管理数据库系统。具体的，SQL分为4个部。</p>
+<p>数据定义语言（Data Definition Language，DDL）：DROP、CREATE、ALTER等语句；数据库定义语言。主要用于定义数据库，表，视图，索引和触发器等。CREATE语句主要用于创建数据库，创建表，创建视图。ALTER语句主要用于修改表的定义，修改视图的定义。DROP语句主要用于删除数据库，删除表和删除视图等。<br>数据操作语言（Data Manipulation Language，DML）：INSERT、UPDATE、DELETE语句；数据库操作语言。主要用于插入数据，更新数据，删除数据。INSERT语句用于插入数据，UPDATE语句用于更新数据，DELETE语句用于删除数据。<br>数据查询语言（Data Query Language，DQL）：SELECT语句。主要用于查询数据。<br>数据控制语言（Data Control Language ，DCL）语句：数据库控制语言。主要用于控制用户的访问权限。其中GRANT语句用于给用户增加权限，REVOKE语句用于收回用户的权限。</p>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>启动数据库服务：<br>linux: service mysql start<br>macOs: mysql start<br>使用root用户登录<br>mysql -u root</p>
+<p>SElECT语句<br>    语句格式：SELECT 要查询的列名 FROM 表名字 WHERE 限制条件;<br>    例如：SELECT name,age FROM employee;<br>    ①SELECT 语句常常会有 WHERE 限制条件，用于达到更加精确的查询。WHERE限制条件可以有数学符号 (=,&lt;,&gt;,&gt;=,&lt;=)<br>    例如：SELECT name,age FROM employee WHERE age&gt;25;<br>    ②“AND”与“OR”<br>    例如：SELECT name,age FROM employee WHERE age<25 or="" age="">30;<br>    如果要包含边界数。则使用between。<br>    ③IN和NOT IN 用于筛选在或者不在某个范围内的结果。<br>    例如：<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in_dpt IN (‘dpt3’,’dpt4’);<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in<em>dpt NOT IN (‘dpt1’,’dpt3’);<br>    ④通配符<br>    关键字 LIKE 在SQL语句中和通配符一起使用，通配符代表未知字符。SQL中的通配符是</em>和%，其中_代表一个未指定字符，%代表不定个未指定字符。<br>    例如：<br>    SELECT name,age,phone FROM employee WHERE phone LIKE ‘1101__’;<br>    SELECT name,age,phone FROM employee WHERE name LIKE ‘J%’;<br>    ⑤结果排序<br>    ORDER BY的结果是升序排列，而使用关键词ASC和DESC可指定升序或降序排序。<br>    使用AS关键词可以给值重命名<br>    例如：<br>    SELECT MAX(salary) AS max_salary,MIN(salary) FROM employee;<br>    ⑥子查询 使用where in 进行查询，而且可以扩展到3层，4层或者更多的层。<br>    例如：SELECT of_dpt,COUNT(proj_name) AS count_project FROM project<br>    WHERE of_dpt IN<br>    (SELECT in_dpt FROM employee WHERE name=’Tom’);<br>    ⑦连接查询<br>    连接的基本思想是把两个或多个表当作一个新的表来操作<br>    例如：<br>        SELECT id,name,people_num<br>        FROM employee,department<br>        WHERE employee.in_dpt = department.dpt_name<br>        ORDER BY id;<br>        SELECT id,name,people_num<br>        FROM employee JOIN department<br>        ON employee.in_dpt = department.dpt_name<br>        ORDER BY id;</25></p>
+<p>数据库及表的修改和删除<br>drop database text_01 删除名为text_01的表。<br>重命名:<br>    RENAME TABLE 原名 TO 新名字;<br>    ALTER TABLE 原名 RENAME 新名;<br>    ALTER TABLE 原名 RENAME TO 新名;<br>对表的修改<br>    ①增加一列：新增加的列，被默认放置在这张表的最右边.<br>        ALTER TABLE 表名字 ADD COLUMN 列名字 数据类型 约束;<br>        或： ALTER TABLE 表名字 ADD 列名字 数据类型 约束;<br>    ②如果要把增加的列插入在指定位置，则需要在语句的最后使用AFTER关键词(“AFTER 列1” 表示新增的列被放置在 “列1” 的后面)<br>    ③如果想放在第一列的位置，则使用 FIRST 关键词<br>        ALTER TABLE employee ADD test INT(10) DEFAULT 11 FIRST;<br>    ④删除一列<br>    ALTER TABLE 表名字 DROP COLUMN 列名字;<br>    或：ALTER TABLE 表名字 DROP 列名字;<br>    ⑤重命名一列<br>    ALTER TABLE 表名字 CHANGE 原列名 新列名 数据类型 约束;<br>    注意：这条重命名语句后面的 “数据类型” 不能省略，否则重命名失败。<br>    ⑥修改表的某个值<br>    UPDATE 表名字 SET 列1=值1,列2=值2 WHERE 条件;<br>    ⑦删除表中的一行记录<br>    DELETE FROM 表名字 WHERE 条件;</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>   索引是一种与表有关的结构，它的作用相当于书的目录，可以根据目录中的页码快速找到所需的内容。<br>   当表中有大量记录时，若要对表进行查询，没有索引的情况是全表搜索：将所有记录一一取出，和查询条件进行一一对比，然后返回满足条件的记录。这样做会消耗大量数据库系统时间，并造成大量磁盘 I/O 操作。<br>   而如果在表中已建立索引，在索引中找到符合查询条件的索引值，通过索引值就可以快速找到表中的数据，可以大大加快查询速度。<br>   方法：<br>   对一张表的某个列建立索引<br>      ALTER TABLE 表名字 ADD INDEX 索引名 (列名);<br>      CREATE INDEX 索引名 ON 表名字 (列名);</p>
+<p>   视图<br>      视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。<br>      注意理解视图是虚拟的表：<br>            数据库中只存放了视图的定义，而没有存放视图中的数据，这些数据存放在原来的表中；<br>            使用视图查询数据时，数据库系统会从原来的表中取出对应的数据；<br>            视图中的数据依赖于原来表中的数据，一旦表中数据发生改变，显示在视图中的数据也会发生改变；<br>            在使用视图的时候，可以把它当作一张表。<br>        方法：<br>        CREATE VIEW 视图名(列a,列b,列c) AS SELECT 列1,列2,列3 FROM 表名字;<br>        导入:<br>        导入操作，可以把一个文件里的数据保存进一张表。导入语句格式为：<br>        LOAD DATA INFILE ‘文件路径’ INTO TABLE 表名字;<br>        导出:<br>        导出与导入是相反的过程，是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为：<br>        SELECT 列1，列2 INTO OUTFILE ‘文件路径和文件名’ FROM 表名字;<br>        备份：<br>        mysqldump -u root 数据库名&gt;备份文件名;   #备份整个数据库<br>        mysqldump -u root 数据库名 表名字&gt;备份文件名;  #备份整个表<br>        恢复：<br>        source /tmp/SQL6/MySQL-06.sql</p>
+<h1 id="MySQL操作"><a href="#MySQL操作" class="headerlink" title="MySQL操作"></a>MySQL操作</h1><p>①CREATE DATABASE 库名<br>②CREATE TABLE 表名<br>③DESCRIBE 内容名<br>④LOAD DATA INFILE … INTO TABLE 表名 和 INSERT<br>INSERT INTO 内容名<br>ps:windows中 \r\n为换行符，osx中为\r。<br>⑤SELECT * FROM 内容名<br>⑥DELETE FROM<br>⑦UPDATE 内容名 SET<br>⑧条件筛选<br>    &lt;特殊列&gt;SELECT … FROM …WHERE …<br>    &lt;特殊行&gt;SELECT … FROM … ORDER BY …(DESC)</p>
+
       
     </div>
 
@@ -520,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#非关系型数据库"><span class="nav-number">1.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库-Database"><span class="nav-number">1.</span> <span class="nav-text">数据库(Database)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库模型"><span class="nav-number">2.</span> <span class="nav-text">数据库模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">4.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL操作"><span class="nav-number">5.</span> <span class="nav-text">MySQL操作</span></a></li></ol></div>
             
 
           </div>
