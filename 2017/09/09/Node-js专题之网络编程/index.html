@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="node.js," />
 
 
 
@@ -102,16 +102,25 @@
 
 
 
-<meta name="description" content="一个正在填坑的font-ender">
+<meta name="description" content="#网络服务于安全
+一.TLS/SSL
+1.密钥
+在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。通过openssl来实现TLS/SSL12345678//生成服务器端私钥openssl genrsa -out server.key 1024//生成客户端私钥openssl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery 源码解读">
-<meta property="og:url" content="http://ycomer.com/2017/08/23/jQuery-源码解读/index.html">
+<meta property="og:title" content="Node-js专题之网络编程">
+<meta property="og:url" content="http://ycomer.com/2017/09/09/Node-js专题之网络编程/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="一个正在填坑的font-ender">
-<meta property="og:updated_time" content="2017-08-23T15:51:45.000Z">
+<meta property="og:description" content="#网络服务于安全
+一.TLS/SSL
+1.密钥
+在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。通过openssl来实现TLS/SSL12345678//生成服务器端私钥openssl genrsa -out server.key 1024//生成客户端私钥openssl">
+<meta property="og:updated_time" content="2017-09-10T15:43:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery 源码解读">
-<meta name="twitter:description" content="一个正在填坑的font-ender">
+<meta name="twitter:title" content="Node-js专题之网络编程">
+<meta name="twitter:description" content="#网络服务于安全
+一.TLS/SSL
+1.密钥
+在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。通过openssl来实现TLS/SSL12345678//生成服务器端私钥openssl genrsa -out server.key 1024//生成客户端私钥openssl">
 
 
 
@@ -139,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/08/23/jQuery-源码解读/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/09/09/Node-js专题之网络编程/"/>
 
 
 
 
 
-  <title> jQuery 源码解读 | 东方猿BLog </title>
+  <title> Node-js专题之网络编程 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +265,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/jQuery-源码解读/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/Node-js专题之网络编程/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -280,7 +289,7 @@
             
             
               
-                jQuery 源码解读
+                Node-js专题之网络编程
               
             
           </h1>
@@ -293,8 +302,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:51:03+08:00">
-                2017-08-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T21:03:52+08:00">
+                2017-09-09
               </time>
             
 
@@ -313,7 +322,7 @@
 
           
           
-             <span id="/2017/08/23/jQuery-源码解读/" class="leancloud_visitors" data-flag-title="jQuery 源码解读">
+             <span id="/2017/09/09/Node-js专题之网络编程/" class="leancloud_visitors" data-flag-title="Node-js专题之网络编程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,7 +347,17 @@
       
 
       
-        
+        <p>#网络服务于安全</p>
+<p>一.TLS/SSL</p>
+<p>1.密钥</p>
+<p>在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。<br>通过openssl来实现TLS/SSL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//生成服务器端私钥</div><div class="line">openssl genrsa -out server.key 1024</div><div class="line">//生成客户端私钥</div><div class="line">openssl genrsa -out client.key 1024</div><div class="line">//服务器端公钥</div><div class="line">openssl rsa -in server.key -pubout -out server.pem</div><div class="line">//客户端公钥</div><div class="line">openssl rsa -in client.key -pubout -out client.pem</div></pre></td></tr></table></figure></p>
+<p>2.数字证书<br>CA(Certificate Authority 数字证书认证中心)<br>自签名证书，自己扮演CA,给自己的服务器办法签名证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 1024</div><div class="line">openssl req -new -key ca.key -out ca.csr</div><div class="line">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt</div></pre></td></tr></table></figure></p>
+<p>接下来是服务器通过自己的私钥生成证书签名请求文件SCR并申请签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key -out server.csr</div><div class="line">openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -in server.csr -out server.crt</div></pre></td></tr></table></figure></p>
+<h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
+<h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
+<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件</p>
+
       
     </div>
 
@@ -361,7 +380,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+            <a href="/tags/node-js/" rel="tag"># node.js</a>
           
         </div>
       
@@ -370,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/23/厉害的jQuery/" rel="next" title="厉害的jQuery">
-                <i class="fa fa-chevron-left"></i> 厉害的jQuery
+              <a href="/2017/09/09/RESTful/" rel="next" title="RESTful">
+                <i class="fa fa-chevron-left"></i> RESTful
               </a>
             
           </div>
@@ -380,8 +399,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/25/执行上下文/" rel="prev" title="执行上下文">
-                执行上下文 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/10/Docker/" rel="prev" title="Docker">
+                Docker <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -505,6 +533,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构建TCP服务"><span class="nav-number">1.</span> <span class="nav-text">构建TCP服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建UDP服务"><span class="nav-number">2.</span> <span class="nav-text">构建UDP服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建HTTP服务"><span class="nav-number">3.</span> <span class="nav-text">构建HTTP服务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

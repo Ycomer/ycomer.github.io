@@ -257,6 +257,461 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/厉害的jQuery/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/厉害的jQuery/" itemprop="url">
+                  厉害的jQuery
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/厉害的jQuery/" class="leancloud_visitors" data-flag-title="厉害的jQuery">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>1.基本选择器</p>
+<blockquote>
+<p>#id<br>.class<br>.element<br>\.<em><br>.selector1, selector2,···selectorN<br>2.层次选择器<br>$(“ancestor descendant”)<br>$(“parent&gt;child”)<br>$(“prev + next”)<br>$(“prev ~ siblings”)<br>3.过滤选择器<br>1.基本选择器。<br>:first<br>:last<br>:not<br>:even<br>:odd<br>:eq(index) index从0开始<br>:gt(index)<br>:lt(index)<br>:header<br>:animated<br>:focus<br>2.内容过滤选择器<br>:contains(text)<br>:empty<br>:has(selector)<br>:parent<br>3.可见性过滤选择器<br>:hidden<br>:visible<br>4.属性过滤选择器<br>[attribute]<br>[attribute=value]<br>[attribute!=value]<br>[attribute^=value]<br>[attribute$=value]<br>[attribute</em>=value]<br>[attribute|=value]<br>[attribute~=value]<br>[attribute1][attribute2][attributeN]<br>5.子元素过滤选择器<br>:nth-child(index/even/odd/equation) index从1开始<br>:first-child<br>:last-child<br>:only-child<br>6.表单对象属性过滤选择器<br>:enabled<br>:disabled<br>:checked<br>:selected<br>4.表单选择器<br>:input<br>:text<br>:password<br>:radio<br>:checkbox<br>:submit<br>:image<br>:reset<br>:button<br>:file<br>:hidden</p>
+</blockquote>
+<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><p>5.插入节点的方法</p>
+<blockquote>
+<p>append()追加内容<br>appendTo()追加到指定元素中 颠倒常规顺序<br>prepend()内部前置内容<br>prependTo()前置到指定内容<br>after()之后插入内容<br>insertAfter()插入指定元素后面 颠倒常规用法<br>before()之前插入内容<br>insertBefore() 插入指定元素前面</p>
+</blockquote>
+<p>6.删除节点</p>
+<blockquote>
+<p>remove()<br>该节点所包含的所有后代节点都被删除，此方法返回值是一个指向已被删除的的节点的引用，意思后面还可以继续使用，这里就很强大了比如使用appendTo。而且可以有选择行的删除。给remove传递参数即可。<br>detach()<br>和remove一样但是不会把匹配的元素从jquery对象中删除，后面可以继续使用这些匹配的元素。区别就是所有绑定的事件和，附加的数据都会保留下来。<br>empty()<br>清空元素中的所有后代节点。</p>
+</blockquote>
+<p>7.复制节点</p>
+<blockquote>
+<p>clone()<br>点击复制一个新元素，但是这个新元素不具有任何功能，这里clone有一个参数true，这个参数能使复制的元素具备被复制元素一样的功能。</p>
+</blockquote>
+<p>8.替换的节点</p>
+<blockquote>
+<p>replaceWith()<br>replaceAll()<br>两种替换方法都将所有匹配的元素替换成指定的html或者dom元素，替换后原先绑定的事件都会消失，区别是操作颠倒。</p>
+</blockquote>
+<p>9.包裹节点</p>
+<blockquote>
+<p>wrap()<br>将某个节点其他标记包裹起来（所有元素进行单独的包裹）<br>wrapAll()<br>所有匹配的元素用一个元素来包裹，<br>wraInner()<br>所有匹配元素的子内容被包裹起来。</p>
+</blockquote>
+<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><p>1.获取和设置属性(getter setter)</p>
+<blockquote>
+<p>attr()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'p'</span>).attr(&#123;<span class="string">'title'</span>: <span class="string">'your titile'</span>, <span class="string">'name'</span>: <span class="string">'test'</span>&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>2.删除属性</p>
+<blockquote>
+<p>removeAttr()<br>3.1.6以后新增方法<br>prop()<br>removeProp()</p>
+</blockquote>
+<h4 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h4><p>1.获取和设置样式</p>
+<blockquote>
+<p>attr()获取和设置<br>addClass()追加属性<br>2.移除样式<br>removeClass() 删除全部或指定的class 可以给其传递参数也可以不用传递。<br>3.切换样式<br>toggle()控制行为上的重复切换<br>toggleClass()控制样式上的重复切换<br>4.判断是否含有某个样式<br>hasClass()<br>.is()</p>
+<h4 id="设置获取HTML、文本和值"><a href="#设置获取HTML、文本和值" class="headerlink" title="设置获取HTML、文本和值"></a>设置获取HTML、文本和值</h4><p>1.html() 用于xhtml 不能用于xml<br>2.text()<br>3.获取元素的值<br>val()和attr()有些时候功能一样。<br>val不仅能获取元素的值也能设置元素的值，第二个就是它能选中选框。<br>defaultValue</p>
+</blockquote>
+<h4 id="遍历节点"><a href="#遍历节点" class="headerlink" title="遍历节点"></a>遍历节点</h4><p>1.children()<br>匹配子元素集合<br>2.next()<br>匹配元素后面紧邻的同辈元素<br>3.prev()<br>匹配元素前面紧邻的同辈元素<br>4.siblings()<br>匹配元素前后所有的同辈元素<br>5.closest()<br>取得最近的匹配元素，如果没有就逐级向上查找。<br>6.区别<br>parent()获得集合中每个匹配元素父级元素<br>parents()获得集合中每个匹配元素祖先元素<br>closest()元素本身开始逐级向上，并返回最先匹配的祖先元素<br>7.find() filter() nextAll() prevAll()</p>
+<h4 id="CSS-DOM"><a href="#CSS-DOM" class="headerlink" title="CSS-DOM"></a>CSS-DOM</h4><p>1.css()<br>获取元素的样式属性，设置单个或多个样式。<br>2.透明度的设置opacity() 和诸如height就可以直接进行设置。<br>.height() .width()<br>3.元素定位</p>
+<blockquote>
+<p>offset()获取元素在当前视窗的相对偏移量。对可见元素有两个返回值top left<br>position() 获取元素相对于最近一个position样式属性为relative 或absolute的祖父节点的相对偏移量。<br>scrollTop() 获取元素的滚动条距离顶端的距离和距离左侧的距离。<br>scrollLeft()</p>
+<h3 id="事件和动画"><a href="#事件和动画" class="headerlink" title="事件和动画"></a>事件和动画</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>1.$(document).ready()和window.onload的区别<br>①window.onload是在页面全部元素加载完毕以后。而$(document).ready()则是DOM加载完毕以后。<br>②每次调用$(document).ready()都会在先有的行为上追加新的行为，这些行为会根据函数注册的顺序执行。<br>③三种方式均可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>2.事件绑定</p>
+<blockquote>
+<p>bind( type [, data] ,fn);<br>第一个参数表示事件类型：foucs blur load resize srcoll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error<br>第二个参数为可选参数，第三个参数则是用来绑定的处理函数。<br>绑定事件以后要对绑定的事件进行加强，比如通过if else 这样的语句。或者toggle。<br>改变绑带事件的类型可以采用简写的形式来减少代码量。</p>
+</blockquote>
+<p>合成事件<br>①hover()模拟光标悬停事件，光标移动到元素上时触发第一个函数，移出当前元素，触发第二个函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hover(enter, leave);</div></pre></td></tr></table></figure></p>
+<p>hover()方法替代的是bind(‘mouseenter’)和bind(‘mouseleave’) 所以在触发hover的第二个函数时使用trigger(‘mouseleave’).<br>②toggle()模拟鼠标连续点击事件。第一次点击元素，触发指定的第一个函数，以此类推。</p>
+<p>事件冒泡<br>定义：IE的事件流叫事件冒泡<br>问题：引起预料之外的效果，必须要对事件的作用范围进行限制<br>事件对象：在jQuery中使用事件对象很简单，只需为函数添加一个函数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$('element).bind('click', function(event)&#123;</div><div class="line">  //event:事件对象</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>停止事件冒泡：stopPropagation()<br>组织默认行为：preventDefault()<br>以上两种都可以通过 return false来实现。</p>
+<p>事件对象的属性<br>1.event.type 获取事件的类型<br>2.event.preventDefault() 阻止默认的事件行为<br>3.event.stopPropagation() 阻止事件冒泡<br>4.event.target() 获取到触发事件的元素<br>5.event.relatedTarget()获取相关元素<br>6.event.pageX和event.pageY 获取光标相对页面的x和y坐标。<br>7.event.which()在鼠标单击事件中获取到鼠标的左中右键，在键盘事件中获取键盘的按钮。<br>8.event.metaKey()键盘事件中获取ctrl()</p>
+<p>移除事件<br>unbind()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unbind([type], [data]);</div></pre></td></tr></table></figure></p>
+<p>one()为元素绑定处理函数，当处理函数触发一次以后，立即被删除。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">one( type, [data], fn);</div></pre></td></tr></table></figure></p>
+<p>off()<br>delegate()<br>undelegate()</p>
+<p>模拟操作<br>1.常用模拟<br>trigger()<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#btn').trigger('click);</div><div class="line">$('#btn').click();</div></pre></td></tr></table></figure></p>
+<p>2.触发自定义事件<br>trigger()<br>3.传递数据<br>trigger(type, [data])第一个参数是触发的事件类型，第二个参数是要传递给事件处理函数的附加数据，以数组的形式传递。<br>4.执行默认操作<br>trigger()<br>triggerHandler()只触发绑定事件，取消默认操作。</p>
+<p>其他用法<br>1.绑定多个事件类型。<br>2.添加事件命名空间，便于管理。<br>3.相同事件名称，不同命名空间执行方法。这里注意使用！匹配所有不包含在命名空间中的click方法。</p>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>1.show()和hide()<br>这两种方法都可以带参数，已达到动画的目的。<br>2.fadeIn()和fadeOut() 只改变元素的不透明度。<br>3.slideUp()和slideDown() 只会改变元素的高度。<br>4.animate()<br>animate(params, speed, callback)<br>5.stop()<br>stop([clearQueue].[gotoEnd])其中的参数都是boolean值<br>立即停止当前正在进行的动画，其中clearQueue是否清空未执行完的动画队列。gotoEnd是否直接将正在执行的动画跳转到末尾。<br>6。判断元素是否处于动画状态<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(! $(element).is(<span class="string">':animated'</span>))&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.延迟动画<br>delay()<br>8.其他动画方法(专门用于交互的)<br>①toggle(speed, [callback])<br>切换元素的可见状态<br>②slideToggle(speed, [easing], [callback])<br>通过高度的变化来切换匹配元素的可见性<br>③fadeTo(speed, opacity, [callback])<br>把元素的不透明度以渐进的方式调整到指定的值。<br>④fadeToggle(speed, [easing], [callback])<br>通过不透明度变化来切换匹配元素的可见性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
+                  深入浅出之ES6之变量解构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
+<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
+<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>真正被赋值的是变量</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
+                  深入浅出ES6之let和const
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
+</blockquote>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出JS之事件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,493 +971,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之负值/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/CSS魔法之负值/" itemprop="url">
-                  CSS魔法之负值
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:38:59+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/11/CSS魔法之负值/" class="leancloud_visitors" data-flag-title="CSS魔法之负值">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="margin基础"><a href="#margin基础" class="headerlink" title="margin基础"></a>margin基础</h1><p>定义：<br>CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。<br>边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南<br>外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, margin-right.来设置他们的值。</p>
-<h4 id="垂直外边距"><a href="#垂直外边距" class="headerlink" title="垂直外边距"></a>垂直外边距</h4><p>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。<br>eg1:当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。<br>eg2:当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。<br>eg3:假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并。如果这个外边距遇到另一个元素的外边距，它还会发生合并<br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br>根据规范：一个盒子如果没有上补白(padding-top)和上边框(border-top)，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
-<h4 id="用margin还是padding"><a href="#用margin还是padding" class="headerlink" title="用margin还是padding"></a>用margin还是padding</h4><p><strong>何时应当使用margin</strong>：<br>需要在border外侧添加空白时。<br>空白处不需要背景（色）时。<br>上下相连的两个盒子之间的空白，需要相互抵消时<br><strong>何时应当时用padding</strong>：<br>需要在border内测添加空白时。<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</p>
-<h4 id="margin在块元素、内联元素中的区别"><a href="#margin在块元素、内联元素中的区别" class="headerlink" title="margin在块元素、内联元素中的区别"></a>margin在块元素、内联元素中的区别</h4><p>在页面文档中block元素另起一行开始，并独占一行。inline元素则同其他inline元素共处一行。<br>block元素:</p>
-<ul>
-<li>address - 地址 <ul>
-<li>blockquote - 块引用 </li>
-<li>center - 举中对齐块 </li>
-<li>dir - 目录列表 </li>
-<li>div - 常用块级容易，也是css layout的主要标签 </li>
-<li>dl - 定义列表 </li>
-<li>fieldset - form控制组 </li>
-<li>form - 交互表单 （只能用来容纳其它块元素） </li>
-<li>h1 - 大标题 </li>
-<li>h2 - 副标题 </li>
-<li>h3 - 3级标题 </li>
-<li>h4 - 4级标题 </li>
-<li>h5 - 5级标题 </li>
-<li>h6 - 6级标题 </li>
-<li>hr - 水平分隔线 </li>
-<li>isindex - input prompt </li>
-<li>menu - 菜单列表 </li>
-<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容 </li>
-<li>noscript - 可选脚本内容（对于不支持script的浏览器显示此内容） </li>
-<li>ol - 排序表单 </li>
-<li>p - 段落 </li>
-<li>pre - 格式化文本 </li>
-<li>table - 表格 </li>
-<li>ul - 非排序列表<br>inline元素：</li>
-<li>a - 锚点 </li>
-<li>abbr - 缩写 </li>
-<li>acronym - 首字 </li>
-<li>b - 粗体(不推荐) </li>
-<li>bdo - bidi override </li>
-<li>big - 大字体 </li>
-<li>br - 换行 </li>
-<li>cite - 引用 </li>
-<li>code - 计算机代码(在引用源码的时候需要) </li>
-<li>dfn - 定义字段 </li>
-<li>em - 强调 </li>
-<li>font - 字体设定(不推荐) </li>
-<li>i - 斜体 </li>
-<li>img - 图片 </li>
-<li>input - 输入框 </li>
-<li>kbd - 定义键盘文本 </li>
-<li>label - 表格标签 </li>
-<li>q - 短引用 </li>
-<li>s - 中划线(不推荐) </li>
-<li>samp - 定义范例计算机代码 </li>
-<li>select - 项目选择 </li>
-<li>small - 小字体文本 </li>
-<li>span - 常用内联容器，定义文本内区块 </li>
-<li>strike - 中划线 </li>
-<li>strong - 粗体强调 </li>
-<li>sub - 下标 </li>
-<li>sup - 上标 </li>
-<li>textarea - 多行文本输入框 </li>
-<li>tt - 电传文本 </li>
-<li>u - 下划线 </li>
-<li>var - 定义变量</li>
-</ul>
-</li>
-</ul>
-<h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><p>当元素margin的top和left是负值时会引起元素的向上或向左位置移动。而当元素margin的bottom和right是负值时会影响右边和下边相邻元素的参考线,即其右边和下边的相邻元素会进入覆盖它的一部分。</p>
-<h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1><p>一、左右列固定，中间自适应，也就是圣杯和双飞翼布局<br>二、去除列表右边框。<br>项目中经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（margin-right）,当父元素的宽度固定式，每一行的最右端的li元素的右边距就多余了。使用margin负值就可以轻松搞定。<br>三、水平垂直居中<br>通过绝对定位和负边距，把div元素的中心拉回到body的中心。负边距为content的一半。<br>四、去除列表最后一个li元素的border-bottom。border-bottom与外边框重合看起来很丑。通过设置border-bottom为负值，解决重合问题<br>五、多列等高<br>给每个框设置大的底部内边距，然后用数值相似的负外边距消除这个高度。这会导致每一列溢出容器元素，如果把外包容器的overflow属性设为hidden，列就在最高点被裁切。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>负值的应用很广泛，在了解其原理的基础上，方能游刃有余，但是负值是用来解决问题的，那么会有更好的东西来替代他。需要我们继续挖掘。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/09/深入浅出JS之this/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/09/深入浅出JS之this/" itemprop="url">
-                  深入浅出JS之this
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-09T23:57:02+08:00">
-                2017-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/09/深入浅出JS之this/" class="leancloud_visitors" data-flag-title="深入浅出JS之this">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="this的使用场合"><a href="#this的使用场合" class="headerlink" title="this的使用场合"></a>this的使用场合</h1><p>1.全局变量<br>2.构造函数中this指向实例对象<br>3.对象的方法，使用一个变量固定this的值，然后内层函数调用这个变量。</p>
-<h1 id="使用注意点"><a href="#使用注意点" class="headerlink" title="使用注意点"></a>使用注意点</h1><p>1.避免多层this<br>2.避免数组处理方法中的this<br>  数组的map和foreach方法，允许提供一个函数作为参数。这个函数内部不应该使用this。<br>3.避免回调函数中的this</p>
-<h1 id="绑定this的方法"><a href="#绑定this的方法" class="headerlink" title="绑定this的方法"></a>绑定this的方法</h1><p>1.function.prototype.call():函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。call方法的参数，应该是一个对象。如果参数为空、null和undefined，则默认传入全局对象。如果call方法的参数是一个原始值，那么这个原始值会自动转成对应的包装对象，然后传入call方法。call方法还可以接受多个参数。call的第一个参数就是this所要指向的那个对象，后面的参数则是函数调用时所需的参数。<br>2.function.prototype.apply():apply方法的作用与call方法类似，也是改变this指向，然后再调用该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数,apply方法的第一个参数也是this所要指向的那个对象，如果设为null或undefined，则等同于指定全局对象。第二个参数则是一个数组.</p>
-<blockquote>
-<p>1.找出数组最大元素:JavaScript不提供找出数组最大元素的函数。结合使用apply方法和Math.max方法，就可以返回数组的最大元素。<br>2.将数组的空元素变为undefined:通过apply方法，利用Array构造函数将数组的空元素变成undefined,空数组与undefined的差别在于，数组的forEach方法会跳过空元素，但是不会跳过undefined。因此，遍历内部元素的时候，会得到不同的结果。。<br>3.转换类似数组的对象:另外，利用数组对象的slice方法，可以将一个类似数组的对象（比如arguments对象）转为真正的数组。</p>
-</blockquote>
-<p>3.function.prototype.bind()<br>1.bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。<br>2.bind比call方法和apply方法更进一步的是，除了绑定this以外，还可以绑定原函数的参数。<br>3.如果bind方法的第一个参数是null或undefined，等于将this绑定到全局对象，函数运行时this指向顶层对象</p>
-<blockquote>
-<p>bind方法有一些使用注意点。<br>①每一次返回一个新函数<br>②结合回调函数使用<br>③结合call方法使用</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/02/CSS魔法之布局篇/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/02/CSS魔法之布局篇/" itemprop="url">
-                  CSS魔法之传布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T23:51:36+08:00">
-                2017-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/02/CSS魔法之布局篇/" class="leancloud_visitors" data-flag-title="CSS魔法之传布局">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="传统布局"><a href="#传统布局" class="headerlink" title="传统布局"></a>传统布局</h1><p>传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。<br>一、先从display(显示)说起。<br>MDN上关于display的定义：</p>
-<blockquote>
-<p>The display CSS property specifies the type of rendering box used for an element. </p>
-</blockquote>
-<p>其中display属性值入下表所列。<br>有必要表明的注释：<br>①display-outside:<br>The display-outside CSS property specifies the outer display type of the box generated by an element, dictating how the element participates in its parent formatting context.<br>②display-inside:<br>The display-inside CSS property specifies the inner display type of the box generated by an element, dictating how its contents lay out inside the box.<br>其实从字面意思我们都能理解。但是为了更深入的理解，理解其原文意至关重要。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">/* &lt;display-outside&gt; values */</div><div class="line">display: block;</div><div class="line">display: inline;</div><div class="line">display: run-in;</div><div class="line"></div><div class="line">/* &lt;display-inside&gt; values */</div><div class="line">display: flow;</div><div class="line">display: flow-root;</div><div class="line">display: table;</div><div class="line">display: flex;</div><div class="line">display: grid;</div><div class="line">display: ruby;</div><div class="line">display: subgrid;</div><div class="line"></div><div class="line">/* &lt;display-outside&gt; plus &lt;display-inside&gt; values */</div><div class="line">display: block flow;</div><div class="line">display: inline table;</div><div class="line">display: flex run-in;</div><div class="line"></div><div class="line">/* &lt;display-listitem&gt; values */</div><div class="line">display: list-item;</div><div class="line">display: list-item block;</div><div class="line">display: list-item inline;</div><div class="line">display: list-item flow;</div><div class="line">display: list-item flow-root;</div><div class="line">display: list-item block flow;</div><div class="line">display: list-item block flow-root;</div><div class="line">display: flow list-item block;</div><div class="line"></div><div class="line">/* &lt;display-internal&gt; values */</div><div class="line">display: table-row-group;</div><div class="line">display: table-header-group;</div><div class="line">display: table-footer-group;</div><div class="line">display: table-row;</div><div class="line">display: table-cell;</div><div class="line">display: table-column-group;</div><div class="line">display: table-column;</div><div class="line">display: table-caption;</div><div class="line">display: ruby-base;</div><div class="line">display: ruby-text;</div><div class="line">display: ruby-base-container;</div><div class="line">display: ruby-text-container;</div><div class="line"></div><div class="line">/* &lt;display-box&gt; values */</div><div class="line">display: contents;</div><div class="line">display: none;</div><div class="line"></div><div class="line">/* &lt;display-legacy&gt; values */</div><div class="line">display: inline-block;</div><div class="line">display: inline-list-item;</div><div class="line">display: inline-table;</div><div class="line">display: inline-flex;</div><div class="line">display: inline-grid;</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">display: inherit;</div><div class="line">display: initial;</div><div class="line">display: unset;</div></pre></td></tr></table></figure></p>
-<p>上表列出了关于display的所有显示方式，全局的外部的内部的，子元素，表格等等一系列。但是对于每一个可能用的上的布局方式来说，这里有过时的还有没过时。常用的和不常用。只要能达到自己的目的，都可以用，但是作为“懒代表的我们”，清楚原理的情况下，提升工作效率才是王道啊。不妨在<a href="https://codepen.io" target="_blank" rel="external">CODEPEN</a>上花时间试试每一个样式。就很清楚了。</p>
-<p>二、接下来是position。<br>Positon MDN</p>
-<blockquote>
-<p>The position CSS property specifies how an element is positioned in a document</p>
-</blockquote>
-<p>相对于display来说。position的作用就是固定一个元素所处的位置。虽然定位的方式有很多种，很明显这是最直接的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* Keyword values */</div><div class="line">position: static;</div><div class="line">position: relative;</div><div class="line">position: absolute;</div><div class="line">position: fixed;</div><div class="line">position: sticky;</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">position: inherit;</div><div class="line">position: initial;</div><div class="line">position: unset;</div></pre></td></tr></table></figure></p>
-<p><a href="https://codepen.io/pen/" target="_blank" rel="external">CODEPEN</a>看例子。static是默认的属性，relative是相对位置，那么这里的相对与前面的元素进行定位。absolute则是针对他的父元素进行。fixed顾名思义就是固定其位置，当固定在哪里则是有你选择。全局属性中的继承 初始 复位 都是对于公共样式中关于位置也就是通配符中定义的。<br>三、最后是float<br>Float MDN</p>
-<blockquote>
-<p>The float CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. </p>
-</blockquote>
-<p>float总的来说应该是在容器内元素改如何确定其位置，堵车只是一个大概的位置。重视强调最重要的是float默认的元素为块状显示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">float: left;</div><div class="line">float: right;</div><div class="line">float: none;</div><div class="line">float: inline-start;//表明元素必须浮动在其所在块容器的开始一侧，在ltr脚本中是左侧，在rtl脚本中是右侧。</div><div class="line">float: inline-end;//表明元素必须浮动在其所在块容器的结束一侧，在ltr脚本中是右侧，在rtl脚本中是左侧。</div><div class="line">/* Global values */</div><div class="line">float: inherit;</div><div class="line">float: initial;</div><div class="line">float: unset;</div></pre></td></tr></table></figure></p>
-<p>重点来了，既然设置了浮动，但是有一些元素我们又不想让其浮动，这个时候就用上了清除浮动的属性clear。来看关于clear的相关内容<br>Clear MDN</p>
-<blockquote>
-<p>The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The clear property applies to both floating and non-floating elements.</p>
-</blockquote>
-<p>清除浮动适用于浮动的和不浮动的元素，这里可能有会疑问，没有浮动为什么要清除浮动呢？我们先来看clear的属性<br><figure class="highlight plain"><figcaption><span>none;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">clear: left;</div><div class="line">clear: right;</div><div class="line">clear: both;</div><div class="line">clear: inline-start;</div><div class="line">clear: inline-end;</div><div class="line">clear: inherit;</div></pre></td></tr></table></figure></p>
-<p>这里来解释，当应用于非浮动块时，它将非浮动块的边框边界移动到所有相关浮动元素外边界的下方。这个行为作用时会导致外边距塌陷不起作用。<br>当应用于浮动元素时，它将元素的外边界移动到所有相关的浮动元素外边界的下方。这会影响后面浮动元素的布局，后面的浮动元素的位置无法高于它之前的元素。<br>要被清除的相关浮动元素指 在相同块级格式化上下文中的前置浮动。</p>
-<h1 id="弹性盒布局-Flexbox"><a href="#弹性盒布局-Flexbox" class="headerlink" title="弹性盒布局(Flexbox)"></a>弹性盒布局(Flexbox)</h1><p>一、概念<br>①在定义方面来说，弹性布局是指通过调整其内元素的宽高，从而在任何显示设备上实现对可用显示空间最佳填充的能力。弹性容器扩展其内元素来填充可用空间，或将其收缩来避免溢出。<br>块级布局更侧重于垂直方向、行内布局更侧重于水平方向，与此相对的，弹性盒子布局算法是方向无关的。虽然块级布局对于单独一个页面来说是行之有效的，但其仍缺乏足够的定义来支持那些必须随用户代理(user agent)不同或设备方向从水平转为垂直等各种变化而变换方向、调整大小、拉伸、收缩的应用程序组件。 <strong>弹性盒子布局主要适用于应用程序的组件及小规模的布局</strong>，而（新兴的）栅格布局则针对大规模的布局。<br>②新的布局当然需要新的语言来支持它<br>flex container : 弹性容器<br>     display: flex or inline-flex;<br>flex item : 弹性项目<br>Axis : 轴</p>
-<ul>
-<li>每个弹性布局含有两个轴 主轴水平（main axis）侧轴垂直（cross axis）</li>
-<li>flex-direction 确立主轴。</li>
-<li>justify-content 定义了在当前行上，弹性项目沿主轴如何排布。</li>
-<li>align-items 定义了在当前行上，弹性项目沿侧轴默认如何排布。</li>
-<li>align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。<br>Direction :方向<br>弹性容器的主轴起点（main start）和主轴终点（main end）侧轴的起点（cross start）和侧轴<br>的终点(cross end)而这些取决于主轴和侧轴中有writing-mode确定的方向是从左到右还是相反方向。</li>
-<li>order属性将元素和序号关联起来。以此决定那个元素先出现。</li>
-<li>flex-flow是flex-direction和flex-wrap的简写<br>Line : 行<br>根据 flex-wrap 属性，弹性项目可以排布在单个行或者多个行中。此属性控制侧轴的方向和新行排列的方向。<br>Dimension : 尺寸<br>根据弹性容器的主轴与侧轴，弹性项目的宽和高中，对应主轴的称为主轴尺寸(main size) ，对应侧轴的称为 侧轴尺寸(cross size)<br>③将布局设置为flex时，弹性容器就变成了块级元素。<br>④注：弹性容器直接包含的文本将自动包覆成匿名弹性项目，对于弹性容器的绝对定位子元素来说，其静态位置参照弹性容器的内容框的主起始角确定，而后依此完成此元素的定位。相邻的弹性元素其外边距不会互相合并，使用 auto 外边距可以吸收掉水平或垂直方向上的额外空间，这可以用于对齐或分隔相邻的弹性项目。  对弹性容器中第一个和最后一个弹性项目的外侧边缘应用，也可以使用自动外边距来替代 justify- 属性。自动外边距会自动伸缩来占满剩余空间，当有剩余空间存在时弹性项目将会居中，如果没有则切换至常规对齐方式。不过很不幸，如果尝试在多行的弹性框中用基于外边距的居中方法来替代 justify-content，就必须对每一行的第一个和最后一个弹性项目应用外边距，<strong>元素的显示顺序与它们在源代码中的顺序无关，这种无关性只影响视觉呈现，语音顺序以及基于源代码顺序的导航均不受影响。</strong> order 属性并不影响语音和导航的次序。因此开发者们必须小心，合理地安排元素在源代码中的顺序，以免破坏文档的可访问性。<br>二、flex的基础属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div></pre></td><td class="code"><pre><div class="line">/* Basic values */</div><div class="line">flex: auto;</div><div class="line">flex: initial;</div><div class="line">flex: none;</div><div class="line">flex: 2;</div><div class="line">/* Global values */</div><div class="line">flex: inherit;</div><div class="line">flex: initial;</div><div class="line">flex: unset;</div><div class="line"></div><div class="line">align-content</div><div class="line">/* Positional alignment */</div><div class="line">align-content: center;    </div><div class="line">align-content: start;      </div><div class="line">align-content: end;       </div><div class="line">align-content: flex-start;</div><div class="line">align-content: flex-end;   </div><div class="line">align-content: left;       </div><div class="line">align-content: right;      </div><div class="line">align-content: baseline;</div><div class="line">align-content: first baseline;</div><div class="line">align-content: last baseline;</div><div class="line">/* Distributed alignment */</div><div class="line">align-content: space-between; </div><div class="line">align-content: space-around; </div><div class="line">align-content: space-evenly;  </div><div class="line">/* Overflow alignment */</div><div class="line">align-content: safe center;</div><div class="line">align-content: unsafe center;</div><div class="line">/* Global values */</div><div class="line">align-content: inherit;</div><div class="line">align-content: initial;</div><div class="line">align-content: unset;</div><div class="line"></div><div class="line">align-items</div><div class="line">/* Basic keywords */ </div><div class="line">align-items: normal; </div><div class="line">align-items: stretch; </div><div class="line">/* Positional alignment */ </div><div class="line">align-items: center; </div><div class="line">align-items: start;</div><div class="line">align-items: end; </div><div class="line">align-items: flex-start;</div><div class="line">align-items: flex-end;</div><div class="line">align-items: self-start; </div><div class="line">align-items: self-end; </div><div class="line">align-items: left; </div><div class="line">align-items: right; </div><div class="line">/* Baseline alignment */</div><div class="line">align-items: baseline; </div><div class="line">align-items: first baseline; </div><div class="line">align-items: last baseline; </div><div class="line">align-items: safe center; </div><div class="line">align-items: unsafe center; </div><div class="line">/* Global values */ </div><div class="line">align-items: inherit; </div><div class="line">align-items: initial; </div><div class="line">align-items: unset;</div><div class="line"></div><div class="line"></div><div class="line">align-self</div><div class="line">/* Keyword values */ </div><div class="line">align-self: auto; </div><div class="line">align-self: normal; </div><div class="line">/* Positional alignment */ </div><div class="line">align-self: center; </div><div class="line">align-self: start; </div><div class="line">align-self: end; </div><div class="line">align-self: self-start; </div><div class="line">align-self: self-end; </div><div class="line">align-self: flex-start; </div><div class="line">align-self: flex-end;  </div><div class="line">align-self: left;</div><div class="line">align-self: right;</div><div class="line">/* Baseline alignment */ </div><div class="line">align-self: baseline; </div><div class="line">align-self: first baseline; </div><div class="line">align-self: last baseline; </div><div class="line">align-self: stretch;</div><div class="line">/* Overflow alignment */ </div><div class="line">align-self: safe center; </div><div class="line">align-self: unsafe center; </div><div class="line">/* Global values */ </div><div class="line">align-self: inherit; </div><div class="line">align-self: initial; </div><div class="line">align-self: unset;</div><div class="line"></div><div class="line">align-basic</div><div class="line">/* Specify &lt;&apos;width&apos;&gt; */</div><div class="line">flex-basis: 10em;      </div><div class="line">flex-basis: 3px;</div><div class="line">flex-basis: auto;</div><div class="line">/* Intrinsic sizing keywords */</div><div class="line">flex-basis: fill;</div><div class="line">flex-basis: max-content;</div><div class="line">flex-basis: min-content;</div><div class="line">flex-basis: fit-content;</div><div class="line">flex-basis: content;</div><div class="line">/* Global values */</div><div class="line">flex-basis: inherit;</div><div class="line">flex-basis: initial;</div><div class="line">flex-basis: unset;</div><div class="line"></div><div class="line">flex-direction</div><div class="line">/* The direction text is laid out in a line */</div><div class="line">flex-direction: row;</div><div class="line">/* Like &lt;row&gt;, but reversed */</div><div class="line">flex-direction: row-reverse;</div><div class="line">/* The direction in which lines of text are stacked */</div><div class="line">flex-direction: column;</div><div class="line">/* Like &lt;column&gt;, but reversed */</div><div class="line">flex-direction: column-reverse;</div><div class="line">/* Global values */</div><div class="line">flex-direction: inherit;</div><div class="line">flex-direction: initial;</div><div class="line">flex-direction: unset;</div><div class="line"></div><div class="line">flex-flow</div><div class="line">/* flex-flow: &lt;&apos;flex-direction&apos;&gt; */</div><div class="line">flex-flow: row;</div><div class="line">flex-flow: row-reverse;</div><div class="line">flex-flow: column;</div><div class="line">flex-flow: column-reverse;</div><div class="line">/* flex-flow: &lt;&apos;flex-wrap&apos;&gt; */</div><div class="line">flex-flow: nowrap;</div><div class="line">flex-flow: wrap;</div><div class="line">flex-flow: wrap-reverse;</div><div class="line">/* flex-flow: &lt;&apos;flex-direction&apos;&gt; and &lt;&apos;flex-wrap&apos;&gt; */</div><div class="line">flex-flow: row nowrap;</div><div class="line">flex-flow: column wrap;</div><div class="line">flex-flow: column-reverse wrap-reverse;</div><div class="line">/* Global values */</div><div class="line">flex-flow: inherit;</div><div class="line">flex-flow: initial;</div><div class="line">flex-flow: unset;</div><div class="line"></div><div class="line">flex-grow flex-shrink</div><div class="line">flex-wrap</div><div class="line">flex-wrap: nowrap</div><div class="line">flex-wrap: wrap</div><div class="line">flex-wrap: wrap-reverse</div><div class="line"></div><div class="line"></div><div class="line">justify-content</div><div class="line">/* Positional alignment */</div><div class="line">justify-content: center;    </div><div class="line">justify-content: start;      </div><div class="line">justify-content: end;       </div><div class="line">justify-content: flex-start; </div><div class="line">justify-content: flex-end;   </div><div class="line">justify-content: left;       </div><div class="line">justify-content: right;     </div><div class="line">/* Baseline alignment */</div><div class="line">justify-content: baseline;</div><div class="line">justify-content: first baseline;</div><div class="line">justify-content: last baseline;</div><div class="line">/* Distributed alignment */</div><div class="line">justify-content: space-between;</div><div class="line">justify-content: space-around; </div><div class="line">justify-content: space-evenly;  </div><div class="line">justify-content: stretch;      </div><div class="line">justify-content: safe center;</div><div class="line">justify-content: unsafe center;</div><div class="line">/* Global values */</div><div class="line">justify-content: inherit;</div><div class="line">justify-content: initial;</div><div class="line">justify-content: unset;</div><div class="line"></div><div class="line">order</div><div class="line">order: 5 or -5</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>#网格布局<br>一、概念<br>网格布局是一种二维布局，前面介绍的flexbox布局则是一维。那么如果将两者结合起来则是各种强大的存啊。使用Grid布局非常简单，你只需要给容器（container）定义：display:grid，并设置列（grid-template-columns）和 行（grid-template-rows）的大小，然后用grid-column和grid-row定义容器子元素（grid-item项目）的位置。与flexbox布局类似，一开始项目的排列顺序并不重要，可以放置在容器的任何位置，这也使得你非常容易通过媒体查询重新排列你的项目。<br>二、重要术语<br>Grid Container: 网格容器<br>  display:grid;<br>          inline-grid<br>          subgrid<br>  注：column float clear vertical-align 在网格系统中没有作用<br>Grid item: 网格项<br>Grid line: 网格线<br>Grid Track: 网格轨道<br>Grid cell: 网格单元<br>Grid Area: 网格区<br>三、设置在网格容器上的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">1.grid-template-columns,grid-template-rows:&lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;使用fr为基本单位，如果fr单位和实际值一起使用，设置fr的行或列将分(除了实际值)剩余部分。</div><div class="line">确定网格的大小，其中可以为每一个网格轨道确定大小，不同的是确定的方法有很多。首先第一种是直接为每一个网格轨道从起始位置水平和垂直方向指定大小依次排序。第二种是以网格线为基准并给每个网格线起名字后，每一个网格轨道在垂直和水平方向确定大小（ps:网格线的起点和终点之间为一个网格轨道，同一条线会有不同的名字但是都是代表一条线）如果你定义包含重复部分，可以使用repeat()简化。</div><div class="line">2.grid-template-areas:</div><div class="line">        &quot;&lt;grid-area-name&gt; | . | none | ...&quot;</div><div class="line">        &quot;...&quot;;</div><div class="line"> 其中点为空。none表示没有网格区</div><div class="line"> </div><div class="line">3.grid-column-gap:&lt;line-size&gt;; 和 grid-row-gap: &lt;line-size&gt; ;网格单元间距。其中的line-size：为网格线间距。注：间隔仅仅作用在网格单元之间，不作用在容器边缘。</div><div class="line"></div><div class="line">4.grid-gap：&lt;grid-column-gap&gt; &lt;grid-row-gap&gt;;</div><div class="line">   是grid-column-gap 和 grid-row-gap简写。</div><div class="line">注：如果只设置一个值，那么grid-column-gap 和 grid-row-gap都为那个值。</div><div class="line">5.justify-items: start | end | center | stretch（默认） ;</div><div class="line">垂直于列网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满（默认）。</div><div class="line">6.align-items: start | end | center | stretch ;</div><div class="line">垂直于行网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start： 顶部对齐。</div><div class="line">end： 底部对齐。</div><div class="line">center： 居中对齐。</div><div class="line">stretch：填满（默认）。</div><div class="line">7.justify-content: start | end | center | stretch | space-around | space-between | space-evenly </div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于列网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">8.align-content: start | end | center | stretch | space-around | space-between | space-evenly ;</div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于行网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 顶部对齐。</div><div class="line">end: 底部对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">9.grid-auto-columns: &lt;track-size&gt; ... ; 和 grid-auto-rows: &lt;track-size&gt; ... ;</div><div class="line">自动生成隐式网格轨道（列和行），当你定位网格项超出网格容器范围时，将自动创建隐式网格轨道。</div><div class="line">属性值：</div><div class="line">track-size: 网格轨道大小,可以是固定值，百分比或者是分数（fr单位）。</div><div class="line">10. grid-auto-flow : row（默认） | column | dense ;</div><div class="line">在没有设置网格项的位置时，这个属性控制网格项怎样排列。</div><div class="line">属性值：</div><div class="line">row: 按照行依次从左到右排列。</div><div class="line">column: 按照列依次从上倒下排列。</div><div class="line">dense: 按先后顺序排列。</div><div class="line">11.12. grid: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt; | &lt;grid-auto-flow&gt; [&lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ];</div><div class="line">是一种简写形式，设置网格容器所有属性。</div><div class="line">属性值：</div><div class="line">none: 设置为所有属性的默认值。</div><div class="line">&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;: 设置行和列的值，其他属性为默认值。</div><div class="line">&lt;grid-auto-flow&gt; [ &lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ] : 设置网格自动流、网格自动行、网格自动列的值，其他未设置则为默认值。</div><div class="line">四、设置在网格项上的属性</div><div class="line">grid-column-start</div><div class="line">grid-column-end</div><div class="line">grid-row-start</div><div class="line">grid-row-end</div><div class="line">grid-column</div><div class="line">grid-row</div><div class="line">grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt; ;定义网格项名字，以便创建模块</div><div class="line">justify-self:justify-self: start | end | center | stretch;定义单个网格项垂直于列网格线的对齐方式。</div><div class="line">align-self: start | end | center | stretch;定义单个网格项垂直于行网格线的对齐方式。</div></pre></td></tr></table></figure>
-<p>#总结<br>通过对传统布局，和弹性布局（flexbox）网格系统的了解。加之对css盒模型的总体的认识。基本上形成了对目前css在网页布局方面的所有。但是要实现一个好的布局不是只靠一种就能完美的。结合起来往往是最佳的选择。在结合的时候我们要明白，那些需要的那些事不需要的，比如在传统布局中设置了浮动又设置绝对定位的情况，太荒唐了。关于css布局的实践和摸索一直不会停止，always do it!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1048,7 +1016,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1058,7 +1026,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
