@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="Node.js," />
 
 
 
@@ -102,22 +102,16 @@
 
 
 
-<meta name="description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
+<meta name="description" content="广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。一、单元测试1.断言(assertion)单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。2.测试框架本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD①关注点不同：tdd关注所有功能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="立即执行函数表达式">
-<meta property="og:url" content="http://ycomer.com/2017/08/25/立即执行函数表达式/index.html">
+<meta property="og:title" content="Node-js专题之测试">
+<meta property="og:url" content="http://ycomer.com/2017/09/11/Node-js专题之测试/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
-<meta property="og:updated_time" content="2017-08-25T05:18:38.000Z">
+<meta property="og:description" content="广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。一、单元测试1.断言(assertion)单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。2.测试框架本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD①关注点不同：tdd关注所有功能">
+<meta property="og:updated_time" content="2017-09-12T04:32:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="立即执行函数表达式">
-<meta name="twitter:description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
+<meta name="twitter:title" content="Node-js专题之测试">
+<meta name="twitter:description" content="广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。一、单元测试1.断言(assertion)单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。2.测试框架本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD①关注点不同：tdd关注所有功能">
 
 
 
@@ -145,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/08/25/立即执行函数表达式/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/09/11/Node-js专题之测试/"/>
 
 
 
 
 
-  <title> 立即执行函数表达式 | 东方猿BLog </title>
+  <title> Node-js专题之测试 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/25/立即执行函数表达式/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/11/Node-js专题之测试/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -286,7 +280,7 @@
             
             
               
-                立即执行函数表达式
+                Node-js专题之测试
               
             
           </h1>
@@ -299,8 +293,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T13:05:50+08:00">
-                2017-08-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T16:02:01+08:00">
+                2017-09-11
               </time>
             
 
@@ -319,7 +313,7 @@
 
           
           
-             <span id="/2017/08/25/立即执行函数表达式/" class="leancloud_visitors" data-flag-title="立即执行函数表达式">
+             <span id="/2017/09/11/Node-js专题之测试/" class="leancloud_visitors" data-flag-title="Node-js专题之测试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,14 +338,8 @@
       
 
       
-        <p>一、函数声明</p>
-<p>最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>二、函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>ps:当JavaScript解析器遇到 function关键字时，它通常假设我们在写函数声明</p>
-<p>三、立即执行函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;)();</div></pre></td></tr></table></figure></p>
-<p>第一个圆括号的作用：<br>通过使用圆括号包裹我们的函数, 我们告诉解释器以函数表达式的方式解析JavaScript代码 , 而不是函数声明。 这样我们的代码在编译的时候不会出现任何错误。<br>第二个圆括号的作用<br>圆括号的作用之一就是用于调用函数。<br>通过在函数表达式后面加上一对圆括号，那么就会立即调用我们的立即执行函数表达式（IIFE）</p>
-<p>1.为什么我们要使用 IIFE?<br>私有性.<br>在 JavaScript 中, 变量所在的作用域在包含他们的函数中.这意味着他们不能从函数外被访问<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> superSecret = <span class="number">195</span>;</div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(superSecret);</div><div class="line"><span class="comment">// Uncaught ReferenceError: superSecret is not defined</span></div></pre></td></tr></table></figure></p>
-<p>我们不能在 IIFE 之外访问到superSecret。 在 IIFE 内的所有代码都处在该函数的私有的作用域当中。 这允许我们在函数私有的变量和数据不被侵扰的情况下使用这些变量和数据</p>
+        <p>广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。<br>一、单元测试<br>1.断言(assertion)<br>单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。<br>2.测试框架<br>本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD<br>①关注点不同：tdd关注所有功能是否被正确实现。bdd关注整体行为是否符合预期。<br>②表达方式不同：tdd偏向于功能说明，bdd接近于自然语言的习惯。<br>2.1BDD<br>采用describe和it进行组织<br>2.2TDD<br>采用suite和test完成。<br>3.异步测试<br>mocha<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'fs.readFile should be ok'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fs.readFile(<span class="string">'file_path'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</div><div class="line">        should.not.exist(err);</div><div class="line">        done();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>超时限制<br>mocha给所有涉及异步的测试用例添加了超时限制，如果一个用例的执行时间超过了预期时间， 将会记录下一个超时错误， 然后执行力下一个测试用例。<br>4.测试覆盖率<br>blanket<br>istanbul<br>5.模拟异常mock<br>muk模块<br>6.私有方法的测试<br>rewire<br>7.工程化和自动化<br>Makefile<br>travis-ci<br>二、性能测试</p>
 
       
     </div>
@@ -375,7 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
           
         </div>
       
@@ -384,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/25/执行上下文/" rel="next" title="执行上下文">
-                <i class="fa fa-chevron-left"></i> 执行上下文
+              <a href="/2017/09/10/Docker/" rel="next" title="Docker">
+                <i class="fa fa-chevron-left"></i> Docker
               </a>
             
           </div>
@@ -394,8 +382,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/28/厉害的jQuery之应用/" rel="prev" title="厉害的jQuery之应用">
-                厉害的jQuery之应用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/12/Node编码规范/" rel="prev" title="Node编码规范">
+                Node编码规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

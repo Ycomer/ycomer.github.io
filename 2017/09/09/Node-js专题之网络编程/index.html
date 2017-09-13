@@ -114,7 +114,7 @@
 一.TLS/SSL
 1.密钥
 在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。通过openssl来实现TLS/SSL12345678//生成服务器端私钥openssl genrsa -out server.key 1024//生成客户端私钥openssl">
-<meta property="og:updated_time" content="2017-09-10T15:43:05.000Z">
+<meta property="og:updated_time" content="2017-09-12T07:36:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node-js专题之网络编程">
 <meta name="twitter:description" content="#网络服务于安全
@@ -356,7 +356,7 @@
 <h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
 <h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
-<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件</p>
+<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件<br>服务器也是一个EventEmitter实例<br>connection<br>request<br>close<br>checkcontinue<br>connect<br>upgrade<br>clientError<br>3.HTTP客户端<br>报文头和报文体由它产生。<br>http模块提供的底层api：http.request(options,connect)<br>其中options决定了http请求头中的内容<br>host<br>hostname<br>port<br>localAddress<br>socketPath<br>method<br>path<br>headers<br>auth<br>agent<br>这里的内容由write()和end()方法实现。<br>3.1HTTP代理<br>为了重TCP连接。http模块包含了一个默认的客户端代理对象http:globalAgent,它对每个服务器端创建的连接进行了管理，默认情况下ClientRequest对象对同一个服务器发起的http请求最多可以创建5个。通过对options中Agent对象的sockets和Requests进行监视可以发现业务的繁忙程度。<br>3.2客户端事件<br>response<br>socket<br>connect<br>upgrade<br>continue</p>
 
       
     </div>
@@ -469,7 +469,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -479,7 +479,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
