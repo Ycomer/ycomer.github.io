@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/02/CSS魔法之布局篇/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -282,8 +282,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/02/CSS魔法之布局篇/" itemprop="url">
-                  CSS魔法之传布局
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
+                  深入浅出之ES6之变量解构
                 </a>
               
             
@@ -297,8 +297,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-02T23:51:36+08:00">
-                2017-08-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
               </time>
             
 
@@ -317,7 +317,7 @@
 
           
           
-             <span id="/2017/08/02/CSS魔法之布局篇/" class="leancloud_visitors" data-flag-title="CSS魔法之传布局">
+             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,593 +344,613 @@
       
         
           
-            <h1 id="传统布局"><a href="#传统布局" class="headerlink" title="传统布局"></a>传统布局</h1><p>传统布局中使用display,position,float达到各种各样的布局问题，但是在一些问题上传统布局往往就显得无缚鸡之力了。那么就让我们看看传统布局中的这三位是如何实现的，以及他们的瓶颈在哪里。<br>一、先从display(显示)说起。<br>MDN上关于display的定义：</p>
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
+<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
+<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>真正被赋值的是变量</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
+                  深入浅出ES6之let和const
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>The display CSS property specifies the type of rendering box used for an element. </p>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
 </blockquote>
-<p>其中display属性值入下表所列。<br>有必要表明的注释：<br>①display-outside:<br>The display-outside CSS property specifies the outer display type of the box generated by an element, dictating how the element participates in its parent formatting context.<br>②display-inside:<br>The display-inside CSS property specifies the inner display type of the box generated by an element, dictating how its contents lay out inside the box.<br>其实从字面意思我们都能理解。但是为了更深入的理解，理解其原文意至关重要。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">/* &lt;display-outside&gt; values */</div><div class="line">display: block;</div><div class="line">display: inline;</div><div class="line">display: run-in;</div><div class="line"></div><div class="line">/* &lt;display-inside&gt; values */</div><div class="line">display: flow;</div><div class="line">display: flow-root;</div><div class="line">display: table;</div><div class="line">display: flex;</div><div class="line">display: grid;</div><div class="line">display: ruby;</div><div class="line">display: subgrid;</div><div class="line"></div><div class="line">/* &lt;display-outside&gt; plus &lt;display-inside&gt; values */</div><div class="line">display: block flow;</div><div class="line">display: inline table;</div><div class="line">display: flex run-in;</div><div class="line"></div><div class="line">/* &lt;display-listitem&gt; values */</div><div class="line">display: list-item;</div><div class="line">display: list-item block;</div><div class="line">display: list-item inline;</div><div class="line">display: list-item flow;</div><div class="line">display: list-item flow-root;</div><div class="line">display: list-item block flow;</div><div class="line">display: list-item block flow-root;</div><div class="line">display: flow list-item block;</div><div class="line"></div><div class="line">/* &lt;display-internal&gt; values */</div><div class="line">display: table-row-group;</div><div class="line">display: table-header-group;</div><div class="line">display: table-footer-group;</div><div class="line">display: table-row;</div><div class="line">display: table-cell;</div><div class="line">display: table-column-group;</div><div class="line">display: table-column;</div><div class="line">display: table-caption;</div><div class="line">display: ruby-base;</div><div class="line">display: ruby-text;</div><div class="line">display: ruby-base-container;</div><div class="line">display: ruby-text-container;</div><div class="line"></div><div class="line">/* &lt;display-box&gt; values */</div><div class="line">display: contents;</div><div class="line">display: none;</div><div class="line"></div><div class="line">/* &lt;display-legacy&gt; values */</div><div class="line">display: inline-block;</div><div class="line">display: inline-list-item;</div><div class="line">display: inline-table;</div><div class="line">display: inline-flex;</div><div class="line">display: inline-grid;</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">display: inherit;</div><div class="line">display: initial;</div><div class="line">display: unset;</div></pre></td></tr></table></figure></p>
-<p>上表列出了关于display的所有显示方式，全局的外部的内部的，子元素，表格等等一系列。但是对于每一个可能用的上的布局方式来说，这里有过时的还有没过时。常用的和不常用。只要能达到自己的目的，都可以用，但是作为“懒代表的我们”，清楚原理的情况下，提升工作效率才是王道啊。不妨在<a href="https://codepen.io" target="_blank" rel="external">CODEPEN</a>上花时间试试每一个样式。就很清楚了。</p>
-<p>二、接下来是position。<br>Positon MDN</p>
-<blockquote>
-<p>The position CSS property specifies how an element is positioned in a document</p>
-</blockquote>
-<p>相对于display来说。position的作用就是固定一个元素所处的位置。虽然定位的方式有很多种，很明显这是最直接的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* Keyword values */</div><div class="line">position: static;</div><div class="line">position: relative;</div><div class="line">position: absolute;</div><div class="line">position: fixed;</div><div class="line">position: sticky;</div><div class="line"></div><div class="line">/* Global values */</div><div class="line">position: inherit;</div><div class="line">position: initial;</div><div class="line">position: unset;</div></pre></td></tr></table></figure></p>
-<p><a href="https://codepen.io/pen/" target="_blank" rel="external">CODEPEN</a>看例子。static是默认的属性，relative是相对位置，那么这里的相对与前面的元素进行定位。absolute则是针对他的父元素进行。fixed顾名思义就是固定其位置，当固定在哪里则是有你选择。全局属性中的继承 初始 复位 都是对于公共样式中关于位置也就是通配符中定义的。<br>三、最后是float<br>Float MDN</p>
-<blockquote>
-<p>The float CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. </p>
-</blockquote>
-<p>float总的来说应该是在容器内元素改如何确定其位置，堵车只是一个大概的位置。重视强调最重要的是float默认的元素为块状显示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">float: left;</div><div class="line">float: right;</div><div class="line">float: none;</div><div class="line">float: inline-start;//表明元素必须浮动在其所在块容器的开始一侧，在ltr脚本中是左侧，在rtl脚本中是右侧。</div><div class="line">float: inline-end;//表明元素必须浮动在其所在块容器的结束一侧，在ltr脚本中是右侧，在rtl脚本中是左侧。</div><div class="line">/* Global values */</div><div class="line">float: inherit;</div><div class="line">float: initial;</div><div class="line">float: unset;</div></pre></td></tr></table></figure></p>
-<p>重点来了，既然设置了浮动，但是有一些元素我们又不想让其浮动，这个时候就用上了清除浮动的属性clear。来看关于clear的相关内容<br>Clear MDN</p>
-<blockquote>
-<p>The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them. The clear property applies to both floating and non-floating elements.</p>
-</blockquote>
-<p>清除浮动适用于浮动的和不浮动的元素，这里可能有会疑问，没有浮动为什么要清除浮动呢？我们先来看clear的属性<br><figure class="highlight plain"><figcaption><span>none;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">clear: left;</div><div class="line">clear: right;</div><div class="line">clear: both;</div><div class="line">clear: inline-start;</div><div class="line">clear: inline-end;</div><div class="line">clear: inherit;</div></pre></td></tr></table></figure></p>
-<p>这里来解释，当应用于非浮动块时，它将非浮动块的边框边界移动到所有相关浮动元素外边界的下方。这个行为作用时会导致外边距塌陷不起作用。<br>当应用于浮动元素时，它将元素的外边界移动到所有相关的浮动元素外边界的下方。这会影响后面浮动元素的布局，后面的浮动元素的位置无法高于它之前的元素。<br>要被清除的相关浮动元素指 在相同块级格式化上下文中的前置浮动。</p>
-<h1 id="弹性盒布局-Flexbox"><a href="#弹性盒布局-Flexbox" class="headerlink" title="弹性盒布局(Flexbox)"></a>弹性盒布局(Flexbox)</h1><p>一、概念<br>①在定义方面来说，弹性布局是指通过调整其内元素的宽高，从而在任何显示设备上实现对可用显示空间最佳填充的能力。弹性容器扩展其内元素来填充可用空间，或将其收缩来避免溢出。<br>块级布局更侧重于垂直方向、行内布局更侧重于水平方向，与此相对的，弹性盒子布局算法是方向无关的。虽然块级布局对于单独一个页面来说是行之有效的，但其仍缺乏足够的定义来支持那些必须随用户代理(user agent)不同或设备方向从水平转为垂直等各种变化而变换方向、调整大小、拉伸、收缩的应用程序组件。 <strong>弹性盒子布局主要适用于应用程序的组件及小规模的布局</strong>，而（新兴的）栅格布局则针对大规模的布局。<br>②新的布局当然需要新的语言来支持它<br>flex container : 弹性容器<br>     display: flex or inline-flex;<br>flex item : 弹性项目<br>Axis : 轴</p>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出JS之事件/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出JS之事件/" itemprop="url">
+                  深入浅出JS之事件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:44:26+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出JS之事件/" class="leancloud_visitors" data-flag-title="深入浅出JS之事件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="事件类型-event-type"><a href="#事件类型-event-type" class="headerlink" title="事件类型(event type)"></a>事件类型(event type)</h1><p>一、传统事件类型<br>是一个用来说明发生了什么类型事件的字符串。<br>1.表单事件<br>2.window事件<br>3.鼠标事件<br>4.键盘事件<br>二、DOM事件<br>1.html5事件<br>2.触摸屏和移动设备事件</p>
+<h1 id="注册事件处理程序"><a href="#注册事件处理程序" class="headerlink" title="注册事件处理程序"></a>注册事件处理程序</h1><p>有两种实现方式<br>1.给事件目标对象或文档元素设置属性<br>2.将事件处理程序传递给对象或者元素一个方法。<br>通用的处理方法是addEventlistener()。<br>事件处理程序属性是在前面加上’on’,并且都是小写。</p>
+<h1 id="事件目标-event-target"><a href="#事件目标-event-target" class="headerlink" title="事件目标(event target"></a>事件目标(event target</h1><p>发生的事件或与之相关的对象。</p>
+<h1 id="事件对象-event-object"><a href="#事件对象-event-object" class="headerlink" title="事件对象(event object)"></a>事件对象(event object)</h1><p>与特定事件相关且包含有关该事件详细信息的对象。</p>
+<h1 id="事件传播-event-propagation"><a href="#事件传播-event-propagation" class="headerlink" title="事件传播(event propagation)"></a>事件传播(event propagation)</h1><p>是浏览器决定那个对象触发其事件处理程序的过程。它的另一种形式称为事件捕获(event capturing)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/13/CSS魔法之经典布局/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/13/CSS魔法之经典布局/" itemprop="url">
+                  CSS魔法之经典布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-13T23:48:19+08:00">
+                2017-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/13/CSS魔法之经典布局/" class="leancloud_visitors" data-flag-title="CSS魔法之经典布局">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS经典布局之圣杯和双飞翼"><a href="#CSS经典布局之圣杯和双飞翼" class="headerlink" title="CSS经典布局之圣杯和双飞翼"></a>CSS经典布局之圣杯和双飞翼</h1><p>圣杯布局与双飞翼布局针对的都是三列左右栏固定中间栏边框自适应的网页布局，下来我们就来实现它。<br>在实现之前我们先来提几个问题？<br>一、浮动产生的问题都有神马?该如何解决？<br>二、实现圣杯布局原理是神马？<br>三、在flexbox和grid中如何实现?<br>带着问题来解决问题。</p>
+<h3 id="传统实现"><a href="#传统实现" class="headerlink" title="传统实现"></a>传统实现</h3><p>1.①html代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--省略的代码--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"HolyGrid"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>header<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span>main<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 省略的代码 --&gt;</span></div></pre></td></tr></table></figure></p>
+<p>1.②效果图</p>
+<p><div align="center" style="margin-top: 1px;"><br><img src="show1.jpg" alt=""><br></div><br>2.①添加基础样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">header</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkseagreen;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: white;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.②效果图</p>
+<p><div align="center"><br><img src="show2.png" alt=""><br></div><br>图中我们只是简单的设置了各部分的基础样式，看一开到由于main的宽度设置为了100%所以导致，left和right被挤到下面去了。那么为了实现我们的圣杯布局，这里我们就要用到之前所说的定位和浮动，那么该如何做呢？<br>3.①让容器container里面的元素浮动<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">left</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注：由于在container容器中我们将其所有元素进行了浮动，意味着他们都脱离了文档流，由于footer和header并没有脱离，所以自然的footer就会被main盖住。这里就需要借助clear来清除非浮动块。<br>3.②效果图</p>
+<p><div align="center"><br><img src="show3.png" alt=""><br></div><br>4.①达到最终的效果。先上图</p>
+<p><div align="center"><br><img src="show4.png" alt=""><br></div><br>图中将left和right浮动块，让其各自margin-left:-100%; margin-left:-200px;代码如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">200px</span>;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>关于边距负值的理解和应用大家是必须要了解和掌握的，这里我们已经实现了圣杯布局的整体样式，接下来我们来实现main的自适应。<br>5.①这个时候我们利用内边距padding来实现。将left和right的位置设置为relative。然后就可以固定他们的位置了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">200px</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">   <span class="attribute">position</span>: relative;</div><div class="line">   <span class="attribute">left</span>: -<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">   <span class="attribute">position</span>: relative;</div><div class="line">   <span class="attribute">right</span>: -<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line">局部代码</div></pre></td></tr></table></figure></p>
+<p>5.②效果图</p>
+<p><div align="center"><br><img src="show5.png" alt=""><br></div></p>
+<h1 id="flex实现"><a href="#flex实现" class="headerlink" title="flex实现"></a>flex实现</h1><p>6.①flex实现相对容易，没有前面那么复杂。也是一种比较好的实现方案。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">  <span class="selector-class">.HolyGrid</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">header</span>,</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#left</span>,</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">12em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6.②效果图</p>
+<p><div align="center"><br><img src="show6.png" alt=""><br></div></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>圣杯布局和双飞翼布局在main内容之外的思路都是一样的。区别在于main内部内容的显示不一样，具体的是:圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。flex实现就更方便了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之负值/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/11/CSS魔法之负值/" itemprop="url">
+                  CSS魔法之负值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:38:59+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/11/CSS魔法之负值/" class="leancloud_visitors" data-flag-title="CSS魔法之负值">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="margin基础"><a href="#margin基础" class="headerlink" title="margin基础"></a>margin基础</h1><p>定义：<br>CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。<br>边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南<br>外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, margin-right.来设置他们的值。</p>
+<h4 id="垂直外边距"><a href="#垂直外边距" class="headerlink" title="垂直外边距"></a>垂直外边距</h4><p>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。<br>eg1:当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。<br>eg2:当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。<br>eg3:假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并。如果这个外边距遇到另一个元素的外边距，它还会发生合并<br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br>根据规范：一个盒子如果没有上补白(padding-top)和上边框(border-top)，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
+<h4 id="用margin还是padding"><a href="#用margin还是padding" class="headerlink" title="用margin还是padding"></a>用margin还是padding</h4><p><strong>何时应当使用margin</strong>：<br>需要在border外侧添加空白时。<br>空白处不需要背景（色）时。<br>上下相连的两个盒子之间的空白，需要相互抵消时<br><strong>何时应当时用padding</strong>：<br>需要在border内测添加空白时。<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</p>
+<h4 id="margin在块元素、内联元素中的区别"><a href="#margin在块元素、内联元素中的区别" class="headerlink" title="margin在块元素、内联元素中的区别"></a>margin在块元素、内联元素中的区别</h4><p>在页面文档中block元素另起一行开始，并独占一行。inline元素则同其他inline元素共处一行。<br>block元素:</p>
 <ul>
-<li>每个弹性布局含有两个轴 主轴水平（main axis）侧轴垂直（cross axis）</li>
-<li>flex-direction 确立主轴。</li>
-<li>justify-content 定义了在当前行上，弹性项目沿主轴如何排布。</li>
-<li>align-items 定义了在当前行上，弹性项目沿侧轴默认如何排布。</li>
-<li>align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。<br>Direction :方向<br>弹性容器的主轴起点（main start）和主轴终点（main end）侧轴的起点（cross start）和侧轴<br>的终点(cross end)而这些取决于主轴和侧轴中有writing-mode确定的方向是从左到右还是相反方向。</li>
-<li>order属性将元素和序号关联起来。以此决定那个元素先出现。</li>
-<li>flex-flow是flex-direction和flex-wrap的简写<br>Line : 行<br>根据 flex-wrap 属性，弹性项目可以排布在单个行或者多个行中。此属性控制侧轴的方向和新行排列的方向。<br>Dimension : 尺寸<br>根据弹性容器的主轴与侧轴，弹性项目的宽和高中，对应主轴的称为主轴尺寸(main size) ，对应侧轴的称为 侧轴尺寸(cross size)<br>③将布局设置为flex时，弹性容器就变成了块级元素。<br>④注：弹性容器直接包含的文本将自动包覆成匿名弹性项目，对于弹性容器的绝对定位子元素来说，其静态位置参照弹性容器的内容框的主起始角确定，而后依此完成此元素的定位。相邻的弹性元素其外边距不会互相合并，使用 auto 外边距可以吸收掉水平或垂直方向上的额外空间，这可以用于对齐或分隔相邻的弹性项目。  对弹性容器中第一个和最后一个弹性项目的外侧边缘应用，也可以使用自动外边距来替代 justify- 属性。自动外边距会自动伸缩来占满剩余空间，当有剩余空间存在时弹性项目将会居中，如果没有则切换至常规对齐方式。不过很不幸，如果尝试在多行的弹性框中用基于外边距的居中方法来替代 justify-content，就必须对每一行的第一个和最后一个弹性项目应用外边距，<strong>元素的显示顺序与它们在源代码中的顺序无关，这种无关性只影响视觉呈现，语音顺序以及基于源代码顺序的导航均不受影响。</strong> order 属性并不影响语音和导航的次序。因此开发者们必须小心，合理地安排元素在源代码中的顺序，以免破坏文档的可访问性。<br>二、flex的基础属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div></pre></td><td class="code"><pre><div class="line">/* Basic values */</div><div class="line">flex: auto;</div><div class="line">flex: initial;</div><div class="line">flex: none;</div><div class="line">flex: 2;</div><div class="line">/* Global values */</div><div class="line">flex: inherit;</div><div class="line">flex: initial;</div><div class="line">flex: unset;</div><div class="line"></div><div class="line">align-content</div><div class="line">/* Positional alignment */</div><div class="line">align-content: center;    </div><div class="line">align-content: start;      </div><div class="line">align-content: end;       </div><div class="line">align-content: flex-start;</div><div class="line">align-content: flex-end;   </div><div class="line">align-content: left;       </div><div class="line">align-content: right;      </div><div class="line">align-content: baseline;</div><div class="line">align-content: first baseline;</div><div class="line">align-content: last baseline;</div><div class="line">/* Distributed alignment */</div><div class="line">align-content: space-between; </div><div class="line">align-content: space-around; </div><div class="line">align-content: space-evenly;  </div><div class="line">/* Overflow alignment */</div><div class="line">align-content: safe center;</div><div class="line">align-content: unsafe center;</div><div class="line">/* Global values */</div><div class="line">align-content: inherit;</div><div class="line">align-content: initial;</div><div class="line">align-content: unset;</div><div class="line"></div><div class="line">align-items</div><div class="line">/* Basic keywords */ </div><div class="line">align-items: normal; </div><div class="line">align-items: stretch; </div><div class="line">/* Positional alignment */ </div><div class="line">align-items: center; </div><div class="line">align-items: start;</div><div class="line">align-items: end; </div><div class="line">align-items: flex-start;</div><div class="line">align-items: flex-end;</div><div class="line">align-items: self-start; </div><div class="line">align-items: self-end; </div><div class="line">align-items: left; </div><div class="line">align-items: right; </div><div class="line">/* Baseline alignment */</div><div class="line">align-items: baseline; </div><div class="line">align-items: first baseline; </div><div class="line">align-items: last baseline; </div><div class="line">align-items: safe center; </div><div class="line">align-items: unsafe center; </div><div class="line">/* Global values */ </div><div class="line">align-items: inherit; </div><div class="line">align-items: initial; </div><div class="line">align-items: unset;</div><div class="line"></div><div class="line"></div><div class="line">align-self</div><div class="line">/* Keyword values */ </div><div class="line">align-self: auto; </div><div class="line">align-self: normal; </div><div class="line">/* Positional alignment */ </div><div class="line">align-self: center; </div><div class="line">align-self: start; </div><div class="line">align-self: end; </div><div class="line">align-self: self-start; </div><div class="line">align-self: self-end; </div><div class="line">align-self: flex-start; </div><div class="line">align-self: flex-end;  </div><div class="line">align-self: left;</div><div class="line">align-self: right;</div><div class="line">/* Baseline alignment */ </div><div class="line">align-self: baseline; </div><div class="line">align-self: first baseline; </div><div class="line">align-self: last baseline; </div><div class="line">align-self: stretch;</div><div class="line">/* Overflow alignment */ </div><div class="line">align-self: safe center; </div><div class="line">align-self: unsafe center; </div><div class="line">/* Global values */ </div><div class="line">align-self: inherit; </div><div class="line">align-self: initial; </div><div class="line">align-self: unset;</div><div class="line"></div><div class="line">align-basic</div><div class="line">/* Specify &lt;&apos;width&apos;&gt; */</div><div class="line">flex-basis: 10em;      </div><div class="line">flex-basis: 3px;</div><div class="line">flex-basis: auto;</div><div class="line">/* Intrinsic sizing keywords */</div><div class="line">flex-basis: fill;</div><div class="line">flex-basis: max-content;</div><div class="line">flex-basis: min-content;</div><div class="line">flex-basis: fit-content;</div><div class="line">flex-basis: content;</div><div class="line">/* Global values */</div><div class="line">flex-basis: inherit;</div><div class="line">flex-basis: initial;</div><div class="line">flex-basis: unset;</div><div class="line"></div><div class="line">flex-direction</div><div class="line">/* The direction text is laid out in a line */</div><div class="line">flex-direction: row;</div><div class="line">/* Like &lt;row&gt;, but reversed */</div><div class="line">flex-direction: row-reverse;</div><div class="line">/* The direction in which lines of text are stacked */</div><div class="line">flex-direction: column;</div><div class="line">/* Like &lt;column&gt;, but reversed */</div><div class="line">flex-direction: column-reverse;</div><div class="line">/* Global values */</div><div class="line">flex-direction: inherit;</div><div class="line">flex-direction: initial;</div><div class="line">flex-direction: unset;</div><div class="line"></div><div class="line">flex-flow</div><div class="line">/* flex-flow: &lt;&apos;flex-direction&apos;&gt; */</div><div class="line">flex-flow: row;</div><div class="line">flex-flow: row-reverse;</div><div class="line">flex-flow: column;</div><div class="line">flex-flow: column-reverse;</div><div class="line">/* flex-flow: &lt;&apos;flex-wrap&apos;&gt; */</div><div class="line">flex-flow: nowrap;</div><div class="line">flex-flow: wrap;</div><div class="line">flex-flow: wrap-reverse;</div><div class="line">/* flex-flow: &lt;&apos;flex-direction&apos;&gt; and &lt;&apos;flex-wrap&apos;&gt; */</div><div class="line">flex-flow: row nowrap;</div><div class="line">flex-flow: column wrap;</div><div class="line">flex-flow: column-reverse wrap-reverse;</div><div class="line">/* Global values */</div><div class="line">flex-flow: inherit;</div><div class="line">flex-flow: initial;</div><div class="line">flex-flow: unset;</div><div class="line"></div><div class="line">flex-grow flex-shrink</div><div class="line">flex-wrap</div><div class="line">flex-wrap: nowrap</div><div class="line">flex-wrap: wrap</div><div class="line">flex-wrap: wrap-reverse</div><div class="line"></div><div class="line"></div><div class="line">justify-content</div><div class="line">/* Positional alignment */</div><div class="line">justify-content: center;    </div><div class="line">justify-content: start;      </div><div class="line">justify-content: end;       </div><div class="line">justify-content: flex-start; </div><div class="line">justify-content: flex-end;   </div><div class="line">justify-content: left;       </div><div class="line">justify-content: right;     </div><div class="line">/* Baseline alignment */</div><div class="line">justify-content: baseline;</div><div class="line">justify-content: first baseline;</div><div class="line">justify-content: last baseline;</div><div class="line">/* Distributed alignment */</div><div class="line">justify-content: space-between;</div><div class="line">justify-content: space-around; </div><div class="line">justify-content: space-evenly;  </div><div class="line">justify-content: stretch;      </div><div class="line">justify-content: safe center;</div><div class="line">justify-content: unsafe center;</div><div class="line">/* Global values */</div><div class="line">justify-content: inherit;</div><div class="line">justify-content: initial;</div><div class="line">justify-content: unset;</div><div class="line"></div><div class="line">order</div><div class="line">order: 5 or -5</div></pre></td></tr></table></figure>
+<li>address - 地址 <ul>
+<li>blockquote - 块引用 </li>
+<li>center - 举中对齐块 </li>
+<li>dir - 目录列表 </li>
+<li>div - 常用块级容易，也是css layout的主要标签 </li>
+<li>dl - 定义列表 </li>
+<li>fieldset - form控制组 </li>
+<li>form - 交互表单 （只能用来容纳其它块元素） </li>
+<li>h1 - 大标题 </li>
+<li>h2 - 副标题 </li>
+<li>h3 - 3级标题 </li>
+<li>h4 - 4级标题 </li>
+<li>h5 - 5级标题 </li>
+<li>h6 - 6级标题 </li>
+<li>hr - 水平分隔线 </li>
+<li>isindex - input prompt </li>
+<li>menu - 菜单列表 </li>
+<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容 </li>
+<li>noscript - 可选脚本内容（对于不支持script的浏览器显示此内容） </li>
+<li>ol - 排序表单 </li>
+<li>p - 段落 </li>
+<li>pre - 格式化文本 </li>
+<li>table - 表格 </li>
+<li>ul - 非排序列表<br>inline元素：</li>
+<li>a - 锚点 </li>
+<li>abbr - 缩写 </li>
+<li>acronym - 首字 </li>
+<li>b - 粗体(不推荐) </li>
+<li>bdo - bidi override </li>
+<li>big - 大字体 </li>
+<li>br - 换行 </li>
+<li>cite - 引用 </li>
+<li>code - 计算机代码(在引用源码的时候需要) </li>
+<li>dfn - 定义字段 </li>
+<li>em - 强调 </li>
+<li>font - 字体设定(不推荐) </li>
+<li>i - 斜体 </li>
+<li>img - 图片 </li>
+<li>input - 输入框 </li>
+<li>kbd - 定义键盘文本 </li>
+<li>label - 表格标签 </li>
+<li>q - 短引用 </li>
+<li>s - 中划线(不推荐) </li>
+<li>samp - 定义范例计算机代码 </li>
+<li>select - 项目选择 </li>
+<li>small - 小字体文本 </li>
+<li>span - 常用内联容器，定义文本内区块 </li>
+<li>strike - 中划线 </li>
+<li>strong - 粗体强调 </li>
+<li>sub - 下标 </li>
+<li>sup - 上标 </li>
+<li>textarea - 多行文本输入框 </li>
+<li>tt - 电传文本 </li>
+<li>u - 下划线 </li>
+<li>var - 定义变量</li>
+</ul>
 </li>
 </ul>
-<p>#网格布局<br>一、概念<br>网格布局是一种二维布局，前面介绍的flexbox布局则是一维。那么如果将两者结合起来则是各种强大的存啊。使用Grid布局非常简单，你只需要给容器（container）定义：display:grid，并设置列（grid-template-columns）和 行（grid-template-rows）的大小，然后用grid-column和grid-row定义容器子元素（grid-item项目）的位置。与flexbox布局类似，一开始项目的排列顺序并不重要，可以放置在容器的任何位置，这也使得你非常容易通过媒体查询重新排列你的项目。<br>二、重要术语<br>Grid Container: 网格容器<br>  display:grid;<br>          inline-grid<br>          subgrid<br>  注：column float clear vertical-align 在网格系统中没有作用<br>Grid item: 网格项<br>Grid line: 网格线<br>Grid Track: 网格轨道<br>Grid cell: 网格单元<br>Grid Area: 网格区<br>三、设置在网格容器上的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">1.grid-template-columns,grid-template-rows:&lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;使用fr为基本单位，如果fr单位和实际值一起使用，设置fr的行或列将分(除了实际值)剩余部分。</div><div class="line">确定网格的大小，其中可以为每一个网格轨道确定大小，不同的是确定的方法有很多。首先第一种是直接为每一个网格轨道从起始位置水平和垂直方向指定大小依次排序。第二种是以网格线为基准并给每个网格线起名字后，每一个网格轨道在垂直和水平方向确定大小（ps:网格线的起点和终点之间为一个网格轨道，同一条线会有不同的名字但是都是代表一条线）如果你定义包含重复部分，可以使用repeat()简化。</div><div class="line">2.grid-template-areas:</div><div class="line">        &quot;&lt;grid-area-name&gt; | . | none | ...&quot;</div><div class="line">        &quot;...&quot;;</div><div class="line"> 其中点为空。none表示没有网格区</div><div class="line"> </div><div class="line">3.grid-column-gap:&lt;line-size&gt;; 和 grid-row-gap: &lt;line-size&gt; ;网格单元间距。其中的line-size：为网格线间距。注：间隔仅仅作用在网格单元之间，不作用在容器边缘。</div><div class="line"></div><div class="line">4.grid-gap：&lt;grid-column-gap&gt; &lt;grid-row-gap&gt;;</div><div class="line">   是grid-column-gap 和 grid-row-gap简写。</div><div class="line">注：如果只设置一个值，那么grid-column-gap 和 grid-row-gap都为那个值。</div><div class="line">5.justify-items: start | end | center | stretch（默认） ;</div><div class="line">垂直于列网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满（默认）。</div><div class="line">6.align-items: start | end | center | stretch ;</div><div class="line">垂直于行网格线对齐，适用于网格容器里的所有网格项。</div><div class="line">属性值：</div><div class="line">start： 顶部对齐。</div><div class="line">end： 底部对齐。</div><div class="line">center： 居中对齐。</div><div class="line">stretch：填满（默认）。</div><div class="line">7.justify-content: start | end | center | stretch | space-around | space-between | space-evenly </div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于列网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 左对齐。</div><div class="line">end: 右对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">8.align-content: start | end | center | stretch | space-around | space-between | space-evenly ;</div><div class="line">如果用像px非弹性单位定义的话，总网格区域大小有可能小于网格容器，这时候你可以设置网格的对齐方式（垂直于行网格线对齐）。</div><div class="line">属性值：</div><div class="line">start: 顶部对齐。</div><div class="line">end: 底部对齐。</div><div class="line">center: 居中对齐。</div><div class="line">stretch: 填满网格容器。</div><div class="line">space-around: 网格项两边间距相等，网格项之间间隔是单侧的2倍。</div><div class="line">space-between: 两边对齐，网格项之间间隔相等。</div><div class="line">space-evenly: 网格项间隔相等。</div><div class="line">9.grid-auto-columns: &lt;track-size&gt; ... ; 和 grid-auto-rows: &lt;track-size&gt; ... ;</div><div class="line">自动生成隐式网格轨道（列和行），当你定位网格项超出网格容器范围时，将自动创建隐式网格轨道。</div><div class="line">属性值：</div><div class="line">track-size: 网格轨道大小,可以是固定值，百分比或者是分数（fr单位）。</div><div class="line">10. grid-auto-flow : row（默认） | column | dense ;</div><div class="line">在没有设置网格项的位置时，这个属性控制网格项怎样排列。</div><div class="line">属性值：</div><div class="line">row: 按照行依次从左到右排列。</div><div class="line">column: 按照列依次从上倒下排列。</div><div class="line">dense: 按先后顺序排列。</div><div class="line">11.12. grid: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt; | &lt;grid-auto-flow&gt; [&lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ];</div><div class="line">是一种简写形式，设置网格容器所有属性。</div><div class="line">属性值：</div><div class="line">none: 设置为所有属性的默认值。</div><div class="line">&lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;: 设置行和列的值，其他属性为默认值。</div><div class="line">&lt;grid-auto-flow&gt; [ &lt;grid-auto-rows&gt; [ / &lt;grid-auto-columns&gt;] ] : 设置网格自动流、网格自动行、网格自动列的值，其他未设置则为默认值。</div><div class="line">四、设置在网格项上的属性</div><div class="line">grid-column-start</div><div class="line">grid-column-end</div><div class="line">grid-row-start</div><div class="line">grid-row-end</div><div class="line">grid-column</div><div class="line">grid-row</div><div class="line">grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt; ;定义网格项名字，以便创建模块</div><div class="line">justify-self:justify-self: start | end | center | stretch;定义单个网格项垂直于列网格线的对齐方式。</div><div class="line">align-self: start | end | center | stretch;定义单个网格项垂直于行网格线的对齐方式。</div></pre></td></tr></table></figure>
-<p>#总结<br>通过对传统布局，和弹性布局（flexbox）网格系统的了解。加之对css盒模型的总体的认识。基本上形成了对目前css在网页布局方面的所有。但是要实现一个好的布局不是只靠一种就能完美的。结合起来往往是最佳的选择。在结合的时候我们要明白，那些需要的那些事不需要的，比如在传统布局中设置了浮动又设置绝对定位的情况，太荒唐了。关于css布局的实践和摸索一直不会停止，always do it!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/01/读书笔记之《学习之道》/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/01/读书笔记之《学习之道》/" itemprop="url">
-                  读书笔记之《学习之道》
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-01T12:18:31+08:00">
-                2017-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/01/读书笔记之《学习之道》/" class="leancloud_visitors" data-flag-title="读书笔记之《学习之道》">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="拖延症解决之法"><a href="#拖延症解决之法" class="headerlink" title="拖延症解决之法"></a>拖延症解决之法</h1><p>贪图一时之快。<br>①番茄工作法<br>②每天入睡前把今天最重要的事写下来，做一个任务清单，然后循坏往复。<br>③21分钟休息法<br>④让自己待在无干扰的情况下，克服拖延症。<br>⑤练习无视分心的想法<br>⑥态度不端正就要改造自己的关注点，让注意力从负面转移到正面想法上。<br>⑦开心一刻，拥有合情合理的计划和每周一次的周计划，前一天晚上写好第二天的计划，先从最困难的事情开始。<br>⑧把工作细化为一系列的挑战，慎重的选择时间，相信自己的时间系统，注意力集中的时候就要努力工作，该休息的时候就要相信自己去休息，不要有负罪感。<br>⑨做第一个吃螃蟹的人，享受做小白鼠的时光。</p>
-<p>小结：<br>专注模式和发散模式<br>用专注模式处理新的事物会停止不前。<br>解决问题或者新的点子需要给注意力放个假。<br>定势效应需要切换到发散思维。</p>
-<h1 id="思维转换方式"><a href="#思维转换方式" class="headerlink" title="思维转换方式"></a>思维转换方式</h1><p>先专注模式打头阵，后发散思维<br>工作期间放松一下，做点别的<br>每天进步一点<br>让两种模式有足够的时间各行其是<br>记忆系统：<br>①工作记忆（4个组块）<br>②长期记忆（存储知识的仓库）<br>间隔性重复有助于吧信息从工作记忆转移到长期记忆。<br>睡眠是重要的一部分。</p>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><p>练习有助于构建强壮的神经模型，且会形成理解的概念组块。<br>构建组块的要素:<br>①专注力<br>②对基本概念的理解<br>③练习<br>简单的回想，试着关上书回忆要点。<br>重述看过的练过的所有内容，或者对着小黄鸭说。</p>
-<h1 id="番茄工作法-amp-针对拖延症"><a href="#番茄工作法-amp-针对拖延症" class="headerlink" title="番茄工作法&amp;针对拖延症"></a>番茄工作法&amp;针对拖延症</h1><p>分解工作量，专注简短的高效工作。在轻微压力下，更轻松的应对更大的压力。<br>专注过程而非是结果。即刻开始25分钟。<br>在让自己痛苦的事情上多一些努力。<br>改变的方法：<br>①规划自由时间<br>②心理对照<br>③改变习惯<br>④干脆回避信号<br>⑤信念和奖励自己<br>感觉无精打采和头脑空空，可以先去做几个俯卧撑或者开合跳。</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试是强效的学习经历，提高自己记住材料的能力。<br>①建立一个思维方案库<br>②搭建自己的组块<br>③刻意关注难点<br>④准备充分，勤加练习，搭建思维方案库<br>不要在自己看的书或者其他上面画标记，看到每一页是总结出主要内容。</p>
-<h1 id="加强记忆"><a href="#加强记忆" class="headerlink" title="加强记忆"></a>加强记忆</h1><p>用思维图像来记忆事物，用视觉化方法处理各种概念。<br>①比喻<br>②重复<br>③意群和口诀简化学习内容<br>④编故事<br>⑤体育锻炼<br>⑥学会组块化学习-提炼关键思想<br>⑦不管结果如何，要有开放心态，，保证自己的学习宝库中储备更多的知识。<br>⑧一心一意</p>
-<h1 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h1><p>自主学习是一种最深入，最有效的学习方法，提高独思考的能力。<br>①毅力往往比智力更重要<br>②去接触比自己牛逼的人<br>③真正了解前因后果，帮你更深层次理解问题<br>④对问题要淡然但是不能放弃。<br>⑤和愿意提出不同意见的小伙伴一起讨论，可以使你找出自己想法中的错误，更容易学会随机应变，更好应对压力，确保你真正了解你想让别人解释的知识，建立起重要的职业关系。<br>⑥宽容对待别人的批评。</p>
-<h1 id="法则"><a href="#法则" class="headerlink" title="法则"></a>法则</h1><p>1.运用回想<br>2.自我测评<br>3.间隔开重复动作<br>4.在练习中交替使用不同解题技巧<br>5.注意休息<br>6.使用解释性的提问和简单类比<br>7.专注<br>8.困难的事情最先做<br>9.心里对照<br>10.困难的事情最先做</p>
-<h1 id="坏的学习法则"><a href="#坏的学习法则" class="headerlink" title="坏的学习法则"></a>坏的学习法则</h1><p>1.被动重复阅读<br>2.满眼尽是重点标记。<br>3.瞟一眼解题方法，就觉得胸有成竹。<br>4.等到火烧眉毛才开始学习<br>5.已经清楚一种方法，还继续使用<br>6.与朋友一没有促进反而变成闲坎<br>7.忽略书本的阅读<br>8.有疑问却不找人问<br>9.时常分心<br>10.休息不好</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/31/Ajax/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/31/Ajax/" itemprop="url">
-                  Ajax
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T23:48:36+08:00">
-                2017-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/07/31/Ajax/" class="leancloud_visitors" data-flag-title="Ajax">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>XHR是Ajax的一个对象，用法如下:<br>1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。<br>2.send(null)发送特定请求。其中不需要发送数据则设为null<br>3.abort()取消异步请求<br>setRequestHeader()自定义头部信息。<br>FormData()<br>getResponseHeader()取得相应的响应头部信息<br>getAllResponseHeader() 取得包含所有头部信息的长字符串。</p>
-<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>向服务器查询某些信息</p>
-<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>向服务器发送应该被保存的数据</p>
-<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">createCORSRequest</span>(<span class="params">method, url</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">   <span class="keyword">if</span> (<span class="string">"withCredentials"</span> <span class="keyword">in</span> xhr) &#123;</div><div class="line">     xhr.open(meth, url, <span class="literal">true</span>);</div><div class="line">   &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> XDomainRequest != <span class="string">"undefined"</span>)&#123;</div><div class="line">     xhr = <span class="keyword">new</span> XDomainRequest();</div><div class="line">     xhr.open(method, url);</div><div class="line">   &#125;<span class="keyword">else</span> &#123;</div><div class="line">   xhr = <span class="literal">null</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> xhr;</div><div class="line">   &#125;</div><div class="line"><span class="keyword">var</span> request = createCORSRequest(<span class="string">"get"</span>, <span class="string">"http://www.somewhere-else.com/page/"</span>);</div><div class="line"><span class="keyword">if</span>(request)&#123;</div><div class="line">    request.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//对request.responseText 处理</span></div><div class="line">    &#125;;</div><div class="line">    request.send();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>图像ping:与服务器进行简单的，单向的跨域通讯方式。<br>jsonp: 通过动态<code>&lt;script&gt;</code>元素使用。能够直接访问响应文本，支持在浏览器和服务器之间双向通信。<br>服务器向页面推送数据的技术。<br>①长轮询<br>②HTTP流<br>XHR对象实现http流的典型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createStreamingClient</span>(<span class="params">url, progress, finished</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),</div><div class="line">        received = <span class="number">0</span>;</div><div class="line">    xhr.open(<span class="string">"get"</span>, url, <span class="literal">true</span>);</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> result;</div><div class="line">        <span class="keyword">if</span> (xhr.readyState == <span class="number">3</span>)&#123;</div><div class="line">            <span class="comment">//只取得最新数据并调整计数器</span></div><div class="line">            result = xhr.responseText.substring(received);</div><div class="line">            received += result.length;</div><div class="line">            <span class="comment">//调用progress回调函数</span></div><div class="line">            progress(result);</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">            finished(xhr.responseText);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    xhr.send(<span class="literal">null</span>);</div><div class="line">    <span class="keyword">return</span> xhr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> client = createStreamingClient(<span class="string">"streaming.php"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Received: "</span> + data);</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Done!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/读书笔记之《算法图解》/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/30/读书笔记之《算法图解》/" itemprop="url">
-                  读书笔记之《算法图解》
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T23:48:13+08:00">
-                2017-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/07/30/读书笔记之《算法图解》/" class="leancloud_visitors" data-flag-title="读书笔记之《算法图解》">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><em>D&amp;C 分而治之法
-</em>二分查找</p>
-<h4 id="快速排序的原理："><a href="#快速排序的原理：" class="headerlink" title="快速排序的原理："></a>快速排序的原理：</h4><p>首先，从数组中选择一个元素，这个元素被称为基准值 （pivot ）。 找出比基准值小的元素以及比基准值大的元素，称为分区，快速排序的平均运行时间为O(nlogn) 。<br>大O 表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。<br>比较简单查找和二分查找时，常量几乎无关紧要，因为列表很长时，O(logn) 的速度比O(n)<br>快得多。</p>
-<h4 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h4><p>散列函数是这样的函数，即无论你给它什么数据，它都还你一个数字。<br>散列函数“将输入映射到数字<br>满足这样的基本条件：<br>①它必须是一致的。例如，假设你输入apple 时得到的是4，那么每次输入apple时，得到的都<br>必须为4，如果不是这样，散列表将毫无用处。<br>②它应将不同的输入映射到不同的数字。例如，如果一个散列函数不管输入是什么都返回1 ，<br>它就不是好的散列函数。最理想的情况是，将不同的输入映射到不同的数字。</p>
-<blockquote>
-<p>散列函数总是将同样的输入映射到相同的索引。每次你输入avocado,得到的都是同一个数字。因此，你可首先使用它来确定将鳄梨的价格存储在什么地方，并在以后使用它来确定鳄梨的价格存储在什么地方。散列函数将不同的输入映射到不同的索引。avocado 映射到索引4 ，milk 映射到索引0 每种商品都映射到数组的不同位置，让你能够将其价格存储到这里。散列函数知道数组有多大，只返回有效的索引。如果数组包含5个元素，散列函数就不会返回无效索引100 。<br>散列表由键和值组成。在前面的散列表book 中，键为商品名，值为商品价格。散列表将键映射到值。</p>
-</blockquote>
-<p>应用实例：<br>dns解析。网址映射到ip地址<br>使用散列表来检查是否重复，速度非常快。例如投票问题<br>服务器的缓存</p>
-<p>要避免冲突，需要有：<br>①较低的填装因子； 一旦填装因子大于0.7 ，就调整散列表的长度。<br>②良好的散列函数。<br>总结：<br>散列表是一种功能强大的数据结构，其操作速度快，还能让你以不同的方式建立数据模型。<br>你可能很快会发现自己经常在使用它。你可以结合散列函数和数组来创建散列表。<br>冲突很糟糕，你应使用可以最大限度减少冲突的散列函数。<br>散列表的查找、插入和删除速度都非常快。<br>应用实例：<br>散列表适合用于模拟映射关系。<br>一旦填装因子超过0.7 ，就该调整散列表的长度。<br>散列表可用于缓存数据（例如，在Web 服务器上）。<br>散列表非常适合用于防止重复。</p>
-<h4 id="广度优先搜索："><a href="#广度优先搜索：" class="headerlink" title="广度优先搜索："></a>广度优先搜索：</h4><blockquote>
-<p>图模拟一组连接， 图由节点（node） 和边（edge） 组成。<br> 广度优先搜索是一种用于图的查找算法，可帮助回答两类问题。<br> 第一类问题：从节点A 出发，有前往节点B 的路径吗？<br> 第二类问题：从节点A 出发，前往节点B 的哪条路径最短？</p>
-</blockquote>
-<p>广度优先搜索算法就是找到从点到面的算法：<br>在广度优先搜索的执行过程中，搜索范围从起点开始逐渐向外延伸，即先检查一度关系，再检查二度关系，这些关系都是单向的（有箭头）注意，只有按添加顺序查找时，才能实现这样的目的， 你需要按添加顺序进行检查。有一个可实现这种目的的数据结构，那就是队列（queue） 。 队列的工作原理与现实生活中的队列完全相同。 队列是一种先进先出（First In First Out ，FIFO ）的数据结构，而栈是一种后进先出（Last In First Out，LIFO）的数据结构。<br>广度优先搜索的运行时间为O(人数+边数)，这通常写作O(V+E) ，其中V为顶点（vertice ）数，E 为边数。<br>从某种程度上说，这种列表是有序的。如果任务A 依赖于任务B ，在列表中任务A 就必须在任务B 后面。这被称为拓扑排序 ，使用它可根据图创建一个有序列表<br>小结<br>①广度优先搜索指出是否有从A到B的路径。<br>②如果有，广度优先搜索将找出最短路径。<br>③面临类似于寻找最短路径的问题时，可尝试使用图来建立模型，再使用广度优先搜索来<br>解决问题。<br>④有向图中的边为箭头，箭头的方向指定了关系的方向，例如，rama→adit表示rama欠adit钱。<br>⑤无向图中的边不带箭头，其中的关系是双向的，例如，ross - rachel表示“ross与rachel约<br>会，而rachel也与ross约会”。<br>⑥队列是先进先出（FIFO）的。<br>⑦栈是后进先出（LIFO）的。<br>⑧你需要按加入顺序检查搜索列表中的人，否则找到的就不是最短路径，因此搜索列表必<br>须是队列。<br>⑨对于检查过的人，务必不要再去检查，否则可能导致无限循环。</p>
-<h4 id="狄克斯特拉算法"><a href="#狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法"></a>狄克斯特拉算法</h4><p>广度优先搜索，找出的是段数最少的路径，狄克斯特拉算法，找出最快路径。<br>狄克斯特拉算法包含4个步骤。<br>(1)找出最便宜的节点，即可在最短时间内前往的节点。<br>(2)对于该节点的邻居，检查是否有前往它们的更短路径，如果有，就更新其开销。<br>(3)重复这个过程，直到对图中的每个节点都这样做了。<br>狄克斯特拉算法用于每条边都有关联数字的图，这些数字称为权重 （weight ）。 带权重的图称为加权图 （weighted graph ），不带权重的图称为非加权图（unweighted graph ）<br>狄克斯特拉算法只适用于有向无环图。如果有负权边，就不能使用狄克斯特拉算法 。因为负权边会导致这种算法不管用。这是因为狄克斯特拉算法这样假设：对于处理过的海报节点，没有前往该节点的更短路径。<br>这种假设仅在没有负权边时才成立。而在有负权重的情况下需要使用贝尔曼—福德算法<br>小结：<br>①广度优先搜索用于在非加权图中查找最短路径。<br>②狄克斯特拉算法用于在加权图中查找最短路径。<br>③仅当权重为正时狄克斯特拉算法才管用。<br>④如果图中包含负权边，请使用贝尔曼-福德算法。</p>
-<h4 id="贪婪算法（NP算法）："><a href="#贪婪算法（NP算法）：" class="headerlink" title="贪婪算法（NP算法）："></a>贪婪算法（NP算法）：</h4><p> 每步都采取最优的做法。用专业术语说，就是你每步都选择局部最优解，最终得到的就是全局最优解<br> 元素较少时算法的运行速度非常快，但随着元素数量的增加，速度会变得非常慢。<br>①涉及“所有组合”的问题通常是NP 完全问题。<br>②不能将问题分成小问题，必须考虑各种可能的情况。这可能是NP完全问题。<br>③如果问题涉及序列（如旅行商问题中的城市序列）且难以解决，它可能就是NP完全问题。<br>④如果问题涉及集合（如广播台集合）且难以解决，它可能就是NP完全问题。<br>⑤如果问题可转换为集合覆盖问题或旅行商问题，那它肯定是NP完全问题。<br>小结<br>①贪婪算法寻找局部最优解，企图以这种方式获得全局最优解。<br>②对于NP完全问题，还没有找到快速解决方案。<br>③面临NP完全问题时，最佳的做法是使用近似算法。<br>④贪婪算法易于实现、运行速度快，是不错的近似算法。</p>
-<h4 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a>动态规划：</h4><p>动态规划先解决子问题，再逐步解决大问题。<br>每种动态规划解决方案都涉及网格。<br>单元格中的值通常就是你要优化的值。在前面的背包问题中，单元格的值为商品的价值。每个单元格都是一个子问题，因此你应考虑如何将问题分成子问题，这有助于你找出网格的坐标轴。<br> 动态规划实际应用<br>①生物学家根据最长公共序列来确定DNA链的相似性，进而判断度两种动物或疾病有多相<br>似。最长公共序列还被用来寻找多发性硬化症治疗方案。<br>②你使用过诸如git diff 等命令吗？它们指出两个文件的差异，也是使用动态规划实现的。<br>③前面讨论了字符串的相似程度。编辑距离（levenshtein distance ）指出了两个字符串的相<br>似程度，也是使用动态规划计算得到的。编辑距离算法的用途很多，从拼写检查到判断<br>用户上传的资料是否是盗版，都在其中。<br>④Microsoft Word等具有断字功能的应用程序使用动态规划。<br>小结<br>①需要在给定约束条件下优化某种指标时，动态规划很有用。<br>②问题可分解为离散子问题时，可使用动态规划来解决。<br>③每种动态规划解决方案都涉及网格。<br>④单元格中的值通常就是你要优化的值。<br>⑤每个单元格都是一个子问题，因此你需要考虑如何将问题分解为子问题。<br>⑥没有放之四海皆准的计算动态规划解决方案的公式。</p>
-<h4 id="K最邻近算法：（KNN）"><a href="#K最邻近算法：（KNN）" class="headerlink" title="K最邻近算法：（KNN）"></a>K最邻近算法：（KNN）</h4><p>要计算两点的距离，可使用毕达哥拉斯公式。<br>维度越高之间的这种距离指出了两组数字之间的相似程度。<br>余弦相似度(余弦相似度不计算两个矢量的距离，而比较它们的角度OCR指的是光学字符识别（optical character recognition），这意味着你可拍摄印刷页面的照片，<br>计算机将自动识别出其中的文字。knn的简单理念皆可用在语音识别和人脸识别和图书数字化等。<br>OCR的第一步是查看大量的数字图像并提取特征，这被称为训练（ training）。大多数机器学<br>习算法都包含训练的步骤：要让计算机完成任务，必须先训练它。<br>垃圾邮件过滤器使用一种简单算法——朴素贝叶斯分类器（Naive Bayes classifier)， 朴素贝叶斯分类器也是一种简单而极其有效的算法<br>小结：<br>①KNN用于分类和回归，需要考虑最近的邻居。<br>②分类就是编组。<br>③回归就是预测结果（如数字）。<br>④特征抽取意味着将物品（如水果或用户）转换为一系列可比较的数字。<br>⑤能否挑选合适的特征事关KNN算法的成败。</p>
-<h4 id="树"><a href="#树" class="headerlink" title="树"></a>树</h4><p>二叉查找树：<br>对于其中的每个节点，左子节点的值都比它小 ，而右子节点的值都比它大<br>二叉查找树处于平衡状态和不平衡状态时性能是不一样的。也有一些处于平衡状态的特殊二叉查找树，如红黑树。<br>B树是一种特殊的二叉树，数据库常用它来存储数据。接下来要深入研究的是：B树 红黑树 堆 伸展树。<br>反向索引<br>搜索引擎的工作原理、<br>一个散列表，将单词映射到包含它的页面。这种数据结构被称为反向索引（inverted index），常用于创<br>建搜索引擎。</p>
-<h4 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h4><p> 傅里叶变换非常适合用于处理信号，可使用它来压缩音乐。<br> 傅里叶变换能够准确地指出各个音符对整个歌曲的贡献，让你能够将不重要的音符删除。这就是MP3 格式的工作原理！</p>
-<h4 id="并行算法"><a href="#并行算法" class="headerlink" title="并行算法"></a>并行算法</h4><p>可扩展性和海量数据处理相关<br>在最佳情况下，排序算法的速度大致为O(nlogn)众所周知，对数组进行排序时，快速排序的并行版本所需的时间为O(n) 。<br>并行算法设计起来很难，要确保它们能够正确地工作并实现期望的速度提升也很难。<br>①并行性管理开销<br>②负载均衡<br>有一种特殊的并行算法正越来越流行，它就是分布式算法。<br>MapReduce是一种流行的分布式算法，你可通过流行的开源工具Apache，Hadoop来<br>使用它。 分布式算法非常适合用于在短时间内完成海量工作，其中的MapReduce 基于两个简单的理<br>念：映射（map ）函数和归并（reduce）函数。映射函数很简单，它接受一个数组，并对其中的每个元素执行同样的处理。将耗时严重的任务分发给不同的机器去处理。<br>归并函数：归并函数可能令人迷惑，其理念是将很多项归并为一项。映射是将一个数组转换为另一个数组。 而归并是将一个数组转换为一个元素。</p>
-<h4 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h4><p>给定一个元素，你需要判断它是否包含在这个集合中。为快速做出这种判断，可使用散列表<br>布隆过滤器提供了解决之道。布隆过滤器是一种概率型数据结构，它提供的答案有可能不对，<br>但很可能是正确的。为判断网页以前是否已搜集，可不使用散列表，而使用布隆过滤器。使用散<br>列表时，答案绝对可靠，而使用布隆过滤器时，答案却是很可能是正确的。<br>可能出现错报的情况<br>不可能出现漏报的情况<br>布隆过滤器的优点在于占用的存储空间很少。使用散列表时，必须存储Google搜集过的所有<br>URL ，但使用布隆过滤器时不用这样做。布隆过滤器非常适合用于不要求答案绝对准确的情况。</p>
-<h4 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h4><p>是一种类似于布隆过滤器的算法。如果 Google要计算用户执行的不同搜索的数<br>量，或者 Amazon要计算当天用户浏览的不同商品的数量，要回答这些问题，需要耗用大量的空<br>间！对 Google来说，必须有一个日志，其中包含用户执行的不同搜索。有用户执行搜索时，Google<br>必须判断该搜索是否包含在日志中：如果答案是否定的，就必须将其加入到日志中。即便只记录<br>一天的搜索，这种日志也大得不得了！<br>HyperLogLog近似地计算集合中不同的元素数，与布隆过滤器一样，它不能给出准确的答案，<br>但也八九不离十，而占用的内存空间却少得多。<br>面临海量数据且只要求答案八九不离十时，可考虑使用概率型算法</p>
-<h4 id="SHA-算法"><a href="#SHA-算法" class="headerlink" title="SHA 算法"></a>SHA 算法</h4><p>散列函数接受一个字符串，并返回一个索引号。<br>安全散列算法:<br>给定一个字符串，SHA返回其散列值。使用SHA 来判断两个文件是否相同<br>SHA是一个散列函数，它生成一个散列值—— 一个较短的字符串。用于创建散列表的散列函数根据字符串生成数组索引，而SHA 根据字符串生成另一个字符串。对于每个不同的字符串，SHA 生成的散列值都不同。<br>SHA还让你能在不知道原始字符串的情况下对其进行比较,其中散列算法是单向的。<br>SHA还有一个重要特征，那就是局部不敏感的，但有的时候希望散列函数是局部敏感的。在这种情况下，可使用Simhash。如果你对字符串做细微的修改，Simhash生成的散列值也只存在细微的差别。这让你能够通过比较散列值来判断两个字符串的相似程度，这很有用！ 需要检查两项内容的相似程度时，Simhash 很有用。<br>Diffie-Hellman密钥交换：<br>如何对消息进行加密，以便只有收件人才能看懂呢？<br>解决的两个问题<br>①双方无需知道加密算法。他们不必会面协商要使用的加密算法<br> 要破解加密的消息比登天还难。<br>②Diffie-Hellman使用两个密钥：公钥和私钥。顾名思义，公钥就是公开的，可将其发布到网站<br>上，通过电子邮件发送给朋友，或使用其他任何方式来发布。你不必将它藏着掖着。有人要向你<br>发送消息时，他使用公钥对其进行加密。加密后的消息只有使用私钥才能解密。只要只有你知道<br>私钥，就只有你才能解密消息！ Diffie-Hellman算法及其替代者 RSA依然被广泛使用。</p>
-<h4 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h4><p> 线性规划用于在给定约束条件下最大限度地改善指定的指标。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/DOM/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/30/DOM/" itemprop="url">
-                  DOM
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T23:42:59+08:00">
-                2017-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/07/30/DOM/" class="leancloud_visitors" data-flag-title="DOM">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>对arguements对象使用Array.prototype.slice()可以将其转化为数组。</p>
-<h3 id="node类型"><a href="#node类型" class="headerlink" title="node类型"></a>node类型</h3><p>节点属性:<br>childNodes, parentNode, previousSibling, nextSibling,<br>firstChild, lastChild分别指向childNodes中的第一个和最后一个节点。hasChildNodes(),ownerDocument,<br><br>操作节点（必须先取得父节点）:</p>
-<blockquote>
-<p>appendChild(）向childNodes列表末尾添加节点。<br>insertBefore() 向childNodes中不特定位置插入某个节点。<br>replaceChild() 替换节点<br>removeChild() 删除节点</p>
-</blockquote>
-<p>cloneNode() 复制节点 ture为深复制 false为浅复制。<br>normalize() 处理文档树中的文本节点。只有一个则删除，两个则合并</p>
-<h3 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h3><p>①属性<br>document.documentElement<br>document.body<br>document.doctype<br>document.title<br>document.domain<br>document.referrer<br>document.URL<br>document.anchors<br>document.applets(不建议)<br>document.forms<br>document.images<br>document.links<br>②方法<br>getElementById() 取得元素的id<br>getElementByTagName() 取得元素的标签名<br>getElementByName() 返回带有给定name特性的所有元素<br>③文档写入<br>write(), writeln(), open(), close()</p>
-<h3 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h3><p>①html元素<br>属性<br>id, title, lang, dir, className</p>
-<p>特性(名称不区分大小写):<br>getAttribute(), setAttribute(), removeAttribute()</p>
-<p>②创建元素<br>document.createElement()<br>createElement() IE浏览器中使用此法</p>
-<h3 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h3><p>document.createTextNode()<br>normalize()<br>splitText()与上面的相反，刚好分开文本。<br>document.createComment() 传递注释文本并创建注释节点<br>document.createCDataSection() 只针对xml的文档</p>
-<h3 id="选择符API"><a href="#选择符API" class="headerlink" title="选择符API"></a>选择符API</h3><p>querySelector()接受一个css选择符，返回与该模式匹配的第一个元素。<br>querySelectorAll() 返回所有匹配的元素。<br>matchesSelector() 接受一个参数，<br>getElementByClassName()<br>add()<br>contains()<br>remove()<br>toggle()<br>document.activeElement()<br>document.hasFocus() 焦点管理<br>插入标记:<br>innerHTML()<br>outerHTML()<br>insertAdjacentHTML()<br>scrollIntoView(）</p>
+<h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><p>当元素margin的top和left是负值时会引起元素的向上或向左位置移动。而当元素margin的bottom和right是负值时会影响右边和下边相邻元素的参考线,即其右边和下边的相邻元素会进入覆盖它的一部分。</p>
+<h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1><p>一、左右列固定，中间自适应，也就是圣杯和双飞翼布局<br>二、去除列表右边框。<br>项目中经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（margin-right）,当父元素的宽度固定式，每一行的最右端的li元素的右边距就多余了。使用margin负值就可以轻松搞定。<br>三、水平垂直居中<br>通过绝对定位和负边距，把div元素的中心拉回到body的中心。负边距为content的一半。<br>四、去除列表最后一个li元素的border-bottom。border-bottom与外边框重合看起来很丑。通过设置border-bottom为负值，解决重合问题<br>五、多列等高<br>给每个框设置大的底部内边距，然后用数值相似的负外边距消除这个高度。这会导致每一列溢出容器元素，如果把外包容器的overflow属性设为hidden，列就在最高点被裁切。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>负值的应用很广泛，在了解其原理的基础上，方能游刃有余，但是负值是用来解决问题的，那么会有更好的东西来替代他。需要我们继续挖掘。</p>
 
           
         
@@ -964,7 +984,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1005,7 +1025,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1015,7 +1035,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

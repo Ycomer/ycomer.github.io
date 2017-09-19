@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node-js专题之异步编程/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/18/设计模式之Promise-Deferred模式/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -282,8 +282,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/12/Node-js专题之异步编程/" itemprop="url">
-                  Node_js专题之异步编程
+                <a class="post-title-link" href="/2017/09/18/设计模式之Promise-Deferred模式/" itemprop="url">
+                  设计模式之Promise/Deferred模式
                 </a>
               
             
@@ -297,8 +297,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T15:37:04+08:00">
-                2017-09-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T11:44:22+08:00">
+                2017-09-18
               </time>
             
 
@@ -317,7 +317,7 @@
 
           
           
-             <span id="/2017/09/12/Node-js专题之异步编程/" class="leancloud_visitors" data-flag-title="Node_js专题之异步编程">
+             <span id="/2017/09/18/设计模式之Promise-Deferred模式/" class="leancloud_visitors" data-flag-title="设计模式之Promise/Deferred模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,7 +344,8 @@
       
         
           
-            <p>常规函数<br>函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。<br>高阶函数<br>则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。<br>偏函数<br>通过指定部分参数来产生一个新的定制函数的形式就是偏函数。<br>异步编程的难点<br>1.异常处理<br>node在处理异常的时候形成了一种规定，将异常作为回调函数的第一个实参传回，若为空值，则表明异步调用没有异常抛出，<br>自行编写的异步方法上，也需要去遵循这样一些原则<br>原则一：必须执行调用者传入回的回调函数<br>原则二：正确传递回异常供调用者判断<br>2. </p>
+            <h1 id="Promises-A"><a href="#Promises-A" class="headerlink" title="Promises/A"></a>Promises/A</h1><p>对单个异步操作：<br>一、三种从状态：未完成态，完成态，失败态。<br>二、状态只会从未完成态向完成态或者失败态转化，不能逆向。<br>三、一旦状态转化，便不能更改<br>一个promise对象只要具备then()方法即可。<br>对then()方法有以下简单的要求：<br>一、接受完成态，错误态的回调方法。<br>二、可选的支持progress事件回调作为第三个方法。<br>三、then()方法继续返回promise对象。以实现链式调用<br>四、then()方法只接受function对象，其余对象会被忽略。<br>then(fulfilleHandler, errorHandler, progressHandler)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> <span class="built_in">Promise</span> = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  EventEmitter.call(<span class="keyword">this</span>);</div><div class="line">&#125;;</div><div class="line">util.inherits(<span class="built_in">Promise</span>, EventEmitter);</div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">fulfilleHandler, errorHandler, progressHandler</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fulfilleHandler === <span class="string">'function'</span>)&#123;</div><div class="line">    <span class="keyword">this</span>.once(<span class="string">'success'</span>, fulfilleHandler);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> errorHandler === <span class="string">'function'</span>)&#123;</div><div class="line">    <span class="keyword">this</span>.once(<span class="string">'error'</span>, errorHandler);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> progressHandler === <span class="string">'function'</span>)&#123;</div><div class="line">    <span class="keyword">this</span>.once(<span class="string">'progress'</span>, progressHandler);</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line"><span class="comment">//then()将所有的回调函数都存起来，那么触发执行这些回调函数就用到了延迟对象Deferred</span></div><div class="line"><span class="keyword">var</span> Deferred = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.state = <span class="string">'unfulfilled'</span>;</div><div class="line">  <span class="keyword">this</span>.promise = <span class="keyword">new</span> <span class="built_in">Promise</span>();</div><div class="line">&#125;;</div><div class="line"><span class="comment">//完成态</span></div><div class="line">Deferred.prototype.resolve = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.state = <span class="string">'fulfilled'</span>;</div><div class="line">  <span class="keyword">this</span>.promise.emit(<span class="string">'success'</span>, obj);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//失败态</span></div><div class="line">Deferred.prototype.reject = <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.state = <span class="string">'failed'</span>;</div><div class="line">  <span class="keyword">this</span>.promise.emit(<span class="string">'error'</span>, err);</div><div class="line">&#125;;</div><div class="line">Deferred.prototype.progress = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.promise.emit(<span class="string">'progress'</span>, data);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//对相应对象进行封装</span></div><div class="line"><span class="keyword">var</span> promisify = <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> deferred = <span class="keyword">new</span> Deferred();</div><div class="line">  <span class="keyword">var</span> result = <span class="string">''</span>;</div><div class="line">  res.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    result += chunk;</div><div class="line">    deferred.progress(chunk);</div><div class="line">  &#125;);</div><div class="line">  res.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    deferred.resolve(result); </div><div class="line">  &#125;);</div><div class="line">  res.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    deferred.reject(err);</div><div class="line">  &#125;);</div><div class="line">  <span class="keyword">return</span> deferred.promise;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//封装对象的调用</span></div><div class="line">promisify(res).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//done</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  <span class="comment">//Error</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">  <span class="comment">//progress</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'BODY:'</span> + chunk);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>通过上面的代码我们发现，他将业务中不可变的部分封装在了Deferred中，将可变的部分交由Promise。用来解决典型问题非常有效。<br>Promise通过封装异步调用，实现了正向用例和反向用例的分离和逻辑处理延迟，使得调用函数相对优雅。</p>
 
           
         
@@ -383,7 +384,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node编码规范/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/17/React-of-Flux/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -408,8 +409,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/12/Node编码规范/" itemprop="url">
-                  Node编码规范
+                <a class="post-title-link" href="/2017/09/17/React-of-Flux/" itemprop="url">
+                  React of Flux and Redux
                 </a>
               
             
@@ -423,8 +424,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T14:29:58+08:00">
-                2017-09-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-17T13:24:31+08:00">
+                2017-09-17
               </time>
             
 
@@ -443,7 +444,7 @@
 
           
           
-             <span id="/2017/09/12/Node编码规范/" class="leancloud_visitors" data-flag-title="Node编码规范">
+             <span id="/2017/09/17/React-of-Flux/" class="leancloud_visitors" data-flag-title="React of Flux and Redux">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -470,8 +471,11 @@
       
         
           
-            <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><p>一、空格与格式<br>两格缩进紧凑、明快<br>永远使用var<br>操作符前后必须加空格<br>小括号前后必须加空格<br>尽量使用单引号<br>大括号无需另起一行<br>不在行尾的逗号后面加空格<br>分号不能少<br>二、命名规范<br>变量命名采用小驼峰式命名<br>方法名和变量一样但是尽量采用动词或者判断性词汇<br>类命名采用大驼峰式命名<br>常量全部大写<br>文件名尽量采用下划线分割单词，也可下划线开头<br>比较操作符使用===<br>使用[]{}代替new Array()和new Object()<br>不使用with和eval()<br>创建对象或者数组的时候，注意在结尾用逗号分割。<br>使用for in 循环时 对对象使用<br>不要把数组当做对象来使用。<br>在异步回调函数的第一个参数应该是错误提示<br>执行传入的回调函数<br>类继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Socket</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  stream.Stream.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure></p>
-<p>所有供外部调用的方法或变量均需挂载在exports变量上。导出是：<br>module.exprots = Class;sub</p>
+            <h1 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h1><p>Flux将一个应用分成四个部分。<br>View： 视图层<br>Action（动作）：视图层发出的消息（比如mouseClick）<br>Dispatcher（派发器）：用来接收Actions、执行回调函数<br>Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面。<br>Flux 的最大特点，就是数据的”单向流动”。<br>        1.用户访问 View<br>        2.View 发出用户的 Action<br>        3.Dispatcher 收到 Action，要求 Store 进行相应的更新<br>        4.Store 更新后，发出一个”change”事件<br>        5.View 收到”change”事件后，更新页面</p>
+<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><p>React只是DOM的一个抽象层，并不是Web应用的完整解决方案。有两个方面，它没涉及。它只是一种web架构的解决方案，还有很多可供选择。<br>第一个是代码结构，第二个是组件之间的通信。而Redux是将Flux和函数式编程结合在一起。<br>Redux的不适用场景:<br>简单说，如果你的UI层非常简单，没有很多互动，Redux 就是不必要的，用了反而增加复杂性。</p>
+<blockquote>
+<p>用户的使用方式非常简单<br>用户之间没有协作<br>不需要与服务器大量交互，也没有使用 WebSocket<br>视图层（View）只从单一来源获取数据<br>Redux的使用场景：<br>用户的使用方式复杂<br>不同身份的用户有不同的使用方式（比如普通用户和管理员）<br>多个用户之间可以协作<br>与服务器大量交互，或者使用了WebSocket<br>View要从多个来源获取数据<br>场景（）<br>某个组件的状态，需要共享<br>某个状态需要在任何地方都可以拿到<br>一个组件需要改变全局状态<br>一个组件需要改变另一个组件的状态</p>
+</blockquote>
 
           
         
@@ -510,7 +514,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/11/Node-js专题之测试/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/16/jsonp/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -535,8 +539,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/11/Node-js专题之测试/" itemprop="url">
-                  Node-js专题之测试
+                <a class="post-title-link" href="/2017/09/16/jsonp/" itemprop="url">
+                  jsonp
                 </a>
               
             
@@ -550,8 +554,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T16:02:01+08:00">
-                2017-09-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-16T19:25:12+08:00">
+                2017-09-16
               </time>
             
 
@@ -570,7 +574,7 @@
 
           
           
-             <span id="/2017/09/11/Node-js专题之测试/" class="leancloud_visitors" data-flag-title="Node-js专题之测试">
+             <span id="/2017/09/16/jsonp/" class="leancloud_visitors" data-flag-title="jsonp">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -597,8 +601,7 @@
       
         
           
-            <p>广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。<br>一、单元测试<br>1.断言(assertion)<br>单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。<br>2.测试框架<br>本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD<br>①关注点不同：tdd关注所有功能是否被正确实现。bdd关注整体行为是否符合预期。<br>②表达方式不同：tdd偏向于功能说明，bdd接近于自然语言的习惯。<br>2.1BDD<br>采用describe和it进行组织<br>2.2TDD<br>采用suite和test完成。<br>3.异步测试<br>mocha<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'fs.readFile should be ok'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fs.readFile(<span class="string">'file_path'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</div><div class="line">        should.not.exist(err);</div><div class="line">        done();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>超时限制<br>mocha给所有涉及异步的测试用例添加了超时限制，如果一个用例的执行时间超过了预期时间， 将会记录下一个超时错误， 然后执行力下一个测试用例。<br>4.测试覆盖率<br>blanket<br>istanbul<br>5.模拟异常mock<br>muk模块<br>6.私有方法的测试<br>rewire<br>7.工程化和自动化<br>Makefile<br>travis-ci<br>二、性能测试</p>
+            <h1 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h1><p>JSON with padding<br>类似：callback({“name”: “Nicholas”}<br>典型的jsonp请求：<br><a href="http://freegeoip.net/json/?callback=handleResponse" target="_blank" rel="external">http://freegeoip.net/json/?callback=handleResponse</a></p>
 
           
         
@@ -637,7 +640,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/10/Docker/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/15/闭包/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -662,8 +665,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/10/Docker/" itemprop="url">
-                  Docker
+                <a class="post-title-link" href="/2017/09/15/闭包/" itemprop="url">
+                  闭包
                 </a>
               
             
@@ -677,8 +680,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T11:54:16+08:00">
-                2017-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-15T23:00:07+08:00">
+                2017-09-15
               </time>
             
 
@@ -697,7 +700,7 @@
 
           
           
-             <span id="/2017/09/10/Docker/" class="leancloud_visitors" data-flag-title="Docker">
+             <span id="/2017/09/15/闭包/" class="leancloud_visitors" data-flag-title="闭包">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -724,11 +727,7 @@
       
         
           
-            <p>容器”这个术语实际上只是一个抽象的概念，用于描述如何让一些特性像一个“容器”一样地在一起工作。让我们快速地过一遍这些特性：<br>1) 命名空间（Namespaces）<br>命名空间为容器提供了他们对下层 Linux 系统的视图，限制了容器可以看到和访问到的范围。当你运行一个容器的时候，Docker 会创建一个命名空间供它使用。<br>Docker 使用的内核中有很多种命名空间，比如：<br>a. NET: 为容器提供了它自己的系统网络堆栈视图（比如它自己的网络设备、IP 地址、IP 路由表、/proc/net 文件夹、端口号等）。<br>b. PID: PID 表示进程 ID。如果你在命令行中跑过 ps aux 来查看你系统中的进程，你将会看到有一列叫“PID”。PID 命名空间为容器提供了它们自己的域中的进程，它们可以查看并与这些进程交互。这些进程包含一个独立的初始化进程（PID 1），这个进程是“所有进程的祖先”。<br>c. MNT: 为容器提供了一个对系统的“挂载”的视图。所以不同挂载命名空间中的进程拥有不同的文件系统层次结构视图。<br>d. UTS: UTS 表示UNIX分时系统（UNIX Timesharing System）。它提供了一个进程去识别系统标识符（即主机名、域名、等）。UTS 使容器有独立于其他容器和主机系统的主机名和 NIS 域名。<br>e. IPC: IPC 表示进程间通信。IPC 命名空间用于在隔离每个容器中运行的进程之间 IPC 资源。<br>f. USER: 这个命名空间用于隔离每个容器中的用户。它给每个容器提供了一个独立的视图来存放 uid (用户 ID) 和 gid (组 ID)  与主机系统的对照。因此，一个进程的 uid 和 gid 在一个用户命名空间的里面和外面是可以不同的，这么做也使得一个进程可以在不牺牲 root 权限的前提下，在容器之外拥有一个特权用户。<br>Docker 用这些命名空间隔离并开始容器的创建。<br>2) 对照组（Control groups）<br>对照组（也叫 cgroups）是 Linux 的内核特性，用于隔离、优先考虑以及计算一组进程的资源占用情况（CPU、内存、磁盘I/O、网络等）。在这个意义上讲，一个 cgroup 保证了 Docker 容器只使用它们需要的资源，而且如果需要的话可以限制一个容器能够使用的资源。cgroup 也保证了单个容器不会耗尽其中的一个资源，从而导致整个系统崩溃<br>3)独立联合文件系统（Isolated Union file system）<br>Docker使用联合文件系统来创建一个镜像。你可以把联合文件系统当做是一个“可堆叠的文件系统”，即文件和单独文件系统（也叫分支）的文件夹都可以被无感地覆盖来形成单个文件系统.<br>覆盖的分支中拥有相同路径的文件夹的内容都会被看做是一个合并文件夹，这样避免了将每一层都拷贝一次。相反，它们都会被赋予指向相同资源的指针；当某层需要变更时，它将创建一份拷贝并在本地的拷贝上修改，而原始的层并不会被改变。这就是为什么文件系统看起来可写实则不允许写入（换句话说，叫“先拷贝再写”系统）。<br>分层系统有两个主要优势：</p>
-<ol>
-<li>可自由复制： 每当你使用一个镜像去创建并运行一个新的容器时，层有助于避免每次都要复制一组完整的文件。这让 Docker 容器的实例化又快又轻。</li>
-<li>层隔离: 做出改变要快得多 —— 当你改变一个镜像时，Docker 只需将变更应用到你改变了的层上即可。</li>
-</ol>
+            <p>JS的函数可以嵌套在其他函数中定义，这样他们就可以访问他们被定义时所处的作用域中的任何变量。这样就构成了一个闭包(closure)。</p>
 
           
         
@@ -767,7 +766,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/Node-js专题之网络编程/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/15/作用域/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -792,8 +791,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/09/Node-js专题之网络编程/" itemprop="url">
-                  Node-js专题之网络编程
+                <a class="post-title-link" href="/2017/09/15/作用域/" itemprop="url">
+                  作用域
                 </a>
               
             
@@ -807,8 +806,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T21:03:52+08:00">
-                2017-09-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-15T21:50:08+08:00">
+                2017-09-15
               </time>
             
 
@@ -827,7 +826,7 @@
 
           
           
-             <span id="/2017/09/09/Node-js专题之网络编程/" class="leancloud_visitors" data-flag-title="Node-js专题之网络编程">
+             <span id="/2017/09/15/作用域/" class="leancloud_visitors" data-flag-title="作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -854,16 +853,11 @@
       
         
           
-            <p>#网络服务于安全</p>
-<p>一.TLS/SSL</p>
-<p>1.密钥</p>
-<p>在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。<br>通过openssl来实现TLS/SSL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//生成服务器端私钥</div><div class="line">openssl genrsa -out server.key 1024</div><div class="line">//生成客户端私钥</div><div class="line">openssl genrsa -out client.key 1024</div><div class="line">//服务器端公钥</div><div class="line">openssl rsa -in server.key -pubout -out server.pem</div><div class="line">//客户端公钥</div><div class="line">openssl rsa -in client.key -pubout -out client.pem</div></pre></td></tr></table></figure></p>
-<p>2.数字证书<br>CA(Certificate Authority 数字证书认证中心)<br>自签名证书，自己扮演CA,给自己的服务器办法签名证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 1024</div><div class="line">openssl req -new -key ca.key -out ca.csr</div><div class="line">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt</div></pre></td></tr></table></figure></p>
-<p>接下来是服务器通过自己的私钥生成证书签名请求文件SCR并申请签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key -out server.csr</div><div class="line">openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -in server.csr -out server.crt</div></pre></td></tr></table></figure></p>
-<h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
-<h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
-<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件<br>服务器也是一个EventEmitter实例<br>connection<br>request<br>close<br>checkcontinue<br>connect<br>upgrade<br>clientError<br>3.HTTP客户端<br>报文头和报文体由它产生。<br>http模块提供的底层api：http.request(options,connect)<br>其中options决定了http请求头中的内容<br>host<br>hostname<br>port<br>localAddress<br>socketPath<br>method<br>path<br>headers<br>auth<br>agent<br>这里的内容由write()和end()方法实现。<br>3.1HTTP代理<br>为了重TCP连接。http模块包含了一个默认的客户端代理对象http:globalAgent,它对每个服务器端创建的连接进行了管理，默认情况下ClientRequest对象对同一个服务器发起的http请求最多可以创建5个。通过对options中Agent对象的sockets和Requests进行监视可以发现业务的繁忙程度。<br>3.2客户端事件<br>response<br>socket<br>connect<br>upgrade<br>continue</p>
+            <h1 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h1><p>通过阅读包含变量定义在内的数行源码就能知道变量的作用域。<br>一个变量的作用域是程序源代码中定义这个变量的区域。全局变量拥有全局作用域。在函数内部声明的变量是局部变量。在类似于c语言的编程语言中有块级作用域的存在。然而在JS中是没有块级作用域，但是却有函数作用域，是指在函数内声明的所有变量在函数体内始终是可见的（变量提升）也就是说在没有块级作用域的函数中声明的局部变量在执行结束后，也会存在与其执行的外部环境中。并不能像块级作用域那样立即销毁。<br>查询标识符会沿着作用域链向上查询，比如在使return语句返回时就是一个字符串的作用域链查询。显然局部变量的查询速度要比全局变量快的多。</p>
+<h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>作用域链的的用于是，保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">'blue'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> anotherColor = <span class="string">'red'</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> tempColor = anotherColor;</div><div class="line">    anotherColor = color;</div><div class="line">    color = tempColor;</div><div class="line">  &#125;</div><div class="line">  swarColors();</div><div class="line">&#125;</div><div class="line">changeColor();</div></pre></td></tr></table></figure>
+<p>内部环境可以通过作用域链访问所有的外部环境，但是外部环境不能访问内部环境中的任何变量和函数，这些环境之间的关系是线性的，有次序的。每个环境都可以向上搜索作用域链。以查询变量和函数名。但任何环境不能通过向下搜索作用域链。</p>
+<p># </p>
 
           
         
@@ -897,7 +891,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -938,7 +932,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -948,7 +942,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

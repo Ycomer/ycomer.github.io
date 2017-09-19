@@ -102,22 +102,19 @@
 
 
 
-<meta name="description" content="事件流1.时间冒泡2.时间捕获
-时间处理程序1.html事件处理程序2.DOM事件处理程序
-事件对象事件类型模拟事件">
+<meta name="description" content="事件类型(event type)一、传统事件类型是一个用来说明发生了什么类型事件的字符串。1.表单事件2.window事件3.鼠标事件4.键盘事件二、DOM事件1.html5事件2.触摸屏和移动设备事件
+注册事件处理程序有两种实现方式1.给事件目标对象或文档元素设置属性2.将事件处理程序传递给对象或者元素一个方法。通用的处理方法是addEventlistener()。事件处理程序属性是在前面加上’">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出JS之事件">
 <meta property="og:url" content="http://ycomer.com/2017/08/23/深入浅出JS之事件/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="事件流1.时间冒泡2.时间捕获
-时间处理程序1.html事件处理程序2.DOM事件处理程序
-事件对象事件类型模拟事件">
-<meta property="og:updated_time" content="2017-08-31T15:57:57.000Z">
+<meta property="og:description" content="事件类型(event type)一、传统事件类型是一个用来说明发生了什么类型事件的字符串。1.表单事件2.window事件3.鼠标事件4.键盘事件二、DOM事件1.html5事件2.触摸屏和移动设备事件
+注册事件处理程序有两种实现方式1.给事件目标对象或文档元素设置属性2.将事件处理程序传递给对象或者元素一个方法。通用的处理方法是addEventlistener()。事件处理程序属性是在前面加上’">
+<meta property="og:updated_time" content="2017-09-18T06:08:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出JS之事件">
-<meta name="twitter:description" content="事件流1.时间冒泡2.时间捕获
-时间处理程序1.html事件处理程序2.DOM事件处理程序
-事件对象事件类型模拟事件">
+<meta name="twitter:description" content="事件类型(event type)一、传统事件类型是一个用来说明发生了什么类型事件的字符串。1.表单事件2.window事件3.鼠标事件4.键盘事件二、DOM事件1.html5事件2.触摸屏和移动设备事件
+注册事件处理程序有两种实现方式1.给事件目标对象或文档元素设置属性2.将事件处理程序传递给对象或者元素一个方法。通用的处理方法是addEventlistener()。事件处理程序属性是在前面加上’">
 
 
 
@@ -344,9 +341,12 @@
       
 
       
-        <h1 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h1><p>1.时间冒泡<br>2.时间捕获</p>
-<h1 id="时间处理程序"><a href="#时间处理程序" class="headerlink" title="时间处理程序"></a>时间处理程序</h1><p>1.html事件处理程序<br>2.DOM事件处理程序</p>
-<h1 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h1><h1 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h1><h1 id="模拟事件"><a href="#模拟事件" class="headerlink" title="模拟事件"></a>模拟事件</h1>
+        <h1 id="事件类型-event-type"><a href="#事件类型-event-type" class="headerlink" title="事件类型(event type)"></a>事件类型(event type)</h1><p>一、传统事件类型<br>是一个用来说明发生了什么类型事件的字符串。<br>1.表单事件<br>2.window事件<br>3.鼠标事件<br>4.键盘事件<br>二、DOM事件<br>1.html5事件<br>2.触摸屏和移动设备事件</p>
+<h1 id="注册事件处理程序"><a href="#注册事件处理程序" class="headerlink" title="注册事件处理程序"></a>注册事件处理程序</h1><p>有两种实现方式<br>1.给事件目标对象或文档元素设置属性<br>2.将事件处理程序传递给对象或者元素一个方法。<br>通用的处理方法是addEventlistener()。<br>事件处理程序属性是在前面加上’on’,并且都是小写。</p>
+<h1 id="事件目标-event-target"><a href="#事件目标-event-target" class="headerlink" title="事件目标(event target"></a>事件目标(event target</h1><p>发生的事件或与之相关的对象。</p>
+<h1 id="事件对象-event-object"><a href="#事件对象-event-object" class="headerlink" title="事件对象(event object)"></a>事件对象(event object)</h1><p>与特定事件相关且包含有关该事件详细信息的对象。</p>
+<h1 id="事件传播-event-propagation"><a href="#事件传播-event-propagation" class="headerlink" title="事件传播(event propagation)"></a>事件传播(event propagation)</h1><p>是浏览器决定那个对象触发其事件处理程序的过程。它的另一种形式称为事件捕获(event capturing)</p>
+
       
     </div>
 
@@ -388,8 +388,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/23/深入浅出ES6之变量解构/" rel="prev" title="深入浅出之ES6之变量解构">
-                深入浅出之ES6之变量解构 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/深入浅出ES6之let和const/" rel="prev" title="深入浅出ES6之let和const">
+                深入浅出ES6之let和const <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -458,7 +458,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -468,7 +468,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -532,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件流"><span class="nav-number">1.</span> <span class="nav-text">事件流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#时间处理程序"><span class="nav-number">2.</span> <span class="nav-text">时间处理程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件对象"><span class="nav-number">3.</span> <span class="nav-text">事件对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件类型"><span class="nav-number">4.</span> <span class="nav-text">事件类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模拟事件"><span class="nav-number">5.</span> <span class="nav-text">模拟事件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件类型-event-type"><span class="nav-number">1.</span> <span class="nav-text">事件类型(event type)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册事件处理程序"><span class="nav-number">2.</span> <span class="nav-text">注册事件处理程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件目标-event-target"><span class="nav-number">3.</span> <span class="nav-text">事件目标(event target</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件对象-event-object"><span class="nav-number">4.</span> <span class="nav-text">事件对象(event object)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件传播-event-propagation"><span class="nav-number">5.</span> <span class="nav-text">事件传播(event propagation)</span></a></li></ol></div>
             
 
           </div>

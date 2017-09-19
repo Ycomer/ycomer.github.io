@@ -103,21 +103,21 @@
 
 
 <meta name="description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
+最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
+二、函数表达式(匿名函数、拉姆达函数)123var doSomething = function()&amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="立即执行函数表达式">
 <meta property="og:url" content="http://ycomer.com/2017/08/25/立即执行函数表达式/index.html">
 <meta property="og:site_name" content="东方猿BLog">
 <meta property="og:description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
-<meta property="og:updated_time" content="2017-08-25T05:18:38.000Z">
+最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
+二、函数表达式(匿名函数、拉姆达函数)123var doSomething = function()&amp;#123;">
+<meta property="og:updated_time" content="2017-09-15T15:18:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="立即执行函数表达式">
 <meta name="twitter:description" content="一、函数声明
-最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
-二、函数表达式123var doSomething = function()&amp;#123;  // _...do something..._&amp;#125;">
+最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)123function doSomething()&amp;#123;  // _...do something..._&amp;#125;;
+二、函数表达式(匿名函数、拉姆达函数)123var doSomething = function()&amp;#123;">
 
 
 
@@ -345,9 +345,9 @@
 
       
         <p>一、函数声明</p>
-<p>最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>二、函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>ps:当JavaScript解析器遇到 function关键字时，它通常假设我们在写函数声明</p>
+<p>最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
+<p>二、函数表达式(匿名函数、拉姆达函数)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
+<p>ps:当JavaScript解析器遇到 function关键字时，它通常假设我们在写函数声明，适合用来定义那些只会用到一次的函数。</p>
 <p>三、立即执行函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;)();</div></pre></td></tr></table></figure></p>
 <p>第一个圆括号的作用：<br>通过使用圆括号包裹我们的函数, 我们告诉解释器以函数表达式的方式解析JavaScript代码 , 而不是函数声明。 这样我们的代码在编译的时候不会出现任何错误。<br>第二个圆括号的作用<br>圆括号的作用之一就是用于调用函数。<br>通过在函数表达式后面加上一对圆括号，那么就会立即调用我们的立即执行函数表达式（IIFE）</p>
 <p>1.为什么我们要使用 IIFE?<br>私有性.<br>在 JavaScript 中, 变量所在的作用域在包含他们的函数中.这意味着他们不能从函数外被访问<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> superSecret = <span class="number">195</span>;</div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(superSecret);</div><div class="line"><span class="comment">// Uncaught ReferenceError: superSecret is not defined</span></div></pre></td></tr></table></figure></p>
@@ -394,8 +394,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/28/厉害的jQuery之应用/" rel="prev" title="厉害的jQuery之应用">
-                厉害的jQuery之应用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/28/厉害的jQuery之Ajax/" rel="prev" title="厉害的jQuery之Ajax">
+                厉害的jQuery之Ajax <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -455,7 +455,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -465,7 +465,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

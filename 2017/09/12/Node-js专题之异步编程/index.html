@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处理node在处理异常">
+<meta name="description" content="异步编程的概念和问题常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node_js专题之异步编程">
 <meta property="og:url" content="http://ycomer.com/2017/09/12/Node-js专题之异步编程/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处理node在处理异常">
-<meta property="og:updated_time" content="2017-09-13T14:46:55.000Z">
+<meta property="og:description" content="异步编程的概念和问题常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处">
+<meta property="og:updated_time" content="2017-09-14T04:43:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node_js专题之异步编程">
-<meta name="twitter:description" content="常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处理node在处理异常">
+<meta name="twitter:description" content="异步编程的概念和问题常规函数函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。高阶函数则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。偏函数通过指定部分参数来产生一个新的定制函数的形式就是偏函数。异步编程的难点1.异常处">
 
 
 
@@ -338,7 +338,13 @@
       
 
       
-        <p>常规函数<br>函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。<br>高阶函数<br>则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。<br>偏函数<br>通过指定部分参数来产生一个新的定制函数的形式就是偏函数。<br>异步编程的难点<br>1.异常处理<br>node在处理异常的时候形成了一种规定，将异常作为回调函数的第一个实参传回，若为空值，则表明异步调用没有异常抛出，<br>自行编写的异步方法上，也需要去遵循这样一些原则<br>原则一：必须执行调用者传入回的回调函数<br>原则二：正确传递回异常供调用者判断<br>2. </p>
+        <h1 id="异步编程的概念和问题"><a href="#异步编程的概念和问题" class="headerlink" title="异步编程的概念和问题"></a>异步编程的概念和问题</h1><p>常规函数<br>函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。<br>高阶函数<br>则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。<br>偏函数<br>通过指定部分参数来产生一个新的定制函数的形式就是偏函数。<br>异步编程的难点<br>1.异常处理<br>node在处理异常的时候形成了一种规定，将异常作为回调函数的第一个实参传回，若为空值，则表明异步调用没有异常抛出，<br>自行编写的异步方法上，也需要去遵循这样一些原则<br>原则一：必须执行调用者传入回的回调函数<br>原则二：正确传递回异常供调用者判断<br>2.函数嵌套过深<br>3.阻塞代码<br>4.多线程编程<br>在浏览器中将JavaScript和ui渲染分离，这里用到的是Web Workers(利用消息机制合理使用多核cpu的理想模型)。在node中借鉴了类似web worker的模式。<br>Child_process 以及更深层次的cluster模块。</p>
+<h1 id="异步编程解决方案"><a href="#异步编程解决方案" class="headerlink" title="异步编程解决方案"></a>异步编程解决方案</h1><p>1.事件发布/订阅模式<br>事件监听模式是一种广泛用于异步编程的模式，是回调函数的事件化，又称发布/订阅模式。也是一种钩子(hook)机制。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//订阅</span></div><div class="line">emitter.on(<span class="string">'event1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(message);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//发布</span></div><div class="line">emitter.emit(<span class="string">'event1'</span>, <span class="string">'I am message!'</span>);</div></pre></td></tr></table></figure></p>
+<p>订阅事件是一个高阶函数的应用。事件发布和订阅模式可以实现一个事件与多个回调函数的关联。这些回调函数又称为事件侦听器。通过emit()发布事件以后，消息会立即传递给当前事件的所有侦听器执行，侦听器可以灵活的添加和删除，使得事件和具体的处理逻辑之间可以很轻松的关联和解耦。<br>①继承events模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Node中Stream对象继承EventEmitter</span></div><div class="line"><span class="keyword">var</span> evnets = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stream</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  events.EventEmitter.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Stream, events.EventEmitter);</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>②解决雪崩问题<br>所谓雪崩问题就是在高访问量，大并发的情况下缓存失效的情景。once()方法，将所有请求的回调都压入事件队列中，利用其执行一次就会将监视器移除的特点，保证每一次回调都会被执行一次。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"><span class="keyword">var</span> status = <span class="string">'ready'</span>;</div><div class="line"><span class="keyword">var</span> select = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  proxy.once(<span class="string">'selected'</span>, callback);</div><div class="line">  <span class="keyword">if</span>(status === <span class="string">'ready'</span>)&#123;</div><div class="line">    status = <span class="string">'pending'</span>;</div><div class="line">    db.select(<span class="string">'SQl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</div><div class="line">      proxy.emit(<span class="string">'selected'</span>, results);</div><div class="line">      status = <span class="string">'ready'</span>;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>Sql在进行查询时，新到来的相同调用只需要在队列中等待数据就绪即可，一旦查询结束，得到的结果可以被这些调用共同使用。<br>③多异步之间的协作方案<br>一般的事件与侦听器的关系是一对多。但是在异步编程中，也会出现多对一的情况，这就是回调嵌套过深的原因。那么如何解决呢<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//由于多个异步场景中回调函数的执行并不能保证顺序，且回调函数之间互相没有任何交集，所以需要借助第三方函数和第三方变量来处理异步协作的结果，通常我们吧这个用于检测次数的变量叫做哨兵变量。</span></div><div class="line"><span class="keyword">var</span> after = <span class="function"><span class="keyword">function</span>(<span class="params">times callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> count = <span class="number">0</span>, results = &#123;&#125;;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</div><div class="line">    results[key] = value;</div><div class="line">    count++;</div><div class="line">    <span class="keyword">if</span>(count === times)&#123;</div><div class="line">      callback(results);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> done = after(times, render);</div></pre></td></tr></table></figure></p>
+<p>还可以将事件订阅/发布模式中一对多的发散和偏函数中多对一结合起来实现多对多。<br>具体看例子：<br>③.1 EventProxy模块<br>all()方法来订阅多个事件，当订阅的所有事件都被触发以后侦听器才会执行。且只执行一次。<br>tail()方法在满足条件时执行一次之后，如果组合事件的某个事件被再次触发，侦听器会用最新的数据继续执行。<br>after()方法来实现事件在执行多少次后行令侦听器的单一事件组合订阅方式。<br>③.2 EventProxy的异常处理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">exports.getContent = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> ep = <span class="keyword">new</span> EventProxy();</div><div class="line">  ep.all(<span class="string">'tpl'</span>,<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">tpl,data</span>)</span>&#123;</div><div class="line">    <span class="comment">//成功回调</span></div><div class="line">    callback(<span class="literal">null</span>, &#123;</div><div class="line">      <span class="attr">template</span>: tpl,</div><div class="line">      <span class="attr">data</span>: data</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">//绑定错误处理函数</span></div><div class="line">  ep.fail(callback);</div><div class="line">  fs.readFile(<span class="string">'template.tpl'</span>, <span class="string">'utf-8'</span>,ep.done(<span class="string">'tpl'</span>));</div><div class="line">  db.get(<span class="string">'some sql'</span>, ep.done(<span class="string">'data'</span>));</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>2.Promise/Deferred模式</p>
 
       
     </div>
@@ -380,6 +386,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/14/设计模式之发布-订阅模式/" rel="prev" title="设计模式之发布-订阅模式">
+                设计模式之发布-订阅模式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -426,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -438,7 +457,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -448,7 +467,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -502,6 +521,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异步编程的概念和问题"><span class="nav-number">1.</span> <span class="nav-text">异步编程的概念和问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步编程解决方案"><span class="nav-number">2.</span> <span class="nav-text">异步编程解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>

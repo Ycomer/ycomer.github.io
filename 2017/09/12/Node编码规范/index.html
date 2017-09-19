@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array()和new Object(">
+<meta name="description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node编码规范">
 <meta property="og:url" content="http://ycomer.com/2017/09/12/Node编码规范/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array()和new Object(">
-<meta property="og:updated_time" content="2017-09-12T14:54:26.000Z">
+<meta property="og:description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array(">
+<meta property="og:updated_time" content="2017-09-15T15:20:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node编码规范">
-<meta name="twitter:description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array()和new Object(">
+<meta name="twitter:description" content="ES5一、空格与格式两格缩进紧凑、明快永远使用var操作符前后必须加空格小括号前后必须加空格尽量使用单引号大括号无需另起一行不在行尾的逗号后面加空格分号不能少二、命名规范变量命名采用小驼峰式命名方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。类命名采用大驼峰式命名常量全部大写文件名尽量采用下划线分割单词，也可下划线开头比较操作符使用===使用[]{}代替new Array(">
 
 
 
@@ -338,7 +338,7 @@
       
 
       
-        <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><p>一、空格与格式<br>两格缩进紧凑、明快<br>永远使用var<br>操作符前后必须加空格<br>小括号前后必须加空格<br>尽量使用单引号<br>大括号无需另起一行<br>不在行尾的逗号后面加空格<br>分号不能少<br>二、命名规范<br>变量命名采用小驼峰式命名<br>方法名和变量一样但是尽量采用动词或者判断性词汇<br>类命名采用大驼峰式命名<br>常量全部大写<br>文件名尽量采用下划线分割单词，也可下划线开头<br>比较操作符使用===<br>使用[]{}代替new Array()和new Object()<br>不使用with和eval()<br>创建对象或者数组的时候，注意在结尾用逗号分割。<br>使用for in 循环时 对对象使用<br>不要把数组当做对象来使用。<br>在异步回调函数的第一个参数应该是错误提示<br>执行传入的回调函数<br>类继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Socket</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  stream.Stream.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure></p>
+        <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><p>一、空格与格式<br>两格缩进紧凑、明快<br>永远使用var<br>操作符前后必须加空格<br>小括号前后必须加空格<br>尽量使用单引号<br>大括号无需另起一行<br>不在行尾的逗号后面加空格<br>分号不能少<br>二、命名规范<br>变量命名采用小驼峰式命名<br>方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。<br>类命名采用大驼峰式命名<br>常量全部大写<br>文件名尽量采用下划线分割单词，也可下划线开头<br>比较操作符使用===<br>使用[]{}代替new Array()和new Object()<br>不使用with和eval()<br>创建对象或者数组的时候，注意在结尾用逗号分割。<br>使用for in 循环时 对对象使用<br>不要把数组当做对象来使用。<br>在异步回调函数的第一个参数应该是错误提示<br>执行传入的回调函数<br>类继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Socket</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  stream.Stream.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure></p>
 <p>所有供外部调用的方法或变量均需挂载在exports变量上。导出是：<br>module.exprots = Class;sub</p>
 
       
@@ -452,7 +452,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -462,7 +462,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
