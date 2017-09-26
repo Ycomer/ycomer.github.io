@@ -257,6 +257,285 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/31/Ajax/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/31/Ajax/" itemprop="url">
+                  Ajax
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-31T23:48:36+08:00">
+                2017-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/07/31/Ajax/" class="leancloud_visitors" data-flag-title="Ajax">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>XHR是Ajax的一个对象，用法如下:<br>1.open()启动请求以备发送。要发送的请求的类型,请求的url和表示是否异步发送请求的布尔值。<br>2.send(null)发送特定请求。其中不需要发送数据则设为null<br>3.abort()取消异步请求<br>setRequestHeader()自定义头部信息。<br>FormData()<br>getResponseHeader()取得相应的响应头部信息<br>getAllResponseHeader() 取得包含所有头部信息的长字符串。</p>
+<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>向服务器查询某些信息</p>
+<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>向服务器发送应该被保存的数据</p>
+<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">createCORSRequest</span>(<span class="params">method, url</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">   <span class="keyword">if</span> (<span class="string">"withCredentials"</span> <span class="keyword">in</span> xhr) &#123;</div><div class="line">     xhr.open(meth, url, <span class="literal">true</span>);</div><div class="line">   &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> XDomainRequest != <span class="string">"undefined"</span>)&#123;</div><div class="line">     xhr = <span class="keyword">new</span> XDomainRequest();</div><div class="line">     xhr.open(method, url);</div><div class="line">   &#125;<span class="keyword">else</span> &#123;</div><div class="line">   xhr = <span class="literal">null</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> xhr;</div><div class="line">   &#125;</div><div class="line"><span class="keyword">var</span> request = createCORSRequest(<span class="string">"get"</span>, <span class="string">"http://www.somewhere-else.com/page/"</span>);</div><div class="line"><span class="keyword">if</span>(request)&#123;</div><div class="line">    request.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//对request.responseText 处理</span></div><div class="line">    &#125;;</div><div class="line">    request.send();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>图像ping:与服务器进行简单的，单向的跨域通讯方式。<br>jsonp: 通过动态<code>&lt;script&gt;</code>元素使用。能够直接访问响应文本，支持在浏览器和服务器之间双向通信。<br>服务器向页面推送数据的技术。<br>①长轮询<br>②HTTP流<br>XHR对象实现http流的典型<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createStreamingClient</span>(<span class="params">url, progress, finished</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),</div><div class="line">        received = <span class="number">0</span>;</div><div class="line">    xhr.open(<span class="string">"get"</span>, url, <span class="literal">true</span>);</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> result;</div><div class="line">        <span class="keyword">if</span> (xhr.readyState == <span class="number">3</span>)&#123;</div><div class="line">            <span class="comment">//只取得最新数据并调整计数器</span></div><div class="line">            result = xhr.responseText.substring(received);</div><div class="line">            received += result.length;</div><div class="line">            <span class="comment">//调用progress回调函数</span></div><div class="line">            progress(result);</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">            finished(xhr.responseText);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    xhr.send(<span class="literal">null</span>);</div><div class="line">    <span class="keyword">return</span> xhr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> client = createStreamingClient(<span class="string">"streaming.php"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Received: "</span> + data);</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Done!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/读书笔记之《算法图解》/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/30/读书笔记之《算法图解》/" itemprop="url">
+                  读书笔记之《算法图解》
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T23:48:13+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/07/30/读书笔记之《算法图解》/" class="leancloud_visitors" data-flag-title="读书笔记之《算法图解》">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>D&amp;C 分而治之法
+</em>二分查找</p>
+<h4 id="快速排序的原理："><a href="#快速排序的原理：" class="headerlink" title="快速排序的原理："></a>快速排序的原理：</h4><p>首先，从数组中选择一个元素，这个元素被称为基准值 （pivot ）。 找出比基准值小的元素以及比基准值大的元素，称为分区，快速排序的平均运行时间为O(nlogn) 。<br>大O 表示法中的常量有时候事关重大，这就是快速排序比合并排序快的原因所在。<br>比较简单查找和二分查找时，常量几乎无关紧要，因为列表很长时，O(logn) 的速度比O(n)<br>快得多。</p>
+<h4 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h4><p>散列函数是这样的函数，即无论你给它什么数据，它都还你一个数字。<br>散列函数“将输入映射到数字<br>满足这样的基本条件：<br>①它必须是一致的。例如，假设你输入apple 时得到的是4，那么每次输入apple时，得到的都<br>必须为4，如果不是这样，散列表将毫无用处。<br>②它应将不同的输入映射到不同的数字。例如，如果一个散列函数不管输入是什么都返回1 ，<br>它就不是好的散列函数。最理想的情况是，将不同的输入映射到不同的数字。</p>
+<blockquote>
+<p>散列函数总是将同样的输入映射到相同的索引。每次你输入avocado,得到的都是同一个数字。因此，你可首先使用它来确定将鳄梨的价格存储在什么地方，并在以后使用它来确定鳄梨的价格存储在什么地方。散列函数将不同的输入映射到不同的索引。avocado 映射到索引4 ，milk 映射到索引0 每种商品都映射到数组的不同位置，让你能够将其价格存储到这里。散列函数知道数组有多大，只返回有效的索引。如果数组包含5个元素，散列函数就不会返回无效索引100。<br>散列表由键和值组成。在前面的散列表book 中，键为商品名，值为商品价格。散列表将键映射到值。</p>
+</blockquote>
+<p>应用实例：<br>dns解析。网址映射到ip地址<br>使用散列表来检查是否重复，速度非常快。例如投票问题<br>服务器的缓存</p>
+<p>要避免冲突，需要有：<br>①较低的填装因子； 一旦填装因子大于0.7 ，就调整散列表的长度。<br>②良好的散列函数。<br>总结：<br>散列表是一种功能强大的数据结构，其操作速度快，还能让你以不同的方式建立数据模型。<br>你可能很快会发现自己经常在使用它。你可以结合散列函数和数组来创建散列表。<br>冲突很糟糕，你应使用可以最大限度减少冲突的散列函数。<br>散列表的查找、插入和删除速度都非常快。<br>应用实例：<br>散列表适合用于模拟映射关系。<br>一旦填装因子超过0.7 ，就该调整散列表的长度。<br>散列表可用于缓存数据（例如，在Web 服务器上）。<br>散列表非常适合用于防止重复。</p>
+<h4 id="广度优先搜索："><a href="#广度优先搜索：" class="headerlink" title="广度优先搜索："></a>广度优先搜索：</h4><blockquote>
+<p>图模拟一组连接， 图由节点（node） 和边（edge） 组成。<br> 广度优先搜索是一种用于图的查找算法，可帮助回答两类问题。<br> 第一类问题：从节点A 出发，有前往节点B 的路径吗？<br> 第二类问题：从节点A 出发，前往节点B 的哪条路径最短？</p>
+</blockquote>
+<p>广度优先搜索算法就是找到从点到面的算法：<br>在广度优先搜索的执行过程中，搜索范围从起点开始逐渐向外延伸，即先检查一度关系，再检查二度关系，这些关系都是单向的（有箭头）注意，只有按添加顺序查找时，才能实现这样的目的， 你需要按添加顺序进行检查。有一个可实现这种目的的数据结构，那就是队列（queue） 。 队列的工作原理与现实生活中的队列完全相同。 队列是一种先进先出（First In First Out ，FIFO ）的数据结构，而栈是一种后进先出（Last In First Out，LIFO）的数据结构。<br>广度优先搜索的运行时间为O(人数+边数)，这通常写作O(V+E) ，其中V为顶点（vertice ）数，E 为边数。<br>从某种程度上说，这种列表是有序的。如果任务A 依赖于任务B ，在列表中任务A 就必须在任务B 后面。这被称为拓扑排序 ，使用它可根据图创建一个有序列表<br>小结<br>①广度优先搜索指出是否有从A到B的路径。<br>②如果有，广度优先搜索将找出最短路径。<br>③面临类似于寻找最短路径的问题时，可尝试使用图来建立模型，再使用广度优先搜索来<br>解决问题。<br>④有向图中的边为箭头，箭头的方向指定了关系的方向，例如，rama→adit表示rama欠adit钱。<br>⑤无向图中的边不带箭头，其中的关系是双向的，例如，ross - rachel表示“ross与rachel约<br>会，而rachel也与ross约会”。<br>⑥队列是先进先出（FIFO）的。<br>⑦栈是后进先出（LIFO）的。<br>⑧你需要按加入顺序检查搜索列表中的人，否则找到的就不是最短路径，因此搜索列表必<br>须是队列。<br>⑨对于检查过的人，务必不要再去检查，否则可能导致无限循环。</p>
+<h4 id="狄克斯特拉算法"><a href="#狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法"></a>狄克斯特拉算法</h4><p>广度优先搜索，找出的是段数最少的路径，狄克斯特拉算法，找出最快路径。<br>狄克斯特拉算法包含4个步骤。<br>(1)找出最便宜的节点，即可在最短时间内前往的节点。<br>(2)对于该节点的邻居，检查是否有前往它们的更短路径，如果有，就更新其开销。<br>(3)重复这个过程，直到对图中的每个节点都这样做了。<br>狄克斯特拉算法用于每条边都有关联数字的图，这些数字称为权重 （weight ）。 带权重的图称为加权图 （weighted graph ），不带权重的图称为非加权图（unweighted graph ）<br>狄克斯特拉算法只适用于有向无环图。如果有负权边，就不能使用狄克斯特拉算法 。因为负权边会导致这种算法不管用。这是因为狄克斯特拉算法这样假设：对于处理过的海报节点，没有前往该节点的更短路径。<br>这种假设仅在没有负权边时才成立。而在有负权重的情况下需要使用贝尔曼—福德算法<br>小结：<br>①广度优先搜索用于在非加权图中查找最短路径。<br>②狄克斯特拉算法用于在加权图中查找最短路径。<br>③仅当权重为正时狄克斯特拉算法才管用。<br>④如果图中包含负权边，请使用贝尔曼-福德算法。</p>
+<h4 id="贪婪算法（NP算法）："><a href="#贪婪算法（NP算法）：" class="headerlink" title="贪婪算法（NP算法）："></a>贪婪算法（NP算法）：</h4><p> 每步都采取最优的做法。用专业术语说，就是你每步都选择局部最优解，最终得到的就是全局最优解<br> 元素较少时算法的运行速度非常快，但随着元素数量的增加，速度会变得非常慢。<br>①涉及“所有组合”的问题通常是NP 完全问题。<br>②不能将问题分成小问题，必须考虑各种可能的情况。这可能是NP完全问题。<br>③如果问题涉及序列（如旅行商问题中的城市序列）且难以解决，它可能就是NP完全问题。<br>④如果问题涉及集合（如广播台集合）且难以解决，它可能就是NP完全问题。<br>⑤如果问题可转换为集合覆盖问题或旅行商问题，那它肯定是NP完全问题。<br>小结<br>①贪婪算法寻找局部最优解，企图以这种方式获得全局最优解。<br>②对于NP完全问题，还没有找到快速解决方案。<br>③面临NP完全问题时，最佳的做法是使用近似算法。<br>④贪婪算法易于实现、运行速度快，是不错的近似算法。</p>
+<h4 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a>动态规划：</h4><p>动态规划先解决子问题，再逐步解决大问题。<br>每种动态规划解决方案都涉及网格。<br>单元格中的值通常就是你要优化的值。在前面的背包问题中，单元格的值为商品的价值。每个单元格都是一个子问题，因此你应考虑如何将问题分成子问题，这有助于你找出网格的坐标轴。<br> 动态规划实际应用<br>①生物学家根据最长公共序列来确定DNA链的相似性，进而判断度两种动物或疾病有多相<br>似。最长公共序列还被用来寻找多发性硬化症治疗方案。<br>②你使用过诸如git diff 等命令吗？它们指出两个文件的差异，也是使用动态规划实现的。<br>③前面讨论了字符串的相似程度。编辑距离（levenshtein distance ）指出了两个字符串的相<br>似程度，也是使用动态规划计算得到的。编辑距离算法的用途很多，从拼写检查到判断<br>用户上传的资料是否是盗版，都在其中。<br>④Microsoft Word等具有断字功能的应用程序使用动态规划。<br>小结<br>①需要在给定约束条件下优化某种指标时，动态规划很有用。<br>②问题可分解为离散子问题时，可使用动态规划来解决。<br>③每种动态规划解决方案都涉及网格。<br>④单元格中的值通常就是你要优化的值。<br>⑤每个单元格都是一个子问题，因此你需要考虑如何将问题分解为子问题。<br>⑥没有放之四海皆准的计算动态规划解决方案的公式。</p>
+<h4 id="K最邻近算法：（KNN）"><a href="#K最邻近算法：（KNN）" class="headerlink" title="K最邻近算法：（KNN）"></a>K最邻近算法：（KNN）</h4><p>要计算两点的距离，可使用毕达哥拉斯公式。<br>维度越高之间的这种距离指出了两组数字之间的相似程度。<br>余弦相似度(余弦相似度不计算两个矢量的距离，而比较它们的角度OCR指的是光学字符识别（optical character recognition），这意味着你可拍摄印刷页面的照片，<br>计算机将自动识别出其中的文字。knn的简单理念皆可用在语音识别和人脸识别和图书数字化等。<br>OCR的第一步是查看大量的数字图像并提取特征，这被称为训练（ training）。大多数机器学<br>习算法都包含训练的步骤：要让计算机完成任务，必须先训练它。<br>垃圾邮件过滤器使用一种简单算法——朴素贝叶斯分类器（Naive Bayes classifier)， 朴素贝叶斯分类器也是一种简单而极其有效的算法<br>小结：<br>①KNN用于分类和回归，需要考虑最近的邻居。<br>②分类就是编组。<br>③回归就是预测结果（如数字）。<br>④特征抽取意味着将物品（如水果或用户）转换为一系列可比较的数字。<br>⑤能否挑选合适的特征事关KNN算法的成败。</p>
+<h4 id="树"><a href="#树" class="headerlink" title="树"></a>树</h4><p>二叉查找树：<br>对于其中的每个节点，左子节点的值都比它小 ，而右子节点的值都比它大<br>二叉查找树处于平衡状态和不平衡状态时性能是不一样的。也有一些处于平衡状态的特殊二叉查找树，如红黑树。<br>B树是一种特殊的二叉树，数据库常用它来存储数据。接下来要深入研究的是：B树 红黑树 堆 伸展树。<br>反向索引<br>搜索引擎的工作原理、<br>一个散列表，将单词映射到包含它的页面。这种数据结构被称为反向索引（inverted index），常用于创<br>建搜索引擎。</p>
+<h4 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h4><p> 傅里叶变换非常适合用于处理信号，可使用它来压缩音乐。<br> 傅里叶变换能够准确地指出各个音符对整个歌曲的贡献，让你能够将不重要的音符删除。这就是MP3 格式的工作原理！</p>
+<h4 id="并行算法"><a href="#并行算法" class="headerlink" title="并行算法"></a>并行算法</h4><p>可扩展性和海量数据处理相关<br>在最佳情况下，排序算法的速度大致为O(nlogn)众所周知，对数组进行排序时，快速排序的并行版本所需的时间为O(n) 。<br>并行算法设计起来很难，要确保它们能够正确地工作并实现期望的速度提升也很难。<br>①并行性管理开销<br>②负载均衡<br>有一种特殊的并行算法正越来越流行，它就是分布式算法。<br>MapReduce是一种流行的分布式算法，你可通过流行的开源工具Apache，Hadoop来<br>使用它。 分布式算法非常适合用于在短时间内完成海量工作，其中的MapReduce 基于两个简单的理<br>念：映射（map ）函数和归并（reduce）函数。映射函数很简单，它接受一个数组，并对其中的每个元素执行同样的处理。将耗时严重的任务分发给不同的机器去处理。<br>归并函数：归并函数可能令人迷惑，其理念是将很多项归并为一项。映射是将一个数组转换为另一个数组。 而归并是将一个数组转换为一个元素。</p>
+<h4 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h4><p>给定一个元素，你需要判断它是否包含在这个集合中。为快速做出这种判断，可使用散列表<br>布隆过滤器提供了解决之道。布隆过滤器是一种概率型数据结构，它提供的答案有可能不对，<br>但很可能是正确的。为判断网页以前是否已搜集，可不使用散列表，而使用布隆过滤器。使用散<br>列表时，答案绝对可靠，而使用布隆过滤器时，答案却是很可能是正确的。<br>可能出现错报的情况<br>不可能出现漏报的情况<br>布隆过滤器的优点在于占用的存储空间很少。使用散列表时，必须存储Google搜集过的所有<br>URL ，但使用布隆过滤器时不用这样做。布隆过滤器非常适合用于不要求答案绝对准确的情况。</p>
+<h4 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h4><p>是一种类似于布隆过滤器的算法。如果 Google要计算用户执行的不同搜索的数<br>量，或者 Amazon要计算当天用户浏览的不同商品的数量，要回答这些问题，需要耗用大量的空<br>间！对 Google来说，必须有一个日志，其中包含用户执行的不同搜索。有用户执行搜索时，Google<br>必须判断该搜索是否包含在日志中：如果答案是否定的，就必须将其加入到日志中。即便只记录<br>一天的搜索，这种日志也大得不得了！<br>HyperLogLog近似地计算集合中不同的元素数，与布隆过滤器一样，它不能给出准确的答案，<br>但也八九不离十，而占用的内存空间却少得多。<br>面临海量数据且只要求答案八九不离十时，可考虑使用概率型算法</p>
+<h4 id="SHA-算法"><a href="#SHA-算法" class="headerlink" title="SHA 算法"></a>SHA 算法</h4><p>散列函数接受一个字符串，并返回一个索引号。<br>安全散列算法:<br>给定一个字符串，SHA返回其散列值。使用SHA 来判断两个文件是否相同<br>SHA是一个散列函数，它生成一个散列值—— 一个较短的字符串。用于创建散列表的散列函数根据字符串生成数组索引，而SHA 根据字符串生成另一个字符串。对于每个不同的字符串，SHA 生成的散列值都不同。<br>SHA还让你能在不知道原始字符串的情况下对其进行比较,其中散列算法是单向的。<br>SHA还有一个重要特征，那就是局部不敏感的，但有的时候希望散列函数是局部敏感的。在这种情况下，可使用Simhash。如果你对字符串做细微的修改，Simhash生成的散列值也只存在细微的差别。这让你能够通过比较散列值来判断两个字符串的相似程度，这很有用！ 需要检查两项内容的相似程度时，Simhash 很有用。<br>Diffie-Hellman密钥交换：<br>如何对消息进行加密，以便只有收件人才能看懂呢？<br>解决的两个问题<br>①双方无需知道加密算法。他们不必会面协商要使用的加密算法<br> 要破解加密的消息比登天还难。<br>②Diffie-Hellman使用两个密钥：公钥和私钥。顾名思义，公钥就是公开的，可将其发布到网站<br>上，通过电子邮件发送给朋友，或使用其他任何方式来发布。你不必将它藏着掖着。有人要向你<br>发送消息时，他使用公钥对其进行加密。加密后的消息只有使用私钥才能解密。只要只有你知道<br>私钥，就只有你才能解密消息！ Diffie-Hellman算法及其替代者 RSA依然被广泛使用。</p>
+<h4 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h4><p> 线性规划用于在给定约束条件下最大限度地改善指定的指标。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/30/DOM/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -705,147 +984,11 @@ return {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/03/11/mac搭建hexo博客/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/11/mac搭建hexo博客/" itemprop="url">
-                  拥有自己的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T21:43:26+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/03/11/mac搭建hexo博客/" class="leancloud_visitors" data-flag-title="拥有自己的博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="拥有自己的博客🤡"><a href="#拥有自己的博客🤡" class="headerlink" title="拥有自己的博客🤡"></a><font face="STSong">拥有自己的博客🤡</font></h1><h4 id="现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。"><a href="#现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。" class="headerlink" title="　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。"></a>　　<font face="sans-serif">现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。</font></h4><h1 id="搭建前的准备工作👾"><a href="#搭建前的准备工作👾" class="headerlink" title="搭建前的准备工作👾"></a><font face="STSong">搭建前的准备工作👾</font></h1><blockquote>
-<h4 id="①环境的准备"><a href="#①环境的准备" class="headerlink" title="①环境的准备"></a>①环境的准备</h4><ol>
-<li>Node.js  <a href="http://nodejs.cn/" target="_blank" rel="external">官网</a>   </li>
-<li>Git <a href="https://git-scm.com/" target="_blank" rel="external">官网</a></li>
-</ol>
-<h4 id="②安装（官网的指南值得一看）"><a href="#②安装（官网的指南值得一看）" class="headerlink" title="②安装（官网的指南值得一看）"></a>②安装（<font size="3">官网的指南值得一看</font>）</h4><ol>
-<li><font size="4" color="red">配置Github</font><font size="3" color="blue"><br>&gt; 1. 注册请戳<a href="https://github.com/" target="_blank" rel="external">Github</a>(已有请忽略此步)<br>&gt; 2. 创建代码库<br>&gt; 3. New repository<br>&gt; 4. 在Repository name下填写yourname.github.io(比如我这里就是ycomer.github.io)<br>&gt; 5. Setting<br>&gt; 6. 找到GIthub Pages<br>&gt; 7. 点击Automatic pagr generator<br>&gt; 8. 等待一会就欧克了。</font></li>
-<li><font size="4" color="red">配置hexo</font><br><br><font size="3" color="blue"> Item2<a href="http://www.iterm2.com/" target="_blank" rel="external">官网</a><br><br>打开item2 输入<pre>npm install hexo-cli -g</pre><br><br>上述完成以后输入<pre>npm install hexo –save</pre><br><br>查看是否安装完成输入<pre>hexo -v</pre> </font></li>
-<li><font size="4" color="red">初始化hexo</font><br><br><font size="3" color="blue"> 输入<pre>hexo init folder</pre>　hexo会在folder(指定文件夹新建所需文件)</font></li>
-</ol>
-<h1 id="😄至此hexo搭建完毕"><a href="#😄至此hexo搭建完毕" class="headerlink" title="😄至此hexo搭建完毕"></a><font face="STSong">😄至此hexo搭建完毕</font></h1></blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -886,7 +1029,7 @@ return {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -896,7 +1039,7 @@ return {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
