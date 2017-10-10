@@ -517,7 +517,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/厉害的jQuery/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -542,8 +542,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
-                  深入浅出ES6之let和const
+                <a class="post-title-link" href="/2017/08/23/厉害的jQuery/" itemprop="url">
+                  厉害的jQuery
                 </a>
               
             
@@ -577,7 +577,7 @@
 
           
           
-             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
+             <span id="/2017/08/23/厉害的jQuery/" class="leancloud_visitors" data-flag-title="厉害的jQuery">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -604,19 +604,66 @@
       
         
           
-            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
-<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
-<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
-<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>1.基本选择器</p>
 <blockquote>
-<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
+<p>#id<br>.class<br>.element<br>\.<em><br>.selector1, selector2,···selectorN<br>2.层次选择器<br>$(“ancestor descendant”)<br>$(“parent&gt;child”)<br>$(“prev + next”)<br>$(“prev ~ siblings”)<br>3.过滤选择器<br>1.基本选择器。<br>:first<br>:last<br>:not<br>:even<br>:odd<br>:eq(index) index从0开始<br>:gt(index)<br>:lt(index)<br>:header<br>:animated<br>:focus<br>2.内容过滤选择器<br>:contains(text)<br>:empty<br>:has(selector)<br>:parent<br>3.可见性过滤选择器<br>:hidden<br>:visible<br>4.属性过滤选择器<br>[attribute]<br>[attribute=value]<br>[attribute!=value]<br>[attribute^=value]<br>[attribute$=value]<br>[attribute</em>=value]<br>[attribute|=value]<br>[attribute~=value]<br>[attribute1][attribute2][attributeN]<br>5.子元素过滤选择器<br>:nth-child(index/even/odd/equation) index从1开始<br>:first-child<br>:last-child<br>:only-child<br>6.表单对象属性过滤选择器<br>:enabled<br>:disabled<br>:checked<br>:selected<br>4.表单选择器<br>:input<br>:text<br>:password<br>:radio<br>:checkbox<br>:submit<br>:image<br>:reset<br>:button<br>:file<br>:hidden</p>
 </blockquote>
-<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
-<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
-<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
-<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
-<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
+<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><p>5.插入节点的方法</p>
+<blockquote>
+<p>append()追加内容<br>appendTo()追加到指定元素中 颠倒常规顺序<br>prepend()内部前置内容<br>prependTo()前置到指定内容<br>after()之后插入内容<br>insertAfter()插入指定元素后面 颠倒常规用法<br>before()之前插入内容<br>insertBefore() 插入指定元素前面</p>
+</blockquote>
+<p>6.删除节点</p>
+<blockquote>
+<p>remove()<br>该节点所包含的所有后代节点都被删除，此方法返回值是一个指向已被删除的的节点的引用，意思后面还可以继续使用，这里就很强大了比如使用appendTo。而且可以有选择行的删除。给remove传递参数即可。<br>detach()<br>和remove一样但是不会把匹配的元素从jquery对象中删除，后面可以继续使用这些匹配的元素。区别就是所有绑定的事件和，附加的数据都会保留下来。<br>empty()<br>清空元素中的所有后代节点。</p>
+</blockquote>
+<p>7.复制节点</p>
+<blockquote>
+<p>clone()<br>点击复制一个新元素，但是这个新元素不具有任何功能，这里clone有一个参数true，这个参数能使复制的元素具备被复制元素一样的功能。</p>
+</blockquote>
+<p>8.替换的节点</p>
+<blockquote>
+<p>replaceWith()<br>replaceAll()<br>两种替换方法都将所有匹配的元素替换成指定的html或者dom元素，替换后原先绑定的事件都会消失，区别是操作颠倒。</p>
+</blockquote>
+<p>9.包裹节点</p>
+<blockquote>
+<p>wrap()<br>将某个节点其他标记包裹起来（所有元素进行单独的包裹）<br>wrapAll()<br>所有匹配的元素用一个元素来包裹，<br>wraInner()<br>所有匹配元素的子内容被包裹起来。</p>
+</blockquote>
+<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><p>1.获取和设置属性(getter setter)</p>
+<blockquote>
+<p>attr()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'p'</span>).attr(&#123;<span class="string">'title'</span>: <span class="string">'your titile'</span>, <span class="string">'name'</span>: <span class="string">'test'</span>&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>2.删除属性</p>
+<blockquote>
+<p>removeAttr()<br>3.1.6以后新增方法<br>prop()<br>removeProp()</p>
+</blockquote>
+<h4 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h4><p>1.获取和设置样式</p>
+<blockquote>
+<p>attr()获取和设置<br>addClass()追加属性<br>2.移除样式<br>removeClass() 删除全部或指定的class 可以给其传递参数也可以不用传递。<br>3.切换样式<br>toggle()控制行为上的重复切换<br>toggleClass()控制样式上的重复切换<br>4.判断是否含有某个样式<br>hasClass()<br>.is()</p>
+<h4 id="设置获取HTML、文本和值"><a href="#设置获取HTML、文本和值" class="headerlink" title="设置获取HTML、文本和值"></a>设置获取HTML、文本和值</h4><p>1.html() 用于xhtml 不能用于xml<br>2.text()<br>3.获取元素的值<br>val()和attr()有些时候功能一样。<br>val不仅能获取元素的值也能设置元素的值，第二个就是它能选中选框。<br>defaultValue</p>
+</blockquote>
+<h4 id="遍历节点"><a href="#遍历节点" class="headerlink" title="遍历节点"></a>遍历节点</h4><p>1.children()<br>匹配子元素集合<br>2.next()<br>匹配元素后面紧邻的同辈元素<br>3.prev()<br>匹配元素前面紧邻的同辈元素<br>4.siblings()<br>匹配元素前后所有的同辈元素<br>5.closest()<br>取得最近的匹配元素，如果没有就逐级向上查找。<br>6.区别<br>parent()获得集合中每个匹配元素父级元素<br>parents()获得集合中每个匹配元素祖先元素<br>closest()元素本身开始逐级向上，并返回最先匹配的祖先元素<br>7.find() filter() nextAll() prevAll()</p>
+<h4 id="CSS-DOM"><a href="#CSS-DOM" class="headerlink" title="CSS-DOM"></a>CSS-DOM</h4><p>1.css()<br>获取元素的样式属性，设置单个或多个样式。<br>2.透明度的设置opacity() 和诸如height就可以直接进行设置。<br>.height() .width()<br>3.元素定位</p>
+<blockquote>
+<p>offset()获取元素在当前视窗的相对偏移量。对可见元素有两个返回值top left<br>position() 获取元素相对于最近一个position样式属性为relative 或absolute的祖父节点的相对偏移量。<br>scrollTop() 获取元素的滚动条距离顶端的距离和距离左侧的距离。<br>scrollLeft()</p>
+<h3 id="事件和动画"><a href="#事件和动画" class="headerlink" title="事件和动画"></a>事件和动画</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>1.$(document).ready()和window.onload的区别<br>①window.onload是在页面全部元素加载完毕以后。而$(document).ready()则是DOM加载完毕以后。<br>②每次调用$(document).ready()都会在先有的行为上追加新的行为，这些行为会根据函数注册的顺序执行。<br>③三种方式均可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>2.事件绑定</p>
+<blockquote>
+<p>bind( type [, data] ,fn);<br>第一个参数表示事件类型：foucs blur load resize srcoll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error<br>第二个参数为可选参数，第三个参数则是用来绑定的处理函数。<br>绑定事件以后要对绑定的事件进行加强，比如通过if else 这样的语句。或者toggle。<br>改变绑带事件的类型可以采用简写的形式来减少代码量。</p>
+</blockquote>
+<p>合成事件<br>①hover()模拟光标悬停事件，光标移动到元素上时触发第一个函数，移出当前元素，触发第二个函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hover(enter, leave);</div></pre></td></tr></table></figure></p>
+<p>hover()方法替代的是bind(‘mouseenter’)和bind(‘mouseleave’) 所以在触发hover的第二个函数时使用trigger(‘mouseleave’).<br>②toggle()模拟鼠标连续点击事件。第一次点击元素，触发指定的第一个函数，以此类推。</p>
+<p>事件冒泡<br>定义：IE的事件流叫事件冒泡<br>问题：引起预料之外的效果，必须要对事件的作用范围进行限制<br>事件对象：在jQuery中使用事件对象很简单，只需为函数添加一个函数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$('element).bind('click', function(event)&#123;</div><div class="line">  //event:事件对象</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>停止事件冒泡：stopPropagation()<br>组织默认行为：preventDefault()<br>以上两种都可以通过 return false来实现。</p>
+<p>事件对象的属性<br>1.event.type 获取事件的类型<br>2.event.preventDefault() 阻止默认的事件行为<br>3.event.stopPropagation() 阻止事件冒泡<br>4.event.target() 获取到触发事件的元素<br>5.event.relatedTarget()获取相关元素<br>6.event.pageX和event.pageY 获取光标相对页面的x和y坐标。<br>7.event.which()在鼠标单击事件中获取到鼠标的左中右键，在键盘事件中获取键盘的按钮。<br>8.event.metaKey()键盘事件中获取ctrl()</p>
+<p>移除事件<br>unbind()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unbind([type], [data]);</div></pre></td></tr></table></figure></p>
+<p>one()为元素绑定处理函数，当处理函数触发一次以后，立即被删除。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">one( type, [data], fn);</div></pre></td></tr></table></figure></p>
+<p>off()<br>delegate()<br>undelegate()</p>
+<p>模拟操作<br>1.常用模拟<br>trigger()<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#btn').trigger('click);</div><div class="line">$('#btn').click();</div></pre></td></tr></table></figure></p>
+<p>2.触发自定义事件<br>trigger()<br>3.传递数据<br>trigger(type, [data])第一个参数是触发的事件类型，第二个参数是要传递给事件处理函数的附加数据，以数组的形式传递。<br>4.执行默认操作<br>trigger()<br>triggerHandler()只触发绑定事件，取消默认操作。</p>
+<p>其他用法<br>1.绑定多个事件类型。<br>2.添加事件命名空间，便于管理。<br>3.相同事件名称，不同命名空间执行方法。这里注意使用！匹配所有不包含在命名空间中的click方法。</p>
+<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>1.show()和hide()<br>这两种方法都可以带参数，已达到动画的目的。<br>2.fadeIn()和fadeOut() 只改变元素的不透明度。<br>3.slideUp()和slideDown() 只会改变元素的高度。<br>4.animate()<br>animate(params, speed, callback)<br>5.stop()<br>stop([clearQueue].[gotoEnd])其中的参数都是boolean值<br>立即停止当前正在进行的动画，其中clearQueue是否清空未执行完的动画队列。gotoEnd是否直接将正在执行的动画跳转到末尾。<br>6。判断元素是否处于动画状态<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(! $(element).is(<span class="string">':animated'</span>))&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7.延迟动画<br>delay()<br>8.其他动画方法(专门用于交互的)<br>①toggle(speed, [callback])<br>切换元素的可见状态<br>②slideToggle(speed, [easing], [callback])<br>通过高度的变化来切换匹配元素的可见性<br>③fadeTo(speed, opacity, [callback])<br>把元素的不透明度以渐进的方式调整到指定的值。<br>④fadeToggle(speed, [easing], [callback])<br>通过不透明度变化来切换匹配元素的可见性</p>
 
           
         
@@ -787,7 +834,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/厉害的jQuery/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -812,8 +859,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/23/厉害的jQuery/" itemprop="url">
-                  厉害的jQuery
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
+                  深入浅出ES6之let和const
                 </a>
               
             
@@ -847,7 +894,7 @@
 
           
           
-             <span id="/2017/08/23/厉害的jQuery/" class="leancloud_visitors" data-flag-title="厉害的jQuery">
+             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -874,66 +921,19 @@
       
         
           
-            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>1.基本选择器</p>
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>#id<br>.class<br>.element<br>\.<em><br>.selector1, selector2,···selectorN<br>2.层次选择器<br>$(“ancestor descendant”)<br>$(“parent&gt;child”)<br>$(“prev + next”)<br>$(“prev ~ siblings”)<br>3.过滤选择器<br>1.基本选择器。<br>:first<br>:last<br>:not<br>:even<br>:odd<br>:eq(index) index从0开始<br>:gt(index)<br>:lt(index)<br>:header<br>:animated<br>:focus<br>2.内容过滤选择器<br>:contains(text)<br>:empty<br>:has(selector)<br>:parent<br>3.可见性过滤选择器<br>:hidden<br>:visible<br>4.属性过滤选择器<br>[attribute]<br>[attribute=value]<br>[attribute!=value]<br>[attribute^=value]<br>[attribute$=value]<br>[attribute</em>=value]<br>[attribute|=value]<br>[attribute~=value]<br>[attribute1][attribute2][attributeN]<br>5.子元素过滤选择器<br>:nth-child(index/even/odd/equation) index从1开始<br>:first-child<br>:last-child<br>:only-child<br>6.表单对象属性过滤选择器<br>:enabled<br>:disabled<br>:checked<br>:selected<br>4.表单选择器<br>:input<br>:text<br>:password<br>:radio<br>:checkbox<br>:submit<br>:image<br>:reset<br>:button<br>:file<br>:hidden</p>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
 </blockquote>
-<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><p>5.插入节点的方法</p>
-<blockquote>
-<p>append()追加内容<br>appendTo()追加到指定元素中 颠倒常规顺序<br>prepend()内部前置内容<br>prependTo()前置到指定内容<br>after()之后插入内容<br>insertAfter()插入指定元素后面 颠倒常规用法<br>before()之前插入内容<br>insertBefore() 插入指定元素前面</p>
-</blockquote>
-<p>6.删除节点</p>
-<blockquote>
-<p>remove()<br>该节点所包含的所有后代节点都被删除，此方法返回值是一个指向已被删除的的节点的引用，意思后面还可以继续使用，这里就很强大了比如使用appendTo。而且可以有选择行的删除。给remove传递参数即可。<br>detach()<br>和remove一样但是不会把匹配的元素从jquery对象中删除，后面可以继续使用这些匹配的元素。区别就是所有绑定的事件和，附加的数据都会保留下来。<br>empty()<br>清空元素中的所有后代节点。</p>
-</blockquote>
-<p>7.复制节点</p>
-<blockquote>
-<p>clone()<br>点击复制一个新元素，但是这个新元素不具有任何功能，这里clone有一个参数true，这个参数能使复制的元素具备被复制元素一样的功能。</p>
-</blockquote>
-<p>8.替换的节点</p>
-<blockquote>
-<p>replaceWith()<br>replaceAll()<br>两种替换方法都将所有匹配的元素替换成指定的html或者dom元素，替换后原先绑定的事件都会消失，区别是操作颠倒。</p>
-</blockquote>
-<p>9.包裹节点</p>
-<blockquote>
-<p>wrap()<br>将某个节点其他标记包裹起来（所有元素进行单独的包裹）<br>wrapAll()<br>所有匹配的元素用一个元素来包裹，<br>wraInner()<br>所有匹配元素的子内容被包裹起来。</p>
-</blockquote>
-<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><p>1.获取和设置属性(getter setter)</p>
-<blockquote>
-<p>attr()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'p'</span>).attr(&#123;<span class="string">'title'</span>: <span class="string">'your titile'</span>, <span class="string">'name'</span>: <span class="string">'test'</span>&#125;);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>2.删除属性</p>
-<blockquote>
-<p>removeAttr()<br>3.1.6以后新增方法<br>prop()<br>removeProp()</p>
-</blockquote>
-<h4 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h4><p>1.获取和设置样式</p>
-<blockquote>
-<p>attr()获取和设置<br>addClass()追加属性<br>2.移除样式<br>removeClass() 删除全部或指定的class 可以给其传递参数也可以不用传递。<br>3.切换样式<br>toggle()控制行为上的重复切换<br>toggleClass()控制样式上的重复切换<br>4.判断是否含有某个样式<br>hasClass()<br>.is()</p>
-<h4 id="设置获取HTML、文本和值"><a href="#设置获取HTML、文本和值" class="headerlink" title="设置获取HTML、文本和值"></a>设置获取HTML、文本和值</h4><p>1.html() 用于xhtml 不能用于xml<br>2.text()<br>3.获取元素的值<br>val()和attr()有些时候功能一样。<br>val不仅能获取元素的值也能设置元素的值，第二个就是它能选中选框。<br>defaultValue</p>
-</blockquote>
-<h4 id="遍历节点"><a href="#遍历节点" class="headerlink" title="遍历节点"></a>遍历节点</h4><p>1.children()<br>匹配子元素集合<br>2.next()<br>匹配元素后面紧邻的同辈元素<br>3.prev()<br>匹配元素前面紧邻的同辈元素<br>4.siblings()<br>匹配元素前后所有的同辈元素<br>5.closest()<br>取得最近的匹配元素，如果没有就逐级向上查找。<br>6.区别<br>parent()获得集合中每个匹配元素父级元素<br>parents()获得集合中每个匹配元素祖先元素<br>closest()元素本身开始逐级向上，并返回最先匹配的祖先元素<br>7.find() filter() nextAll() prevAll()</p>
-<h4 id="CSS-DOM"><a href="#CSS-DOM" class="headerlink" title="CSS-DOM"></a>CSS-DOM</h4><p>1.css()<br>获取元素的样式属性，设置单个或多个样式。<br>2.透明度的设置opacity() 和诸如height就可以直接进行设置。<br>.height() .width()<br>3.元素定位</p>
-<blockquote>
-<p>offset()获取元素在当前视窗的相对偏移量。对可见元素有两个返回值top left<br>position() 获取元素相对于最近一个position样式属性为relative 或absolute的祖父节点的相对偏移量。<br>scrollTop() 获取元素的滚动条距离顶端的距离和距离左侧的距离。<br>scrollLeft()</p>
-<h3 id="事件和动画"><a href="#事件和动画" class="headerlink" title="事件和动画"></a>事件和动画</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>1.$(document).ready()和window.onload的区别<br>①window.onload是在页面全部元素加载完毕以后。而$(document).ready()则是DOM加载完毕以后。<br>②每次调用$(document).ready()都会在先有的行为上追加新的行为，这些行为会根据函数注册的顺序执行。<br>③三种方式均可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div><div class="line">$().ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>2.事件绑定</p>
-<blockquote>
-<p>bind( type [, data] ,fn);<br>第一个参数表示事件类型：foucs blur load resize srcoll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error<br>第二个参数为可选参数，第三个参数则是用来绑定的处理函数。<br>绑定事件以后要对绑定的事件进行加强，比如通过if else 这样的语句。或者toggle。<br>改变绑带事件的类型可以采用简写的形式来减少代码量。</p>
-</blockquote>
-<p>合成事件<br>①hover()模拟光标悬停事件，光标移动到元素上时触发第一个函数，移出当前元素，触发第二个函数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hover(enter, leave);</div></pre></td></tr></table></figure></p>
-<p>hover()方法替代的是bind(‘mouseenter’)和bind(‘mouseleave’) 所以在触发hover的第二个函数时使用trigger(‘mouseleave’).<br>②toggle()模拟鼠标连续点击事件。第一次点击元素，触发指定的第一个函数，以此类推。</p>
-<p>事件冒泡<br>定义：IE的事件流叫事件冒泡<br>问题：引起预料之外的效果，必须要对事件的作用范围进行限制<br>事件对象：在jQuery中使用事件对象很简单，只需为函数添加一个函数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$('element).bind('click', function(event)&#123;</div><div class="line">  //event:事件对象</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>停止事件冒泡：stopPropagation()<br>组织默认行为：preventDefault()<br>以上两种都可以通过 return false来实现。</p>
-<p>事件对象的属性<br>1.event.type 获取事件的类型<br>2.event.preventDefault() 阻止默认的事件行为<br>3.event.stopPropagation() 阻止事件冒泡<br>4.event.target() 获取到触发事件的元素<br>5.event.relatedTarget()获取相关元素<br>6.event.pageX和event.pageY 获取光标相对页面的x和y坐标。<br>7.event.which()在鼠标单击事件中获取到鼠标的左中右键，在键盘事件中获取键盘的按钮。<br>8.event.metaKey()键盘事件中获取ctrl()</p>
-<p>移除事件<br>unbind()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unbind([type], [data]);</div></pre></td></tr></table></figure></p>
-<p>one()为元素绑定处理函数，当处理函数触发一次以后，立即被删除。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">one( type, [data], fn);</div></pre></td></tr></table></figure></p>
-<p>off()<br>delegate()<br>undelegate()</p>
-<p>模拟操作<br>1.常用模拟<br>trigger()<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#btn').trigger('click);</div><div class="line">$('#btn').click();</div></pre></td></tr></table></figure></p>
-<p>2.触发自定义事件<br>trigger()<br>3.传递数据<br>trigger(type, [data])第一个参数是触发的事件类型，第二个参数是要传递给事件处理函数的附加数据，以数组的形式传递。<br>4.执行默认操作<br>trigger()<br>triggerHandler()只触发绑定事件，取消默认操作。</p>
-<p>其他用法<br>1.绑定多个事件类型。<br>2.添加事件命名空间，便于管理。<br>3.相同事件名称，不同命名空间执行方法。这里注意使用！匹配所有不包含在命名空间中的click方法。</p>
-<h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>1.show()和hide()<br>这两种方法都可以带参数，已达到动画的目的。<br>2.fadeIn()和fadeOut() 只改变元素的不透明度。<br>3.slideUp()和slideDown() 只会改变元素的高度。<br>4.animate()<br>animate(params, speed, callback)<br>5.stop()<br>stop([clearQueue].[gotoEnd])其中的参数都是boolean值<br>立即停止当前正在进行的动画，其中clearQueue是否清空未执行完的动画队列。gotoEnd是否直接将正在执行的动画跳转到末尾。<br>6。判断元素是否处于动画状态<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(! $(element).is(<span class="string">':animated'</span>))&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>7.延迟动画<br>delay()<br>8.其他动画方法(专门用于交互的)<br>①toggle(speed, [callback])<br>切换元素的可见状态<br>②slideToggle(speed, [easing], [callback])<br>通过高度的变化来切换匹配元素的可见性<br>③fadeTo(speed, opacity, [callback])<br>把元素的不透明度以渐进的方式调整到指定的值。<br>④fadeToggle(speed, [easing], [callback])<br>通过不透明度变化来切换匹配元素的可见性</p>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
 
           
         
