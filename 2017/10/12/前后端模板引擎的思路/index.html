@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="OAuth," />
+  <meta name="keywords" content="全端," />
 
 
 
@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="概念上OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。
-授权流程（A）用户打开客户端以后，客户端要求用户给予授权。（B）用户同意给予客户端授权。（C）客户端使用上一步获得的授权，向认证服务器申请令牌。（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。">
+<meta name="description" content="后端模板在后端mvc中，一般从 Model 层中读取数据，然后将数据传到 View 层渲染（渲染成 HTML 文件），而 View 层，一般都会用到模板引擎。以前的后端大部分会采用mvc模式。优点是有利于seo和减少http请求。但是缺点就很明显了。在前端更改内容的同时后端的模板引擎也会更改。那么问题来了，前端中的有大量的js是前端写还是后端，前端写没有数据调试不便，后端写不一定懂js。
+前端模板">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OAuth2.0的理解">
-<meta property="og:url" content="http://ycomer.com/2017/10/08/OAuth2-0的理解/index.html">
+<meta property="og:title" content="前后端模板引擎的思路">
+<meta property="og:url" content="http://ycomer.com/2017/10/12/前后端模板引擎的思路/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="概念上OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。
-授权流程（A）用户打开客户端以后，客户端要求用户给予授权。（B）用户同意给予客户端授权。（C）客户端使用上一步获得的授权，向认证服务器申请令牌。（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。">
-<meta property="og:updated_time" content="2017-10-10T08:53:39.000Z">
+<meta property="og:description" content="后端模板在后端mvc中，一般从 Model 层中读取数据，然后将数据传到 View 层渲染（渲染成 HTML 文件），而 View 层，一般都会用到模板引擎。以前的后端大部分会采用mvc模式。优点是有利于seo和减少http请求。但是缺点就很明显了。在前端更改内容的同时后端的模板引擎也会更改。那么问题来了，前端中的有大量的js是前端写还是后端，前端写没有数据调试不便，后端写不一定懂js。
+前端模板">
+<meta property="og:updated_time" content="2017-10-12T11:19:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OAuth2.0的理解">
-<meta name="twitter:description" content="概念上OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。
-授权流程（A）用户打开客户端以后，客户端要求用户给予授权。（B）用户同意给予客户端授权。（C）客户端使用上一步获得的授权，向认证服务器申请令牌。（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。">
+<meta name="twitter:title" content="前后端模板引擎的思路">
+<meta name="twitter:description" content="后端模板在后端mvc中，一般从 Model 层中读取数据，然后将数据传到 View 层渲染（渲染成 HTML 文件），而 View 层，一般都会用到模板引擎。以前的后端大部分会采用mvc模式。优点是有利于seo和减少http请求。但是缺点就很明显了。在前端更改内容的同时后端的模板引擎也会更改。那么问题来了，前端中的有大量的js是前端写还是后端，前端写没有数据调试不便，后端写不一定懂js。
+前端模板">
 
 
 
@@ -142,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/10/08/OAuth2-0的理解/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/10/12/前后端模板引擎的思路/"/>
 
 
 
 
 
-  <title> OAuth2.0的理解 | 东方猿BLog </title>
+  <title> 前后端模板引擎的思路 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/08/OAuth2-0的理解/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/12/前后端模板引擎的思路/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -283,7 +283,7 @@
             
             
               
-                OAuth2.0的理解
+                前后端模板引擎的思路
               
             
           </h1>
@@ -296,8 +296,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T12:47:55+08:00">
-                2017-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T18:31:17+08:00">
+                2017-10-12
               </time>
             
 
@@ -316,7 +316,7 @@
 
           
           
-             <span id="/2017/10/08/OAuth2-0的理解/" class="leancloud_visitors" data-flag-title="OAuth2.0的理解">
+             <span id="/2017/10/12/前后端模板引擎的思路/" class="leancloud_visitors" data-flag-title="前后端模板引擎的思路">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,9 +341,11 @@
       
 
       
-        <h1 id="概念上"><a href="#概念上" class="headerlink" title="概念上"></a>概念上</h1><p>OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。</p>
-<h1 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h1><p>（A）用户打开客户端以后，客户端要求用户给予授权。<br>（B）用户同意给予客户端授权。<br>（C）客户端使用上一步获得的授权，向认证服务器申请令牌。<br>（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。<br>（E）客户端使用令牌，向资源服务器申请获取资源。<br>（F）资源服务器确认令牌无误，同意向客户端开放资源。</p>
-<h1 id="授权方法"><a href="#授权方法" class="headerlink" title="授权方法"></a>授权方法</h1><p>一、授权码模式（authorization code）<br>（A）用户访问客户端，后者将前者导向认证服务器。<br>（B）用户选择是否给予客户端授权。<br>（C）假设用户给予授权，认证服务器将用户导向客户端事先指定的”重定向URI”（redirection URI（包括code和state其中code表示授权码，必选项。该码的有效期应该很短，通常设为10分钟，客户端只能使用该码一次，否则会被授权服务器拒绝。如果客户端的请求中包含这个state参数，认证服务器的回应也必须一模一样包含这个参数。）），同时附上一个授权码。<br>（D）客户端收到授权码，附上早先的”重定向URI”，向认证服务器申请令牌。这一步是在客户端的后台的服务器上完成的，对用户不可见。<br>（E）认证服务器核对了授权码和重定向URI，确认无误后，向客户端发送访问令牌（access token）和更新令牌（refresh token）。<br>二、简化模式（implicit）<br>不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了”授权码”这个步骤，因此得名<br>所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证<br> (A)客户端将用户导向认证服务器。<br>（B）用户决定是否给于客户端授权。<br>（C）假设用户给予授权，认证服务器将用户导向客户端指定的”重定向URI”，并在URI的Hash部分包含了访问令牌。<br>（D）浏览器向资源服务器发出请求，其中不包括上一步收到的Hash值。<br>（E）资源服务器返回一个网页，其中包含的代码可以获取Hash值中的令牌。<br>（F）浏览器执行上一步获得的脚本，提取出令牌。<br>（G）浏览器将令牌发给客户端。<br>三、密码模式（resource owner password credentials）<br>用户向客户端提供自己的用户名和密码。客户端使用这些信息，向”服务商提供商”索要授权。用户必须把自己的用户买和密码给客户端，但是客户端不能存储<br>四、客户端模式（client credentials</p>
+        <h1 id="后端模板"><a href="#后端模板" class="headerlink" title="后端模板"></a>后端模板</h1><p>在后端mvc中，一般从 Model 层中读取数据，然后将数据传到 View 层渲染（渲染成 HTML 文件），而 View 层，一般都会用到模板引擎。<br>以前的后端大部分会采用mvc模式。优点是有利于seo和减少http请求。但是缺点就很明显了。在前端更改内容的同时后端的模板引擎也会更改。那么问题来了，前端中的有大量的js是前端写还是后端，前端写没有数据调试不便，后端写不一定懂js。</p>
+<h1 id="前端模板"><a href="#前端模板" class="headerlink" title="前端模板"></a>前端模板</h1><p>特点是依赖于客户端，在浏览器渲染页面，而不依赖于服务端。<br>归功于AJAX的出现前后端分离变成可能，后端专注业务逻辑，而前端提供接口。然后前端通过AJAX向后端请求数据，动态渲染页面。</p>
+<h1 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h1><p>用以生成html等多种文件<br>客户端引擎：主要结合JS实现html，一种以handlebars mustache为代表，实现方式为拼字符串。另一种以react为代表的，实现方式为VDOM。<br>服务端引擎：以velocity这种为代表，可结合Java等语言实现，由服务端生成html返回客户端。</p>
+<h1 id="模板引擎的使用情况"><a href="#模板引擎的使用情况" class="headerlink" title="模板引擎的使用情况"></a>模板引擎的使用情况</h1><p>全前置、前后各半、全后模板。<br>前端模板会分担一部分服务器压力，但是也会给客户端增加压力，所以我们需要根据实际情况选择合适的方法。</p>
+<h1 id="最佳方法"><a href="#最佳方法" class="headerlink" title="最佳方法"></a>最佳方法</h1><p>不管是前端的还是后端的模板都有一定的局限性。最好是用一种后端语言，单纯提供渲染页面所需要的接口，Node中间层用模板引擎来渲染页面，使得页面直出。<br>这样就可以达到一处编写，到处运行的目的。</p>
 
       
     </div>
@@ -367,7 +369,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/OAuth/" rel="tag"># OAuth</a>
+            <a href="/tags/全端/" rel="tag"># 全端</a>
           
         </div>
       
@@ -376,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/05/SPA/" rel="next" title="SPA">
-                <i class="fa fa-chevron-left"></i> SPA
+              <a href="/2017/10/08/OAuth2-0的理解/" rel="next" title="OAuth2.0的理解">
+                <i class="fa fa-chevron-left"></i> OAuth2.0的理解
               </a>
             
           </div>
@@ -385,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/12/前后端模板引擎的思路/" rel="prev" title="前后端模板引擎的思路">
-                前后端模板引擎的思路 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念上"><span class="nav-number">1.</span> <span class="nav-text">概念上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#授权流程"><span class="nav-number">2.</span> <span class="nav-text">授权流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#授权方法"><span class="nav-number">3.</span> <span class="nav-text">授权方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#后端模板"><span class="nav-number">1.</span> <span class="nav-text">后端模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端模板"><span class="nav-number">2.</span> <span class="nav-text">前端模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板引擎"><span class="nav-number">3.</span> <span class="nav-text">模板引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模板引擎的使用情况"><span class="nav-number">4.</span> <span class="nav-text">模板引擎的使用情况</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳方法"><span class="nav-number">5.</span> <span class="nav-text">最佳方法</span></a></li></ol></div>
             
 
           </div>

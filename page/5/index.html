@@ -257,6 +257,178 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/RESTful/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/09/RESTful/" itemprop="url">
+                  RESTful架构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T11:59:48+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/09/RESTful/" class="leancloud_visitors" data-flag-title="RESTful架构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="RESTful架构"><a href="#RESTful架构" class="headerlink" title="RESTful架构"></a>RESTful架构</h1><p>URL定位资源，用HTTP动词（GET,POST,DELETE,DETC）描述操作。<br>RESTful架构：<br>　　（1）每一个URI代表一种资源；<br>　　（2）客户端和服务器之间，传递这种资源的某种表现层；<br>　　（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”表现层状态转化”。<br>就是目前最流行的一个用于互联网软件的架构，它结构清晰，符合标准，易于理解。<br>REST全程为Respresentational State Transfer,中文含义为表现层状态转化。表现层其实指的是资源的表现层，符合REST设计规范的我们称之为RESTful设计。如果一个架构符合REST原则，就称它为RESTful架构。它的设计哲学主要是将服务端提供的内容实体看作一个资源，并表现在url（同一资源定位符）上。所谓上网就是与互联网上的一系列资源进行互动，调用它的URL，每个URI都对应一个特定的资源。要获取这个资源，访问它的URI就可以，因此URI就成了每一个资源的地址或识别符。<br>资源呈现出来的形式成为它的表现层。在HTTTP请求的头部信息中用Accept和Content-Type字段指定。<br>有无状态的理解：<br>1.无状态<br>对于每个资源的请求都不依赖于其他资源和其他请求，每个资源都是可寻址的，都有至少一个url能对其定位。<br>2.有状态<br>后面的每一个状态都依赖于前面的状态，没有一个url直接定位到资源</p>
+<h1 id="RESTful设计指南"><a href="#RESTful设计指南" class="headerlink" title="RESTful设计指南"></a>RESTful设计指南</h1><p>1.采用https协议<br>2.将api部署在专有域名下，如果api简单没有后续的扩展，可以将api放在主域名下<br>3.将api的版本号放入url<br>4.路径又称终点，表示api的具体网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的”集合”（collection），所以API中的名词也应该使用复数。<br>5.对于资源的具体操作，数据的元操作，即CRUD(create, read, update和delete,即数据的增删查改)操作用HTTP动词来表示(括号是sql语句)仅通过HTTP方法，就可以完成对数据的所有增删查改工作。</p>
+<ul>
+<li>GET（SELECT）：从服务器取出资源（一项或多项）。</li>
+<li>POST（CREATE）：在服务器新建一个资源。</li>
+<li>PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。</li>
+<li>PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。</li>
+<li>DELETE（DELETE）：从服务器删除资源。</li>
+<li>HEAD：获取资源的元数据。</li>
+<li>OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。</li>
+</ul>
+<p>6.过滤信息常见的参数</p>
+<ul>
+<li>?limit=10：指定返回记录的数量</li>
+<li>?offset=10：指定返回记录的开始位置。</li>
+<li>?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</li>
+<li>?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。</li>
+<li>?animal_type_id=1：指定筛选条件</li>
+</ul>
+<p>7.服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）。</p>
+<ul>
+<li>200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
+<li>201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
+<li>202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</li>
+<li>204 NO CONTENT - [DELETE]：用户删除数据成功。</li>
+<li>400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</li>
+<li>401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。</li>
+<li>403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。</li>
+<li>404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
+<li>406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。</li>
+<li>410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。</li>
+<li>422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。</li>
+<li>500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
+</ul>
+<p>8.针对不同操作，服务器向用户返回的结果应该符合以下规范。</p>
+<ul>
+<li>GET /collection：返回资源对象的列表（数组）</li>
+<li>GET /collection/resource：返回单个资源对象</li>
+<li>POST /collection：返回新生成的资源对象</li>
+<li>PUT /collection/resource：返回完整的资源对象</li>
+<li>PATCH /collection/resource：返回完整的资源对象</li>
+<li>DELETE /collection/resource：返回一个空文档<br>9.序列化和反序列化<br>在服务器和客户端内部数据的格式是native类型的数据格式，将客户端和服务器端的数据传输的过程是将其转化为RESTful api标准格式的数据也就是用的最多的JOSN和XML。其中，将native类型数据转为json即为序列化，将json转为native类型数据即为反序列化。<br>10.数据校验<br>当客户端发送http请求时，通常也会发送一些json格式的数据，服务器在处理接受的数据之前，往往要对数据进行校验，那么校验的类型通常有类型，格式，逻辑，<br>11.用户验证和权限机制<blockquote>
+<p>OAuth2.0认证机制<br>权限机制是对API请求更近一步的限制，全局型的权限机制，主要指通过为用户赋予权限，或者为用户赋予角色或划分到用户组，然后为角色或用户组赋予权限的方式来实现权限控制，对象型的权限机制，主要指权限控制的颗粒度在object上，用户对某个具体对象的访问、修改、删除或其行为，要单独在该对象上为用户赋予相关权限来实现权限控制。<br>12.跨域解决<br>CORS即Cross-origin resource sharing跨越资源共享，在RESTful API开发中，主要是为js服务的，解决javascript调用 RESTful API时的跨域问题。<br>13.下面是一些例子<br>例如：<br>/users/jacksontian<br>这这个资源的操作，主要体现在http请求的方法上。不是体现在url上。过去的实现方法：<br>POST /user/add?username=jacksontian<br>GET /user/remove?username=jacksontian<br>POST /user/update?username=jacksontian<br>GET /user/get?username=jacksontian<br>而在RESTful中：<br>POST /user/jacksontian<br>DELETE /user/jacksontian<br>PUT /user/jacksontian<br>GET /user/jacksontian<br>另外在资源的具体表现形态上。过去是主要表现在url的文件后缀上，设计资源的格式与后缀有很大的关联。例如：<br>GET /user/jacksontian.json<br>GET /user/jacksontian.xml<br>而在RESTful设计中，资源的具体格式是由请求报头Accept字段和服务器端的支持情况来决定的。例如：<br>Accept：application/json,application/json<br>服务端根据自己能响应的格式做出响应，在响应报文中通过Content-Type字段告知客户端是什么格式。<br>Content-Type：application/json;<br>综上所述：REST设计就是通过URL设计资源，请求方法定义资源的操作， 通过Accept决定资源的表现形式。相MVC,RESTful只是将http请求方法加入了路由的过程，以及url路径上的更资源化。<br>下面来看在node中如何具体实现</p>
+</blockquote>
+</li>
+<li>请求方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//请求方法设计</span></div><div class="line"><span class="keyword">var</span> routes = &#123;<span class="string">'all'</span>:[]&#125;;</div><div class="line"><span class="keyword">var</span> app =&#123;&#125;;</div><div class="line">app.use = <span class="function"><span class="keyword">function</span>(<span class="params">path, action</span>)</span>&#123;</div><div class="line">    routes.all.push([pathRegexp(path), action]);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//添加四种方法</span></div><div class="line">[<span class="string">'get'</span>,<span class="string">'put'</span>,<span class="string">'delete'</span>,<span class="string">'post'</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">method</span>)</span>&#123;</div><div class="line">    routes[method] = [];</div><div class="line">    app[method] = <span class="function"><span class="keyword">function</span>(<span class="params">path, action</span>)</span>&#123;</div><div class="line">        routes[method].push(pathRegexp(path), action);</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//路由映射，分发业务</span></div><div class="line"><span class="comment">//内容匹配match</span></div><div class="line"><span class="keyword">var</span> match = <span class="function"><span class="keyword">function</span>(<span class="params">pathname,routes</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt; routes.length; i++)&#123;</div><div class="line">        <span class="keyword">var</span> route = routes[i];</div><div class="line">        <span class="comment">//正则匹配</span></div><div class="line">        <span class="keyword">var</span> reg = route[<span class="number">0</span>].regexp;</div><div class="line">        <span class="keyword">var</span> keys = route[<span class="number">0</span>].keys;</div><div class="line">        <span class="keyword">var</span> method = reg.exec(pathname);</div><div class="line">        <span class="keyword">if</span>(method)&#123;</div><div class="line">            <span class="comment">//抽取具体值</span></div><div class="line">            <span class="keyword">var</span> params = &#123;&#125;;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; l = keys.length; i &lt; l; i++)&#123;</div><div class="line">                <span class="keyword">var</span> value = matched[i + <span class="number">1</span>];</div><div class="line">                <span class="keyword">if</span>(value)&#123;</div><div class="line">                    params[keys[i]] = value;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            req.params = params;</div><div class="line">            <span class="keyword">var</span> action = route[i];</div><div class="line">            action(req,res);</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//分发部分</span></div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> pathname = url.parse(req, url).pathname;</div><div class="line">    <span class="comment">//将请求方法变为小写</span></div><div class="line">    <span class="keyword">var</span> method = req.method.toLowerCase();</div><div class="line">    <span class="keyword">if</span>(routes.hasOwnPerperty(method))&#123;</div><div class="line">        <span class="comment">//根据请求方法分发</span></div><div class="line">        <span class="keyword">if</span>(match(pathname, routes[method]))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="comment">//如果路径没匹配成功，尝试让all()来处理</span></div><div class="line">        <span class="keyword">if</span>(match(pathname,routes.all))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="comment">//直接让all()来处理</span></div><div class="line">        <span class="keyword">if</span>(match(pathname, routes.all))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handle404(req, res);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/04/SQL浅尝/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -833,139 +1005,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/25/立即执行函数表达式/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/25/立即执行函数表达式/" itemprop="url">
-                  立即执行函数表达式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T13:05:50+08:00">
-                2017-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/25/立即执行函数表达式/" class="leancloud_visitors" data-flag-title="立即执行函数表达式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一、函数声明</p>
-<p>最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>二、函数表达式(匿名函数、拉姆达函数)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
-<p>ps:当JavaScript解析器遇到 function关键字时，它通常假设我们在写函数声明，适合用来定义那些只会用到一次的函数。</p>
-<p>三、立即执行函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;)();</div></pre></td></tr></table></figure></p>
-<p>第一个圆括号的作用：<br>通过使用圆括号包裹我们的函数, 我们告诉解释器以函数表达式的方式解析JavaScript代码 , 而不是函数声明。 这样我们的代码在编译的时候不会出现任何错误。<br>第二个圆括号的作用<br>圆括号的作用之一就是用于调用函数。<br>通过在函数表达式后面加上一对圆括号，那么就会立即调用我们的立即执行函数表达式（IIFE）</p>
-<p>1.为什么我们要使用 IIFE?<br>私有性.<br>在 JavaScript 中, 变量所在的作用域在包含他们的函数中.这意味着他们不能从函数外被访问<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> superSecret = <span class="number">195</span>;</div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(superSecret);</div><div class="line"><span class="comment">// Uncaught ReferenceError: superSecret is not defined</span></div></pre></td></tr></table></figure></p>
-<p>我们不能在 IIFE 之外访问到superSecret。 在 IIFE 内的所有代码都处在该函数的私有的作用域当中。 这允许我们在函数私有的变量和数据不被侵扰的情况下使用这些变量和数据</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1011,7 +1050,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1021,7 +1060,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
