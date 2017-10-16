@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS," />
+  <meta name="keywords" content="debug," />
 
 
 
@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="表单屏蔽字符12345678EventUtil.addHandler(textbox, &quot;keypress&quot;, function()&amp;#123;event = EventUtil.getEvent(event);  var target = EventUtil.getTarget(event);  var charCode = EventUtil.getCharcode(event);  if(!">
+<meta name="description" content="一个正在填坑的font-ender">
 <meta property="og:type" content="article">
-<meta property="og:title" content="表单">
-<meta property="og:url" content="http://ycomer.com/2017/07/28/表单/index.html">
+<meta property="og:title" content="debug之道">
+<meta property="og:url" content="http://ycomer.com/2017/10/16/debug之道/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="表单屏蔽字符12345678EventUtil.addHandler(textbox, &quot;keypress&quot;, function()&amp;#123;event = EventUtil.getEvent(event);  var target = EventUtil.getTarget(event);  var charCode = EventUtil.getCharcode(event);  if(!">
-<meta property="og:updated_time" content="2017-08-02T15:53:55.000Z">
+<meta property="og:description" content="一个正在填坑的font-ender">
+<meta property="og:updated_time" content="2017-10-16T08:25:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="表单">
-<meta name="twitter:description" content="表单屏蔽字符12345678EventUtil.addHandler(textbox, &quot;keypress&quot;, function()&amp;#123;event = EventUtil.getEvent(event);  var target = EventUtil.getTarget(event);  var charCode = EventUtil.getCharcode(event);  if(!">
+<meta name="twitter:title" content="debug之道">
+<meta name="twitter:description" content="一个正在填坑的font-ender">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://ycomer.com/2017/07/28/表单/"/>
+  <link rel="canonical" href="http://ycomer.com/2017/10/16/debug之道/"/>
 
 
 
 
 
-  <title> 表单 | 东方猿BLog </title>
+  <title> debug之道 | 东方猿BLog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/07/28/表单/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/16/debug之道/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -280,7 +280,7 @@
             
             
               
-                表单
+                debug之道
               
             
           </h1>
@@ -293,8 +293,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-28T21:48:01+08:00">
-                2017-07-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T16:25:06+08:00">
+                2017-10-16
               </time>
             
 
@@ -313,7 +313,7 @@
 
           
           
-             <span id="/2017/07/28/表单/" class="leancloud_visitors" data-flag-title="表单">
+             <span id="/2017/10/16/debug之道/" class="leancloud_visitors" data-flag-title="debug之道">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,22 +338,7 @@
       
 
       
-        <h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h5 id="屏蔽字符"><a href="#屏蔽字符" class="headerlink" title="屏蔽字符"></a>屏蔽字符</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">EventUtil.addHandler(textbox, <span class="string">"keypress"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">event = EventUtil.getEvent(event);</div><div class="line">  <span class="keyword">var</span> target = EventUtil.getTarget(event);</div><div class="line">  <span class="keyword">var</span> charCode = EventUtil.getCharcode(event);</div><div class="line">  <span class="keyword">if</span>(!<span class="regexp">/\d/</span>.test(<span class="built_in">String</span>.fromCharCode(charCode)) &amp;&amp; charCode &gt; <span class="number">9</span> &amp;&amp; !event.ctrlKey) &#123;</div><div class="line">  EventUtil.preventDefault(event);</div><div class="line">   &#125; </div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h5 id="自主切换焦点"><a href="#自主切换焦点" class="headerlink" title="自主切换焦点"></a>自主切换焦点</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;input type =<span class="string">"text"</span> name=<span class="string">"tel1"</span> id=<span class="string">"txtTel1"</span> maxlength=<span class="string">"3"</span>&gt;</div><div class="line">&lt;input type ="text" name="tel2" id="txtTel2" maxlength="3"&gt;</div><div class="line">&lt;input type ="text" name="tel3" id="txtTel3" maxlength="4"&gt;</div><div class="line"></div><div class="line">(function()&#123;</div><div class="line">  function tabForward(event)&#123;</div><div class="line">    event = EventUtil.getEvent(event);</div><div class="line">    var target = EventUtil.getTarget(event);</div><div class="line">    if(target.value.length == target.maxLength)&#123;</div><div class="line">      var form = target.form;</div><div class="line">      </div><div class="line">      for (var i=0, len=form.elements.length; i&lt; len; i ++)&#123;</div><div class="line">      if(form.elements[i] == target)&#123;</div><div class="line">      if(form.elements[i+1])&#123;</div><div class="line">         form.elements[i+1].focus();</div><div class="line">         &#125;</div><div class="line">         return;</div><div class="line">         &#125;</div><div class="line">       &#125;</div><div class="line">     &#125; </div><div class="line">   &#125;</div><div class="line">   var textbox1 = document.getElementById("txtTel1");</div><div class="line">   var textbox1 = document.getElementById("txtTel1");</div><div class="line">   var textbox1 = document.getElementById("txtTel1");</div><div class="line">   </div><div class="line">   EventUtil.addHandler(textbox1, "keyup", tabForward);</div><div class="line">   EventUtil.addHandler(textbox2, "keyup", tabForward);</div><div class="line">   EventUtil.addHandler(textbox3, "keyup", tabForward);</div><div class="line">   &#125;)();</div></pre></td></tr></table></figure>
-<p>api约束</p>
-<p>required 属性</p>
-<p>checkValidity 检测某个字段是否有效</p>
-<p>novalidate 不进行验证</p>
-<h5 id="添加选项"><a href="#添加选项" class="headerlink" title="添加选项"></a>添加选项</h5><p>三种方式都是在最后添加。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">wayone:</div><div class="line">var newOption = document.createElement(&quot;option&quot;);</div><div class="line">  newOption.appendChild(document.createTextNode(&quot;Option text&quot;));</div><div class="line">  newOption.setAttribute(&quot;value&quot;, &quot;Option value&quot;);</div><div class="line">  </div><div class="line">  selectbox.appendChild(newOption);</div><div class="line">waytwo:</div><div class="line">var newOption = new Option(&quot;Option text&quot;, &quot;Option value&quot;);</div><div class="line">selectbox.appendChild(newOption);</div><div class="line"></div><div class="line">waythree:</div><div class="line">var newOption = new Option(&quot;Option text&quot;, &quot;Option value&quot;);</div><div class="line">selectbox.add(newOption, undefined);</div></pre></td></tr></table></figure>
-<p>向其中不定位置添加(insertBefore)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var sp1 = document.createElement(&quot;span&quot;);</div><div class="line">var sp2 = document.getElementById(&quot;childElement&quot;);</div><div class="line">var parentNode = sp2.parentNode;</div><div class="line">parentNode.insertBefore(sp1, sp2);</div></pre></td></tr></table></figure>
-<h5 id="移除选项"><a href="#移除选项" class="headerlink" title="移除选项"></a>移除选项</h5><p>selectbox.removeChild(selectbox.options[0]);</p>
-<p>selectbox.remove(0);</p>
-<p>selectbox.options[0] = null;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function clearbox(selectbox)&#123;</div><div class="line"> for (i=0, len=selectbox.options.length; i &lt;len i++)&#123;</div><div class="line"> selectbox.remove(i);&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="表单序列化"><a href="#表单序列化" class="headerlink" title="表单序列化"></a>表单序列化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">function serialize(form)&#123;</div><div class="line">  var parts =[],</div><div class="line">  field = null, j, len, i, optLen, option, optValue;</div><div class="line">  </div><div class="line">  for (i =0, len=form.elelments.length; i&lt; len; i++)&#123;</div><div class="line">    field = form.elements[i];</div><div class="line">    </div><div class="line">  switch(field.type)&#123;</div><div class="line">  case &quot;select-one&quot;:</div><div class="line">  case &quot;select-multiple&quot;:</div><div class="line">  </div><div class="line">  if (field.name.length)&#123;</div><div class="line">    for (j = 0, optLen = field.options.length; j &lt; optLen; j++)&#123;</div><div class="line">    option = field.options[j];</div><div class="line">    if (option.selected)&#123;</div><div class="line">      optValue = &quot;&quot;;</div><div class="line">    if (option.hasAttribute)&#123;</div><div class="line">      optValue = (option.hasAttribute(&quot;value&quot;)? option.value : option.text);</div><div class="line">    &#125;else&#123;</div><div class="line">      optValue = (option.attributes[&quot;value&quot;].specified)? option.value : option.text);&#125;</div><div class="line">    parts.push(encodeURLComponent(field.name) + &quot;=&quot; + encodeURLComponent(optValue));</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">   break;</div><div class="line"> case undefined:</div><div class="line"> case &quot;file&quot;:</div><div class="line"> case &quot;submit&quot;:</div><div class="line"> case &quot;reset&quot;:</div><div class="line"> case &quot;button&quot;:</div><div class="line">   break;</div><div class="line"> case &quot;radio&quot;:</div><div class="line"> case &quot;checkout&quot;:</div><div class="line">   if(!field.checked)&#123;</div><div class="line">     break;</div><div class="line">   &#125;</div><div class="line">   default:</div><div class="line">     if(field.name.length)&#123;</div><div class="line">        parts.push(encodeURLComponent(field.name) + &quot;=&quot; + encodeURLComponent(field.value));</div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> return parts.join(&quot;&amp;&quot;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-
+        
       
     </div>
 
@@ -376,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JS/" rel="tag"># JS</a>
+            <a href="/tags/debug/" rel="tag"># debug</a>
           
         </div>
       
@@ -385,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/26/函数表达式/" rel="next" title="函数表达式">
-                <i class="fa fa-chevron-left"></i> 函数表达式
+              <a href="/2017/10/12/新鲜的mongoDB/" rel="next" title="新鲜的mongoDB">
+                <i class="fa fa-chevron-left"></i> 新鲜的mongoDB
               </a>
             
           </div>
@@ -394,10 +379,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/30/DOM/" rel="prev" title="DOM">
-                DOM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,17 +425,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -529,22 +501,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">1.</span> <span class="nav-text">表单</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#屏蔽字符"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">屏蔽字符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自主切换焦点"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">自主切换焦点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加选项"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">添加选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#移除选项"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">移除选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#表单序列化"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">表单序列化</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>

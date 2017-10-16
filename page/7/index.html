@@ -257,138 +257,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
-                  深入浅出之ES6之变量解构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
-                2017-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
-<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
-<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
-<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
-<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
-<p>真正被赋值的是变量</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/厉害的jQuery/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -536,6 +404,276 @@
 <p>其他用法<br>1.绑定多个事件类型。<br>2.添加事件命名空间，便于管理。<br>3.相同事件名称，不同命名空间执行方法。这里注意使用！匹配所有不包含在命名空间中的click方法。</p>
 <h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>1.show()和hide()<br>这两种方法都可以带参数，已达到动画的目的。<br>2.fadeIn()和fadeOut() 只改变元素的不透明度。<br>3.slideUp()和slideDown() 只会改变元素的高度。<br>4.animate()<br>animate(params, speed, callback)<br>5.stop()<br>stop([clearQueue].[gotoEnd])其中的参数都是boolean值<br>立即停止当前正在进行的动画，其中clearQueue是否清空未执行完的动画队列。gotoEnd是否直接将正在执行的动画跳转到末尾。<br>6。判断元素是否处于动画状态<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(! $(element).is(<span class="string">':animated'</span>))&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>7.延迟动画<br>delay()<br>8.其他动画方法(专门用于交互的)<br>①toggle(speed, [callback])<br>切换元素的可见状态<br>②slideToggle(speed, [easing], [callback])<br>通过高度的变化来切换匹配元素的可见性<br>③fadeTo(speed, opacity, [callback])<br>把元素的不透明度以渐进的方式调整到指定的值。<br>④fadeToggle(speed, [easing], [callback])<br>通过不透明度变化来切换匹配元素的可见性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之let和const/" itemprop="url">
+                  深入浅出ES6之let和const
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出ES6之let和const/" class="leancloud_visitors" data-flag-title="深入浅出ES6之let和const">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><h3 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h3><p>①let<br>只在其代码块内有效<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</div><div class="line">    a[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(i)</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">a[<span class="number">6</span>]();</div><div class="line"><span class="comment">//6</span></div></pre></td></tr></table></figure></p>
+<p>②与for循坏搭配最佳哦<br>for循坏里面的let是父级作用域，里面是块级作用域。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">let</span> i=<span class="string">'abc'</span>;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div><div class="line"><span class="comment">//3个abc</span></div></pre></td></tr></table></figure></p>
+<p>③不存在变量提升<br>必须在声明以后才能使用。未声明的变量在var是undefined。</p>
+<p>④暂时性死区（TDZ）<br>let和const都会绑定其所在区块。<br>暂时性死区内typeof不是一个安全的选择。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = x;</div><div class="line"><span class="comment">//不报错</span></div><div class="line"><span class="keyword">let</span> x = x;</div><div class="line"><span class="comment">//报错</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。</p>
+</blockquote>
+<p>⑤不允许重复声明<br>在块级作用域呢不允许重复声明变量。</p>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域。let为JS增加了块级作用域。作为立即执行函数表达式（IIFE）的替代。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// IIFE 写法</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;());</div><div class="line"></div><div class="line"><span class="comment">// 块级作用域写法</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> tmp = ...;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>①块级作用域和函数声明<br>ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。<br>ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。<br>根据坏境导致的行为应该应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。<br>但是块级作用域没有返回值。目前的解决方案是啥？</p>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
+<h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
+<h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
+                  深入浅出之ES6之变量解构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
+<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
+<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
+<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
+<p>真正被赋值的是变量</p>
 
           
         
@@ -836,197 +974,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/11/CSS魔法之负值/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/CSS魔法之负值/" itemprop="url">
-                  CSS魔法之负值
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T17:38:59+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/11/CSS魔法之负值/" class="leancloud_visitors" data-flag-title="CSS魔法之负值">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="margin基础"><a href="#margin基础" class="headerlink" title="margin基础"></a>margin基础</h1><p>定义：<br>CSS边距属性定义元素周围的空间。通过使用单独的属性，可以对上、右、下、左的外边距进行设置。也可以使用简写的外边距属性同时改变所有的外边距—MDN。<br>边界，元素周围生成额外的空白区。“空白区”通常是指其他元素不能出现且父元素背景可见的区域。—CSS权威指南<br>外边距margin始终是透明的。可以使用margin-top, margin-bottom, margin-left, margin-right.来设置他们的值。</p>
-<h4 id="垂直外边距"><a href="#垂直外边距" class="headerlink" title="垂直外边距"></a>垂直外边距</h4><p>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。<br>eg1:当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。<br>eg2:当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。<br>eg3:假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并。如果这个外边距遇到另一个元素的外边距，它还会发生合并<br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br>根据规范：一个盒子如果没有上补白(padding-top)和上边框(border-top)，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
-<h4 id="用margin还是padding"><a href="#用margin还是padding" class="headerlink" title="用margin还是padding"></a>用margin还是padding</h4><p><strong>何时应当使用margin</strong>：<br>需要在border外侧添加空白时。<br>空白处不需要背景（色）时。<br>上下相连的两个盒子之间的空白，需要相互抵消时<br><strong>何时应当时用padding</strong>：<br>需要在border内测添加空白时。<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</p>
-<h4 id="margin在块元素、内联元素中的区别"><a href="#margin在块元素、内联元素中的区别" class="headerlink" title="margin在块元素、内联元素中的区别"></a>margin在块元素、内联元素中的区别</h4><p>在页面文档中block元素另起一行开始，并独占一行。inline元素则同其他inline元素共处一行。<br>block元素:</p>
-<ul>
-<li>address - 地址 <ul>
-<li>blockquote - 块引用 </li>
-<li>center - 举中对齐块 </li>
-<li>dir - 目录列表 </li>
-<li>div - 常用块级容易，也是css layout的主要标签 </li>
-<li>dl - 定义列表 </li>
-<li>fieldset - form控制组 </li>
-<li>form - 交互表单 （只能用来容纳其它块元素） </li>
-<li>h1 - 大标题 </li>
-<li>h2 - 副标题 </li>
-<li>h3 - 3级标题 </li>
-<li>h4 - 4级标题 </li>
-<li>h5 - 5级标题 </li>
-<li>h6 - 6级标题 </li>
-<li>hr - 水平分隔线 </li>
-<li>isindex - input prompt </li>
-<li>menu - 菜单列表 </li>
-<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容 </li>
-<li>noscript - 可选脚本内容（对于不支持script的浏览器显示此内容） </li>
-<li>ol - 排序表单 </li>
-<li>p - 段落 </li>
-<li>pre - 格式化文本 </li>
-<li>table - 表格 </li>
-<li>ul - 非排序列表<br>inline元素：</li>
-<li>a - 锚点 </li>
-<li>abbr - 缩写 </li>
-<li>acronym - 首字 </li>
-<li>b - 粗体(不推荐) </li>
-<li>bdo - bidi override </li>
-<li>big - 大字体 </li>
-<li>br - 换行 </li>
-<li>cite - 引用 </li>
-<li>code - 计算机代码(在引用源码的时候需要) </li>
-<li>dfn - 定义字段 </li>
-<li>em - 强调 </li>
-<li>font - 字体设定(不推荐) </li>
-<li>i - 斜体 </li>
-<li>img - 图片 </li>
-<li>input - 输入框 </li>
-<li>kbd - 定义键盘文本 </li>
-<li>label - 表格标签 </li>
-<li>q - 短引用 </li>
-<li>s - 中划线(不推荐) </li>
-<li>samp - 定义范例计算机代码 </li>
-<li>select - 项目选择 </li>
-<li>small - 小字体文本 </li>
-<li>span - 常用内联容器，定义文本内区块 </li>
-<li>strike - 中划线 </li>
-<li>strong - 粗体强调 </li>
-<li>sub - 下标 </li>
-<li>sup - 上标 </li>
-<li>textarea - 多行文本输入框 </li>
-<li>tt - 电传文本 </li>
-<li>u - 下划线 </li>
-<li>var - 定义变量</li>
-</ul>
-</li>
-</ul>
-<h1 id="负值是如何影响页面的"><a href="#负值是如何影响页面的" class="headerlink" title="负值是如何影响页面的"></a>负值是如何影响页面的</h1><p>当元素margin的top和left是负值时会引起元素的向上或向左位置移动。而当元素margin的bottom和right是负值时会影响右边和下边相邻元素的参考线,即其右边和下边的相邻元素会进入覆盖它的一部分。</p>
-<h1 id="负值实现的基本应用"><a href="#负值实现的基本应用" class="headerlink" title="负值实现的基本应用"></a>负值实现的基本应用</h1><p>一、左右列固定，中间自适应，也就是圣杯和双飞翼布局<br>二、去除列表右边框。<br>项目中经常会使用浮动列表展示信息，为了美观通常为每个列表之间设置一定的间距（margin-right）,当父元素的宽度固定式，每一行的最右端的li元素的右边距就多余了。使用margin负值就可以轻松搞定。<br>三、水平垂直居中<br>通过绝对定位和负边距，把div元素的中心拉回到body的中心。负边距为content的一半。<br>四、去除列表最后一个li元素的border-bottom。border-bottom与外边框重合看起来很丑。通过设置border-bottom为负值，解决重合问题<br>五、多列等高<br>给每个框设置大的底部内边距，然后用数值相似的负外边距消除这个高度。这会导致每一列溢出容器元素，如果把外包容器的overflow属性设为hidden，列就在最高点被裁切。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>负值的应用很广泛，在了解其原理的基础上，方能游刃有余，但是负值是用来解决问题的，那么会有更好的东西来替代他。需要我们继续挖掘。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1072,7 +1019,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1082,7 +1029,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
