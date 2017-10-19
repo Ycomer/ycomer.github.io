@@ -257,6 +257,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node编码规范/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/Node编码规范/" itemprop="url">
+                  Node编码规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T14:29:58+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/12/Node编码规范/" class="leancloud_visitors" data-flag-title="Node编码规范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><p>一、空格与格式<br>两格缩进紧凑、明快<br>永远使用var<br>操作符前后必须加空格<br>小括号前后必须加空格<br>尽量使用单引号<br>大括号无需另起一行<br>不在行尾的逗号后面加空格<br>分号不能少<br>二、命名规范<br>变量命名采用小驼峰式命名<br>方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。<br>类命名采用大驼峰式命名<br>常量全部大写<br>文件名尽量采用下划线分割单词，也可下划线开头<br>比较操作符使用===<br>使用[]{}代替new Array()和new Object()<br>不使用with和eval()<br>创建对象或者数组的时候，注意在结尾用逗号分割。<br>使用for in 循环时 对对象使用<br>不要把数组当做对象来使用。<br>在异步回调函数的第一个参数应该是错误提示<br>执行传入的回调函数<br>类继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Socket</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  stream.Stream.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure></p>
+<p>所有供外部调用的方法或变量均需挂载在exports变量上。导出是：<br>module.exprots = Class;sub</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/11/Node-js专题之测试/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -812,183 +939,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/04/SQL浅尝/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/04/SQL浅尝/" itemprop="url">
-                  SQL浅尝
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T23:36:38+08:00">
-                2017-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/09/04/SQL浅尝/" class="leancloud_visitors" data-flag-title="SQL浅尝">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库(Database)"></a>数据库(Database)</h1><p>数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.<br>关系型数据库<br>是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各个数据库之间得以互相集成。<br>非关系型数据库（NoSQL）<br>当代典型的关系数据库在一些数据敏感的应用中表现了糟糕的性能，例如为巨量文档创建索引、高流量网站的网页服务，以及发送流式媒体。关系型数据库的典型实现主要被调整用于执行规模小而读写频繁，或者大批量极少写访问的事务。</p>
-<h1 id="数据库模型"><a href="#数据库模型" class="headerlink" title="数据库模型"></a>数据库模型</h1><p>数据库模型描述了在数据库中结构化和操纵数据的方法，模型的结构部分规定了数据如何被描述（例如树、表等）。数据库模型的分类如下：<br>对象模型<br>层次模型（轻量级数据访问协议）<br>网状模型（大型数据储存）<br>关系模型<br>面向对象模型<br>半结构化模型<br>平面模型（表格模型，一般在形式上是一个二维数组。如表格模型数据Excel)</p>
-<p>数据库技术<br>是为了更加有效的管理和存取大量的数据资源。简单的来讲，数据库技术主要包括数据库系统，SQL语言，数据库访问技术。<br>数据库</p>
-<blockquote>
-<p>数据库（Database System）：用于存储数据的地方。<br>数据库管理系统<br>数据库管理系统（Database Management System，DBMS）：用户管理数据库的软件。<br>数据库应用程序<br>数据库应用程序（Database Application）：为了提高数据库系统的处理能力所使用的管理数据库的软件补充。<br>SQL语言<br>SQL，(Structured Query Language)即结构化查询语言，数据库管理系统专门通过SQL语言来管理数据库中的数据，与数据库通信。</p>
-</blockquote>
-<p>SQL为数据库管理系统提供的功能<br>SQL语言是一种数据库查询和程序设计语言，其主要用于存取数据，查询数据，更新数据和管理数据库系统。具体的，SQL分为4个部。</p>
-<p>数据定义语言（Data Definition Language，DDL）：DROP、CREATE、ALTER等语句；数据库定义语言。主要用于定义数据库，表，视图，索引和触发器等。CREATE语句主要用于创建数据库，创建表，创建视图。ALTER语句主要用于修改表的定义，修改视图的定义。DROP语句主要用于删除数据库，删除表和删除视图等。<br>数据操作语言（Data Manipulation Language，DML）：INSERT、UPDATE、DELETE语句；数据库操作语言。主要用于插入数据，更新数据，删除数据。INSERT语句用于插入数据，UPDATE语句用于更新数据，DELETE语句用于删除数据。<br>数据查询语言（Data Query Language，DQL）：SELECT语句。主要用于查询数据。<br>数据控制语言（Data Control Language ，DCL）语句：数据库控制语言。主要用于控制用户的访问权限。其中GRANT语句用于给用户增加权限，REVOKE语句用于收回用户的权限。</p>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>启动数据库服务：<br>linux: service mysql start<br>macOs: mysql start<br>使用root用户登录<br>mysql -u root</p>
-<p>SElECT语句<br>    语句格式：SELECT 要查询的列名 FROM 表名字 WHERE 限制条件;<br>    例如：SELECT name,age FROM employee;<br>    ①SELECT 语句常常会有 WHERE 限制条件，用于达到更加精确的查询。WHERE限制条件可以有数学符号 (=,&lt;,&gt;,&gt;=,&lt;=)<br>    例如：SELECT name,age FROM employee WHERE age&gt;25;<br>    ②“AND”与“OR”<br>    例如：SELECT name,age FROM employee WHERE age<25 or="" age="">30;<br>    如果要包含边界数。则使用between。<br>    ③IN和NOT IN 用于筛选在或者不在某个范围内的结果。<br>    例如：<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in_dpt IN (‘dpt3’,’dpt4’);<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in<em>dpt NOT IN (‘dpt1’,’dpt3’);<br>    ④通配符<br>    关键字 LIKE 在SQL语句中和通配符一起使用，通配符代表未知字符。SQL中的通配符是</em>和%，其中_代表一个未指定字符，%代表不定个未指定字符。<br>    例如：<br>    SELECT name,age,phone FROM employee WHERE phone LIKE ‘1101__’;<br>    SELECT name,age,phone FROM employee WHERE name LIKE ‘J%’;<br>    ⑤结果排序<br>    ORDER BY的结果是升序排列，而使用关键词ASC和DESC可指定升序或降序排序。<br>    使用AS关键词可以给值重命名<br>    例如：<br>    SELECT MAX(salary) AS max_salary,MIN(salary) FROM employee;<br>    ⑥子查询 使用where in 进行查询，而且可以扩展到3层，4层或者更多的层。<br>    例如：SELECT of_dpt,COUNT(proj_name) AS count_project FROM project<br>    WHERE of_dpt IN<br>    (SELECT in_dpt FROM employee WHERE name=’Tom’);<br>    ⑦连接查询<br>    连接的基本思想是把两个或多个表当作一个新的表来操作<br>    例如：<br>        SELECT id,name,people_num<br>        FROM employee,department<br>        WHERE employee.in_dpt = department.dpt_name<br>        ORDER BY id;<br>        SELECT id,name,people_num<br>        FROM employee JOIN department<br>        ON employee.in_dpt = department.dpt_name<br>        ORDER BY id;</25></p>
-<p>数据库及表的修改和删除<br>drop database text_01 删除名为text_01的表。<br>重命名:<br>    RENAME TABLE 原名 TO 新名字;<br>    ALTER TABLE 原名 RENAME 新名;<br>    ALTER TABLE 原名 RENAME TO 新名;<br>对表的修改<br>    ①增加一列：新增加的列，被默认放置在这张表的最右边.<br>        ALTER TABLE 表名字 ADD COLUMN 列名字 数据类型 约束;<br>        或： ALTER TABLE 表名字 ADD 列名字 数据类型 约束;<br>    ②如果要把增加的列插入在指定位置，则需要在语句的最后使用AFTER关键词(“AFTER 列1” 表示新增的列被放置在 “列1” 的后面)<br>    ③如果想放在第一列的位置，则使用 FIRST 关键词<br>        ALTER TABLE employee ADD test INT(10) DEFAULT 11 FIRST;<br>    ④删除一列<br>    ALTER TABLE 表名字 DROP COLUMN 列名字;<br>    或：ALTER TABLE 表名字 DROP 列名字;<br>    ⑤重命名一列<br>    ALTER TABLE 表名字 CHANGE 原列名 新列名 数据类型 约束;<br>    注意：这条重命名语句后面的 “数据类型” 不能省略，否则重命名失败。<br>    ⑥修改表的某个值<br>    UPDATE 表名字 SET 列1=值1,列2=值2 WHERE 条件;<br>    ⑦删除表中的一行记录<br>    DELETE FROM 表名字 WHERE 条件;</p>
-<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>   索引是一种与表有关的结构，它的作用相当于书的目录，可以根据目录中的页码快速找到所需的内容。<br>   当表中有大量记录时，若要对表进行查询，没有索引的情况是全表搜索：将所有记录一一取出，和查询条件进行一一对比，然后返回满足条件的记录。这样做会消耗大量数据库系统时间，并造成大量磁盘 I/O 操作。<br>   而如果在表中已建立索引，在索引中找到符合查询条件的索引值，通过索引值就可以快速找到表中的数据，可以大大加快查询速度。<br>   方法：<br>   对一张表的某个列建立索引<br>      ALTER TABLE 表名字 ADD INDEX 索引名 (列名);<br>      CREATE INDEX 索引名 ON 表名字 (列名);</p>
-<p>   视图<br>      视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。<br>      注意理解视图是虚拟的表：<br>            数据库中只存放了视图的定义，而没有存放视图中的数据，这些数据存放在原来的表中；<br>            使用视图查询数据时，数据库系统会从原来的表中取出对应的数据；<br>            视图中的数据依赖于原来表中的数据，一旦表中数据发生改变，显示在视图中的数据也会发生改变；<br>            在使用视图的时候，可以把它当作一张表。<br>        方法：<br>        CREATE VIEW 视图名(列a,列b,列c) AS SELECT 列1,列2,列3 FROM 表名字;<br>        导入:<br>        导入操作，可以把一个文件里的数据保存进一张表。导入语句格式为：<br>        LOAD DATA INFILE ‘文件路径’ INTO TABLE 表名字;<br>        导出:<br>        导出与导入是相反的过程，是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为：<br>        SELECT 列1，列2 INTO OUTFILE ‘文件路径和文件名’ FROM 表名字;<br>        备份：<br>        mysqldump -u root 数据库名&gt;备份文件名;   #备份整个数据库<br>        mysqldump -u root 数据库名 表名字&gt;备份文件名;  #备份整个表<br>        恢复：<br>        source /tmp/SQL6/MySQL-06.sql</p>
-<h1 id="MySQL操作"><a href="#MySQL操作" class="headerlink" title="MySQL操作"></a>MySQL操作</h1><p>①CREATE DATABASE 库名<br>②CREATE TABLE 表名<br>③DESCRIBE 内容名<br>④LOAD DATA INFILE … INTO TABLE 表名 和 INSERT<br>INSERT INTO 内容名<br>ps:windows中 \r\n为换行符，osx中为\r。<br>⑤SELECT * FROM 内容名<br>⑥DELETE FROM<br>⑦UPDATE 内容名 SET<br>⑧条件筛选<br>    &lt;特殊列&gt;SELECT … FROM …WHERE …<br>    &lt;特殊行&gt;SELECT … FROM … ORDER BY …(DESC)</p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>一、数值类型<br>BIT[(M)]<br>位域类型。M表示每个值的位数，范围为从1到64。如果M被省略，默认为1。<br>TINYINT[(M)] [UNSIGNED] [ZEROFILL]<br>很小的整数。带符号的范围是-128到127。无符号的范围是0到255。<br>BOOL，BOOLEAN<br>是TINYINT(1)的同义词。0值被视为假。非0值视为真。<br>SMALLINT[(M)] [UNSIGNED] [ZEROFILL]<br>小的整数。带符号的范围是-32768到32767。无符号的范围是0到65535。<br>MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL]<br>中等大小的整数。带符号的范围是-8388608到8388607。无符号的范围是0到16777215。<br>INT[(M)] [UNSIGNED] [ZEROFILL]<br>普通大小的整数。带符号的范围是-2147483648到2147483647。无符号的范围是0到4294967295。<br>INTEGER[(M)] [UNSIGNED] [ZEROFILL]<br>这是INT的同义词。<br>BIGINT[(M)] [UNSIGNED] [ZEROFILL]<br>大整数。带符号的范围是-9223372036854775808到9223372036854775807。无符号的范围是0到18446744073709551615。<br>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]<br>小(单精度)浮点数。允许的值是-3.402823466E+38到-1.175494351E-38、0和1.175494351E-38到3.402823466E+38。这些是理论限制，基于IEEE标准。实际的范围根据硬件或操作系统的不同可能稍微小些。<br>M是浮点数的总位数，D是小数点后面的位数。如果M和D被省略，根据硬件允许的限制来保存值。单精度浮点数精确到大约7位小数位。<br>如果指定UNSIGNED，不允许负值。<br>使用浮点数可能会遇到意想不到的问题，因为在MySQL中的所有计算用双精度完成。参见解决与不匹配行有关的问题。<br>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]<br>普通大小(双精度)浮点数。允许的值是-1.7976931348623157E+308到-2.2250738585072014E-308、0和2.2250738585072014E-308到 1.7976931348623157E+308。这些是理论限制，基于IEEE标准。实际的范围根据硬件或操作系统的不同可能稍微小些。<br>M是小数总位数，D是小数点后面的位数。如果M和D被省略，根据硬件允许的限制来保存值。双精度浮点数精确到大约15位小数位。<br>如果指定UNSIGNED，不允许负值。<br>DOUBLE PRECISION[(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL]<br>为DOUBLE的同义词。除非：如果SQL服务器模式启动REAL_AS_FLOAT选项，REAL是FLOAT的同义词而不是DOUBLE的同义词。<br>FLOAT(p) [UNSIGNED] [ZEROFILL]<br>浮点数.p表示精度，但MySQL只使用该值来确定列的数据类型是否为FLOAT或DOUBLE。如果p取值在0到24之间，数据类型将变为没有M或D值的FLOAT类型。如果p取值为25到53，数据类型将变为没有M或D值的DOUBLE型。这种情况下列范围与本节前面描述的单精度FLOAT或双精度DOUBLE数据类型相同。<br>FLOAT(p)语法与ODBC兼容。<br>二、日期时间类型<br>DATE<br>日期。支持的范围为1000-01-01到9999-12-31。MySQL以YYYY-MM-DD格式显示DATE值，但允许使用字符串或数字类型数据为DATE列赋值。<br>DATETIME[(fsp)]<br>日期和时间的组合。支持的范围是1000-01-01 00:00:00到9999-12-31 23:59:59。MySQL以YYYY-MM-DD HH:MM:SS格式显示DATETIME值，但允许使用字符串或数字为DATETIME列赋值。<br>其中，可选参数fsp取值范围是0-6可以指定精确到秒的分位数，默认的是0，指精确到秒。<br>TIMESTAMP[(fsp)]<br>时间戳。范围是1970-01-01 00:00:00到2038-01-19 03:14:07.999999。<br>TIMESTAMP列用于执行INSERT或UPDATE操作时记录日期和时间。如果你不分配一个值，表中的第一个TIMESTAMP列自动设置为最近操作的日期和时间。也可以通过分配一个NULL值，将TIMESTAMP列设置为当前的日期和时间。<br>TIME<br>时间。范围是-838:59:59到838:59:59。MySQL以HH:MM:SS格式显示TIME值，但允许使用字符串或数字为TIME列分配值。<br>YEAR[(2|4)] 两位或四位格式的年。默认是四位格式。在四位格式中，允许的值是1901到2155和0000。在两位格式中，允许的值是70到69，表示从1970年到2069年。MySQL以YYYY格式显示YEAR值，但允许使用字符串或数字为YEAR分配值。<br>三、字符串类型<br>许多字符串数据类型的列定义可以包括指定字符集的CHARACTER SET属性或校对规则。(CHARSET是CHARACTER SET的一个同义词）。这些属性适用于CHAR、VARCHAR、TEXT类型、ENUM和SET<br>[NATIONAL] CHAR(M) [BINARY| ASCII | UNICODE]<br>固定长度字符串，当保存数据时在右侧自动填充空格以达到指定的长度。M表示列长度。M的范围是0到255个字符。<br>注：当检索CHAR类型值时尾部空格将被删除。<br>如果想要将某个CHAR的长度设为大于255，执行CREATE TABLE或ALTER TABLE语句时将失败并提示错误，尝试输入：<br>mysql&gt; CREATE TABLE c1 (col1 INT, col2 CHAR(500));<br>mysql&gt; SHOW CREATE TABLE c1;<br>CHAR是CHARACTER的简写。NATIONAL CHAR(或其等效短形式NCHAR)是标准的定义CHAR列应使用默认字符集的SQL方法。BINARY属性是指定列字符集的二元校对规则的简写。排序和比较基于数值字符值。列类型CHAR BYTE是CHAR BINARY的一个别名，这是为了保证兼容性。通过指定latin1字符集，可以为CHAR指定ASCII属性。通过指定ucs2字符集可以为CHAR指定UNICODE属性。<br>MySQL允许创建类型为CHAR(0)的列。这主要用于与必须有一个列但实际上不使用它的值的旧版本中应用程序相兼容。<br>CHAR<br>这是CHAR(1)的同义词。<br>[NATIONAL] VARCHAR(M) [BINARY]<br>变长字符串。M表示最大列长度。M的范围是0到65,535。(VARCHAR的最大实际长度由最长的行的大小和使用的字符集确定。最大有效长度是65,532字节）。<br>注：MySQL 5.1遵从标准SQL规范，并且不自动移除VARCHAR值的尾部空格。<br>VARCHAR是字符VARYING的简写。BINARY属性是指定列的字符集的二元校对规则的简写。排序和比较基于数值字符值。VARCHAR保存时用一个字节或两个字节长的前缀+数据。如果VARCHAR列声明的长度大于255，长度前缀是两个字节。<br>BINARY(M)<br>BINARY类型类似于CHAR类型，但存储二进制字节字符串而不是非二进制字符串。<br>VARBINARY(M)<br>VARBINARY类型类似于VARCHAR类型，但存储二进制字节字符串而不是非二进制字符串。<br>TINYBLOB<br>最大长度为255字节的BLOB列。<br>TINYTEXT<br>最大长度为255字符的TEXT列。<br>BLOB[(M)]<br>最大长度为65,535字节的BLOB列。<br>可以给出该类型的可选长度M。如果给出，则MySQL将列创建为最小的但足以容纳M字节长的值的BLOB类型。<br>TEXT[(M)]<br>最大长度为65,535字符的TEXT列。<br>可以给出可选长度M。则MySQL将列创建为最小的但足以容纳M字符长的值的TEXT类型。<br>MEDIUMBLOB<br>最大长度为16,777,215字节的BLOB列。<br>MEDIUMTEXT<br>最大长度为16,777,215字符的TEXT列。<br>LONGBLOB<br>最大长度为4,294,967,295或4GB字节的BLOB列。LONGBLOB列的最大有效(允许的)长度取决于客户端或服务器协议中配置最大包大小和可用的内存。<br>LONGTEXT<br>最大长度为4,294,967,295或4GB字符的TEXT列。LONGTEXT列的最大有效(允许的)长度取决于客户端或服务器协议中配置最大包大小和可用的内存。<br>ENUM(‘value1’,’value2’,…)<br>枚举类型。一个字符串只能由一个值，从值列列表’value1’，’value2’，…，NULL中或特殊’’错误值中选出。ENUM列最多可以有65,535个截然不同的值。ENUM值在内部用整数表示。<br>SET(‘value1’,’value2’,…)<br>一个SET类型列可以64个不同值。字符串对象可以有零个或多个值，每个值必须来自列表值’value1’，’value2’，…，SET对应的值在内部用整数表示。</p>
-<h1 id="语法结构"><a href="#语法结构" class="headerlink" title="语法结构"></a>语法结构</h1><p>一、ALTER DATABASE语法<br>用于更改数据库的全局特性<br>二、ALTER TABLE语法<br>用于更改表的结构。例如，您可以增加或删减列，创建或取消索引，更改原有列的类型，或重新命名列或者表。您还可以更改表的评注和表的类型。<br>三、CREATE DATABASE语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX index_name</div><div class="line">    [USING index_type]</div><div class="line">    ON tbl_name (index_col_name,...)</div><div class="line"></div><div class="line">index_col_name:</div><div class="line">    col_name [(length)] [ASC | DESC]</div><div class="line">CREATE INDEX被映射到一个ALTER TABLE语句上，用于创建索引。</div></pre></td></tr></table></figure></p>
-<p>四、CREATE TABLE语法<br>CREATE TABLE用于创建带给定名称的表。<br>五、DROP DATABASE语法<br>DROP {DATABASE | SCHEMA} [IF EXISTS] db_name<br>丢弃数据库中的所有表格并删除数据库<br>六、DROP INDEX语法<br>DROP INDEX index_name ON tbl_name<br>从表tbl_name中取消名称为index_name的索引<br>七、DROP TABLE语法<br>DROP [TEMPORARY] TABLE [IF EXISTS]<br>    tbl_name [, tbl_name] …<br>    [RESTRICT | CASCADE]<br>移除一个或多个表<br>八、RENAME TABLE语法<br>RENAME TABLE tbl_name TO new_tbl_name<br>    [, tbl_name2 TO new_tbl_name2] …</p>
-<p>2.2.1 DELETE语法<br>单表语法：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name<br>    [WHERE where_definition]<br>    [ORDER BY …]<br>    [LIMIT row_count]<br>多表语法：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE]<br>    tbl_name[.<em>] [, tbl_name[.</em>] …]<br>    FROM table_references<br>    [WHERE where_definition]<br>or：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE]<br>    FROM tbl_name[.<em>] [, tbl_name[.</em>] …]<br>    USING table_references<br>    [WHERE where_definition]<br>如果tbl_name中有些行满足由where_definition给定的条件，那么DELETE就会删除这些行，并返回被删除的记录的数目。<br>如果您编写的DELETE语句中没有WHERE子句，则所有的行都被删除。当您不想知道被删除的行的数目时，有一个更快的方法，即使用TRUNCATE TABLE。<br>举例：<br>如果DELETE语句中含有ORDER BY子句，则按照子句中指定的顺序删除行，再结合LIMIT语句会显得非常有优势。<br>比如说，下面的语句就是找出表somelog中匹配WHERE子句条件的所有行，并根据timestamp_column这一列数据进行排序，然后删除第一（最老的）行：<br>mysql&gt; DELETE FROM somelog WHERE user = ‘jcole’ ORDER BY timestamp_column LIMIT 1;<br>2.2.2 DO语法<br>DO expr [, expr] …<br>DO用于执行表达式，但是不返回任何结果。DO是SELECT expr的简化表达方式。DO有一个优势，就是如果您不太关心结果的话，DO的速度稍快。 DO主要用于执行有副作用的函数，比如RELEASE_LOCK()。<br>举例：<br>这个SELECT有停止的作用，但是也产生了一个结果集：<br>mysql&gt; SELECT SLEEP(5);<br>相反，尝试一下DO语句的神奇：<br>mysql&gt; DO SLEEP(5);<br>以上例子适用于禁止产生结果集的存储函数或触发器。<br>2.2.3 HANDLER语法<br>HANDLER tbl_name OPEN [ AS alias ]<br>HANDLER tbl_name READ index_name { = | &gt;= | &lt;= | &lt; } (value1,value2,…)<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name READ index_name { FIRST | NEXT | PREV | LAST }<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name READ { FIRST | NEXT }<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name CLOSE<br>HANDLER语句提供通往表存储引擎接口的直接通道。HANDLER可以用于MyISAM和InnoDB表。<br>HANDLER…OPEN语句用于打开一个表，通过后续的HANDLER…READ语句建立读取表的通道。本表目标不会被其它线程共享，也不会关闭，直到线程调用HANDLER…CLOSE或线程中止时为止。如果您使用一个别名打开表，如果要使用其它HANDLER语句进一步参阅表则必须使用此别名，而不能使用表名。<br>2.2.4 INSERT语法<br>INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name [(col_name,…)]<br>    VALUES ({expr | DEFAULT},…),(…),…<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, … ]<br>or：<br>INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name<br>    SET col_name={expr | DEFAULT}, …<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, …<br>or<br>INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name [(col_name,…)]<br>    SELECT …<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, … ]<br>INSERT用于向一个已有的表中插入新行。INSERT…VALUES和INSERT…SET形式的语句根据明确指定的值插入行。INSERT…SELECT形式的语句插入从其它表中选出的行。<br>举例：<br>INSERT语句可以使用VALUES语法插入多行数据。要想实现这一点，每一列的值列表必须用括号括起来，并使用逗号隔开。例如：<br>INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);<br>2.2.5 LOAD DATA INFILE语法<br>LOAD DATA [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE ‘file_name.txt’<br>    [REPLACE | IGNORE]<br>    INTO TABLE tbl_name<br>    [FIELDS<br>        [TERMINATED BY ‘string’]<br>        [[OPTIONALLY] ENCLOSED BY ‘char’]<br>        [ESCAPED BY ‘char’ ]<br>    ]<br>    [LINES<br>        [STARTING BY ‘string’]<br>        [TERMINATED BY ‘string’]<br>    ]<br>    [IGNORE number LINES]<br>    [(col_name_or_user_var,…)]<br>    [SET col_name = expr,…)]<br>LOAD DATA INFILE语句用于高速地从一个文本文件中读取行，并装入一个表中。文件名称必须为文字字符串类型。<br>举例：<br>下面例子是从文件persondata.txt中加载数据到表persondata中：<br>LOAD DATA INFILE ‘persondata.txt’ INTO TABLE persondata;<br>2.2.6 REPLACE语法<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name [(col_name,…)]<br>    VALUES ({expr | DEFAULT},…),(…),…<br>或：<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name<br>    SET col_name={expr | DEFAULT}, …<br>或：<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name [(col_name,…)]<br>    SELECT …<br>REPLACE的运行模式与INSERT很相像。只有一点除外，如果表中的一个旧记录与一个用于PRIMARY KEY或一个UNIQUE索引的新记录具有相同的值，则在新记录被插入之前，旧记录被删除<br>2.2.7 SELECT语法<br>SELECT<br>    [ALL | DISTINCT | DISTINCTROW ]<br>      [HIGH_PRIORITY]<br>      [STRAIGHT_JOIN]<br>      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]<br>      [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]<br>    select_expr, …<br>    [INTO OUTFILE ‘file_name’ export_options<br>      | INTO DUMPFILE ‘file_name’]<br>    [FROM table_references<br>    [WHERE where_definition]<br>    [GROUP BY {col_name | expr | position}<br>      [ASC | DESC], … [WITH ROLLUP]]<br>    [HAVING where_definition]<br>    [ORDER BY {col_name | expr | position}<br>      [ASC | DESC] , …]<br>    [LIMIT {[offset,] row_count | row_count OFFSET offset}]<br>    [PROCEDURE procedure_name(argument_list)]<br>    [FOR UPDATE | LOCK IN SHARE MODE]]<br>SELECT用于从一个或多个表中恢复选择的行，也可以用于在不检索任何表的情况下计算。<br>例如：<br>mysql&gt; SELECT 1 + 1;<br>可以在没有表可以参考的情况下指定DUAL为一个虚拟的表名：<br>mysql&gt; SELECT 1 + 1 FROM DUAL;<br>1） JOIN语法<br>MySQL支持以下JOIN语法。这些语法用于SELECT语句的table_references部分和多表DELETE和UPDATE语句：<br>table_references:<br>    table_reference [, table_reference] …<br>table_reference:<br>    table_factor<br>  | join_table<br>table_factor:<br>    tbl_name [[AS] alias]<br>        [{USE|IGNORE|FORCE} INDEX (key_list)]<br>  | ( table_references )<br>  | { OJ table_reference LEFT OUTER JOIN table_reference<br>        ON conditional_expr }<br>join_table:<br>    table_reference [INNER | CROSS] JOIN table_factor [join_condition]<br>  | table_reference STRAIGHT_JOIN table_factor<br>  | table_reference STRAIGHT_JOIN table_factor ON condition<br>  | table_reference LEFT [OUTER] JOIN table_reference join_condition<br>  | table_reference NATURAL [LEFT [OUTER]] JOIN table_factor<br>  | table_reference RIGHT [OUTER] JOIN table_reference join_condition<br>  | table_reference NATURAL [RIGHT [OUTER]] JOIN table_factor<br>join_condition:<br>    ON conditional_expr<br>  | USING (column_list)<br>一个表的引用也被称为一个联合表达式。与SQL标准相比，table_factor的语法被扩展了，前者只接受table_reference，不接受括号内的table_reference列表。<br>2） UNION语法<br>SELECT …<br>UNION [ALL | DISTINCT]<br>SELECT …<br>[UNION [ALL | DISTINCT]<br>SELECT …]<br>UNION用于把来自多个SELECT语句的结果组合到一个结果集中。<br>举例：<br>如果相应的SELECT列的数据类型不匹配，那么在UNION中列的类型和长度应该考虑所有的SELECT语句的返回值。比如：<br>mysql&gt; SELECT REPEAT(‘a’,1) UNION SELECT REPEAT(‘b’,10);<br>你会发现：只有最后一个SELECT语句被重复写入输出集；<br>思考一下，为什么？并把答案写入到实验报告。<br>2.2.8 UPDATE语法<br>单表语法<br>UPDATE [LOW_PRIORITY] [IGNORE] tbl_name<br>    SET col_name1=expr1 [, col_name2=expr2 …]<br>    [WHERE where_definition]<br>    [ORDER BY …]<br>    [LIMIT row_count]<br>多表语法：<br>UPDATE [LOW_PRIORITY] [IGNORE] table_references<br>    SET col_name1=expr1 [, col_name2=expr2 …]<br>    [WHERE where_definition]<br>UPDATE语法可以将新值更新到原有表中的行和列。SET子句指示要修改哪些列和要给予哪些值。WHERE子句指定应更新哪些行。如果没有WHERE子句，则更新所有的行。如果指定了ORDER BY子句，则按照被指定的顺序对行进行更新。LIMIT子句用于给定一个限值，限制可以被更新的行的数目。<br>例子：<br>例如，表t中的id列有1和2这两个值，并且在2被更新到3之前，1会被更新为2，那么就会出错。为了避免这个问题，添加一个ORDER BY子句让拥有较大id值的行更早更新：<br>UPDATE t SET id = id + 1 ORDER BY id DESC;<br>2.3.1 DESCRIBE语法（获取有关列的信息）<br>{DESCRIBE | DESC} tbl_name [col_name | wild]<br>DESCRIBE可以提供有关表中各列的信息。它是SHOW COLUMNS FROM的快捷方式。<br>2.3.2 USE语法<br>USE db_name<br>USE db_name语句可以通告MySQL把db_name数据库作为默认（当前）数据库使用，用于后续的语句。<br>2.4 MySQL事务处理和锁定语句</p>
-<p>2.4.1 START TRANSACTION，COMMIT和ROLLBACK语法</p>
-<p>START TRANSACTION | BEGIN [WORK]<br>COMMIT [WORK] [AND [NO] CHAIN] [[NO] RELEASE]<br>ROLLBACK [WORK] [AND [NO] CHAIN] [[NO] RELEASE]<br>SET AUTOCOMMIT = {0 | 1}<br>以下语句提供事务的使用控制：</p>
-<p>START TRANSACTION或BEGIN语句可以开始一项新的事务。<br>COMMIT可以提交当前事务，使其永久更改。<br>ROLLBACK可以回滚当前事务，取消变更。<br>SET AUTOCOMMIT语句可以禁用或启用当前连接中默认的autocommit模式，。<br>默认情况下，MySQL采用autocommit模式运行。这意味着，当您执行一个用于更新（修改）表的语句之后，MySQL立刻把更新存储到磁盘中。</p>
-<p>如果您正在使用一个事务安全型的存储引擎（如InnoDB，BDB或NDB簇），则您可以使用以下语句禁用autocommit模式：</p>
-<p>SET AUTOCOMMIT=0;<br>通过把AUTOCOMMIT变量设置为零，禁用autocommit模式之后，您必须使用COMMIT把变更存储到磁盘中，或者如果您想要忽略从事务开始进行以来做出的变更，请使用ROLLBACK。</p>
-<p>如果您想要对于一个单一系列的语句禁用autocommit模式，则您可以使用START TRANSACTION语句：</p>
-<p>START TRANSACTION;<br>SELECT @A:=SUM(salary) FROM table1 WHERE type=1;<br>UPDATE table2 SET summary=@A WHERE type=1;<br>COMMIT;<br>使用START TRANSACTION，autocommit仍然被禁用，直到您使用COMMIT或ROLLBACK结束事务为止。然后autocommit模式恢复到原来的状态。</p>
-<p>BEGIN和BEGIN WORK被作为START TRANSACTION的别名受到支持，用于对事务进行初始化。START TRANSACTION是标准的SQL语法，并且是启动一个ad-hoc事务的推荐方法。BEGIN语句与BEGIN关键词的使用不同。BEGIN关键词可以启动一个BEGIN…END复合语句。后者不会开始一项事务。</p>
-<p>您也可以按照如下方法开始一项事务：</p>
-<p>START TRANSACTION WITH CONSISTENT SNAPSHOT;<br>WITH CONSISTENT SNAPSHOT子句用于启动一个一致的读取，用于具有此类功能的存储引擎。目前，该子句只适用于InnoDB，该子句的效果与发布一个START TRANSACTION，后面跟一个来自任何InnoDB表的SELECT的效果一样。</p>
-<p>开始一项事务会造成一个隐含的UNLOCK TABLES被执行。</p>
-<p>为了获得最好的结果，事务应只使用由单一事务存储引擎管理的表执行。否则，会出现以下问题：</p>
-<p>如果您使用的表来自多个事务安全型存储引擎（例如InnoDB），并且事务隔离等级不是SERIALIZABLE，则有可能当一个事务提交时，其它正在进行中的、使用同样的表的事务将只会发生由第一个事务产生的变更。也就是，用混合引擎不能保证事务的原子性，并会造成不一致。（如果混合引擎事务不经常有，则您可以根据需要使用SET TRANSACTION ISOLATION LEVEL把隔离等级设置到SERIALIZABLE。）</p>
-<p>如果您在事务中使用非事务安全型表，则对这些表的任何变更被立刻存储，不论autocommit模式的状态如何。</p>
-<p>如果您在更新了事务中一个事务表之后，发布一个ROLLBACK语句，则会出现一个ER_WARNING_NOT_COMPLETE_ROLLBACK警告。对事务安全型表的变更会被回滚，但是非事务安全型表没有发生任何改变。</p>
-<p>每个事务被存储在一个组块中的二进制日志中，在COMMIT之上。其中被回滚的事务不被计入日志。（例外情况：对非事务表的更改不会被回滚。如果一个被回滚的事务包括对非事务表的更改，则整个事务使用一个ROLLBACK语句计入日志末端，以确保对这些表的更改进行复制。）</p>
-<p>您可以使用SET TRANSACTION ISOLATION LEVEL更改事务的隔离等级。</p>
-<p>2.4.2 SAVEPOINT和ROLLBACK TO SAVEPOINT语法</p>
-<p>SAVEPOINT identifier<br>ROLLBACK [WORK] TO SAVEPOINT identifier<br>RELEASE SAVEPOINT identifier<br>InnoDB支持SQL语句SAVEPOINT, ROLLBACK TO SAVEPOINT, RELEASE SAVEPOINT和可选的用于ROLLBACK的WORK关键词。</p>
-<p>SAVEPOINT语句用于用标识符名称设置命名一个事务保存点。如果当前事务有一个同样名称的保存点，则旧的保存点被删除，新的保存点就会被设置。</p>
-<p>ROLLBACK TO SAVEPOINT语句会向以命名的保存点回滚一个事务。如果在保存点被设置后，当前事务对行进行了更改，则这些更改会在回滚中被撤销。但是，InnoDB不会释放被存储在保存点之后的存储器中的行锁定。（注意，对于新插入的行，锁定信息被存储在行中的事务ID承载；锁定没有被分开存储在存储器中。在这种情况下，行锁定在撤销中被释放。）在被命名的保存点之后设置的保存点被删除。</p>
-<p>如果语句返回以下错误，则意味着不存在带有指定名称的保存点：</p>
-<p>ERROR 1181: Got error 153 during ROLLBACK<br>RELEASE SAVEPOINT语句会从当前事务的一组保存点中删除已命名的保存点，不出现提交或回滚。如果保存点不存在，会出现错误。</p>
-<p>如果您执行COMMIT或执行不能命名保存点的ROLLBACK，则当前事务的所有保存点被删除。</p>
-<p>2.4.3 LOCK TABLES和UNLOCK TABLES语法</p>
-<p>LOCK TABLES<br>    tbl_name [AS alias] {READ [LOCAL] | [LOW_PRIORITY] WRITE}<br>    [, tbl_name [AS alias] {READ [LOCAL] | [LOW_PRIORITY] WRITE}] …<br>LOCK TABLES可以锁定用于当前线程的表。如果表被其它线程锁定，则造成堵塞，直到可以获取所有锁定为止。UNLOCK TABLES可以释放被当前线程保持的任何锁定。当线程发布另一个LOCK TABLES时，或当与服务器的连接被关闭时，所有由当前线程锁定的表被隐含地解锁。</p>
-<p>表锁定只用于防止其它客户端进行不正当地读取和写入。保持锁定（即使是读取锁定）的客户端可以进行表层级的操作，比如DROP TABLE。</p>
-<p>2.4.4 SET TRANSACTION语法</p>
-<p>SET [GLOBAL | SESSION] TRANSACTION ISOLATION LEVEL<br>{ READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE }<br>本语句用于设置事务隔离等级，用于下一个事务或者当前会话。</p>
-<p>在默认情况下，SET TRANSACTION会为下一个（还未开始）事务设置隔离等级。如果您使用GLOBAL关键词，则语句会设置全局性的默认事务等级，用于从该点以后创建的所有新连接，且原有的连接不受影响。要进行此操作，您需要SUPER权限。使用SESSION关键词可以设置默认事务等级，用于对当前连接执行所有将来事务。</p>
-<p>2.4.5 XA事务SQL语法<br>要在MySQL中执行XA事务，应使用以下语句：<br>XA {START|BEGIN} xid [JOIN|RESUME]<br>XA END xid [SUSPEND [FOR MIGRATE]]<br>XA PREPARE xid<br>XA COMMIT xid [ONE PHASE]<br>XA ROLLBACK xid<br>XA RECOVER<br>对于XA START，JOIN和RESUME子句不被支持。<br>对于XA END，SUSPEND [FOR MIGRATE]子句不被支持。<br>每个XA语句以XA关键词为开头，多数语句要求一个xid值。xid是XA事务的标识符，它指示该语句适用于哪个事务。xid值由客户端提供，或由MySQL服务器生成。xid值包含一到三个部分：<br>xid: gtrid [, bqual [, formatID ]]<br>gtrid是一个全局事务标识符，bqual是一个分支限定符，formatID是一个用于标识由gtrid和bqual值使用的格式的数字。根据语法，bqual和formatID是可选的。如果没有给定，默认的bqual值是’’，默认的fromatID值是1。<br>gtrid和bqual必须为字符串文字，每个的长度最多为64字节（不是字符）。gtrid和bqual可以用多种方法指定。您可以使用带引号的字符串(‘ab’)，十六进制字符串(0x6162, X’ab’)，或位值(b’nnnn’)。<br>formatID是一个无符号的整数。<br>2.5 数据库管理语句<br>2.5.1 账户管理语句<br>1） CREATE USER语法<br>CREATE USER user [IDENTIFIED BY [PASSWORD] ‘password’]<br>    [, user [IDENTIFIED BY [PASSWORD] ‘password’]] …<br>CREATE USER用于创建新的MySQL账户。要使用CREATE USER，您必须拥有mysql数据库的全局CREATE USER权限，或拥有INSERT权限。对于每个账户，CREATE USER会在mysql.user表中创建一个新记录。如果试图建立一个已经存在的账户，则会报错。<br>使用可选的IDENTIFIED BY子句，可以为账户给定一个密码。举例如下：<br>创建一个已经使用sha256_password认证的插件和密码设置为’new-password’的账户’jeffrey’@’localhost’，要求每隔180天建立一个新的密码：<br>CREATE USER ‘jeffrey’@’localhost’<br>  IDENTIFIED WITH sha256_password BY ‘new-password’<br>  PASSWORD EXPIRE INTERVAL 180 DAY;<br>2） DROP USER语法<br>DROP USER user [, user] …<br>DROP USER语句用于删除一个或多个MySQL账户。要使用DROP USER，您必须拥有mysql数据库的全局CREATE USER权限或DELETE权限。<br>3） GRANT和REVOKE语法<br>GRANT priv_type [(column_list)] [, priv_type [(column_list)]] …<br>    ON [object_type] {tbl_name | <em> | </em>.<em> | db_name.</em>}<br>    TO user [IDENTIFIED BY [PASSWORD] ‘password’]<br>        [, user [IDENTIFIED BY [PASSWORD] ‘password’]] …<br>    [REQUIRE<br>        NONE |<br>        [{SSL| X509}]<br>        [CIPHER ‘cipher’ [AND]]<br>        [ISSUER ‘issuer’ [AND]]<br>        [SUBJECT ‘subject’]]<br>    [WITH with_option [with_option] …]<br>object_type =<br>    TABLE<br>  | FUNCTION<br>  | PROCEDURE<br>with_option =<br>    GRANT OPTION<br>  | MAX_QUERIES_PER_HOUR count<br>  | MAX_UPDATES_PER_HOUR count<br>  | MAX_CONNECTIONS_PER_HOUR count<br>  | MAX_USER_CONNECTIONS count<br>REVOKE priv_type [(column_list)] [, priv_type [(column_list)]] …<br>    ON [object_type] {tbl_name | <em> | </em>.<em> | db_name.</em>}<br>    FROM user [, user] …<br>REVOKE ALL PRIVILEGES, GRANT OPTION FROM user [, user] …<br>GRANT和REVOKE语句允许系统管理员创建MySQL用户账户，授予权限和撤销权限。<br>4） RENAME USER语法<br>RENAME USER old_user TO new_user<br>    [, old_user TO new_user] …<br>RENAME USER语句用于对原有MySQL账户进行重命名。要使用RENAME USER，您必须拥有全局CREATE USER权限或mysql数据库UPDATE权限。如果旧 账户不存在或者新账户已存在，则会出现错误。old_user和new_user值的给定方法与GRANT语句一样。<br>例如：<br>RENAME USER ‘jeffrey’@’localhost’ TO ‘jeff’@’127.0.0.1’;<br>5） SET PASSWORD语法<br>SET PASSWORD = PASSWORD(‘some password’);<br>SET PASSWORD FOR user = PASSWORD(‘some password’);<br>SET PASSWORD语句用于向一个原有MySQL用户账户赋予密码。<br>第一个语法是为当前用户设置密码，其中使用一个非匿名账户连接到服务器上的任何客户即都可以更改该账户的密码。<br>第二个语法是为当前服务器主机上的一个特定账户设置密码。只有拥有mysql数据库UPDATE权限的客户端可以这么做。user值应以为固定格式user_name@host_name，此处user_name和host_name与mysql.user表登录项的User和Host列中列出的完全一样。<br>2.5.2 表维护语句<br>1） ANALYZE TABLE语法<br>ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] …<br>本语句用于分析和存储表的关键字分布。在分析期间，使用读取锁定对表MyISAM， BDB和InnoDB表进行锁定。对于MyISAM表，本语句与使用myisamchk –analyze相当。<br>当您对除常数以外的对象执行联合时，MySQL使用已存储的关键字分布来决定，表按什么顺序进行联合。<br>ANALYZE TABLE语句会返回一个含有下列的结果集：<br>此处输入图片的描述<br>2） CHECK TABLE语法<br>CHECK TABLE tbl_name [, tbl_name] … [option] …<br>option = {QUICK | FAST | MEDIUM | EXTENDED | CHANGED}<br>CHECK TABLE对MyISAM和InnoDB表执行检查。对于MyISAM表，关键字统计数据在检查的同时也被更新。<br>CHECK TABLE也可以检查视图是否有错误，比如在视图定义中被引用的表已不存在。<br>CHECK TABLE语句会返回一个含有以下列的结果集：<br>此处输入图片的描述<br>3） CHECKSUM TABLE语法<br>CHECKSUM TABLE tbl_name [, tbl_name] … [ QUICK | EXTENDED ]<br>报告表的校验和。<br>4） OPTIMIZE TABLE语法<br>OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] …<br>如果您已经删除了表的一大部分，或者如果您已经对含有可变长度行的表（含有VARCHAR，BLOB或TEXT列的表）进行了很多更改，则应使用OPTIMIZE TABLE。被删除的记录被保存在链接清单中，后续的INSERT操作会重新使用旧的记录位置。您可以使用OPTIMIZE TABLE来重新利用未使用的空间，并整理数据文件碎片。<br>在多数的设置中，您根本不需要运行OPTIMIZE TABLE。即使您对可变长度的行进行了大量的更新，您也不需要经常运行，只对特定的表每周一次或每月一次执行该语句即可。<br>5） REPAIR TABLE语法<br>REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE<br>    tbl_name [, tbl_name] … [QUICK] [EXTENDED] [USE_FRM]<br>REPAIR TABLE用于修复被破坏的表。默认情况下，REPAIR TABLE与myisamchk –recover tbl_name具有相同的效果。REPAIR TABLE对MyISAM和ARCHIVE表起作用。<br>通常，您基本上不必运行此语句。但是，如果’灾难’真的发生，REPAIR TABLE很有可能从MyISAM表中找回所有数据。如果您的表经常被破坏，您应该尽力找到原因，以避免使用REPAIR TALBE。<br>本语句会返回一个含有以下列的结果集：<br>此处输入图片的描述<br>2.5.3 SET语法<br>SET variable_assignment [, variable_assignment] …<br>variable_assignment:<br>      user_var_name = expr<br>    | [GLOBAL | SESSION] system_var_name = expr<br>    | @@[global. | session.]system_var_name = expr<br>SET用于设置不同类型的变量，这些变量会影响服务器或客户端的操作。SET可以用于向用户变量或系统变量赋值。<br>2.5.4 SHOW语法<br>1） SHOW CHARACTER SET语法<br>SHOW CHARACTER SET [LIKE ‘pattern’];<br>SHOW CHARACTER SET语句用于显示所有可用的字符集。如果选定LIKE子句，该子句用于指定哪些字符集名称可以匹配。<br>2） SHOW COLLATION语法<br>SHOW COLLATION [LIKE ‘pattern’];<br>默认情况下，SHOW COLLATION语句输出所有可用的字符集。该语句如果设置可选LIKE子句，那么pattern将指定哪些归类名可以匹配。<br>3） SHOW COLUMNS语法<br>SHOW [FULL] COLUMNS FROM tbl_name [FROM db_name] [LIKE ‘pattern’];<br>SHOW COLUMNS显示在一个给定表中的各列的信息。对于视图，本语句也起作用。<br>4） SHOW CREATE DATABASE语法<br>SHOW CREATE {DATABASE | SCHEMA} db_name;<br>显示CREATE DATABASE语句创建的给定数据库。也可以使用SHOW CREATE SCHEMA。<br>5） SHOW CREATE TABLE语法<br>SHOW CREATE TABLE tbl_name;<br>显示CREATE TABLE语句创建的给定表格。本语句对视图也起作用。<br>6） SHOW DATABASES语法<br>SHOW {DATABASES | SCHEMAS} [LIKE ‘pattern’];<br>SHOW DATABASES可以列举在MySQL服务器主机上的所有数据库。您也可以使用mysqlshow命令得到此数据库清单。您只能看到您拥有的权限可以允许看到的的数据库，除非您拥有全局SHOW DATABASES权限。<br>如果服务器以–skip-show-database选项方式启动，那么您根本不能使用本语句，除非您拥有SHOW DATABASES权限。<br>7） SHOW ENGINE语法<br>SHOW ENGINE engine_name {LOGS | STATUS };<br>SHOW ENGINE显示存储引擎的日志或状态信息。<br>8） SHOW ENGINES语法<br>SHOW [STORAGE] ENGINES;<br>SHOW ENGINES显示存储引擎的状态信息。对于检查一个存储引擎是否被支持，或者对于查看默认引擎是什么，本语句十分有用。<br>9） SHOW ERRORS语法<br>SHOW ERRORS [LIMIT [offset,] row_count];<br>SHOW COUNT(*) ERRORS;<br>本语句与SHOW WARNINGS接近，不过该语句只显示错误，并不同时显示错误、警告和注意信息。<br>10） SHOW GRANTS语法<br>SHOW GRANTS FOR user;<br>本语句列出了在为MySQL用户账户复制权限时必须发布的GRANT语句。<br>11） SHOW INDEX语法<br>SHOW INDEX FROM tbl_name [FROM db_name];<br>SHOW INDEX会返回表索引信息。其格式与ODBC中的SQLStatistics调用相似。<br>12） SHOW INNODB STATUS语法<br>SHOW INNODB STATUS;<br>在MySQL 5.1中，等价于SHOW ENGINE INNODB STATUS，但不赞成使用后者。<br>13） SHOW LOGS语法<br>SHOW [BDB] LOGS;<br>14） SHOW OPEN TABLES语法<br>SHOW OPEN TABLES [FROM db_name] [LIKE ‘pattern’];<br>SHOW OPEN TABLES列举当前在表缓存中被打开的非TEMPORARY表<br>15） SHOW PRIVILEGES语法<br>SHOW PRIVILEGES;<br>SHOW PRIVILEGES显示MySQL服务器支持的系统权限列表。确切的输出内容需要根据您的服务器的版本而定。</p>
-<p>16） SHOW PROCESSLIST语法</p>
-<p>SHOW [FULL] PROCESSLIST;<br>SHOW PROCESSLIST显示正在运行的线程。您也可以使用mysqladmin processlist语句得到此信息。如果您有SUPER权限，您可以看到所有线程，否则，您只能看到您自己的线程（也就是，与您正在使用的MySQL账户相关的线程）。<br>17） SHOW STATUS语法<br>SHOW [GLOBAL | SESSION] STATUS [LIKE ‘pattern’];<br>SHOW STATUS提供服务器状态信息。此信息也可以使用mysqladmin extended-status命令获得。<br>18） SHOW TABLE STATUS语法<br>SHOW TABLE STATUS [FROM db_name] [LIKE ‘pattern’];<br>SHOW TABLE STATUS的性质与SHOW TABLE的类似；不过，可以提供每个表的大量信息。您也可以使用mysqlshow –status db_name命令得到此信息列表。本语句也显示视图信息。<br>19） SHOW TABLES语法<br>SHOW [FULL] TABLES [FROM db_name] [LIKE ‘pattern’];<br>SHOW TABLES列举了给定数据库中的非TEMPORARY表。您也可以使用mysqlshow db_name命令得到此列表。<br>本命令也列举数据库中的视图。支持FULL修改符，这样SHOW FULL TABLES就可以显示到第二个输出列。对于一个表，第二列的值为BASE TABLE；对于一个视图，第二列的值为VIEW。<br>注释：如果您对一个表没有权限，则该表不会在来自SHOW TABLES或mysqlshow db_name命令的输出中显示。<br>20） SHOW TRIGGERS语法<br>SHOW TRIGGERS [FROM db_name] [LIKE expr];<br>SHOW TRIGGERS列出了目前被MySQL服务器定义的触发程序。<br>2.5.5 其他管理语句<br>1） CACHE INDEX语法<br>CACHE INDEX<br>  tbl_index_list [, tbl_index_list] …<br>  IN key_cache_name<br>tbl_index_list:<br>  tbl_name [[INDEX|KEY] (index_name[, index_name] …)]<br>CACHE INDEX语句把表索引分配给某个关键缓存。该语句只用于MyISAM表。<br>2） FLUSH语法<br>FLUSH [LOCAL | NO_WRITE_TO_BINLOG] flush_option [, flush_option] …<br>如果您想要清除MySQL使用部分的内部缓存，您应该使用FLUSH语句。要执行FLUSH，您必须拥有RELOAD权限。<br>3） KILL语法<br>KILL [CONNECTION | QUERY] thread_id;<br>每个与mysqld的连接都在一个独立的线程里运行，您可以使用SHOW PROCESSLIST语句查看哪些线程正在运行，并使用KILL thread_id语句终止其中一个线程。<br>KILL允许可选参数CONNECTION或QUERY修改符：<br>KILL CONNECTION与不含修改符的KILL一样：它会终止与给定的thread_id有关的连接。<br>KILL QUERY会终止当前与正在执行的语句的连接，但是会保持连接的原状。<br>如果您拥有PROCESS权限，则您可以查看所有线程。如果您拥有SUPER权限，您可以终止所有线程和语句。否则，您只能查看和终止您自己的线程和语句。<br>您也可以使用mysqladmin processlist和mysqladmin kill命令来检查和终止线程。<br>4） LOAD INDEX INTO CACHE语法<br>LOAD INDEX INTO CACHE<br>  tbl_index_list [, tbl_index_list] …<br>tbl_index_list:<br>  tbl_name<br>    [[INDEX|KEY] (index_name[, index_name] …)]<br>    [IGNORE LEAVES]<br>LOAD INDEX INTO CACHE语句会把一个表索引预载入到某个关键缓存中。<br>5） RESET语法<br>RESET reset_option [, reset_option] …<br>RESET语句被用于清除不同的服务器操作的状态。它也作为FLUSH语句的更强大的版本。<br>为了执行RESET，您必须拥有RELOAD权限。<br>reset_option可以为以下的任何一项：<br>MASTER可以删除列于索引文件中的所有二进制日志，把二进制日志索引文件重新设置为空，并创建一个新的二进制日志文件。（在以前版本的MySQL中，被称为FLUSH MASTER。）<br>QUERY CACHE 从查询缓存中取消所有的查询结果。<br>SLAVE可以使从属服务器忘记其在主服务器二进制日志中的复制位置，另外，也可以通过删除原有的中继日志文件和开始一个新文件来重新设置中继日志。<br>2.6 复制语句<br>2.6.1 用于控制主服务器的SQL语句<br>1） PURGE MASTER LOGS语法<br>PURGE {MASTER | BINARY} LOGS TO ‘log_name’;<br>PURGE {MASTER | BINARY} LOGS BEFORE ‘date’;<br>首先介绍什么是二进制日志。二进制日志是一组记录MySQL服务器进行数据修改时的信息文件；该日志由一组二进制文件和索引文件组成。<br>那么PURGE MASTER LOGS语法就是用于删除列于在指定的日志或日期之前的日志索引中的所有二进制日志。这些被删除的日志文件也会被移出索引文件的记录列表，以致指定的日志文件被排在日志列表首部。<br>2） RESET MASTER语法<br>RESET MASTER;<br>可以删除列于索引文件中的所有二进制日志，把二进制日志索引文件重新设置为空，并创建一个新的二进制日志文件。<br>3） SET SQL_LOG_BIN语法<br>SET SQL_LOG_BIN = {0|1};<br>如果客户端使用一个有SUPER权限的账户连接，则可以禁用或启用当前连接的二进制日志记录。如果客户端没有此权限，则语句被拒绝，并伴随错误提示。<br>4） SHOW BINLOG EVENTS语法<br>SHOW BINLOG EVENTS<br>   [IN ‘log_name’] [FROM pos] [LIMIT [offset,] row_count]<br>用于显示二进制日志中的事件。如果您不指定’log_name’，则显示第一个二进制日志。<br>5） SHOW MASTER LOGS语法<br>SHOW MASTER LOGS;<br>SHOW BINARY LOGS;<br>用于列出服务器中的二进制日志文件。<br>6） SHOW MASTER STATUS语法<br>SHOW MASTER STATUS;<br>用于提供主服务器上二进制日志文件的状态信息。需要有SUPER或者REPLICATION CLIENT权限才能执行该语句。<br>7） SHOW SLAVE HOSTS语法<br>SHOW SLAVE HOSTS;<br>用于显示当前使用主服务器注册的克隆从属服务器的清单。不以–report-host=slave_name选项为开头的从属服务器不会显示在本清单中。<br>2.5.2 用于控制从服务器的SQL语句<br>1） CHANGE MASTER TO语法<br>CHANGE MASTER TO master_def [, master_def] …<br>master_def:<br>      MASTER_HOST = ‘host_name’<br>    | MASTER_USER = ‘user_name’<br>    | MASTER_PASSWORD = ‘password’<br>    | MASTER_PORT = port_num<br>    | MASTER_CONNECT_RETRY = count<br>    | MASTER_LOG_FILE = ‘master_log_name’<br>    | MASTER_LOG_POS = master_log_pos<br>    | RELAY_LOG_FILE = ‘relay_log_name’<br>    | RELAY_LOG_POS = relay_log_pos<br>    | MASTER_SSL = {0|1}<br>    | MASTER_SSL_CA = ‘ca_file_name’<br>    | MASTER_SSL_CAPATH = ‘ca_directory_name’<br>    | MASTER_SSL_CERT = ‘cert_file_name’<br>    | MASTER_SSL_KEY = ‘key_file_name’<br>    | MASTER_SSL_CIPHER = ‘cipher_list’<br>可以更改从属服务器用于与主服务器进行连接和通讯的参数。<br>MASTER_USER, MASTER_PASSWORD,MASTER_SSL,MASTER_SSL_CA,MASTER_SSL_CAPATH, MASTER_SSL_CERT,MASTER_SSL_KEY和MASTER_SSL_CIPHER这些参数用于向从属服务器提供有关如何与主服务器连接的信息。</p>
-<p>即使对于在编译时没有SSL支持的从属服务器，SSL选项(MASTER_SSL, MASTER_SSL_CA, MASTER_SSL_CAPATH, MASTER_SSL_CERT, MASTER_SSL_KEY和MASTER_SSL_CIPHER)也可以被更改。它们被保存到master.info文件中，但是会被忽略，直到您使用SSL支持已启用的服务器。<br>2） MASTER_POS_WAIT()语法<br>SELECT MASTER_POS_WAIT(‘master_log_file’, master_log_pos);<br>该语法实际上是一个函数，而不是一个语句。它被用于确认从属服务器已读取并执行最后到达主服务器上二进制日志的给定位置。<br>3 RESET SLAVE语法<br>RESET SLAVE;<br>用于让从属服务器忘记其在主服务器的二进制日志中的复制位置。本语句被用于进行一个明确的启动：它会删除master.info和relay-log.info文件，以及所有的中继日志，并启动一个新的中继日志。<br>注释：所有的中继日志被删除，即使它们没有被从属服务器SQL线程完全的执行。（如果您已经发布了一个STOP SLAVE语句或如果从属服务器的载入量很大，那么以上情况将会发生在从属服务器上。）<br>存储在master.info文件中的连接信息通过使用在对应的启动选项中指定的值，被立即重新设置了。此信息包括主服务器主机、主服务器接口、主服务器用户和主服务器密码等值。当从属服务器SQL线程被中止时，它位于正在复制的临时表的中，当发布RESET SLAVE语句时，已被复制的临时表在从属服务器中被删除。<br>4） SET GLOBAL SQL_SLAVE_SKIP_COUNTER语法<br>SET GLOBAL SQL_SLAVE_SKIP_COUNTER = n;<br>该语句作用是跳过来自主服务器上的n个事件，一般有效作用于当复制被某个语句终止的时候还原。<br>仅当从属线程没有正在运行时，本语句是有效的，否则会产生错误。<br>5） START SLAVE语法<br>START SLAVE [thread_type [, thread_type] … ]<br>START SLAVE [SQL_THREAD] UNTIL<br>    MASTER_LOG_FILE = ‘log_name’, MASTER_LOG_POS = log_pos<br>START SLAVE [SQL_THREAD] UNTIL<br>    RELAY_LOG_FILE = ‘log_name’, RELAY_LOG_POS = log_pos<br>thread_type: IO_THREAD | SQL_THREAD<br>不含任何可选参数的START SLAVE会同时启动两个从属服务器线程。I/O线程从主服务器中读取查询事件，并把它们存储在中继日志中，SQL线程读取中继日志并执行查询。START SLAVE语句要求SUPER权限。<br>6） STOP SLAVE语法<br>STOP SLAVE [thread_type [, thread_type] … ]<br>thread_type: IO_THREAD | SQL_THREAD<br>用于中止从属服务器线程。STOP SLAVE的执行要求具有SUPER权限。<br>和START SLAVE相似，本语句在使用时可以添加IO_THREAD和SQL_THREAD选项，指明将被中止的线程。<br>在以前版本的MySQL中，本语句被称为SLAVE STOP，在MySQL 5.1中仍然接受这种用法，以便与以前版本兼容，但是现在不赞成使用该语句。<br>2.7 用于预处理语句的SQL语法<br>预处理语句的SQL语法基于以下三个SQL语句：<br>PREPARE stmt_name FROM preparable_stmt;<br>EXECUTE stmt_name [USING @var_name [, @var_name] …];<br>{DEALLOCATE | DROP} PREPARE stmt_name;<br>PREPARE语句用于准备一个语句，并赋予它一个名称stmt_name，借此在以后引用该语句。<br>语句名称不区分大小写。preparable_stmt可以是一个文字字符串，也可以是一个包含了语句文本的用户变量。如果是文本，那么必须展现一个单一的SQL语句，而不是多个语句。使用本语句，?字符可以被用于标记参数，以指示当您执行查询时，数据值在哪里与查询结合在一起。?字符不应加引号，即使您想要把它们与字符串值结合在一起，也不要加引号。参数标记符只能被用于数据值应该出现的地方，不用于SQL关键词和标识符等。<br>如果带有此名称的预备语句已经存在，则在新的语言被预备以前，它会被隐含地解除分配。这意味着，如果新语句包含一个错误并且不能被预备，则会返回一个错误，并且不存在带有给定名称语句。<br>预备语句用于客户端内部会话：<br>在此会话内，如果语句被创建，那么其它客户端看不到它。<br>在预备了一个语句后，您可使用一个EXECUTE语句（该语句引用了预制语句名称）来执行它。如果预制语句包含任何参数标记符，则您必须提供一个列举了用户变量（其中包含要与参数结合的值）的USING子句。参数值只能由用户变量提供，USING子句必须准确地指明用户变量。用户变量的数目与语句中的参数标记符的数量一样多。<br>您可以多次执行一个给定的预制语句，在每次执行前，把不同的变量传递给它，或把变量设置为不同的值。<br>要对一个预制语句解除分配，需使用DEALLOCATE PREPARE语句。尝试在解除分配后执行一个预制语句会导致错误。<br>如果您终止了一个客户端会话，同时没有对以前已预制的语句解除分配，则服务器会自动解除分配。<br>以下SQL语句可以被用在预制语句中：CREATE TABLE, DELETE, DO, INSERT, REPLACE, SELECT, SET, UPDATE和多数的SHOW语句。目前不支持其它语句。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1034,7 +984,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">47</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

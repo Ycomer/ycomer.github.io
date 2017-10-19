@@ -102,16 +102,19 @@
 
 
 
-<meta name="description" content="先说RESTful API的缺点GraphQL">
+<meta name="description" content="先说RESTful API的缺点一、扩展性随api的不断发展，会变得越来越臃肿。server返回的用户信息越来越多，client需要的信息只是其中的一部分，这样会增加网络传输量。并且不利于client处理数据。调用多个api才能满足不同的数据需求，导致需要调用不同的api很是不灵活。
+GraphQL简单来说就是取那些数据是由客户端说了，在REST中给，给那些数据是server决定的，client只">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GraphQL">
 <meta property="og:url" content="http://ycomer.com/2017/10/17/GraphQL/index.html">
 <meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="先说RESTful API的缺点GraphQL">
-<meta property="og:updated_time" content="2017-10-18T15:55:23.000Z">
+<meta property="og:description" content="先说RESTful API的缺点一、扩展性随api的不断发展，会变得越来越臃肿。server返回的用户信息越来越多，client需要的信息只是其中的一部分，这样会增加网络传输量。并且不利于client处理数据。调用多个api才能满足不同的数据需求，导致需要调用不同的api很是不灵活。
+GraphQL简单来说就是取那些数据是由客户端说了，在REST中给，给那些数据是server决定的，client只">
+<meta property="og:updated_time" content="2017-10-19T15:25:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GraphQL">
-<meta name="twitter:description" content="先说RESTful API的缺点GraphQL">
+<meta name="twitter:description" content="先说RESTful API的缺点一、扩展性随api的不断发展，会变得越来越臃肿。server返回的用户信息越来越多，client需要的信息只是其中的一部分，这样会增加网络传输量。并且不利于client处理数据。调用多个api才能满足不同的数据需求，导致需要调用不同的api很是不灵活。
+GraphQL简单来说就是取那些数据是由客户端说了，在REST中给，给那些数据是server决定的，client只">
 
 
 
@@ -338,7 +341,9 @@
       
 
       
-        <h1 id="先说RESTful-API的缺点"><a href="#先说RESTful-API的缺点" class="headerlink" title="先说RESTful API的缺点"></a>先说RESTful API的缺点</h1><h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1>
+        <h1 id="先说RESTful-API的缺点"><a href="#先说RESTful-API的缺点" class="headerlink" title="先说RESTful API的缺点"></a>先说RESTful API的缺点</h1><p>一、扩展性<br>随api的不断发展，会变得越来越臃肿。<br>server返回的用户信息越来越多，client需要的信息只是其中的一部分，这样会增加网络传输量。并且不利于client处理数据。<br>调用多个api才能满足不同的数据需求，导致需要调用不同的api很是不灵活。</p>
+<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><p>简单来说就是取那些数据是由客户端说了，在REST中给，给那些数据是server决定的，client只能从中挑选。在GraphQL中client直接对server说想要什么数据，server就负责返回什么数据。</p>
+<h1 id="使用node-js实现GraphQL服务器"><a href="#使用node-js实现GraphQL服务器" class="headerlink" title="使用node.js实现GraphQL服务器"></a>使用node.js实现GraphQL服务器</h1>
       
     </div>
 
@@ -379,6 +384,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/TCP-IP阅读/" rel="prev" title="TCP/IP阅读">
+                TCP/IP阅读 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -446,7 +455,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">47</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -520,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先说RESTful-API的缺点"><span class="nav-number">1.</span> <span class="nav-text">先说RESTful API的缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GraphQL"><span class="nav-number">2.</span> <span class="nav-text">GraphQL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先说RESTful-API的缺点"><span class="nav-number">1.</span> <span class="nav-text">先说RESTful API的缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GraphQL"><span class="nav-number">2.</span> <span class="nav-text">GraphQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用node-js实现GraphQL服务器"><span class="nav-number">3.</span> <span class="nav-text">使用node.js实现GraphQL服务器</span></a></li></ol></div>
             
 
           </div>
