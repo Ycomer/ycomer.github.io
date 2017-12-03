@@ -257,6 +257,399 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/25/立即执行函数表达式/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/25/立即执行函数表达式/" itemprop="url">
+                  立即执行函数表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T13:05:50+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/25/立即执行函数表达式/" class="leancloud_visitors" data-flag-title="立即执行函数表达式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、函数声明</p>
+<p>最标准的函数声明是-关键字function后面紧跟着函数名doSomething然后是圆括号()和花括号{}(ps:重要特征就是函数声明提升)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
+<p>二、函数表达式(匿名函数、拉姆达函数)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;;</div></pre></td></tr></table></figure></p>
+<p>ps:当JavaScript解析器遇到 function关键字时，它通常假设我们在写函数声明，适合用来定义那些只会用到一次的函数。</p>
+<p>三、立即执行函数表达式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// _...do something...</span></div><div class="line">_&#125;)();</div></pre></td></tr></table></figure></p>
+<p>第一个圆括号的作用：<br>通过使用圆括号包裹我们的函数, 我们告诉解释器以函数表达式的方式解析JavaScript代码 , 而不是函数声明。 这样我们的代码在编译的时候不会出现任何错误。<br>第二个圆括号的作用<br>圆括号的作用之一就是用于调用函数。<br>通过在函数表达式后面加上一对圆括号，那么就会立即调用我们的立即执行函数表达式（IIFE）</p>
+<p>1.为什么我们要使用 IIFE?<br>私有性.<br>在 JavaScript 中, 变量所在的作用域在包含他们的函数中.这意味着他们不能从函数外被访问<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> superSecret = <span class="number">195</span>;</div><div class="line">&#125;)()</div><div class="line"><span class="built_in">console</span>.log(superSecret);</div><div class="line"><span class="comment">// Uncaught ReferenceError: superSecret is not defined</span></div></pre></td></tr></table></figure></p>
+<p>我们不能在 IIFE 之外访问到superSecret。 在 IIFE 内的所有代码都处在该函数的私有的作用域当中。 这允许我们在函数私有的变量和数据不被侵扰的情况下使用这些变量和数据</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/25/执行上下文/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/25/执行上下文/" itemprop="url">
+                  执行上下文
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-25T12:36:10+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/25/执行上下文/" class="leancloud_visitors" data-flag-title="执行上下文">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一、当JavaScript代码在运行的时候, 它所在的执行环境是非常重要的, 通常认为是以下其中之一:</p>
+<ul>
+<li>Global code – 默认环境，你的代码首次执行的地方。</li>
+<li>Function code – 当代码执行进入到函数体当中。</li>
+<li>Eval code – 在 eval 函数内部执行的文本。<br>二、关于执行上下文有五个要点是要记住的:<br>1.单线程。<br>2.同步执行。<br>3.只有一个全局上下文。<br>4.可有无数个函数上下文。<br>5.每个函数调用都会创建一个新的 执行上下文，哪怕是递归调用。<br>三、执行上下文中的细节<br>①创建阶段 [当函数被调用, 但内部的代码还没开始执行]:<br>②创建作用域链.<br>③创建变量、函数以及参数<br>④决定 “this”的值<br>⑤激活 / 代码执行阶段:<br>⑥赋值, 寻找函数引用以及解释 /执行代码<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">executionContextObj = &#123;</div><div class="line">    <span class="string">'scopeChain'</span>: &#123; <span class="comment">/* 变量对象 + 所有父级执行上下文中的变量对象 */</span> &#125;,</div><div class="line">    <span class="string">'variableObject'</span>: &#123; <span class="comment">/* 函数参数 / 参数, 内部变量以及函数声明 */</span> &#125;,</div><div class="line">    <span class="string">'this'</span>: &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这是解释器执行代码时的伪概述:<br>1.寻找调用函数的代码<br>2.在执行函数代码之前,创建执行上下文.<br>3.进入创建阶段:<br>4.初始化作用域链.<br>5.创建变量对象：<br>6.创建参数对象,检查参数的上下文,初始化其名称和值并创建一个引用拷贝。<br>7.扫描上下文中的函数声明：<br>8.对于每个被发现的函数,在变量对象中创建一个和函数名同名的属性这是函数在内存中的引用。<br>9.如果函数名已经存在,引用值将会被覆盖。<br>10.扫描上下文中的变量声明：<br>11.对于每个被发现的变量声明,在变量对象中创建一个同名属性并初始化值为undefined。<br>12.如果变量名在变量对象中已经存在,什么都不做继续扫描。<br>13.确定上下文中的 “this”<br>14.激活/代码执行阶段：<br>15.执行/在上下文中解释函数代码，并在代码逐行执行时给变量赋值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="string">'hello'</span>;</div><div class="line">    <span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span> <span class="title">privateB</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    &#125;;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">foo(<span class="number">22</span>);</div></pre></td></tr></table></figure></p>
+<p>创建阶段<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">fooExecutionContext = &#123;</div><div class="line">    <span class="attr">scopeChain</span>: &#123; ... &#125;,</div><div class="line">    <span class="attr">variableObject</span>: &#123;</div><div class="line">        <span class="attr">arguments</span>: &#123;</div><div class="line">            <span class="number">0</span>: <span class="number">22</span>,</div><div class="line">            <span class="attr">length</span>: <span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">i</span>: <span class="number">22</span>,</div><div class="line">        <span class="attr">c</span>: pointer to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span></div><div class="line">        <span class="title">a</span>: <span class="title">undefined</span>,</div><div class="line">        <span class="title">b</span>: <span class="title">undefined</span></div><div class="line">    &#125;,</div><div class="line">    <span class="title">this</span>: &#123; ... &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>激活/执行阶段<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">fooExecutionContext = &#123;</div><div class="line">    <span class="attr">scopeChain</span>: &#123; ... &#125;,</div><div class="line">    <span class="attr">variableObject</span>: &#123;</div><div class="line">        <span class="attr">arguments</span>: &#123;</div><div class="line">            <span class="number">0</span>: <span class="number">22</span>,</div><div class="line">            <span class="attr">length</span>: <span class="number">1</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">i</span>: <span class="number">22</span>,</div><div class="line">        <span class="attr">c</span>: pointer to <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span></div><div class="line">        <span class="title">a</span>: '<span class="title">hello</span>',</div><div class="line">        <span class="title">b</span>: <span class="title">pointer</span> <span class="title">to</span> <span class="title">function</span> <span class="title">privateB</span>(<span class="params"></span>)</div><div class="line">    &#125;,</div><div class="line">    <span class="title">this</span>: &#123; ... &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/jQuery-源码解读/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/23/jQuery-源码解读/" itemprop="url">
+                  jQuery 源码解读
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:51:03+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/23/jQuery-源码解读/" class="leancloud_visitors" data-flag-title="jQuery 源码解读">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jquery主体源码阅读"><a href="#jquery主体源码阅读" class="headerlink" title="jquery主体源码阅读"></a>jquery主体源码阅读</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之let和const/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -571,414 +964,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出ES6之变量解构/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/23/深入浅出ES6之变量解构/" itemprop="url">
-                  深入浅出之ES6之变量解构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:49:37+08:00">
-                2017-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/23/深入浅出ES6之变量解构/" class="leancloud_visitors" data-flag-title="深入浅出之ES6之变量解构">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。也就是模式匹配。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右相等的完全结构</span></div><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="comment">//左右不相等的不完全结构</span></div></pre></td></tr></table></figure>
-<p>链式结构<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> first, second, all;</div><div class="line">all = [first, second] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div></pre></td></tr></table></figure></p>
-<p>嵌套数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [one, [twoA, twoB]] = [<span class="number">1</span>, [<span class="number">2</span>,<span class="number">2.5</span>], <span class="number">3</span>];</div></pre></td></tr></table></figure></p>
-<p>解构不成功就返回undefined。如果解构的等号右边不是数组（不可遍历的数据结构）就返回undefined。<br>①默认值<br>解构允许指定默认值<br>一个数组成员不严格等于（===）undefined，默认值是不会生效的。</p>
-<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123; <span class="attr">foo</span>: foo, <span class="attr">bar</span>: bar &#125; = &#123; <span class="attr">foo</span>: <span class="string">"aaa"</span>, <span class="attr">bar</span>: <span class="string">"bbb"</span> &#125;;</div></pre></td></tr></table></figure></p>
-<p>真正被赋值的是变量</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/23/深入浅出JS之事件/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/23/深入浅出JS之事件/" itemprop="url">
-                  深入浅出JS之事件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-23T23:44:26+08:00">
-                2017-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/23/深入浅出JS之事件/" class="leancloud_visitors" data-flag-title="深入浅出JS之事件">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="事件类型-event-type"><a href="#事件类型-event-type" class="headerlink" title="事件类型(event type)"></a>事件类型(event type)</h1><p>一、传统事件类型<br>是一个用来说明发生了什么类型事件的字符串。<br>1.表单事件<br>2.window事件<br>3.鼠标事件<br>4.键盘事件<br>二、DOM事件<br>1.html5事件<br>2.触摸屏和移动设备事件</p>
-<h1 id="注册事件处理程序"><a href="#注册事件处理程序" class="headerlink" title="注册事件处理程序"></a>注册事件处理程序</h1><p>有两种实现方式<br>1.给事件目标对象或文档元素设置属性<br>2.将事件处理程序传递给对象或者元素一个方法。<br>通用的处理方法是addEventlistener()。<br>事件处理程序属性是在前面加上’on’,并且都是小写。``</p>
-<h1 id="事件目标-event-target"><a href="#事件目标-event-target" class="headerlink" title="事件目标(event target"></a>事件目标(event target</h1><p>发生的事件或与之相关的对象。</p>
-<h1 id="事件对象-event-object"><a href="#事件对象-event-object" class="headerlink" title="事件对象(event object)"></a>事件对象(event object)</h1><p>与特定事件相关且包含有关该事件详细信息的对象。</p>
-<h1 id="事件传播-event-propagation"><a href="#事件传播-event-propagation" class="headerlink" title="事件传播(event propagation)"></a>事件传播(event propagation)</h1><p>是浏览器决定那个对象触发其事件处理程序的过程。它的另一种形式称为事件捕获(event capturing)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/13/CSS魔法之经典布局/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/13/CSS魔法之经典布局/" itemprop="url">
-                  CSS魔法之经典布局
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-13T23:48:19+08:00">
-                2017-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/13/CSS魔法之经典布局/" class="leancloud_visitors" data-flag-title="CSS魔法之经典布局">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="CSS经典布局之圣杯和双飞翼"><a href="#CSS经典布局之圣杯和双飞翼" class="headerlink" title="CSS经典布局之圣杯和双飞翼"></a>CSS经典布局之圣杯和双飞翼</h1><p>圣杯布局与双飞翼布局针对的都是三列左右栏固定中间栏边框自适应的网页布局，下来我们就来实现它。<br>在实现之前我们先来提几个问题？<br>一、浮动产生的问题都有神马?该如何解决？<br>二、实现圣杯布局原理是神马？<br>三、在flexbox和grid中如何实现?<br>带着问题来解决问题。</p>
-<h3 id="传统实现"><a href="#传统实现" class="headerlink" title="传统实现"></a>传统实现</h3><p>1.①html代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--省略的代码--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"HolyGrid"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span>header<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span>main<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 省略的代码 --&gt;</span></div></pre></td></tr></table></figure></p>
-<p>1.②效果图</p>
-<p><div align="center" style="margin-top: 1px;"><br><img src="show1.jpg" alt=""><br></div><br>2.①添加基础样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">header</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkseagreen;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: white;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>2.②效果图</p>
-<p><div align="center"><br><img src="show2.png" alt=""><br></div><br>图中我们只是简单的设置了各部分的基础样式，看一开到由于main的宽度设置为了100%所以导致，left和right被挤到下面去了。那么为了实现我们的圣杯布局，这里我们就要用到之前所说的定位和浮动，那么该如何做呢？<br>3.①让容器container里面的元素浮动<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">left</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注：由于在container容器中我们将其所有元素进行了浮动，意味着他们都脱离了文档流，由于footer和header并没有脱离，所以自然的footer就会被main盖住。这里就需要借助clear来清除非浮动块。<br>3.②效果图</p>
-<p><div align="center"><br><img src="show3.png" alt=""><br></div><br>4.①达到最终的效果。先上图</p>
-<p><div align="center"><br><img src="show4.png" alt=""><br></div><br>图中将left和right浮动块，让其各自margin-left:-100%; margin-left:-200px;代码如下:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">200px</span>;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>关于边距负值的理解和应用大家是必须要了解和掌握的，这里我们已经实现了圣杯布局的整体样式，接下来我们来实现main的自适应。<br>5.①这个时候我们利用内边距padding来实现。将left和right的位置设置为relative。然后就可以固定他们的位置了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">200px</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">   <span class="attribute">position</span>: relative;</div><div class="line">   <span class="attribute">left</span>: -<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">   <span class="attribute">position</span>: relative;</div><div class="line">   <span class="attribute">right</span>: -<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line">局部代码</div></pre></td></tr></table></figure></p>
-<p>5.②效果图</p>
-<p><div align="center"><br><img src="show5.png" alt=""><br></div></p>
-<h1 id="flex实现"><a href="#flex实现" class="headerlink" title="flex实现"></a>flex实现</h1><p>6.①flex实现相对容易，没有前面那么复杂。也是一种比较好的实现方案。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">  <span class="selector-class">.HolyGrid</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">header</span>,</div><div class="line"><span class="selector-tag">footer</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: darkgreen;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#left</span>,</div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">flex</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">12em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#right</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: darkorchid;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>6.②效果图</p>
-<p><div align="center"><br><img src="show6.png" alt=""><br></div></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>圣杯布局和双飞翼布局在main内容之外的思路都是一样的。区别在于main内部内容的显示不一样，具体的是:圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。flex实现就更方便了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1019,7 +1009,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-count">53</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
