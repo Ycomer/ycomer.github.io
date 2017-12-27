@@ -108,7 +108,7 @@
 <meta property="og:url" content="http://ycomer.com/2017/10/04/跨域资源共享/index.html">
 <meta property="og:site_name" content="东方猿BLog">
 <meta property="og:description" content="垮与资源共享（Cross-origin resource sharing）跨域资源共享的整个过程都是在浏览器自动完成的。所以实现CORS的关键是服务器，只要服务器实现CORS的接口，就可以跨源通讯。一、两种请求浏览器将跨域请求分成两类，简单请求和非简单请求同时满足请求方法为(get pust head）和http头部信息不超出一下字段（Accept Accept-language Content-">
-<meta property="og:updated_time" content="2017-10-05T04:55:09.000Z">
+<meta property="og:updated_time" content="2017-12-27T09:29:52.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域资源共享">
 <meta name="twitter:description" content="垮与资源共享（Cross-origin resource sharing）跨域资源共享的整个过程都是在浏览器自动完成的。所以实现CORS的关键是服务器，只要服务器实现CORS的接口，就可以跨源通讯。一、两种请求浏览器将跨域请求分成两类，简单请求和非简单请求同时满足请求方法为(get pust head）和http头部信息不超出一下字段（Accept Accept-language Content-">
@@ -340,9 +340,8 @@
       
         <h1 id="垮与资源共享（Cross-origin-resource-sharing）"><a href="#垮与资源共享（Cross-origin-resource-sharing）" class="headerlink" title="垮与资源共享（Cross-origin resource sharing）"></a>垮与资源共享（Cross-origin resource sharing）</h1><p>跨域资源共享的整个过程都是在浏览器自动完成的。所以实现CORS的关键是服务器，只要服务器实现CORS的接口，就可以跨源通讯。<br>一、两种请求<br>浏览器将跨域请求分成两类，简单请求和非简单请求<br>同时满足请求方法为(get pust head）和http头部信息不超出一下字段（Accept Accept-language Content-language Last-Event-ID Content-Type（只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain））都是简单方法，否则是非简单方法。<br>二、简单请求<br>对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段，用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。如果origin的源不在许可范围，服务器会返回一个正常的http回应。浏览器发现头信息没有包含Access-Control-Allow-Origin字段，就抛出错误。被XMLHttpRequest的onerror回调函数捕获。这种错误无法通过状态码识别，因为HTTP回应的状态码有可能是200。<br>如果在许可的范围会出现多个头部信息</p>
 <blockquote>
-<p>Access-Control-Allow-Origin<br>必须存在的，这个值要么是请求时Origin的值，要么是*，表示接受任意域名的请求<br>Access-Control-Allow-Credentials<br>可选，表是否发送cookie<br>Access-Control-Expose-Headers<br>CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段：Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma,如果想拿到其他字段就必须在其中指定。<br>withCredentials 属性<br>如果把Cookie发送到服务器，一方面指定Access-Control-Allow-Credentials。另一方面必须打开withCredentials属性。Access-Control-Allow-Origin就不能设为星号，必须指定明确的、与请求网页一致的域名<br>三、非简单请求<br>预检请求<br>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。<br>预检请求的方式是OPTIONS，头信息里面关键字是origin。还有其他两个特殊字段<br>Access-Control-Request-Method<br>该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法。<br>Access-Control-Request-Headers<br>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段<br>如果浏览器否定了预检请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被XMLHttpRequest对象的onerror回调函数捕获<br>如果预检通过，服务器返回的结果中有如下字段<br>Access-Control-Allow-Methods<br>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了避免多次”预检”请求。<br>Access-Control-Allow-Headers<br>它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段，不限于浏览器在”预检”中请求的字段。前提是预检请求中有它。<br>Access-Control-Allow-Credentials<br>该字段与简单请求时的含义相同。<br>Access-Control-Max-Age<br>可选，指定本次预检请求的有效期<br>一旦服务器通过了预检请求，以后的每次浏览器的CORS请求，都跟简单请求一样。</p>
+<p>Access-Control-Allow-Origin<br>必须存在的，这个值要么是请求时Origin的值，要么是*，表示接受任意域名的请求<br>Access-Control-Allow-Credentials<br>可选，表是否发送cookie<br>Access-Control-Expose-Headers<br>CORS请求时，XMLHttpRequest对象的getResponseHeader()方法只能拿到6个基本字段：Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma,如果想拿到其他字段就必须在其中指定。<br>withCredentials 属性<br>如果把Cookie发送到服务器，一方面指定Access-Control-Allow-Credentials。另一方面必须打开withCredentials属性。Access-Control-Allow-Origin就不能设为星号，必须指定明确的、与请求网页一致的域名<br>三、非简单请求<br>预检请求<br>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。<br>预检请求的方式是OPTIONS，头信息里面关键字是origin。还有其他两个特殊字段<br>Access-Control-Request-Method<br>该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法。<br>Access-Control-Request-Headers<br>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段<br>如果浏览器否定了预检请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被XMLHttpRequest对象的onerror回调函数捕获<br>如果预检通过，服务器返回的结果中有如下字段<br>Access-Control-Allow-Methods<br>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了避免多次”预检”请求。<br>Access-Control-Allow-Headers<br>它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段，不限于浏览器在”预检”中请求的字段。前提是预检请求中有它。<br>Access-Control-Allow-Credentials<br>该字段与简单请求时的含义相同。<br>Access-Control-Max-Age<br>可选，指定本次预检请求的有效期<br>一旦服务器通过了预检请求，以后的每次浏览器的CORS请求，都跟简单请求一样。<br>学习于阮一峰老师<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a></p>
 </blockquote>
-<p>学习于阮一峰老师<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">跨域资源共享 CORS 详解</a></p>
 
       
     </div>
@@ -455,7 +454,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">57</span>
+              <span class="site-state-item-count">58</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
