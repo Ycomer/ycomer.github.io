@@ -257,6 +257,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/Node-js专题之网络编程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/09/Node-js专题之网络编程/" itemprop="url">
+                  Node-js专题之网络编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T21:03:52+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/09/Node-js专题之网络编程/" class="leancloud_visitors" data-flag-title="Node-js专题之网络编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#网络服务于安全</p>
+<p>一.TLS/SSL</p>
+<p>1.密钥</p>
+<p>在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。<br>通过openssl来实现TLS/SSL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//生成服务器端私钥</div><div class="line">openssl genrsa -out server.key 1024</div><div class="line">//生成客户端私钥</div><div class="line">openssl genrsa -out client.key 1024</div><div class="line">//服务器端公钥</div><div class="line">openssl rsa -in server.key -pubout -out server.pem</div><div class="line">//客户端公钥</div><div class="line">openssl rsa -in client.key -pubout -out client.pem</div></pre></td></tr></table></figure></p>
+<p>2.数字证书<br>CA(Certificate Authority 数字证书认证中心)<br>自签名证书，自己扮演CA,给自己的服务器办法签名证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 1024</div><div class="line">openssl req -new -key ca.key -out ca.csr</div><div class="line">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt</div></pre></td></tr></table></figure></p>
+<p>接下来是服务器通过自己的私钥生成证书签名请求文件SCR并申请签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key -out server.csr</div><div class="line">openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -in server.csr -out server.crt</div></pre></td></tr></table></figure></p>
+<h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
+<h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
+<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件<br>服务器也是一个EventEmitter实例<br>connection<br>request<br>close<br>checkcontinue<br>connect<br>upgrade<br>clientError<br>3.HTTP客户端<br>报文头和报文体由它产生。<br>http模块提供的底层api：http.request(options,connect)<br>其中options决定了http请求头中的内容<br>host<br>hostname<br>port<br>localAddress<br>socketPath<br>method<br>path<br>headers<br>auth<br>agent<br>这里的内容由write()和end()方法实现。<br>3.1HTTP代理<br>为了重TCP连接。http模块包含了一个默认的客户端代理对象http:globalAgent,它对每个服务器端创建的连接进行了管理，默认情况下ClientRequest对象对同一个服务器发起的http请求最多可以创建5个。通过对options中Agent对象的sockets和Requests进行监视可以发现业务的繁忙程度。<br>3.2客户端事件<br>response<br>socket<br>connect<br>upgrade<br>continue</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/RESTful/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -863,147 +998,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/08/28/厉害的jQuery之Ajax/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/28/厉害的jQuery之Ajax/" itemprop="url">
-                  厉害的jQuery之Ajax
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-28T12:11:03+08:00">
-                2017-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/08/28/厉害的jQuery之Ajax/" class="leancloud_visitors" data-flag-title="厉害的jQuery之Ajax">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="jQuery与Ajax"><a href="#jQuery与Ajax" class="headerlink" title="jQuery与Ajax"></a>jQuery与Ajax</h1><p>1.load()从服务器获取静态的数据文件<br>load(url [, data] [,callback])<br>url: 字符串 请求html页面的url地址（若是函数的话，它是事件处理程序注册方法）<br>url(‘url selector’)选择url中的一部分内容是显示<br>data: 对象 发送至服务器的key/value数据<br>根据有没有参数来决定传递方式，没有参数则是GET，有参数则POST。<br>callback: 函数 请求完成时的回调函数，无论请求成功或失败。<br>callback(responseText:请求返回内容, textStatus:请求返回状态(success、error、notmodified、timeout、parsererror), XMLHttpRequset)<br>2.$.get()和$.post()传递一些参数给服务器中的页面，都是使用GET和POST方式进行异步请求。<br>①$.get/$.post(url [, data] [, callback] [, type])<br>url: 字符串 请求html页的url地址<br>data: 对象 发送至服务器的key/value数据会作为QueryString附加到请求url中。<br>callback: 函数 载入成功时回调函数(只有response的返回状态是success才调用改函数)自动将请求结果和状态返回给该方法。<br>type: 字符串 服务器返回内容的格式，包括xml、html、script、json、text、jsonp<br>②区别：</p>
-<ul>
-<li>get的请求会跟在url后进行传递。post请求则是作为http消息的实体内容发送给web服务器。</li>
-<li>get方式对传输的数据大小有限制，而使用post方式传递的参数两要比get大很多</li>
-<li>get请求的数据会被浏览器缓存起来，带来严重的安全问题</li>
-<li>两种方式传递的数据在服务器端的获取也不同。</li>
-</ul>
-<p>3.$.ajax()最底层的ajax实现方法，能实现上述三个方式都能实现的功能。<br>  $.ajax(options)<br>  options: url、type、timeout、data、dataType、beforeSend、complete、success、error、global、contentType、cache、ifModified、content。<br> 而且还可以设定<br>  <em>beforeSend(提交前回调函数)
-  </em>error(请求失败后处理)<br>  <em>success(请求成功还能处理)
-  </em>complete(请求完成后处理)</p>
-<p>4.$.getScript()和$.getJson()<br>①$.getScript()直接加载.js文件，他也有回调函数，在函数成功载入后执行。他适用于同源和跨源脚本。在同源情况下，回调函数的第一个参数是脚本的文本内容，第二个是’success’状态码。第三个参数则是用来获取脚本内容的XMLHttpRequest对象。对于跨域不存XMLHttpRequest对象<br>②$.getJSON()用于加载json文件，方法和上面一样。<br>它将获取到的内容解析为JSON，并且只有在传入了回调函数才会有用，如果url或数据字符串在末尾或’&amp;’字符钱含有’=?’字符串，表明这是一个jsonp请求。</p>
-<ul>
-<li>$.each()函数不同于jquery中的each()方法。不操作jquery对象。而是以一个数组或者对象作为第一个参数，以一个回调函数作为第二个参数。回调函数拥有两个参数，第一个参数为对象的成员或数组的索引， 第二个为对应的变量或内容。 </li>
-<li>还可以获取其他网站的json数据。</li>
-</ul>
-<p>5.序列化元素<br>1.serialize()方法将dom元素内容序列化为字符串，用于ajax请求。它还可以解决字符编码的问题，不仅限于处理表单。<br>2.serializeArray()方法将dom元素序列化以后返回json格式的数据。然后通过使用$.each()函数的数据对象进行迭代输出。<br>3.$.param()用来对一个数组或对象按照key/value进行序列化。<br>6.全局事件<br>ajaxStop(callback)<br>ajaxStart(callback)<br>ajaxComplete(callback)<br>ajaxError(callback)<br>ajaxSend(callback)<br>ajaxSuccess(callback)<br>如果不想触发全局事件则可以设置global:false!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1049,7 +1043,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">59</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

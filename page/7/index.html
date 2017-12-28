@@ -257,6 +257,140 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/14/设计模式之发布-订阅模式/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="东方猿BLog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/14/设计模式之发布-订阅模式/" itemprop="url">
+                  设计模式之发布-订阅模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-14T12:44:02+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/14/设计模式之发布-订阅模式/" class="leancloud_visitors" data-flag-title="设计模式之发布-订阅模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>一、广泛用于异步编程中，这是一种替代传递回调函数的方案。<br>二、可以取代对象之间的硬编码问题</p>
+<h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="number">1</span>);</div><div class="line">&#125;, <span class="literal">false</span>);</div><div class="line"><span class="built_in">document</span>.body.click();<span class="comment">//模拟用户点击</span></div></pre></td></tr></table></figure>
+<h1 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h1><p>订阅者只订阅自己感兴趣的事。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line">salesOffices.clientList = [];</div><div class="line">salesOffices.listen = <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>( !<span class="keyword">this</span>.clientList[key])&#123;</div><div class="line">    <span class="keyword">this</span>.clientList(key) = [];</div><div class="line">  &#125; </div><div class="line">  <span class="keyword">this</span>.clientList.[key].push(fn);</div><div class="line">&#125;;</div><div class="line">salesOffices.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//发布消息</span></div><div class="line">  <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">  fns = <span class="keyword">this</span>.clientList[key];</div><div class="line">  <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++]; )&#123;</div><div class="line">    fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure></p>
+<h1 id="发布-订阅模式的通用实现"><a href="#发布-订阅模式的通用实现" class="headerlink" title="发布-订阅模式的通用实现"></a>发布-订阅模式的通用实现</h1><p>很显然上述只能实现一处的需求。如果是在多处呢，则要给对象动态添加职责是理所当然的事情。<br>将发布订阅功能提取出来，放在一个单独的对象内<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> event = &#123;</div><div class="line">  <span class="attr">clientList</span>:[],</div><div class="line">  <span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( !<span class="keyword">this</span>.clientList[ key ] )&#123;</div><div class="line">       <span class="keyword">this</span>.clientList( key ) = [];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.clientList.[ key ].push( fn );</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">      fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">    <span class="keyword">if</span> ( !fns || fns.length === <span class="number">0</span> )&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[ i++ ]; )&#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//给所有对象都动态安装发布-订阅功能</span></div><div class="line"><span class="keyword">var</span> installEvent = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i <span class="keyword">in</span> event)&#123;</div><div class="line">    obj[i] = event[i]</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//测试给对象salesOffices动态增加发布-订阅功能</span></div><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line">installEvent( salesOffices );</div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure></p>
+<h1 id="取消订阅模式"><a href="#取消订阅模式" class="headerlink" title="取消订阅模式"></a>取消订阅模式</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">event.remove = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">  <span class="keyword">if</span>( !fns )&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>( !fn )&#123;</div><div class="line">    fns &amp;&amp; (fns.length = <span class="number">0</span> );</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> l = fns.length - <span class="number">1</span>; l&gt;=<span class="number">0</span>; l--)&#123;</div><div class="line">      <span class="keyword">var</span> _fn = fns[ <span class="number">1</span> ];</div><div class="line">      <span class="keyword">if</span>( _fn === fn)&#123;</div><div class="line">        fns.splice( l, <span class="number">1</span> );</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> installEvent = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i <span class="keyword">in</span> event)&#123;</div><div class="line">    obj[i] = event[i]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">installEvent( salesOffices );</div><div class="line"></div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure>
+<h1 id="真实的例子"><a href="#真实的例子" class="headerlink" title="真实的例子"></a>真实的例子</h1><p>在网站开发的时候。需要获取用户的登录信息来完成后续的操作，但是我们并不知道ajax何时能成功返回用户信息。重点是我们并不清楚网站的还有那些模块是需要用户信息的。这个时候使用发布-订阅模式来处理复杂的业务逻辑就显得很重要了，不管是后续的增加需求还是其他。发布-订阅模式使登录模块并不关心业务究竟要做什么，也不用去了解他们的细节，而只是各模块对登录成功的消息进行监听。</p>
+<h1 id="全局的发布-订阅对象（中介）"><a href="#全局的发布-订阅对象（中介）" class="headerlink" title="全局的发布-订阅对象（中介）"></a>全局的发布-订阅对象（中介）</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> clientList = &#123;&#125;,</div><div class="line">    listen,</div><div class="line">    trigger,</div><div class="line">    remove;</div><div class="line">  listen = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn </span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( !clientList[ key ])&#123;</div><div class="line">      clientList[ key ] = [];</div><div class="line">    &#125;</div><div class="line">    clientList[ key ].push( fn );</div><div class="line">  &#125;;</div><div class="line">  trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">      fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">      <span class="keyword">if</span> ( !fns || fns.length === <span class="number">0</span> )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[ i++ ]; )&#123;</div><div class="line">        fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  remove = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">    <span class="keyword">if</span>( !fns )&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>( !fn )&#123;</div><div class="line">      fns &amp;&amp; (fns.length = <span class="number">0</span> );</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">for</span>( <span class="keyword">var</span> l = fns.length - <span class="number">1</span>; l&gt;=<span class="number">0</span>; l--)&#123;</div><div class="line">        <span class="keyword">var</span> _fn = fns[ <span class="number">1</span> ];</div><div class="line">        <span class="keyword">if</span>( _fn === fn)&#123;</div><div class="line">          fns.splice( l, <span class="number">1</span> );</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">listen</span>: listen,</div><div class="line">    <span class="attr">trigger</span>: trigger,</div><div class="line">    <span class="attr">remove</span>: remove</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line">Event.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">  &#125;);</div><div class="line">Event.trigger(<span class="string">'squareMeter110'</span>, <span class="number">20000000</span>);</div></pre></td></tr></table></figure>
+<h1 id="模块间的通讯"><a href="#模块间的通讯" class="headerlink" title="模块间的通讯"></a>模块间的通讯</h1><p>但是模块间类似这样的通讯不能用太多，不然模块和模块之间的联系就被隐藏到了背后，也许模块之间就是暴露一些接口给其他模块调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"count"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">srcipt</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></div><div class="line"></div><div class="line">  var a = (function()&#123; //模块a有一个按钮</div><div class="line">    var count = 0;</div><div class="line">    var button = document.getElementById('count');</div><div class="line">    button.onclick = function()&#123;</div><div class="line">      Event.trigger( 'add', count++);</div><div class="line">    &#125;</div><div class="line">  &#125;)();</div><div class="line">  var b = (function()&#123; //模块b显示点击的总次数</div><div class="line">    var div = document.getElementById('show');</div><div class="line">    Event.listen('add', function(count)&#123;</div><div class="line">      div.innerHTML = count;</div><div class="line">    &#125;);</div><div class="line">  &#125;)();</div><div class="line"><span class="tag">&lt;/<span class="name">srcipt</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="全局事件的命名冲突"><a href="#全局事件的命名冲突" class="headerlink" title="全局事件的命名冲突"></a>全局事件的命名冲突</h1><p>给Event对象提供创建命名空间的功能<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> global = <span class="keyword">this</span>,</div><div class="line">		Event,</div><div class="line">		_default = <span class="string">'defalt'</span>;</div><div class="line">	Event = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> _listen,</div><div class="line">			_trigger,</div><div class="line">			_remove,</div><div class="line">			_slice = <span class="built_in">Array</span>.prototype.slice,</div><div class="line">			_shift = <span class="built_in">Array</span>.prototype.shift,</div><div class="line">			_unshift = <span class="built_in">Array</span>.prototype.unshift,</div><div class="line">			namespaceCache = &#123;&#125;,</div><div class="line">			_create,</div><div class="line">			find,</div><div class="line">			each = <span class="function"><span class="keyword">function</span>(<span class="params"> ary, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> ret;</div><div class="line">				<span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; l = ary.length; i&lt;<span class="number">1</span> ;i++)&#123;</div><div class="line">					<span class="keyword">var</span> n = ary[i];</div><div class="line">					ret = fn.call(n, i, n);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">return</span> ret;</div><div class="line">			&#125;;</div><div class="line">			_listen = <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, cache</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>( !cache[key])&#123;</div><div class="line">					cache[key] = [];</div><div class="line">				&#125;</div><div class="line">				cache[key].push(fn);</div><div class="line">			&#125;;</div><div class="line">			_remove = <span class="function"><span class="keyword">function</span>(<span class="params">key, cache, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>( cache[key])&#123;</div><div class="line">					<span class="keyword">if</span>(fn)&#123;</div><div class="line">						<span class="keyword">for</span>( <span class="keyword">var</span> i = cache[key].length; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">							<span class="keyword">if</span>( cache[key][i] === fn)&#123;</div><div class="line">								cache[key].splice(i , <span class="number">1</span>);</div><div class="line">							&#125;</div><div class="line">						&#125;</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						cache[key] = [];</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;;</div><div class="line">			_trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> cache = _shift.call(<span class="built_in">arguments</span>),</div><div class="line">				key = _shift.call(<span class="built_in">arguments</span>),</div><div class="line">				args = <span class="built_in">arguments</span>,</div><div class="line">				_self = <span class="keyword">this</span>,</div><div class="line">				ret,</div><div class="line">				stack = cache[key];</div><div class="line">				<span class="keyword">if</span>( !stack || !stack.length)&#123;</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">return</span> each( stack, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					<span class="keyword">return</span> <span class="keyword">this</span>.apply(_self, args);</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">			_create = <span class="function"><span class="keyword">function</span>(<span class="params"> namespace</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> namespace = namespace || _default;</div><div class="line">				<span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line">					offlineStack = [],</div><div class="line">					ret = &#123;</div><div class="line">						<span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">							_listen(key, fn, cache);</div><div class="line">							<span class="keyword">if</span>( offlineStack === <span class="literal">null</span>)&#123;</div><div class="line">								<span class="keyword">return</span>;</div><div class="line">							&#125;</div><div class="line">							<span class="keyword">if</span>( last === <span class="string">'last'</span>)&#123;</div><div class="line">								offlineStack.length &amp;&amp; offlineStack.pop()();</div><div class="line">							&#125;<span class="keyword">else</span>&#123;</div><div class="line">								each( offlineStack, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">									<span class="keyword">this</span>();</div><div class="line">								&#125;);</div><div class="line">							&#125;</div><div class="line">							offlineStack = <span class="literal">null</span>;</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">one</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">							_remove(key, cache);</div><div class="line">							<span class="keyword">this</span>.listen(key, fn, last);</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">remove</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">							_remove(key, cache, fn);</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">							<span class="keyword">var</span> fn,</div><div class="line">							args,</div><div class="line">							_self = <span class="keyword">this</span>;</div><div class="line">							_unshift.call( <span class="built_in">arguments</span>, cache);</div><div class="line">							args = <span class="built_in">arguments</span>;</div><div class="line">							fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">								<span class="keyword">return</span> _trigger.apply( _self, args);</div><div class="line">							&#125;;</div><div class="line">							<span class="keyword">if</span>( offlineStack)&#123;</div><div class="line">								<span class="keyword">return</span> offlineStack.push(fn);</div><div class="line">							&#125;</div><div class="line">							<span class="keyword">return</span> fn();</div><div class="line">						&#125;</div><div class="line">					&#125;;</div><div class="line">					<span class="keyword">return</span> namespace ? ( namespaceCache[namespace] ? namespaceCache[namespace] : namespaceCache[namespace] = ret) : ret;</div><div class="line">			&#125;;</div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="attr">create</span>: _create,</div><div class="line">			<span class="attr">one</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.one(key, fn, last);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">remove</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.remove(key,fn);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.listen(key, fn, last);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event =<span class="keyword">this</span>.create();</div><div class="line">				event.trigger.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">	&#125;();</div><div class="line">	<span class="keyword">return</span> Event；</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node-js专题之异步编程/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -764,141 +898,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/Node-js专题之网络编程/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/09/Node-js专题之网络编程/" itemprop="url">
-                  Node-js专题之网络编程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T21:03:52+08:00">
-                2017-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/09/09/Node-js专题之网络编程/" class="leancloud_visitors" data-flag-title="Node-js专题之网络编程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#网络服务于安全</p>
-<p>一.TLS/SSL</p>
-<p>1.密钥</p>
-<p>在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。<br>通过openssl来实现TLS/SSL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//生成服务器端私钥</div><div class="line">openssl genrsa -out server.key 1024</div><div class="line">//生成客户端私钥</div><div class="line">openssl genrsa -out client.key 1024</div><div class="line">//服务器端公钥</div><div class="line">openssl rsa -in server.key -pubout -out server.pem</div><div class="line">//客户端公钥</div><div class="line">openssl rsa -in client.key -pubout -out client.pem</div></pre></td></tr></table></figure></p>
-<p>2.数字证书<br>CA(Certificate Authority 数字证书认证中心)<br>自签名证书，自己扮演CA,给自己的服务器办法签名证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 1024</div><div class="line">openssl req -new -key ca.key -out ca.csr</div><div class="line">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt</div></pre></td></tr></table></figure></p>
-<p>接下来是服务器通过自己的私钥生成证书签名请求文件SCR并申请签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key -out server.csr</div><div class="line">openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -in server.csr -out server.crt</div></pre></td></tr></table></figure></p>
-<h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
-<h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
-<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件<br>服务器也是一个EventEmitter实例<br>connection<br>request<br>close<br>checkcontinue<br>connect<br>upgrade<br>clientError<br>3.HTTP客户端<br>报文头和报文体由它产生。<br>http模块提供的底层api：http.request(options,connect)<br>其中options决定了http请求头中的内容<br>host<br>hostname<br>port<br>localAddress<br>socketPath<br>method<br>path<br>headers<br>auth<br>agent<br>这里的内容由write()和end()方法实现。<br>3.1HTTP代理<br>为了重TCP连接。http模块包含了一个默认的客户端代理对象http:globalAgent,它对每个服务器端创建的连接进行了管理，默认情况下ClientRequest对象对同一个服务器发起的http请求最多可以创建5个。通过对options中Agent对象的sockets和Requests进行监视可以发现业务的繁忙程度。<br>3.2客户端事件<br>response<br>socket<br>connect<br>upgrade<br>continue</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -944,7 +943,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">59</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
