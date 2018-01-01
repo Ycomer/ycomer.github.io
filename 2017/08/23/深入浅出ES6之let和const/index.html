@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="东方猿BLog">
 <meta property="og:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
 ②与for循坏搭配最佳哦for循坏里面的let是父级作用域，里面是块级作用域。12345for(l">
-<meta property="og:updated_time" content="2017-08-24T15:43:24.000Z">
+<meta property="og:updated_time" content="2017-12-28T13:21:00.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出ES6之let和const">
 <meta name="twitter:description" content="ES6let和const①let只在其代码块内有效12345678var a=[];for(let i=0; i&amp;lt;10; i++)&amp;#123;    a[i] = function()&amp;#123;        console.log(i)    &amp;#125;;&amp;#125;a[6]();//6
@@ -354,7 +354,7 @@
 <h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>声明一个只读的常量。一旦声明，常量的值就不能改变。只在块级作用域中有效<br>①本质<br>实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。<br>可以使用<code>Object.freeze</code>来冻结对象和其属性</p>
 <h3 id="声明变量的方法"><a href="#声明变量的方法" class="headerlink" title="声明变量的方法"></a>声明变量的方法</h3><p>①var<br>②function<br>③let<br>④const<br>⑤import<br>⑥class</p>
 <h3 id="顶层对象和global对象"><a href="#顶层对象和global对象" class="headerlink" title="顶层对象和global对象"></a>顶层对象和global对象</h3><p>顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。<br>ES6规定：<br>var命令和function命令声明的全局变量，依旧是顶层对象的属性<br>let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性</p>
-
+<h3 id="let和const那些不知道的事情"><a href="#let和const那些不知道的事情" class="headerlink" title="let和const那些不知道的事情"></a>let和const那些不知道的事情</h3>
       
     </div>
 
@@ -386,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/23/厉害的jQuery/" rel="next" title="厉害的jQuery">
-                <i class="fa fa-chevron-left"></i> 厉害的jQuery
+              <a href="/2017/08/23/深入浅出ES6之变量解构/" rel="next" title="深入浅出之ES6之变量解构">
+                <i class="fa fa-chevron-left"></i> 深入浅出之ES6之变量解构
               </a>
             
           </div>
@@ -396,8 +396,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/23/深入浅出ES6之变量解构/" rel="prev" title="深入浅出之ES6之变量解构">
-                深入浅出之ES6之变量解构 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/23/jQuery-源码解读/" rel="prev" title="jQuery 源码解读">
+                jQuery 源码解读 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -466,7 +466,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-count">60</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -476,7 +476,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -540,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const"><span class="nav-number">1.0.1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.0.2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">1.0.3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量的方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">声明变量的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象和global对象"><span class="nav-number">1.0.5.</span> <span class="nav-text">顶层对象和global对象</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const"><span class="nav-number">1.0.1.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.0.2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">1.0.3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量的方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">声明变量的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象和global对象"><span class="nav-number">1.0.5.</span> <span class="nav-text">顶层对象和global对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const那些不知道的事情"><span class="nav-number">1.0.6.</span> <span class="nav-text">let和const那些不知道的事情</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -561,7 +561,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
