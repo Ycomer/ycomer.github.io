@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="教程," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="拥有自己的博客🤡　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。搭建前的准备">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拥有自己的博客">
+<meta property="og:url" content="http://ycomer.com/2017/03/12/mac搭建hexo博客/index.html">
+<meta property="og:site_name" content="董方园网络blog">
+<meta property="og:description" content="拥有自己的博客🤡　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。搭建前的准备">
+<meta property="og:updated_time" content="2017-08-02T15:53:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拥有自己的博客">
+<meta name="twitter:description" content="拥有自己的博客🤡　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。搭建前的准备">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6360603109923751000',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ycomer.com/2017/03/12/mac搭建hexo博客/"/>
+
+
+
+
+
+  <title> 拥有自己的博客 | 董方园网络blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">董方园网络blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">编程、技术、生活、旅行</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/03/12/mac搭建hexo博客/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                拥有自己的博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T21:43:26Z">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/12/mac搭建hexo博客/" class="leancloud_visitors" data-flag-title="拥有自己的博客">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="拥有自己的博客🤡"><a href="#拥有自己的博客🤡" class="headerlink" title="拥有自己的博客🤡"></a><font face="STSong">拥有自己的博客🤡</font></h1><h4 id="现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。"><a href="#现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。" class="headerlink" title="　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。"></a>　　<font face="sans-serif">现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。</font></h4><h1 id="搭建前的准备工作👾"><a href="#搭建前的准备工作👾" class="headerlink" title="搭建前的准备工作👾"></a><font face="STSong">搭建前的准备工作👾</font></h1><blockquote>
+<h4 id="①环境的准备"><a href="#①环境的准备" class="headerlink" title="①环境的准备"></a>①环境的准备</h4><ol>
+<li>Node.js  <a href="http://nodejs.cn/" target="_blank" rel="external">官网</a>   </li>
+<li>Git <a href="https://git-scm.com/" target="_blank" rel="external">官网</a></li>
+</ol>
+<h4 id="②安装（官网的指南值得一看）"><a href="#②安装（官网的指南值得一看）" class="headerlink" title="②安装（官网的指南值得一看）"></a>②安装（<font size="3">官网的指南值得一看</font>）</h4><ol>
+<li><font size="4" color="red">配置Github</font><font size="3" color="blue"><br>&gt; 1. 注册请戳<a href="https://github.com/" target="_blank" rel="external">Github</a>(已有请忽略此步)<br>&gt; 2. 创建代码库<br>&gt; 3. New repository<br>&gt; 4. 在Repository name下填写yourname.github.io(比如我这里就是ycomer.github.io)<br>&gt; 5. Setting<br>&gt; 6. 找到GIthub Pages<br>&gt; 7. 点击Automatic pagr generator<br>&gt; 8. 等待一会就欧克了。</font></li>
+<li><font size="4" color="red">配置hexo</font><br><br><font size="3" color="blue"> Item2<a href="http://www.iterm2.com/" target="_blank" rel="external">官网</a><br><br>打开item2 输入<pre>npm install hexo-cli -g</pre><br><br>上述完成以后输入<pre>npm install hexo –save</pre><br><br>查看是否安装完成输入<pre>hexo -v</pre> </font></li>
+<li><font size="4" color="red">初始化hexo</font><br><br><font size="3" color="blue"> 输入<pre>hexo init folder</pre>　hexo会在folder(指定文件夹新建所需文件)</font></li>
+</ol>
+<h1 id="😄至此hexo搭建完毕"><a href="#😄至此hexo搭建完毕" class="headerlink" title="😄至此hexo搭建完毕"></a><font face="STSong">😄至此hexo搭建完毕</font></h1></blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/27/函数表达式/" rel="prev" title="函数表达式">
+                函数表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="浪子膏" />
+          <p class="site-author-name" itemprop="name">浪子膏</p>
+          <p class="site-description motion-element" itemprop="description">一个正在填坑的front-ender</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">60</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Ycomer" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Ycnonmer" target="_blank" title="twitter">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zhihu.com/people/lang-zi-gao-56" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拥有自己的博客🤡"><span class="nav-number">1.</span> <span class="nav-text">拥有自己的博客🤡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">　　现在生活节奏快，信息的获取范围广泛，作为一个刚入门的程序猿在对一些不懂得问题进行解决的时候往往会出现如下的样子（从开始搭建博客的相关博文最后调到了一个其他不想干的东西最后还是没有搞懂）如此这样的情况比比皆是，为了总结和反思。建立起自己的学习路径个方式方法不失为一个好的idea。所以搭建一个自己的博客就显得很重要了，当然博客并不是只是用来记笔记的，往往也是一种经历。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建前的准备工作👾"><span class="nav-number">2.</span> <span class="nav-text">搭建前的准备工作👾</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#①环境的准备"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">①环境的准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#②安装（官网的指南值得一看）"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">②安装（官网的指南值得一看）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#😄至此hexo搭建完毕"><span class="nav-number">3.</span> <span class="nav-text">😄至此hexo搭建完毕</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">浪子膏</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

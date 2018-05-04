@@ -102,15 +102,15 @@
 
 
 
-<meta name="description" content="一个正在填坑的font-ender">
+<meta name="description" content="一个正在填坑的front-ender">
 <meta property="og:type" content="website">
-<meta property="og:title" content="东方猿BLog">
+<meta property="og:title" content="董方园网络blog">
 <meta property="og:url" content="http://ycomer.com/page/4/index.html">
-<meta property="og:site_name" content="东方猿BLog">
-<meta property="og:description" content="一个正在填坑的font-ender">
+<meta property="og:site_name" content="董方园网络blog">
+<meta property="og:description" content="一个正在填坑的front-ender">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="东方猿BLog">
-<meta name="twitter:description" content="一个正在填坑的font-ender">
+<meta name="twitter:title" content="董方园网络blog">
+<meta name="twitter:description" content="一个正在填坑的front-ender">
 
 
 
@@ -144,7 +144,7 @@
 
 
 
-  <title> 东方猿BLog </title>
+  <title> 董方园网络blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -177,11 +177,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">东方猿BLog</span>
+      <span class="site-title">董方园网络blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle"></p>
+  <p class="site-subtitle">编程、技术、生活、旅行</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -257,7 +257,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/16/debug之道/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/16/作用域/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -266,9 +266,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
+    <meta itemprop="name" content="董方园网络blog">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
     </span>
   </span>
 
@@ -282,8 +282,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/10/16/debug之道/" itemprop="url">
-                  debug之道
+                <a class="post-title-link" href="/2017/09/16/作用域/" itemprop="url">
+                  作用域
                 </a>
               
             
@@ -297,8 +297,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-16T16:25:06+08:00">
-                2017-10-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-15T21:50:08Z">
+                2017-09-15
               </time>
             
 
@@ -317,7 +317,7 @@
 
           
           
-             <span id="/2017/10/16/debug之道/" class="leancloud_visitors" data-flag-title="debug之道">
+             <span id="/2017/09/16/作用域/" class="leancloud_visitors" data-flag-title="作用域">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,7 +344,12 @@
       
         
           
-            
+            <h1 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h1><p>通过阅读包含变量定义在内的数行源码就能知道变量的作用域。<br>一个变量的作用域是程序源代码中定义这个变量的区域。全局变量拥有全局作用域。在函数内部声明的变量是局部变量。在类似于c语言的编程语言中有块级作用域的存在。然而在JS中是没有块级作用域，但是却有函数作用域，是指在函数内声明的所有变量在函数体内始终是可见的（变量提升）也就是说在没有块级作用域的函数中声明的局部变量在执行结束后，也会存在与其执行的外部环境中。并不能像块级作用域那样立即销毁。<br>查询标识符会沿着作用域链向上查询，比如在使return语句返回时就是一个字符串的作用域链查询。显然局部变量的查询速度要比全局变量快的多。</p>
+<h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>作用域链的的用于是，保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">'blue'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> anotherColor = <span class="string">'red'</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> tempColor = anotherColor;</div><div class="line">    anotherColor = color;</div><div class="line">    color = tempColor;</div><div class="line">  &#125;</div><div class="line">  swarColors();</div><div class="line">&#125;</div><div class="line">changeColor();</div></pre></td></tr></table></figure>
+<p>内部环境可以通过作用域链访问所有的外部环境，但是外部环境不能访问内部环境中的任何变量和函数，这些环境之间的关系是线性的，有次序的。每个环境都可以向上搜索作用域链。以查询变量和函数名。但任何环境不能通过向下搜索作用域链。</p>
+<p># </p>
+
           
         
       
@@ -382,7 +387,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/12/新鲜的mongoDB/">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/14/设计模式之发布-订阅模式/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="浪子膏">
@@ -391,9 +396,9 @@
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
+    <meta itemprop="name" content="董方园网络blog">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
     </span>
   </span>
 
@@ -407,8 +412,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/10/12/新鲜的mongoDB/" itemprop="url">
-                  新鲜的mongoDB
+                <a class="post-title-link" href="/2017/09/14/设计模式之发布-订阅模式/" itemprop="url">
+                  设计模式之发布-订阅模式
                 </a>
               
             
@@ -422,8 +427,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T23:02:06+08:00">
-                2017-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-14T12:44:02Z">
+                2017-09-14
               </time>
             
 
@@ -442,7 +447,7 @@
 
           
           
-             <span id="/2017/10/12/新鲜的mongoDB/" class="leancloud_visitors" data-flag-title="新鲜的mongoDB">
+             <span id="/2017/09/14/设计模式之发布-订阅模式/" class="leancloud_visitors" data-flag-title="设计模式之发布-订阅模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,414 +474,1149 @@
       
         
           
-            <h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p>文档是mongDB的核心，类似于SQLite数据库关系数据库中的每一行。多个键及其关联的值放在一起就是文档。</p>
-<h1 id="文档的逻辑关系"><a href="#文档的逻辑关系" class="headerlink" title="文档的逻辑关系"></a>文档的逻辑关系</h1><p>1.嵌入式关系<br>2.引用式关系，将两个文档分开，通过引用文档的_id<br>字段来建立关系。</p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>集合就是一组文档的集合，就相当于关系数据库中的表一样。<br>1.元数据<br>数据库的信息存储在集合中，他们使用统一的命名空间DBNAME.system.*</p>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>use dbname 创建数据库<br>db 查看当前数据库<br>show dbs 查看所有数据库<br>db.dropDatabase() 销毁数据库<br>createCollection()：创建集合<br>db.COLLECTION.drop()：删除集合<br>db.COLLECTION_NAME.insert(document)：插入文档<br>db.COLLECTION_NAME.update(SELECTION_CRITERIA,UPDATED_DATA)：更新文档<br>db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA})：替换已存在的文档<br>db.COLLECTION_NAME.remove(DELECTION_CRITERIA)：删除文档</p>
-<h1 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h1><p>当find中传入多个键值对时，MongoDB就会将其作为AND处理<br>db.users.find() 查询数据，不带参数返回所有数据。<br>db.users.find().pretty() 可以使查询的结果更为美观。<br>OR处理方法</p>
-<blockquote>
-<p>db.post.find(<br>   {<br>      $or: [<br>         {key1: value1}, {key2:value2}<br>      ]<br>   }<br>).pretty()<br>PS : {$gt:10} 表示大于10，另外，$lt 表示小于，$lte 表示小于等于，$gte 表示大于等于，$ne 表示不等于。</p>
-<h1 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h1><p>创建集合 db.createCollection(“shiyanlou2”, { capped : 1, autoIndexID : 1, size : 6142800, max : 10000 } )            #带参数<br>{ “ok “: 1 }<br>参数描述：</p>
-</blockquote>
+            <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>一、广泛用于异步编程中，这是一种替代传递回调函数的方案。<br>二、可以取代对象之间的硬编码问题</p>
+<h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="number">1</span>);</div><div class="line">&#125;, <span class="literal">false</span>);</div><div class="line"><span class="built_in">document</span>.body.click();<span class="comment">//模拟用户点击</span></div></pre></td></tr></table></figure>
+<h1 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h1><p>订阅者只订阅自己感兴趣的事。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line">salesOffices.clientList = [];</div><div class="line">salesOffices.listen = <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>( !<span class="keyword">this</span>.clientList[key])&#123;</div><div class="line">    <span class="keyword">this</span>.clientList(key) = [];</div><div class="line">  &#125; </div><div class="line">  <span class="keyword">this</span>.clientList.[key].push(fn);</div><div class="line">&#125;;</div><div class="line">salesOffices.trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//发布消息</span></div><div class="line">  <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">  fns = <span class="keyword">this</span>.clientList[key];</div><div class="line">  <span class="keyword">if</span>(!fns || fns.length === <span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[i++]; )&#123;</div><div class="line">    fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure></p>
+<h1 id="发布-订阅模式的通用实现"><a href="#发布-订阅模式的通用实现" class="headerlink" title="发布-订阅模式的通用实现"></a>发布-订阅模式的通用实现</h1><p>很显然上述只能实现一处的需求。如果是在多处呢，则要给对象动态添加职责是理所当然的事情。<br>将发布订阅功能提取出来，放在一个单独的对象内<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> event = &#123;</div><div class="line">  <span class="attr">clientList</span>:[],</div><div class="line">  <span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( !<span class="keyword">this</span>.clientList[ key ] )&#123;</div><div class="line">       <span class="keyword">this</span>.clientList( key ) = [];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.clientList.[ key ].push( fn );</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">      fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">    <span class="keyword">if</span> ( !fns || fns.length === <span class="number">0</span> )&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[ i++ ]; )&#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//给所有对象都动态安装发布-订阅功能</span></div><div class="line"><span class="keyword">var</span> installEvent = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i <span class="keyword">in</span> event)&#123;</div><div class="line">    obj[i] = event[i]</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//测试给对象salesOffices动态增加发布-订阅功能</span></div><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line">installEvent( salesOffices );</div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure></p>
+<h1 id="取消订阅模式"><a href="#取消订阅模式" class="headerlink" title="取消订阅模式"></a>取消订阅模式</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">event.remove = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">  <span class="keyword">if</span>( !fns )&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>( !fn )&#123;</div><div class="line">    fns &amp;&amp; (fns.length = <span class="number">0</span> );</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> l = fns.length - <span class="number">1</span>; l&gt;=<span class="number">0</span>; l--)&#123;</div><div class="line">      <span class="keyword">var</span> _fn = fns[ <span class="number">1</span> ];</div><div class="line">      <span class="keyword">if</span>( _fn === fn)&#123;</div><div class="line">        fns.splice( l, <span class="number">1</span> );</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> salesOffices = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> installEvent = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i <span class="keyword">in</span> event)&#123;</div><div class="line">    obj[i] = event[i]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">installEvent( salesOffices );</div><div class="line"></div><div class="line">salesOffices.listen(<span class="string">'squareMeter88'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line">salesOffices.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">salesOffices.trigger(<span class="string">'squareMeter88'</span>, <span class="number">2000000</span>);</div><div class="line">salesOffices.trigger(<span class="string">'squareMeter110'</span>, <span class="number">3000000</span>);</div></pre></td></tr></table></figure>
+<h1 id="真实的例子"><a href="#真实的例子" class="headerlink" title="真实的例子"></a>真实的例子</h1><p>在网站开发的时候。需要获取用户的登录信息来完成后续的操作，但是我们并不知道ajax何时能成功返回用户信息。重点是我们并不清楚网站的还有那些模块是需要用户信息的。这个时候使用发布-订阅模式来处理复杂的业务逻辑就显得很重要了，不管是后续的增加需求还是其他。发布-订阅模式使登录模块并不关心业务究竟要做什么，也不用去了解他们的细节，而只是各模块对登录成功的消息进行监听。</p>
+<h1 id="全局的发布-订阅对象（中介）"><a href="#全局的发布-订阅对象（中介）" class="headerlink" title="全局的发布-订阅对象（中介）"></a>全局的发布-订阅对象（中介）</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> clientList = &#123;&#125;,</div><div class="line">    listen,</div><div class="line">    trigger,</div><div class="line">    remove;</div><div class="line">  listen = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn </span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> ( !clientList[ key ])&#123;</div><div class="line">      clientList[ key ] = [];</div><div class="line">    &#125;</div><div class="line">    clientList[ key ].push( fn );</div><div class="line">  &#125;;</div><div class="line">  trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> key = <span class="built_in">Array</span>.prototype.shift.call(<span class="built_in">arguments</span>),</div><div class="line">      fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">      <span class="keyword">if</span> ( !fns || fns.length === <span class="number">0</span> )&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>, fn; fn = fns[ i++ ]; )&#123;</div><div class="line">        fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  remove = <span class="function"><span class="keyword">function</span>(<span class="params"> key, fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> fns = <span class="keyword">this</span>.clientList[ key ];</div><div class="line">    <span class="keyword">if</span>( !fns )&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>( !fn )&#123;</div><div class="line">      fns &amp;&amp; (fns.length = <span class="number">0</span> );</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">for</span>( <span class="keyword">var</span> l = fns.length - <span class="number">1</span>; l&gt;=<span class="number">0</span>; l--)&#123;</div><div class="line">        <span class="keyword">var</span> _fn = fns[ <span class="number">1</span> ];</div><div class="line">        <span class="keyword">if</span>( _fn === fn)&#123;</div><div class="line">          fns.splice( l, <span class="number">1</span> );</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">listen</span>: listen,</div><div class="line">    <span class="attr">trigger</span>: trigger,</div><div class="line">    <span class="attr">remove</span>: remove</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line">Event.listen(<span class="string">'squareMeter110'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">price</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'价格='</span> + price);</div><div class="line">  &#125;);</div><div class="line">Event.trigger(<span class="string">'squareMeter110'</span>, <span class="number">20000000</span>);</div></pre></td></tr></table></figure>
+<h1 id="模块间的通讯"><a href="#模块间的通讯" class="headerlink" title="模块间的通讯"></a>模块间的通讯</h1><p>但是模块间类似这样的通讯不能用太多，不然模块和模块之间的联系就被隐藏到了背后，也许模块之间就是暴露一些接口给其他模块调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"count"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">srcipt</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></div><div class="line"></div><div class="line">  var a = (function()&#123; //模块a有一个按钮</div><div class="line">    var count = 0;</div><div class="line">    var button = document.getElementById('count');</div><div class="line">    button.onclick = function()&#123;</div><div class="line">      Event.trigger( 'add', count++);</div><div class="line">    &#125;</div><div class="line">  &#125;)();</div><div class="line">  var b = (function()&#123; //模块b显示点击的总次数</div><div class="line">    var div = document.getElementById('show');</div><div class="line">    Event.listen('add', function(count)&#123;</div><div class="line">      div.innerHTML = count;</div><div class="line">    &#125;);</div><div class="line">  &#125;)();</div><div class="line"><span class="tag">&lt;/<span class="name">srcipt</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="全局事件的命名冲突"><a href="#全局事件的命名冲突" class="headerlink" title="全局事件的命名冲突"></a>全局事件的命名冲突</h1><p>给Event对象提供创建命名空间的功能<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Event = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> global = <span class="keyword">this</span>,</div><div class="line">		Event,</div><div class="line">		_default = <span class="string">'defalt'</span>;</div><div class="line">	Event = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> _listen,</div><div class="line">			_trigger,</div><div class="line">			_remove,</div><div class="line">			_slice = <span class="built_in">Array</span>.prototype.slice,</div><div class="line">			_shift = <span class="built_in">Array</span>.prototype.shift,</div><div class="line">			_unshift = <span class="built_in">Array</span>.prototype.unshift,</div><div class="line">			namespaceCache = &#123;&#125;,</div><div class="line">			_create,</div><div class="line">			find,</div><div class="line">			each = <span class="function"><span class="keyword">function</span>(<span class="params"> ary, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> ret;</div><div class="line">				<span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; l = ary.length; i&lt;<span class="number">1</span> ;i++)&#123;</div><div class="line">					<span class="keyword">var</span> n = ary[i];</div><div class="line">					ret = fn.call(n, i, n);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">return</span> ret;</div><div class="line">			&#125;;</div><div class="line">			_listen = <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, cache</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>( !cache[key])&#123;</div><div class="line">					cache[key] = [];</div><div class="line">				&#125;</div><div class="line">				cache[key].push(fn);</div><div class="line">			&#125;;</div><div class="line">			_remove = <span class="function"><span class="keyword">function</span>(<span class="params">key, cache, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>( cache[key])&#123;</div><div class="line">					<span class="keyword">if</span>(fn)&#123;</div><div class="line">						<span class="keyword">for</span>( <span class="keyword">var</span> i = cache[key].length; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">							<span class="keyword">if</span>( cache[key][i] === fn)&#123;</div><div class="line">								cache[key].splice(i , <span class="number">1</span>);</div><div class="line">							&#125;</div><div class="line">						&#125;</div><div class="line">					&#125;<span class="keyword">else</span>&#123;</div><div class="line">						cache[key] = [];</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;;</div><div class="line">			_trigger = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> cache = _shift.call(<span class="built_in">arguments</span>),</div><div class="line">				key = _shift.call(<span class="built_in">arguments</span>),</div><div class="line">				args = <span class="built_in">arguments</span>,</div><div class="line">				_self = <span class="keyword">this</span>,</div><div class="line">				ret,</div><div class="line">				stack = cache[key];</div><div class="line">				<span class="keyword">if</span>( !stack || !stack.length)&#123;</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">return</span> each( stack, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					<span class="keyword">return</span> <span class="keyword">this</span>.apply(_self, args);</div><div class="line">				&#125;);</div><div class="line">			&#125;;</div><div class="line">			_create = <span class="function"><span class="keyword">function</span>(<span class="params"> namespace</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> namespace = namespace || _default;</div><div class="line">				<span class="keyword">var</span> cache = &#123;&#125;;</div><div class="line">					offlineStack = [],</div><div class="line">					ret = &#123;</div><div class="line">						<span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">							_listen(key, fn, cache);</div><div class="line">							<span class="keyword">if</span>( offlineStack === <span class="literal">null</span>)&#123;</div><div class="line">								<span class="keyword">return</span>;</div><div class="line">							&#125;</div><div class="line">							<span class="keyword">if</span>( last === <span class="string">'last'</span>)&#123;</div><div class="line">								offlineStack.length &amp;&amp; offlineStack.pop()();</div><div class="line">							&#125;<span class="keyword">else</span>&#123;</div><div class="line">								each( offlineStack, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">									<span class="keyword">this</span>();</div><div class="line">								&#125;);</div><div class="line">							&#125;</div><div class="line">							offlineStack = <span class="literal">null</span>;</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">one</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">							_remove(key, cache);</div><div class="line">							<span class="keyword">this</span>.listen(key, fn, last);</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">remove</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">							_remove(key, cache, fn);</div><div class="line">						&#125;,</div><div class="line">						<span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">							<span class="keyword">var</span> fn,</div><div class="line">							args,</div><div class="line">							_self = <span class="keyword">this</span>;</div><div class="line">							_unshift.call( <span class="built_in">arguments</span>, cache);</div><div class="line">							args = <span class="built_in">arguments</span>;</div><div class="line">							fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">								<span class="keyword">return</span> _trigger.apply( _self, args);</div><div class="line">							&#125;;</div><div class="line">							<span class="keyword">if</span>( offlineStack)&#123;</div><div class="line">								<span class="keyword">return</span> offlineStack.push(fn);</div><div class="line">							&#125;</div><div class="line">							<span class="keyword">return</span> fn();</div><div class="line">						&#125;</div><div class="line">					&#125;;</div><div class="line">					<span class="keyword">return</span> namespace ? ( namespaceCache[namespace] ? namespaceCache[namespace] : namespaceCache[namespace] = ret) : ret;</div><div class="line">			&#125;;</div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="attr">create</span>: _create,</div><div class="line">			<span class="attr">one</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.one(key, fn, last);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">remove</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.remove(key,fn);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">listen</span>: <span class="function"><span class="keyword">function</span>(<span class="params">key, fn, last</span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event = <span class="keyword">this</span>.create();</div><div class="line">				event.listen(key, fn, last);</div><div class="line">			&#125;,</div><div class="line">			<span class="attr">trigger</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> event =<span class="keyword">this</span>.create();</div><div class="line">				event.trigger.apply( <span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">	&#125;();</div><div class="line">	<span class="keyword">return</span> Event；</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node-js专题之异步编程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/Node-js专题之异步编程/" itemprop="url">
+                  Node_js专题之异步编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T15:37:04Z">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/12/Node-js专题之异步编程/" class="leancloud_visitors" data-flag-title="Node_js专题之异步编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异步编程的概念和问题"><a href="#异步编程的概念和问题" class="headerlink" title="异步编程的概念和问题"></a>异步编程的概念和问题</h1><p>常规函数<br>函数的参数只接受基本的数据类型或是对象的引用，返回值也只是基本数据类型和对象引用。<br>高阶函数<br>则是把函数作为参数，或是将函数作为返回值的函数。后续传递风格的程序编写将函数的业务重点从返回值转移到了回调函数中。在自定义件事件实例中，通过为相同事件注册不同的回调函数，可以多灵活地处理业务逻辑。<br>偏函数<br>通过指定部分参数来产生一个新的定制函数的形式就是偏函数。<br>异步编程的难点<br>1.异常处理<br>node在处理异常的时候形成了一种规定，将异常作为回调函数的第一个实参传回，若为空值，则表明异步调用没有异常抛出，<br>自行编写的异步方法上，也需要去遵循这样一些原则<br>原则一：必须执行调用者传入回的回调函数<br>原则二：正确传递回异常供调用者判断<br>2.函数嵌套过深<br>3.阻塞代码<br>4.多线程编程<br>在浏览器中将JavaScript和ui渲染分离，这里用到的是Web Workers(利用消息机制合理使用多核cpu的理想模型)。在node中借鉴了类似web worker的模式。<br>Child_process 以及更深层次的cluster模块。</p>
+<h1 id="异步编程解决方案"><a href="#异步编程解决方案" class="headerlink" title="异步编程解决方案"></a>异步编程解决方案</h1><p>1.事件发布/订阅模式<br>事件监听模式是一种广泛用于异步编程的模式，是回调函数的事件化，又称发布/订阅模式。也是一种钩子(hook)机制。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//订阅</span></div><div class="line">emitter.on(<span class="string">'event1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(message);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//发布</span></div><div class="line">emitter.emit(<span class="string">'event1'</span>, <span class="string">'I am message!'</span>);</div></pre></td></tr></table></figure></p>
+<p>订阅事件是一个高阶函数的应用。事件发布和订阅模式可以实现一个事件与多个回调函数的关联。这些回调函数又称为事件侦听器。通过emit()发布事件以后，消息会立即传递给当前事件的所有侦听器执行，侦听器可以灵活的添加和删除，使得事件和具体的处理逻辑之间可以很轻松的关联和解耦。<br>①继承events模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Node中Stream对象继承EventEmitter</span></div><div class="line"><span class="keyword">var</span> evnets = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Stream</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  events.EventEmitter.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Stream, events.EventEmitter);</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>②解决雪崩问题<br>所谓雪崩问题就是在高访问量，大并发的情况下缓存失效的情景。once()方法，将所有请求的回调都压入事件队列中，利用其执行一次就会将监视器移除的特点，保证每一次回调都会被执行一次。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"><span class="keyword">var</span> status = <span class="string">'ready'</span>;</div><div class="line"><span class="keyword">var</span> select = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  proxy.once(<span class="string">'selected'</span>, callback);</div><div class="line">  <span class="keyword">if</span>(status === <span class="string">'ready'</span>)&#123;</div><div class="line">    status = <span class="string">'pending'</span>;</div><div class="line">    db.select(<span class="string">'SQl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>&#123;</div><div class="line">      proxy.emit(<span class="string">'selected'</span>, results);</div><div class="line">      status = <span class="string">'ready'</span>;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>Sql在进行查询时，新到来的相同调用只需要在队列中等待数据就绪即可，一旦查询结束，得到的结果可以被这些调用共同使用。<br>③多异步之间的协作方案<br>一般的事件与侦听器的关系是一对多。但是在异步编程中，也会出现多对一的情况，这就是回调嵌套过深的原因。那么如何解决呢<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//由于多个异步场景中回调函数的执行并不能保证顺序，且回调函数之间互相没有任何交集，所以需要借助第三方函数和第三方变量来处理异步协作的结果，通常我们吧这个用于检测次数的变量叫做哨兵变量。</span></div><div class="line"><span class="keyword">var</span> after = <span class="function"><span class="keyword">function</span>(<span class="params">times callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> count = <span class="number">0</span>, results = &#123;&#125;;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</div><div class="line">    results[key] = value;</div><div class="line">    count++;</div><div class="line">    <span class="keyword">if</span>(count === times)&#123;</div><div class="line">      callback(results);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> done = after(times, render);</div></pre></td></tr></table></figure></p>
+<p>还可以将事件订阅/发布模式中一对多的发散和偏函数中多对一结合起来实现多对多。<br>具体看例子：<br>③.1 EventProxy模块<br>all()方法来订阅多个事件，当订阅的所有事件都被触发以后侦听器才会执行。且只执行一次。<br>tail()方法在满足条件时执行一次之后，如果组合事件的某个事件被再次触发，侦听器会用最新的数据继续执行。<br>after()方法来实现事件在执行多少次后行令侦听器的单一事件组合订阅方式。<br>③.2 EventProxy的异常处理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">exports.getContent = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> ep = <span class="keyword">new</span> EventProxy();</div><div class="line">  ep.all(<span class="string">'tpl'</span>,<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">tpl,data</span>)</span>&#123;</div><div class="line">    <span class="comment">//成功回调</span></div><div class="line">    callback(<span class="literal">null</span>, &#123;</div><div class="line">      <span class="attr">template</span>: tpl,</div><div class="line">      <span class="attr">data</span>: data</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">//绑定错误处理函数</span></div><div class="line">  ep.fail(callback);</div><div class="line">  fs.readFile(<span class="string">'template.tpl'</span>, <span class="string">'utf-8'</span>,ep.done(<span class="string">'tpl'</span>));</div><div class="line">  db.get(<span class="string">'some sql'</span>, ep.done(<span class="string">'data'</span>));</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>2.Promise/Deferred模式</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node编码规范/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/Node编码规范/" itemprop="url">
+                  Node编码规范
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-12T14:29:58Z">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/12/Node编码规范/" class="leancloud_visitors" data-flag-title="Node编码规范">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h1><p>一、空格与格式<br>两格缩进紧凑、明快<br>永远使用var<br>操作符前后必须加空格<br>小括号前后必须加空格<br>尽量使用单引号<br>大括号无需另起一行<br>不在行尾的逗号后面加空格<br>分号不能少<br>二、命名规范<br>变量命名采用小驼峰式命名<br>方法名和变量一样但是尽量采用动词或者判断性词汇，或者以动词为前缀的词组。<br>类命名采用大驼峰式命名<br>常量全部大写<br>文件名尽量采用下划线分割单词，也可下划线开头<br>比较操作符使用===<br>使用[]{}代替new Array()和new Object()<br>不使用with和eval()<br>创建对象或者数组的时候，注意在结尾用逗号分割。<br>使用for in 循环时 对对象使用<br>不要把数组当做对象来使用。<br>在异步回调函数的第一个参数应该是错误提示<br>执行传入的回调函数<br>类继承<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Socket</span>(<span class="params">options</span>)</span>&#123;</div><div class="line">  stream.Stream.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">util.inherits(Socket, stream.Stream);</div></pre></td></tr></table></figure></p>
+<p>所有供外部调用的方法或变量均需挂载在exports变量上。导出是：<br>module.exprots = Class;sub</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/12/Node-js专题之测试/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/12/Node-js专题之测试/" itemprop="url">
+                  Node-js专题之测试
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T16:02:01Z">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/12/Node-js专题之测试/" class="leancloud_visitors" data-flag-title="Node-js专题之测试">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>广义上来讲网站有两个领域：逻辑和表示，逻辑中的事应该尽可能的简单清晰，而表示域复杂还是简单则试需求而定。表示域还是可用性和审美问题要关注的课题。<br>一、单元测试<br>1.断言(assertion)<br>单元测试中用来保证最小单元是否正常的检测方法，用于检查程序运行时是否满足期望。<br>2.测试框架<br>本身并不参与测试，主要用于管理测试用例和生成测试报告，根据测试风格的不同，分为TDD和BDD<br>①关注点不同：tdd关注所有功能是否被正确实现。bdd关注整体行为是否符合预期。<br>②表达方式不同：tdd偏向于功能说明，bdd接近于自然语言的习惯。<br>2.1BDD<br>采用describe和it进行组织<br>2.2TDD<br>采用suite和test完成。<br>3.异步测试<br>mocha<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'fs.readFile should be ok'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fs.readFile(<span class="string">'file_path'</span>, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>)</span>&#123;</div><div class="line">        should.not.exist(err);</div><div class="line">        done();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>超时限制<br>mocha给所有涉及异步的测试用例添加了超时限制，如果一个用例的执行时间超过了预期时间， 将会记录下一个超时错误， 然后执行力下一个测试用例。<br>4.测试覆盖率<br>blanket<br>istanbul<br>5.模拟异常mock<br>muk模块<br>6.私有方法的测试<br>rewire<br>7.工程化和自动化<br>Makefile<br>travis-ci<br>二、性能测试</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/10/Docker/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/10/Docker/" itemprop="url">
+                  Docker
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T11:54:16Z">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/10/Docker/" class="leancloud_visitors" data-flag-title="Docker">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>容器”这个术语实际上只是一个抽象的概念，用于描述如何让一些特性像一个“容器”一样地在一起工作。让我们快速地过一遍这些特性：<br>1) 命名空间（Namespaces）<br>命名空间为容器提供了他们对下层 Linux 系统的视图，限制了容器可以看到和访问到的范围。当你运行一个容器的时候，Docker 会创建一个命名空间供它使用。<br>Docker 使用的内核中有很多种命名空间，比如：<br>a. NET: 为容器提供了它自己的系统网络堆栈视图（比如它自己的网络设备、IP 地址、IP 路由表、/proc/net 文件夹、端口号等）。<br>b. PID: PID 表示进程 ID。如果你在命令行中跑过 ps aux 来查看你系统中的进程，你将会看到有一列叫“PID”。PID 命名空间为容器提供了它们自己的域中的进程，它们可以查看并与这些进程交互。这些进程包含一个独立的初始化进程（PID 1），这个进程是“所有进程的祖先”。<br>c. MNT: 为容器提供了一个对系统的“挂载”的视图。所以不同挂载命名空间中的进程拥有不同的文件系统层次结构视图。<br>d. UTS: UTS 表示UNIX分时系统（UNIX Timesharing System）。它提供了一个进程去识别系统标识符（即主机名、域名、等）。UTS 使容器有独立于其他容器和主机系统的主机名和 NIS 域名。<br>e. IPC: IPC 表示进程间通信。IPC 命名空间用于在隔离每个容器中运行的进程之间 IPC 资源。<br>f. USER: 这个命名空间用于隔离每个容器中的用户。它给每个容器提供了一个独立的视图来存放 uid (用户 ID) 和 gid (组 ID)  与主机系统的对照。因此，一个进程的 uid 和 gid 在一个用户命名空间的里面和外面是可以不同的，这么做也使得一个进程可以在不牺牲 root 权限的前提下，在容器之外拥有一个特权用户。<br>Docker 用这些命名空间隔离并开始容器的创建。<br>2) 对照组（Control groups）<br>对照组（也叫 cgroups）是 Linux 的内核特性，用于隔离、优先考虑以及计算一组进程的资源占用情况（CPU、内存、磁盘I/O、网络等）。在这个意义上讲，一个 cgroup 保证了 Docker 容器只使用它们需要的资源，而且如果需要的话可以限制一个容器能够使用的资源。cgroup 也保证了单个容器不会耗尽其中的一个资源，从而导致整个系统崩溃<br>3)独立联合文件系统（Isolated Union file system）<br>Docker使用联合文件系统来创建一个镜像。你可以把联合文件系统当做是一个“可堆叠的文件系统”，即文件和单独文件系统（也叫分支）的文件夹都可以被无感地覆盖来形成单个文件系统.<br>覆盖的分支中拥有相同路径的文件夹的内容都会被看做是一个合并文件夹，这样避免了将每一层都拷贝一次。相反，它们都会被赋予指向相同资源的指针；当某层需要变更时，它将创建一份拷贝并在本地的拷贝上修改，而原始的层并不会被改变。这就是为什么文件系统看起来可写实则不允许写入（换句话说，叫“先拷贝再写”系统）。<br>分层系统有两个主要优势：</p>
+<ol>
+<li>可自由复制： 每当你使用一个镜像去创建并运行一个新的容器时，层有助于避免每次都要复制一组完整的文件。这让 Docker 容器的实例化又快又轻。</li>
+<li>层隔离: 做出改变要快得多 —— 当你改变一个镜像时，Docker 只需将变更应用到你改变了的层上即可。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/10/Node-js专题之网络编程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/10/Node-js专题之网络编程/" itemprop="url">
+                  Node-js专题之网络编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T21:03:52Z">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/10/Node-js专题之网络编程/" class="leancloud_visitors" data-flag-title="Node-js专题之网络编程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#网络服务于安全</p>
+<p>一.TLS/SSL</p>
+<p>1.密钥</p>
+<p>在建立安全传输之前，客户端和服务器端要相互交换公钥，客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要客户端的公钥进行加密，各自通过自己的私钥来进行解密。<br>通过openssl来实现TLS/SSL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//生成服务器端私钥</div><div class="line">openssl genrsa -out server.key 1024</div><div class="line">//生成客户端私钥</div><div class="line">openssl genrsa -out client.key 1024</div><div class="line">//服务器端公钥</div><div class="line">openssl rsa -in server.key -pubout -out server.pem</div><div class="line">//客户端公钥</div><div class="line">openssl rsa -in client.key -pubout -out client.pem</div></pre></td></tr></table></figure></p>
+<p>2.数字证书<br>CA(Certificate Authority 数字证书认证中心)<br>自签名证书，自己扮演CA,给自己的服务器办法签名证书。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out ca.key 1024</div><div class="line">openssl req -new -key ca.key -out ca.csr</div><div class="line">openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt</div></pre></td></tr></table></figure></p>
+<p>接下来是服务器通过自己的私钥生成证书签名请求文件SCR并申请签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl req -new -key server.key -out server.csr</div><div class="line">openssl x509 -req -CA ca.crt -CAkey ca.key -CAcreateserial -in server.csr -out server.crt</div></pre></td></tr></table></figure></p>
+<h1 id="构建TCP服务"><a href="#构建TCP服务" class="headerlink" title="构建TCP服务"></a>构建TCP服务</h1><p>在Node中提供了net、dgram、http、https。分别用于处理TCP、UDP、HTTP、和HTTPS。适用于服务器端和客户端，<br>通过net创建服务器端和客户端。在tcp服务中的事件分为服务器事件和连接事件。<br>1.服务器事件<br>listening: server.listen(port,listeningListener)<br>connection: net.createServer();<br>close: server.close()<br>error:<br>2.连接事件<br>data: 当一端调用write(),另一端会触发data事件。事件传递的数据既是write: 发送的数据。<br>end: 任意端发送FIN数据时<br>connect: 用于客户端<br>drain: 任一端触发write()<br>error: 异常<br>close: 套接字完全关闭<br>timeout: 连接不活跃时</p>
+<h1 id="构建UDP服务"><a href="#构建UDP服务" class="headerlink" title="构建UDP服务"></a>构建UDP服务</h1><p>udp又称用户数据包协议，udp不是面向连接的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//upd服务器端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> server = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">server.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg, rinfo</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server got:'</span> + msg+<span class="string">'from'</span> + rinfo.address + <span class="string">':'</span> + rinfo.port);</div><div class="line">&#125;);</div><div class="line">server.on(<span class="string">'listening'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> address = server.address();</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'server listening'</span> + address.address + <span class="string">':'</span> + address.port);</div><div class="line">&#125;);</div><div class="line">server.bind(<span class="number">41234</span>);</div><div class="line"></div><div class="line"><span class="comment">//udp客户端</span></div><div class="line"><span class="keyword">var</span> dgram = <span class="built_in">require</span>(<span class="string">'dgram'</span>);</div><div class="line"><span class="keyword">var</span> message = <span class="keyword">new</span> Buffer(<span class="string">'hello world'</span>);</div><div class="line"><span class="keyword">var</span> client = dgram.createSocket(<span class="string">'udp4'</span>);</div><div class="line">client.send(message, <span class="number">0</span>, message.length, <span class="number">41234</span>, <span class="string">'localhost'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, bytes</span>)</span>&#123;</div><div class="line">    client.close();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>1.事件<br>message:<br>listening:<br>close:<br>error:</p>
+<h1 id="构建HTTP服务"><a href="#构建HTTP服务" class="headerlink" title="构建HTTP服务"></a>构建HTTP服务</h1><p>HTTP服务继承自TCP服务。区别是开始keepalive后，一个TCP会话可以进行多次请求和相应。在node的http模块中是将Connection(TCP)和request(HTTP)的过程进行了封装。<br>在请求产生的过程中，http模块拿到数据后先调用二进制解析模块http_parse 进行解析。解析完报文的报头后，触发Request事件。<br>1.1.http请求<br>http模块将其封装为ServerRequest对象。报文头部被http_parse解析为一下内容：<br>报文第一行<br>①req.method: GET POST PUT DELETE CONNECT<br>②req.url: /<br>③req.httpVersion:<br>其余内容都是规律的Key:value。报文体部分则抽象为一个只读流对象。<br>http请求和响应对象其实是相对底层的封装。<br>1.2.http响应<br>可以看成是一个可写的流对象。它影响报文头部信息的api是res.setHeader()和res.writeHead()。而在报文体部分则是调用res.write()和res.end()。<br>2.http服务的事件<br>服务器也是一个EventEmitter实例<br>connection<br>request<br>close<br>checkcontinue<br>connect<br>upgrade<br>clientError<br>3.HTTP客户端<br>报文头和报文体由它产生。<br>http模块提供的底层api：http.request(options,connect)<br>其中options决定了http请求头中的内容<br>host<br>hostname<br>port<br>localAddress<br>socketPath<br>method<br>path<br>headers<br>auth<br>agent<br>这里的内容由write()和end()方法实现。<br>3.1HTTP代理<br>为了重TCP连接。http模块包含了一个默认的客户端代理对象http:globalAgent,它对每个服务器端创建的连接进行了管理，默认情况下ClientRequest对象对同一个服务器发起的http请求最多可以创建5个。通过对options中Agent对象的sockets和Requests进行监视可以发现业务的繁忙程度。<br>3.2客户端事件<br>response<br>socket<br>connect<br>upgrade<br>continue</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/09/RESTful/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/09/RESTful/" itemprop="url">
+                  RESTful架构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T11:59:48Z">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/09/RESTful/" class="leancloud_visitors" data-flag-title="RESTful架构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="RESTful架构"><a href="#RESTful架构" class="headerlink" title="RESTful架构"></a>RESTful架构</h1><p>URL定位资源，用HTTP动词（GET,POST,DELETE,DETC）描述操作。<br>RESTful架构：<br>　　（1）每一个URI代表一种资源；<br>　　（2）客户端和服务器之间，传递这种资源的某种表现层；<br>　　（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”表现层状态转化”。<br>就是目前最流行的一个用于互联网软件的架构，它结构清晰，符合标准，易于理解。<br>REST全程为Respresentational State Transfer,中文含义为表现层状态转化。表现层其实指的是资源的表现层，符合REST设计规范的我们称之为RESTful设计。如果一个架构符合REST原则，就称它为RESTful架构。它的设计哲学主要是将服务端提供的内容实体看作一个资源，并表现在url（同一资源定位符）上。所谓上网就是与互联网上的一系列资源进行互动，调用它的URL，每个URI都对应一个特定的资源。要获取这个资源，访问它的URI就可以，因此URI就成了每一个资源的地址或识别符。<br>资源呈现出来的形式成为它的表现层。在HTTTP请求的头部信息中用Accept和Content-Type字段指定。<br>有无状态的理解：<br>1.无状态<br>对于每个资源的请求都不依赖于其他资源和其他请求，每个资源都是可寻址的，都有至少一个url能对其定位。<br>2.有状态<br>后面的每一个状态都依赖于前面的状态，没有一个url直接定位到资源</p>
+<h1 id="RESTful设计指南"><a href="#RESTful设计指南" class="headerlink" title="RESTful设计指南"></a>RESTful设计指南</h1><p>1.采用https协议<br>2.将api部署在专有域名下，如果api简单没有后续的扩展，可以将api放在主域名下<br>3.将api的版本号放入url<br>4.路径又称终点，表示api的具体网址，在RESTful架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的”集合”（collection），所以API中的名词也应该使用复数。<br>5.对于资源的具体操作，数据的元操作，即CRUD(create, read, update和delete,即数据的增删查改)操作用HTTP动词来表示(括号是sql语句)仅通过HTTP方法，就可以完成对数据的所有增删查改工作。</p>
 <ul>
-<li>capped：类型为 Boolean，如果为 true 则创建一个固定大小的集合，当其条目达到最大时可以自动覆盖以前的条目。在设置其为 true 时也要指定参数大小；</li>
-<li>autoIndexID：类型为 Boolean，默认为 false，如果设置为 true，则会在 _id field.s 上自动创建索引；</li>
-<li>size：如果 capped 为 true 需要指定，指定参数的最大值，单位为 byte；</li>
-<li>max：指定最大的文档数。 在 Mongodb 中也可以不用创建集合，因为在创建文档的时候也会自动的创建集合。<h1 id="查询索引和聚合"><a href="#查询索引和聚合" class="headerlink" title="查询索引和聚合"></a>查询索引和聚合</h1>1.条件操作符<br>MongoDB 中的条件操作符有：<br>(&gt;) 大于 - $gt #greater than<br>(&lt;) 小于 - $lt #less than<br>(&gt;=) 大于等于 - $gte #equal<br>(&lt;= ) 小于等于 - $lte<br>2.条件操作符<br>$type<br>3.limit与skip<br>读取指定数量的数据记录 limit<br>读取时跳过指定数量的数据记录 skip<br>当然，还可以添加 find 的查找条件的参数，以便进行更精确的查找。<br>4.排序sort()<br>升序用1表示，降序用-1表示<br>5.索引ensureIndex()<br>索引是特殊的数据结构，索引存储在一个易于遍历读取的数据集合中，索引是对数据库集合中一个文档或多个文档的值进行排序的一种结构。<br>6.聚合 aggregate()<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$match:&#123;x:1&#125;,</div><div class="line">&#123;limit:NUM&#125;,</div><div class="line">$group:&#123;_id:$age&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
+<li>GET（SELECT）：从服务器取出资源（一项或多项）。</li>
+<li>POST（CREATE）：在服务器新建一个资源。</li>
+<li>PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。</li>
+<li>PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。</li>
+<li>DELETE（DELETE）：从服务器删除资源。</li>
+<li>HEAD：获取资源的元数据。</li>
+<li>OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。</li>
 </ul>
-<p>实例：db.shiyanlou.aggregate([{$group:{_id:”$name”, user:{$sum:”$user_id”}}}])<br>7.管道<br>MongoDB 的聚合管道将 MongoDB 文档在一个管道处理完毕后将结果传递给下一个管道处理。管道操作是可以重复的。<br>表达式：处理输入文档并输出。表达式是无状态的，只能用于计算当前聚合管道的文档，不能处理其它的文档。<br>聚合框架中常用的几个操作<br>$project：修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。<br>$match：用于过滤数据，只输出符合条件的文档。$match 使用 MongoDB 的标准查询操作。<br>$limit：用来限制 MongoDB 聚合管道返回的文档数。<br>$skip：在聚合管道中跳过指定数量的文档，并返回余下的文档。<br>$unwind：将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。<br>$group：将集合中的文档分组，可用于统计结果。<br>$sort：将输入文档排序后输出。<br>$geoNear：输出接近某一地理位置的有序文档。</p>
-<h1 id="高级索引和查询"><a href="#高级索引和查询" class="headerlink" title="高级索引和查询"></a>高级索引和查询</h1><p>为了验证我们使用了索引，可以使用 explain 命令<br>1.原子操作<br>所谓原子操作，就是要么执行成功，要么执行失败，执行成功完成既定任务，执行失败还原执行前的状态。<br>常用原子操作命令：<br>1) $set<br>用来指定一个键并更新键值，若键不存在并创建。<br>2) $unset<br>用来删除一个键。<br>3) $inc<br>$inc 可以对文档的某个值为数字型（只能为满足要求的数字）的键进行增减的操作。<br>4) $push<br>把 value 追加到 field 里面去，field 一定要是数组类型才行，如果 field 不存在，会新增一个数组类型加进去。<br>5) $pushAll<br>同 $push ,只是一次可以追加多个值到一个数组字段内。<br>6) $pull<br>从数组 field 内删除一个等于 value 值。<br>7) $addToSet<br>增加一个值到数组内，而且只有当这个值不在数组内才增加。<br>8) $pop<br>删除数组的第一个或最后一个元素。<br>9) $rename<br>修改字段名称<br>10) $bit<br>位操作，integer 类型<br>2.查询分析explain()<br>explain 操作提供了查询信息，使用索引及查询统计等。有利于我们对索引的优化<br>3.hint()<br>虽然 MongoDB 查询优化器一般工作的很不错，但是也可以使用 hints 来强迫 MongoDB 使用一个指定的索引。<br>通过这种方法在某些情形下会提升性能。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/12/前后端模板引擎的思路/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/12/前后端模板引擎的思路/" itemprop="url">
-                  前后端模板引擎的思路
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T18:31:17+08:00">
-                2017-10-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/10/12/前后端模板引擎的思路/" class="leancloud_visitors" data-flag-title="前后端模板引擎的思路">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="后端模板"><a href="#后端模板" class="headerlink" title="后端模板"></a>后端模板</h1><p>在后端mvc中，一般从 Model 层中读取数据，然后将数据传到 View 层渲染（渲染成 HTML 文件），而 View 层，一般都会用到模板引擎。<br>以前的后端大部分会采用mvc模式。优点是有利于seo和减少http请求。但是缺点就很明显了。在前端更改内容的同时后端的模板引擎也会更改。那么问题来了，前端中的有大量的js是前端写还是后端，前端写没有数据调试不便，后端写不一定懂js。</p>
-<h1 id="前端模板"><a href="#前端模板" class="headerlink" title="前端模板"></a>前端模板</h1><p>特点是依赖于客户端，在浏览器渲染页面，而不依赖于服务端。<br>归功于AJAX的出现前后端分离变成可能，后端专注业务逻辑，而前端提供接口。然后前端通过AJAX向后端请求数据，动态渲染页面。</p>
-<h1 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h1><p>用以生成html等多种文件<br>客户端引擎：主要结合JS实现html，一种以handlebars mustache为代表，实现方式为拼字符串。另一种以react为代表的，实现方式为VDOM。<br>服务端引擎：以velocity这种为代表，可结合Java等语言实现，由服务端生成html返回客户端。</p>
-<h1 id="模板引擎的使用情况"><a href="#模板引擎的使用情况" class="headerlink" title="模板引擎的使用情况"></a>模板引擎的使用情况</h1><p>全前置、前后各半、全后模板。<br>前端模板会分担一部分服务器压力，但是也会给客户端增加压力，所以我们需要根据实际情况选择合适的方法。</p>
-<h1 id="最佳方法"><a href="#最佳方法" class="headerlink" title="最佳方法"></a>最佳方法</h1><p>不管是前端的还是后端的模板都有一定的局限性。最好是用一种后端语言，单纯提供渲染页面所需要的接口，Node中间层用模板引擎来渲染页面，使得页面直出。<br>这样就可以达到一处编写，到处运行的目的。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/08/OAuth2-0的理解/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/08/OAuth2-0的理解/" itemprop="url">
-                  OAuth2.0的理解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-08T12:47:55+08:00">
-                2017-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/10/08/OAuth2-0的理解/" class="leancloud_visitors" data-flag-title="OAuth2.0的理解">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概念上"><a href="#概念上" class="headerlink" title="概念上"></a>概念上</h1><p>OAuth在”客户端”与”服务提供商”之间，设置了一个授权层（authorization layer）。”客户端”不能直接登录”服务提供商”，只能登录授权层，以此将用户与客户端区分开来。</p>
-<h1 id="授权流程"><a href="#授权流程" class="headerlink" title="授权流程"></a>授权流程</h1><p>（A）用户打开客户端以后，客户端要求用户给予授权。<br>（B）用户同意给予客户端授权。<br>（C）客户端使用上一步获得的授权，向认证服务器申请令牌。<br>（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。<br>（E）客户端使用令牌，向资源服务器申请获取资源。<br>（F）资源服务器确认令牌无误，同意向客户端开放资源。</p>
-<h1 id="授权方法"><a href="#授权方法" class="headerlink" title="授权方法"></a>授权方法</h1><p>一、授权码模式（authorization code）<br>（A）用户访问客户端，后者将前者导向认证服务器。<br>（B）用户选择是否给予客户端授权。<br>（C）假设用户给予授权，认证服务器将用户导向客户端事先指定的”重定向URI”（redirection URI（包括code和state其中code表示授权码，必选项。该码的有效期应该很短，通常设为10分钟，客户端只能使用该码一次，否则会被授权服务器拒绝。如果客户端的请求中包含这个state参数，认证服务器的回应也必须一模一样包含这个参数。）），同时附上一个授权码。<br>（D）客户端收到授权码，附上早先的”重定向URI”，向认证服务器申请令牌。这一步是在客户端的后台的服务器上完成的，对用户不可见。<br>（E）认证服务器核对了授权码和重定向URI，确认无误后，向客户端发送访问令牌（access token）和更新令牌（refresh token）。<br>二、简化模式（implicit）<br>不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了”授权码”这个步骤，因此得名<br>所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证<br> (A)客户端将用户导向认证服务器。<br>（B）用户决定是否给于客户端授权。<br>（C）假设用户给予授权，认证服务器将用户导向客户端指定的”重定向URI”，并在URI的Hash部分包含了访问令牌。<br>（D）浏览器向资源服务器发出请求，其中不包括上一步收到的Hash值。<br>（E）资源服务器返回一个网页，其中包含的代码可以获取Hash值中的令牌。<br>（F）浏览器执行上一步获得的脚本，提取出令牌。<br>（G）浏览器将令牌发给客户端。<br>三、密码模式（resource owner password credentials）<br>用户向客户端提供自己的用户名和密码。客户端使用这些信息，向”服务商提供商”索要授权。用户必须把自己的用户买和密码给客户端，但是客户端不能`储<br>四、客户端模式（client credentials)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/10/05/SPA/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="浪子膏">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="东方猿BLog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="东方猿BLog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/10/05/SPA/" itemprop="url">
-                  SPA
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-05T13:11:25+08:00">
-                2017-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/10/05/SPA/" class="leancloud_visitors" data-flag-title="SPA">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="SPA-single-page-application"><a href="#SPA-single-page-application" class="headerlink" title="SPA: single-page application"></a>SPA: single-page application</h1><p>单页面应用是指用户通过浏览器加载独立的HTML页面并且无需离开此导航页面，单页面应用为用户提供了更接近一个本地移动或桌面应用程序的体验。页面无须重新加载。</p>
-<h1 id="传统网页应用"><a href="#传统网页应用" class="headerlink" title="传统网页应用"></a>传统网页应用</h1><p>在传统的网页应用中，浏览器充当一个展示层，路由处理、服务调用、页面跳转流程都由服务端来处理。即MVC都放在服务器端，而V作为用户界面则通过网络发送到浏览器端，作为UI与用户交互。这传统的网页应用中重服务端，页面频繁刷新。</p>
-<h1 id="单页应用"><a href="#单页应用" class="headerlink" title="单页应用"></a>单页应用</h1><p>将mvc前置到了浏览器端。</p>
-<blockquote>
-<p>控制器前置<br>单页应用将路由处理放在浏览器端，即在浏览器端直接响应浏览器地址的变化，分发到对应的路由，向用户呈现对应的界面。<br>以小块组件为功能元件<br>类似于传统网页中的 Ajax 组件，单页应用以小的组件为功能元件，在路由变化时，不再刷新整个页面，而是组合这些小的组件，替换变化的部分。<br>数据层前置<br>与 Ajax 组件一个明显的区别是，单页应用在浏览器端通常有一层实实在在的数据层，而服务端则退化成了完全的数据 API。浏览器端的数据层会封装服务端 API，供上层的视图层调用。</p>
-<h1 id="单页应用的优缺点"><a href="#单页应用的优缺点" class="headerlink" title="单页应用的优缺点"></a>单页应用的优缺点</h1><p>无刷新体验<br>这个应该是最显著的有点，由于路由分发直接在浏览器端完成，页面是不刷新，对用户的响应非常及时，因此提升了用户体验；<br>完全的前端组件化<br>前端开发不再以页面为单位，更多地采用组件化的思想，代码结构和组织方式更加规范化，便于修改和调整；<br>API 共享<br>如果你的服务是多端的（浏览器端、Android、iOS、微信等），单页应用的模式便于你在多个端共用 API，可以显著减少服务端的工作量。容易变化的 UI 部分都已经前置到了多端，只受到业务数据模型影响的 API，更容易稳定下来，便于提供鲁棒的服务；<br>组件共享<br>在某些对性能体验要求不高的场景，或者产品处于快速试错阶段，借助于一些技术（Hybrid、React Native），可以在多端共享组件，便于产品的快速迭代，节约资源。<br>单页应用的优点有时候也是缺点：<br>首次加载大量资源<br>要在一个页面上为用户提供产品的所有功能，在这个页面加载的时候，首先要加载大量的静态资源，这个加载时间相对比较长；<br>较高的前端开发门槛<br>MVC 前置，对前端工程师的要求提高了，不再是『切切图，画画页面这么简单』；同时工作量也会增加数倍，开发这类应用前端工程师的数量往往多于后端；<br>不利于 SEO<br>单页页面，数据在前端渲染，就意味着没有 SEO，或者需要使用变通的方案。</p>
+<p>6.过滤信息常见的参数</p>
+<ul>
+<li>?limit=10：指定返回记录的数量</li>
+<li>?offset=10：指定返回记录的开始位置。</li>
+<li>?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</li>
+<li>?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。</li>
+<li>?animal_type_id=1：指定筛选条件</li>
+</ul>
+<p>7.服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）。</p>
+<ul>
+<li>200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
+<li>201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
+<li>202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</li>
+<li>204 NO CONTENT - [DELETE]：用户删除数据成功。</li>
+<li>400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</li>
+<li>401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。</li>
+<li>403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。</li>
+<li>404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
+<li>406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。</li>
+<li>410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。</li>
+<li>422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。</li>
+<li>500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
+</ul>
+<p>8.针对不同操作，服务器向用户返回的结果应该符合以下规范。</p>
+<ul>
+<li>GET /collection：返回资源对象的列表（数组）</li>
+<li>GET /collection/resource：返回单个资源对象</li>
+<li>POST /collection：返回新生成的资源对象</li>
+<li>PUT /collection/resource：返回完整的资源对象</li>
+<li>PATCH /collection/resource：返回完整的资源对象</li>
+<li>DELETE /collection/resource：返回一个空文档<br>9.序列化和反序列化<br>在服务器和客户端内部数据的格式是native类型的数据格式，将客户端和服务器端的数据传输的过程是将其转化为RESTful api标准格式的数据也就是用的最多的JOSN和XML。其中，将native类型数据转为json即为序列化，将json转为native类型数据即为反序列化。<br>10.数据校验<br>当客户端发送http请求时，通常也会发送一些json格式的数据，服务器在处理接受的数据之前，往往要对数据进行校验，那么校验的类型通常有类型，格式，逻辑，<br>11.用户验证和权限机制<blockquote>
+<p>OAuth2.0认证机制<br>权限机制是对API请求更近一步的限制，全局型的权限机制，主要指通过为用户赋予权限，或者为用户赋予角色或划分到用户组，然后为角色或用户组赋予权限的方式来实现权限控制，对象型的权限机制，主要指权限控制的颗粒度在object上，用户对某个具体对象的访问、修改、删除或其行为，要单独在该对象上为用户赋予相关权限来实现权限控制。<br>12.跨域解决<br>CORS即Cross-origin resource sharing跨越资源共享，在RESTful API开发中，主要是为js服务的，解决javascript调用 RESTful API时的跨域问题。<br>13.下面是一些例子<br>例如：<br>/users/jacksontian<br>这这个资源的操作，主要体现在http请求的方法上。不是体现在url上。过去的实现方法：<br>POST /user/add?username=jacksontian<br>GET /user/remove?username=jacksontian<br>POST /user/update?username=jacksontian<br>GET /user/get?username=jacksontian<br>而在RESTful中：<br>POST /user/jacksontian<br>DELETE /user/jacksontian<br>PUT /user/jacksontian<br>GET /user/jacksontian<br>另外在资源的具体表现形态上。过去是主要表现在url的文件后缀上，设计资源的格式与后缀有很大的关联。例如：<br>GET /user/jacksontian.json<br>GET /user/jacksontian.xml<br>而在RESTful设计中，资源的具体格式是由请求报头Accept字段和服务器端的支持情况来决定的。例如：<br>Accept：application/json,application/json<br>服务端根据自己能响应的格式做出响应，在响应报文中通过Content-Type字段告知客户端是什么格式。<br>Content-Type：application/json;<br>综上所述：REST设计就是通过URL设计资源，请求方法定义资源的操作， 通过Accept决定资源的表现形式。相MVC,RESTful只是将http请求方法加入了路由的过程，以及url路径上的更资源化。<br>下面来看在node中如何具体实现</p>
 </blockquote>
+</li>
+<li>请求方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//请求方法设计</span></div><div class="line"><span class="keyword">var</span> routes = &#123;<span class="string">'all'</span>:[]&#125;;</div><div class="line"><span class="keyword">var</span> app =&#123;&#125;;</div><div class="line">app.use = <span class="function"><span class="keyword">function</span>(<span class="params">path, action</span>)</span>&#123;</div><div class="line">    routes.all.push([pathRegexp(path), action]);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//添加四种方法</span></div><div class="line">[<span class="string">'get'</span>,<span class="string">'put'</span>,<span class="string">'delete'</span>,<span class="string">'post'</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">method</span>)</span>&#123;</div><div class="line">    routes[method] = [];</div><div class="line">    app[method] = <span class="function"><span class="keyword">function</span>(<span class="params">path, action</span>)</span>&#123;</div><div class="line">        routes[method].push(pathRegexp(path), action);</div><div class="line">    &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//路由映射，分发业务</span></div><div class="line"><span class="comment">//内容匹配match</span></div><div class="line"><span class="keyword">var</span> match = <span class="function"><span class="keyword">function</span>(<span class="params">pathname,routes</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt; routes.length; i++)&#123;</div><div class="line">        <span class="keyword">var</span> route = routes[i];</div><div class="line">        <span class="comment">//正则匹配</span></div><div class="line">        <span class="keyword">var</span> reg = route[<span class="number">0</span>].regexp;</div><div class="line">        <span class="keyword">var</span> keys = route[<span class="number">0</span>].keys;</div><div class="line">        <span class="keyword">var</span> method = reg.exec(pathname);</div><div class="line">        <span class="keyword">if</span>(method)&#123;</div><div class="line">            <span class="comment">//抽取具体值</span></div><div class="line">            <span class="keyword">var</span> params = &#123;&#125;;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; l = keys.length; i &lt; l; i++)&#123;</div><div class="line">                <span class="keyword">var</span> value = matched[i + <span class="number">1</span>];</div><div class="line">                <span class="keyword">if</span>(value)&#123;</div><div class="line">                    params[keys[i]] = value;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            req.params = params;</div><div class="line">            <span class="keyword">var</span> action = route[i];</div><div class="line">            action(req,res);</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//分发部分</span></div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> pathname = url.parse(req, url).pathname;</div><div class="line">    <span class="comment">//将请求方法变为小写</span></div><div class="line">    <span class="keyword">var</span> method = req.method.toLowerCase();</div><div class="line">    <span class="keyword">if</span>(routes.hasOwnPerperty(method))&#123;</div><div class="line">        <span class="comment">//根据请求方法分发</span></div><div class="line">        <span class="keyword">if</span>(match(pathname, routes[method]))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="comment">//如果路径没匹配成功，尝试让all()来处理</span></div><div class="line">        <span class="keyword">if</span>(match(pathname,routes.all))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="comment">//直接让all()来处理</span></div><div class="line">        <span class="keyword">if</span>(match(pathname, routes.all))&#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    handle404(req, res);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/05/SQL浅尝/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/05/SQL浅尝/" itemprop="url">
+                  SQL浅尝
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T23:36:38Z">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/05/SQL浅尝/" class="leancloud_visitors" data-flag-title="SQL浅尝">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据库-Database"><a href="#数据库-Database" class="headerlink" title="数据库(Database)"></a>数据库(Database)</h1><p>数据库指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合.<br>关系型数据库<br>是创建在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据，标准数据查询语言SQL就是一种基于关系数据库的语言，这种语言执行对关系数据库中数据的检索和操作。几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令各个数据库之间得以互相集成。<br>非关系型数据库（NoSQL）<br>当代典型的关系数据库在一些数据敏感的应用中表现了糟糕的性能，例如为巨量文档创建索引、高流量网站的网页服务，以及发送流式媒体。关系型数据库的典型实现主要被调整用于执行规模小而读写频繁，或者大批量极少写访问的事务。</p>
+<h1 id="数据库模型"><a href="#数据库模型" class="headerlink" title="数据库模型"></a>数据库模型</h1><p>数据库模型描述了在数据库中结构化和操纵数据的方法，模型的结构部分规定了数据如何被描述（例如树、表等）。数据库模型的分类如下：<br>对象模型<br>层次模型（轻量级数据访问协议）<br>网状模型（大型数据储存）<br>关系模型<br>面向对象模型<br>半结构化模型<br>平面模型（表格模型，一般在形式上是一个二维数组。如表格模型数据Excel)</p>
+<p>数据库技术<br>是为了更加有效的管理和存取大量的数据资源。简单的来讲，数据库技术主要包括数据库系统，SQL语言，数据库访问技术。<br>数据库</p>
+<blockquote>
+<p>数据库（Database System）：用于存储数据的地方。<br>数据库管理系统<br>数据库管理系统（Database Management System，DBMS）：用户管理数据库的软件。<br>数据库应用程序<br>数据库应用程序（Database Application）：为了提高数据库系统的处理能力所使用的管理数据库的软件补充。<br>SQL语言<br>SQL，(Structured Query Language)即结构化查询语言，数据库管理系统专门通过SQL语言来管理数据库中的数据，与数据库通信。</p>
+</blockquote>
+<p>SQL为数据库管理系统提供的功能<br>SQL语言是一种数据库查询和程序设计语言，其主要用于存取数据，查询数据，更新数据和管理数据库系统。具体的，SQL分为4个部。</p>
+<p>数据定义语言（Data Definition Language，DDL）：DROP、CREATE、ALTER等语句；数据库定义语言。主要用于定义数据库，表，视图，索引和触发器等。CREATE语句主要用于创建数据库，创建表，创建视图。ALTER语句主要用于修改表的定义，修改视图的定义。DROP语句主要用于删除数据库，删除表和删除视图等。<br>数据操作语言（Data Manipulation Language，DML）：INSERT、UPDATE、DELETE语句；数据库操作语言。主要用于插入数据，更新数据，删除数据。INSERT语句用于插入数据，UPDATE语句用于更新数据，DELETE语句用于删除数据。<br>数据查询语言（Data Query Language，DQL）：SELECT语句。主要用于查询数据。<br>数据控制语言（Data Control Language ，DCL）语句：数据库控制语言。主要用于控制用户的访问权限。其中GRANT语句用于给用户增加权限，REVOKE语句用于收回用户的权限。</p>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><p>启动数据库服务：<br>linux: service mysql start<br>macOs: mysql start<br>使用root用户登录<br>mysql -u root</p>
+<p>SElECT语句<br>    语句格式：SELECT 要查询的列名 FROM 表名字 WHERE 限制条件;<br>    例如：SELECT name,age FROM employee;<br>    ①SELECT 语句常常会有 WHERE 限制条件，用于达到更加精确的查询。WHERE限制条件可以有数学符号 (=,&lt;,&gt;,&gt;=,&lt;=)<br>    例如：SELECT name,age FROM employee WHERE age&gt;25;<br>    ②“AND”与“OR”<br>    例如：SELECT name,age FROM employee WHERE age<25 or="" age="">30;<br>    如果要包含边界数。则使用between。<br>    ③IN和NOT IN 用于筛选在或者不在某个范围内的结果。<br>    例如：<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in_dpt IN (‘dpt3’,’dpt4’);<br>    SELECT name,age,phone,in_dpt FROM employee WHERE in<em>dpt NOT IN (‘dpt1’,’dpt3’);<br>    ④通配符<br>    关键字 LIKE 在SQL语句中和通配符一起使用，通配符代表未知字符。SQL中的通配符是</em>和%，其中_代表一个未指定字符，%代表不定个未指定字符。<br>    例如：<br>    SELECT name,age,phone FROM employee WHERE phone LIKE ‘1101__’;<br>    SELECT name,age,phone FROM employee WHERE name LIKE ‘J%’;<br>    ⑤结果排序<br>    ORDER BY的结果是升序排列，而使用关键词ASC和DESC可指定升序或降序排序。<br>    使用AS关键词可以给值重命名<br>    例如：<br>    SELECT MAX(salary) AS max_salary,MIN(salary) FROM employee;<br>    ⑥子查询 使用where in 进行查询，而且可以扩展到3层，4层或者更多的层。<br>    例如：SELECT of_dpt,COUNT(proj_name) AS count_project FROM project<br>    WHERE of_dpt IN<br>    (SELECT in_dpt FROM employee WHERE name=’Tom’);<br>    ⑦连接查询<br>    连接的基本思想是把两个或多个表当作一个新的表来操作<br>    例如：<br>        SELECT id,name,people_num<br>        FROM employee,department<br>        WHERE employee.in_dpt = department.dpt_name<br>        ORDER BY id;<br>        SELECT id,name,people_num<br>        FROM employee JOIN department<br>        ON employee.in_dpt = department.dpt_name<br>        ORDER BY id;</25></p>
+<p>数据库及表的修改和删除<br>drop database text_01 删除名为text_01的表。<br>重命名:<br>    RENAME TABLE 原名 TO 新名字;<br>    ALTER TABLE 原名 RENAME 新名;<br>    ALTER TABLE 原名 RENAME TO 新名;<br>对表的修改<br>    ①增加一列：新增加的列，被默认放置在这张表的最右边.<br>        ALTER TABLE 表名字 ADD COLUMN 列名字 数据类型 约束;<br>        或： ALTER TABLE 表名字 ADD 列名字 数据类型 约束;<br>    ②如果要把增加的列插入在指定位置，则需要在语句的最后使用AFTER关键词(“AFTER 列1” 表示新增的列被放置在 “列1” 的后面)<br>    ③如果想放在第一列的位置，则使用 FIRST 关键词<br>        ALTER TABLE employee ADD test INT(10) DEFAULT 11 FIRST;<br>    ④删除一列<br>    ALTER TABLE 表名字 DROP COLUMN 列名字;<br>    或：ALTER TABLE 表名字 DROP 列名字;<br>    ⑤重命名一列<br>    ALTER TABLE 表名字 CHANGE 原列名 新列名 数据类型 约束;<br>    注意：这条重命名语句后面的 “数据类型” 不能省略，否则重命名失败。<br>    ⑥修改表的某个值<br>    UPDATE 表名字 SET 列1=值1,列2=值2 WHERE 条件;<br>    ⑦删除表中的一行记录<br>    DELETE FROM 表名字 WHERE 条件;</p>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>   索引是一种与表有关的结构，它的作用相当于书的目录，可以根据目录中的页码快速找到所需的内容。<br>   当表中有大量记录时，若要对表进行查询，没有索引的情况是全表搜索：将所有记录一一取出，和查询条件进行一一对比，然后返回满足条件的记录。这样做会消耗大量数据库系统时间，并造成大量磁盘 I/O 操作。<br>   而如果在表中已建立索引，在索引中找到符合查询条件的索引值，通过索引值就可以快速找到表中的数据，可以大大加快查询速度。<br>   方法：<br>   对一张表的某个列建立索引<br>      ALTER TABLE 表名字 ADD INDEX 索引名 (列名);<br>      CREATE INDEX 索引名 ON 表名字 (列名);</p>
+<p>   视图<br>      视图是从一个或多个表中导出来的表，是一种虚拟存在的表。它就像一个窗口，通过这个窗口可以看到系统专门提供的数据，这样，用户可以不用看到整个数据库中的数据，而只关心对自己有用的数据。<br>      注意理解视图是虚拟的表：<br>            数据库中只存放了视图的定义，而没有存放视图中的数据，这些数据存放在原来的表中；<br>            使用视图查询数据时，数据库系统会从原来的表中取出对应的数据；<br>            视图中的数据依赖于原来表中的数据，一旦表中数据发生改变，显示在视图中的数据也会发生改变；<br>            在使用视图的时候，可以把它当作一张表。<br>        方法：<br>        CREATE VIEW 视图名(列a,列b,列c) AS SELECT 列1,列2,列3 FROM 表名字;<br>        导入:<br>        导入操作，可以把一个文件里的数据保存进一张表。导入语句格式为：<br>        LOAD DATA INFILE ‘文件路径’ INTO TABLE 表名字;<br>        导出:<br>        导出与导入是相反的过程，是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为：<br>        SELECT 列1，列2 INTO OUTFILE ‘文件路径和文件名’ FROM 表名字;<br>        备份：<br>        mysqldump -u root 数据库名&gt;备份文件名;   #备份整个数据库<br>        mysqldump -u root 数据库名 表名字&gt;备份文件名;  #备份整个表<br>        恢复：<br>        source /tmp/SQL6/MySQL-06.sql</p>
+<h1 id="MySQL操作"><a href="#MySQL操作" class="headerlink" title="MySQL操作"></a>MySQL操作</h1><p>①CREATE DATABASE 库名<br>②CREATE TABLE 表名<br>③DESCRIBE 内容名<br>④LOAD DATA INFILE … INTO TABLE 表名 和 INSERT<br>INSERT INTO 内容名<br>ps:windows中 \r\n为换行符，osx中为\r。<br>⑤SELECT * FROM 内容名<br>⑥DELETE FROM<br>⑦UPDATE 内容名 SET<br>⑧条件筛选<br>    &lt;特殊列&gt;SELECT … FROM …WHERE …<br>    &lt;特殊行&gt;SELECT … FROM … ORDER BY …(DESC)</p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>一、数值类型<br>BIT[(M)]<br>位域类型。M表示每个值的位数，范围为从1到64。如果M被省略，默认为1。<br>TINYINT[(M)] [UNSIGNED] [ZEROFILL]<br>很小的整数。带符号的范围是-128到127。无符号的范围是0到255。<br>BOOL，BOOLEAN<br>是TINYINT(1)的同义词。0值被视为假。非0值视为真。<br>SMALLINT[(M)] [UNSIGNED] [ZEROFILL]<br>小的整数。带符号的范围是-32768到32767。无符号的范围是0到65535。<br>MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL]<br>中等大小的整数。带符号的范围是-8388608到8388607。无符号的范围是0到16777215。<br>INT[(M)] [UNSIGNED] [ZEROFILL]<br>普通大小的整数。带符号的范围是-2147483648到2147483647。无符号的范围是0到4294967295。<br>INTEGER[(M)] [UNSIGNED] [ZEROFILL]<br>这是INT的同义词。<br>BIGINT[(M)] [UNSIGNED] [ZEROFILL]<br>大整数。带符号的范围是-9223372036854775808到9223372036854775807。无符号的范围是0到18446744073709551615。<br>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL]<br>小(单精度)浮点数。允许的值是-3.402823466E+38到-1.175494351E-38、0和1.175494351E-38到3.402823466E+38。这些是理论限制，基于IEEE标准。实际的范围根据硬件或操作系统的不同可能稍微小些。<br>M是浮点数的总位数，D是小数点后面的位数。如果M和D被省略，根据硬件允许的限制来保存值。单精度浮点数精确到大约7位小数位。<br>如果指定UNSIGNED，不允许负值。<br>使用浮点数可能会遇到意想不到的问题，因为在MySQL中的所有计算用双精度完成。参见解决与不匹配行有关的问题。<br>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL]<br>普通大小(双精度)浮点数。允许的值是-1.7976931348623157E+308到-2.2250738585072014E-308、0和2.2250738585072014E-308到 1.7976931348623157E+308。这些是理论限制，基于IEEE标准。实际的范围根据硬件或操作系统的不同可能稍微小些。<br>M是小数总位数，D是小数点后面的位数。如果M和D被省略，根据硬件允许的限制来保存值。双精度浮点数精确到大约15位小数位。<br>如果指定UNSIGNED，不允许负值。<br>DOUBLE PRECISION[(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL]<br>为DOUBLE的同义词。除非：如果SQL服务器模式启动REAL_AS_FLOAT选项，REAL是FLOAT的同义词而不是DOUBLE的同义词。<br>FLOAT(p) [UNSIGNED] [ZEROFILL]<br>浮点数.p表示精度，但MySQL只使用该值来确定列的数据类型是否为FLOAT或DOUBLE。如果p取值在0到24之间，数据类型将变为没有M或D值的FLOAT类型。如果p取值为25到53，数据类型将变为没有M或D值的DOUBLE型。这种情况下列范围与本节前面描述的单精度FLOAT或双精度DOUBLE数据类型相同。<br>FLOAT(p)语法与ODBC兼容。<br>二、日期时间类型<br>DATE<br>日期。支持的范围为1000-01-01到9999-12-31。MySQL以YYYY-MM-DD格式显示DATE值，但允许使用字符串或数字类型数据为DATE列赋值。<br>DATETIME[(fsp)]<br>日期和时间的组合。支持的范围是1000-01-01 00:00:00到9999-12-31 23:59:59。MySQL以YYYY-MM-DD HH:MM:SS格式显示DATETIME值，但允许使用字符串或数字为DATETIME列赋值。<br>其中，可选参数fsp取值范围是0-6可以指定精确到秒的分位数，默认的是0，指精确到秒。<br>TIMESTAMP[(fsp)]<br>时间戳。范围是1970-01-01 00:00:00到2038-01-19 03:14:07.999999。<br>TIMESTAMP列用于执行INSERT或UPDATE操作时记录日期和时间。如果你不分配一个值，表中的第一个TIMESTAMP列自动设置为最近操作的日期和时间。也可以通过分配一个NULL值，将TIMESTAMP列设置为当前的日期和时间。<br>TIME<br>时间。范围是-838:59:59到838:59:59。MySQL以HH:MM:SS格式显示TIME值，但允许使用字符串或数字为TIME列分配值。<br>YEAR[(2|4)] 两位或四位格式的年。默认是四位格式。在四位格式中，允许的值是1901到2155和0000。在两位格式中，允许的值是70到69，表示从1970年到2069年。MySQL以YYYY格式显示YEAR值，但允许使用字符串或数字为YEAR分配值。<br>三、字符串类型<br>许多字符串数据类型的列定义可以包括指定字符集的CHARACTER SET属性或校对规则。(CHARSET是CHARACTER SET的一个同义词）。这些属性适用于CHAR、VARCHAR、TEXT类型、ENUM和SET<br>[NATIONAL] CHAR(M) [BINARY| ASCII | UNICODE]<br>固定长度字符串，当保存数据时在右侧自动填充空格以达到指定的长度。M表示列长度。M的范围是0到255个字符。<br>注：当检索CHAR类型值时尾部空格将被删除。<br>如果想要将某个CHAR的长度设为大于255，执行CREATE TABLE或ALTER TABLE语句时将失败并提示错误，尝试输入：<br>mysql&gt; CREATE TABLE c1 (col1 INT, col2 CHAR(500));<br>mysql&gt; SHOW CREATE TABLE c1;<br>CHAR是CHARACTER的简写。NATIONAL CHAR(或其等效短形式NCHAR)是标准的定义CHAR列应使用默认字符集的SQL方法。BINARY属性是指定列字符集的二元校对规则的简写。排序和比较基于数值字符值。列类型CHAR BYTE是CHAR BINARY的一个别名，这是为了保证兼容性。通过指定latin1字符集，可以为CHAR指定ASCII属性。通过指定ucs2字符集可以为CHAR指定UNICODE属性。<br>MySQL允许创建类型为CHAR(0)的列。这主要用于与必须有一个列但实际上不使用它的值的旧版本中应用程序相兼容。<br>CHAR<br>这是CHAR(1)的同义词。<br>[NATIONAL] VARCHAR(M) [BINARY]<br>变长字符串。M表示最大列长度。M的范围是0到65,535。(VARCHAR的最大实际长度由最长的行的大小和使用的字符集确定。最大有效长度是65,532字节）。<br>注：MySQL 5.1遵从标准SQL规范，并且不自动移除VARCHAR值的尾部空格。<br>VARCHAR是字符VARYING的简写。BINARY属性是指定列的字符集的二元校对规则的简写。排序和比较基于数值字符值。VARCHAR保存时用一个字节或两个字节长的前缀+数据。如果VARCHAR列声明的长度大于255，长度前缀是两个字节。<br>BINARY(M)<br>BINARY类型类似于CHAR类型，但存储二进制字节字符串而不是非二进制字符串。<br>VARBINARY(M)<br>VARBINARY类型类似于VARCHAR类型，但存储二进制字节字符串而不是非二进制字符串。<br>TINYBLOB<br>最大长度为255字节的BLOB列。<br>TINYTEXT<br>最大长度为255字符的TEXT列。<br>BLOB[(M)]<br>最大长度为65,535字节的BLOB列。<br>可以给出该类型的可选长度M。如果给出，则MySQL将列创建为最小的但足以容纳M字节长的值的BLOB类型。<br>TEXT[(M)]<br>最大长度为65,535字符的TEXT列。<br>可以给出可选长度M。则MySQL将列创建为最小的但足以容纳M字符长的值的TEXT类型。<br>MEDIUMBLOB<br>最大长度为16,777,215字节的BLOB列。<br>MEDIUMTEXT<br>最大长度为16,777,215字符的TEXT列。<br>LONGBLOB<br>最大长度为4,294,967,295或4GB字节的BLOB列。LONGBLOB列的最大有效(允许的)长度取决于客户端或服务器协议中配置最大包大小和可用的内存。<br>LONGTEXT<br>最大长度为4,294,967,295或4GB字符的TEXT列。LONGTEXT列的最大有效(允许的)长度取决于客户端或服务器协议中配置最大包大小和可用的内存。<br>ENUM(‘value1’,’value2’,…)<br>枚举类型。一个字符串只能由一个值，从值列列表’value1’，’value2’，…，NULL中或特殊’’错误值中选出。ENUM列最多可以有65,535个截然不同的值。ENUM值在内部用整数表示。<br>SET(‘value1’,’value2’,…)<br>一个SET类型列可以64个不同值。字符串对象可以有零个或多个值，每个值必须来自列表值’value1’，’value2’，…，SET对应的值在内部用整数表示。</p>
+<h1 id="语法结构"><a href="#语法结构" class="headerlink" title="语法结构"></a>语法结构</h1><p>一、ALTER DATABASE语法<br>用于更改数据库的全局特性<br>二、ALTER TABLE语法<br>用于更改表的结构。例如，您可以增加或删减列，创建或取消索引，更改原有列的类型，或重新命名列或者表。您还可以更改表的评注和表的类型。<br>三、CREATE DATABASE语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX index_name</div><div class="line">    [USING index_type]</div><div class="line">    ON tbl_name (index_col_name,...)</div><div class="line"></div><div class="line">index_col_name:</div><div class="line">    col_name [(length)] [ASC | DESC]</div><div class="line">CREATE INDEX被映射到一个ALTER TABLE语句上，用于创建索引。</div></pre></td></tr></table></figure></p>
+<p>四、CREATE TABLE语法<br>CREATE TABLE用于创建带给定名称的表。<br>五、DROP DATABASE语法<br>DROP {DATABASE | SCHEMA} [IF EXISTS] db_name<br>丢弃数据库中的所有表格并删除数据库<br>六、DROP INDEX语法<br>DROP INDEX index_name ON tbl_name<br>从表tbl_name中取消名称为index_name的索引<br>七、DROP TABLE语法<br>DROP [TEMPORARY] TABLE [IF EXISTS]<br>    tbl_name [, tbl_name] …<br>    [RESTRICT | CASCADE]<br>移除一个或多个表<br>八、RENAME TABLE语法<br>RENAME TABLE tbl_name TO new_tbl_name<br>    [, tbl_name2 TO new_tbl_name2] …</p>
+<p>2.2.1 DELETE语法<br>单表语法：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name<br>    [WHERE where_definition]<br>    [ORDER BY …]<br>    [LIMIT row_count]<br>多表语法：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE]<br>    tbl_name[.<em>] [, tbl_name[.</em>] …]<br>    FROM table_references<br>    [WHERE where_definition]<br>or：<br>DELETE [LOW_PRIORITY] [QUICK] [IGNORE]<br>    FROM tbl_name[.<em>] [, tbl_name[.</em>] …]<br>    USING table_references<br>    [WHERE where_definition]<br>如果tbl_name中有些行满足由where_definition给定的条件，那么DELETE就会删除这些行，并返回被删除的记录的数目。<br>如果您编写的DELETE语句中没有WHERE子句，则所有的行都被删除。当您不想知道被删除的行的数目时，有一个更快的方法，即使用TRUNCATE TABLE。<br>举例：<br>如果DELETE语句中含有ORDER BY子句，则按照子句中指定的顺序删除行，再结合LIMIT语句会显得非常有优势。<br>比如说，下面的语句就是找出表somelog中匹配WHERE子句条件的所有行，并根据timestamp_column这一列数据进行排序，然后删除第一（最老的）行：<br>mysql&gt; DELETE FROM somelog WHERE user = ‘jcole’ ORDER BY timestamp_column LIMIT 1;<br>2.2.2 DO语法<br>DO expr [, expr] …<br>DO用于执行表达式，但是不返回任何结果。DO是SELECT expr的简化表达方式。DO有一个优势，就是如果您不太关心结果的话，DO的速度稍快。 DO主要用于执行有副作用的函数，比如RELEASE_LOCK()。<br>举例：<br>这个SELECT有停止的作用，但是也产生了一个结果集：<br>mysql&gt; SELECT SLEEP(5);<br>相反，尝试一下DO语句的神奇：<br>mysql&gt; DO SLEEP(5);<br>以上例子适用于禁止产生结果集的存储函数或触发器。<br>2.2.3 HANDLER语法<br>HANDLER tbl_name OPEN [ AS alias ]<br>HANDLER tbl_name READ index_name { = | &gt;= | &lt;= | &lt; } (value1,value2,…)<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name READ index_name { FIRST | NEXT | PREV | LAST }<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name READ { FIRST | NEXT }<br>    [ WHERE where_condition ] [LIMIT … ]<br>HANDLER tbl_name CLOSE<br>HANDLER语句提供通往表存储引擎接口的直接通道。HANDLER可以用于MyISAM和InnoDB表。<br>HANDLER…OPEN语句用于打开一个表，通过后续的HANDLER…READ语句建立读取表的通道。本表目标不会被其它线程共享，也不会关闭，直到线程调用HANDLER…CLOSE或线程中止时为止。如果您使用一个别名打开表，如果要使用其它HANDLER语句进一步参阅表则必须使用此别名，而不能使用表名。<br>2.2.4 INSERT语法<br>INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name [(col_name,…)]<br>    VALUES ({expr | DEFAULT},…),(…),…<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, … ]<br>or：<br>INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name<br>    SET col_name={expr | DEFAULT}, …<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, …<br>or<br>INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]<br>    [INTO] tbl_name [(col_name,…)]<br>    SELECT …<br>    [ ON DUPLICATE KEY UPDATE col_name=expr, … ]<br>INSERT用于向一个已有的表中插入新行。INSERT…VALUES和INSERT…SET形式的语句根据明确指定的值插入行。INSERT…SELECT形式的语句插入从其它表中选出的行。<br>举例：<br>INSERT语句可以使用VALUES语法插入多行数据。要想实现这一点，每一列的值列表必须用括号括起来，并使用逗号隔开。例如：<br>INSERT INTO tbl_name (a,b,c) VALUES(1,2,3),(4,5,6),(7,8,9);<br>2.2.5 LOAD DATA INFILE语法<br>LOAD DATA [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE ‘file_name.txt’<br>    [REPLACE | IGNORE]<br>    INTO TABLE tbl_name<br>    [FIELDS<br>        [TERMINATED BY ‘string’]<br>        [[OPTIONALLY] ENCLOSED BY ‘char’]<br>        [ESCAPED BY ‘char’ ]<br>    ]<br>    [LINES<br>        [STARTING BY ‘string’]<br>        [TERMINATED BY ‘string’]<br>    ]<br>    [IGNORE number LINES]<br>    [(col_name_or_user_var,…)]<br>    [SET col_name = expr,…)]<br>LOAD DATA INFILE语句用于高速地从一个文本文件中读取行，并装入一个表中。文件名称必须为文字字符串类型。<br>举例：<br>下面例子是从文件persondata.txt中加载数据到表persondata中：<br>LOAD DATA INFILE ‘persondata.txt’ INTO TABLE persondata;<br>2.2.6 REPLACE语法<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name [(col_name,…)]<br>    VALUES ({expr | DEFAULT},…),(…),…<br>或：<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name<br>    SET col_name={expr | DEFAULT}, …<br>或：<br>REPLACE [LOW_PRIORITY | DELAYED]<br>    [INTO] tbl_name [(col_name,…)]<br>    SELECT …<br>REPLACE的运行模式与INSERT很相像。只有一点除外，如果表中的一个旧记录与一个用于PRIMARY KEY或一个UNIQUE索引的新记录具有相同的值，则在新记录被插入之前，旧记录被删除<br>2.2.7 SELECT语法<br>SELECT<br>    [ALL | DISTINCT | DISTINCTROW ]<br>      [HIGH_PRIORITY]<br>      [STRAIGHT_JOIN]<br>      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]<br>      [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]<br>    select_expr, …<br>    [INTO OUTFILE ‘file_name’ export_options<br>      | INTO DUMPFILE ‘file_name’]<br>    [FROM table_references<br>    [WHERE where_definition]<br>    [GROUP BY {col_name | expr | position}<br>      [ASC | DESC], … [WITH ROLLUP]]<br>    [HAVING where_definition]<br>    [ORDER BY {col_name | expr | position}<br>      [ASC | DESC] , …]<br>    [LIMIT {[offset,] row_count | row_count OFFSET offset}]<br>    [PROCEDURE procedure_name(argument_list)]<br>    [FOR UPDATE | LOCK IN SHARE MODE]]<br>SELECT用于从一个或多个表中恢复选择的行，也可以用于在不检索任何表的情况下计算。<br>例如：<br>mysql&gt; SELECT 1 + 1;<br>可以在没有表可以参考的情况下指定DUAL为一个虚拟的表名：<br>mysql&gt; SELECT 1 + 1 FROM DUAL;<br>1） JOIN语法<br>MySQL支持以下JOIN语法。这些语法用于SELECT语句的table_references部分和多表DELETE和UPDATE语句：<br>table_references:<br>    table_reference [, table_reference] …<br>table_reference:<br>    table_factor<br>  | join_table<br>table_factor:<br>    tbl_name [[AS] alias]<br>        [{USE|IGNORE|FORCE} INDEX (key_list)]<br>  | ( table_references )<br>  | { OJ table_reference LEFT OUTER JOIN table_reference<br>        ON conditional_expr }<br>join_table:<br>    table_reference [INNER | CROSS] JOIN table_factor [join_condition]<br>  | table_reference STRAIGHT_JOIN table_factor<br>  | table_reference STRAIGHT_JOIN table_factor ON condition<br>  | table_reference LEFT [OUTER] JOIN table_reference join_condition<br>  | table_reference NATURAL [LEFT [OUTER]] JOIN table_factor<br>  | table_reference RIGHT [OUTER] JOIN table_reference join_condition<br>  | table_reference NATURAL [RIGHT [OUTER]] JOIN table_factor<br>join_condition:<br>    ON conditional_expr<br>  | USING (column_list)<br>一个表的引用也被称为一个联合表达式。与SQL标准相比，table_factor的语法被扩展了，前者只接受table_reference，不接受括号内的table_reference列表。<br>2） UNION语法<br>SELECT …<br>UNION [ALL | DISTINCT]<br>SELECT …<br>[UNION [ALL | DISTINCT]<br>SELECT …]<br>UNION用于把来自多个SELECT语句的结果组合到一个结果集中。<br>举例：<br>如果相应的SELECT列的数据类型不匹配，那么在UNION中列的类型和长度应该考虑所有的SELECT语句的返回值。比如：<br>mysql&gt; SELECT REPEAT(‘a’,1) UNION SELECT REPEAT(‘b’,10);<br>你会发现：只有最后一个SELECT语句被重复写入输出集；<br>思考一下，为什么？并把答案写入到实验报告。<br>2.2.8 UPDATE语法<br>单表语法<br>UPDATE [LOW_PRIORITY] [IGNORE] tbl_name<br>    SET col_name1=expr1 [, col_name2=expr2 …]<br>    [WHERE where_definition]<br>    [ORDER BY …]<br>    [LIMIT row_count]<br>多表语法：<br>UPDATE [LOW_PRIORITY] [IGNORE] table_references<br>    SET col_name1=expr1 [, col_name2=expr2 …]<br>    [WHERE where_definition]<br>UPDATE语法可以将新值更新到原有表中的行和列。SET子句指示要修改哪些列和要给予哪些值。WHERE子句指定应更新哪些行。如果没有WHERE子句，则更新所有的行。如果指定了ORDER BY子句，则按照被指定的顺序对行进行更新。LIMIT子句用于给定一个限值，限制可以被更新的行的数目。<br>例子：<br>例如，表t中的id列有1和2这两个值，并且在2被更新到3之前，1会被更新为2，那么就会出错。为了避免这个问题，添加一个ORDER BY子句让拥有较大id值的行更早更新：<br>UPDATE t SET id = id + 1 ORDER BY id DESC;<br>2.3.1 DESCRIBE语法（获取有关列的信息）<br>{DESCRIBE | DESC} tbl_name [col_name | wild]<br>DESCRIBE可以提供有关表中各列的信息。它是SHOW COLUMNS FROM的快捷方式。<br>2.3.2 USE语法<br>USE db_name<br>USE db_name语句可以通告MySQL把db_name数据库作为默认（当前）数据库使用，用于后续的语句。<br>2.4 MySQL事务处理和锁定语句</p>
+<p>2.4.1 START TRANSACTION，COMMIT和ROLLBACK语法</p>
+<p>START TRANSACTION | BEGIN [WORK]<br>COMMIT [WORK] [AND [NO] CHAIN] [[NO] RELEASE]<br>ROLLBACK [WORK] [AND [NO] CHAIN] [[NO] RELEASE]<br>SET AUTOCOMMIT = {0 | 1}<br>以下语句提供事务的使用控制：</p>
+<p>START TRANSACTION或BEGIN语句可以开始一项新的事务。<br>COMMIT可以提交当前事务，使其永久更改。<br>ROLLBACK可以回滚当前事务，取消变更。<br>SET AUTOCOMMIT语句可以禁用或启用当前连接中默认的autocommit模式，。<br>默认情况下，MySQL采用autocommit模式运行。这意味着，当您执行一个用于更新（修改）表的语句之后，MySQL立刻把更新存储到磁盘中。</p>
+<p>如果您正在使用一个事务安全型的存储引擎（如InnoDB，BDB或NDB簇），则您可以使用以下语句禁用autocommit模式：</p>
+<p>SET AUTOCOMMIT=0;<br>通过把AUTOCOMMIT变量设置为零，禁用autocommit模式之后，您必须使用COMMIT把变更存储到磁盘中，或者如果您想要忽略从事务开始进行以来做出的变更，请使用ROLLBACK。</p>
+<p>如果您想要对于一个单一系列的语句禁用autocommit模式，则您可以使用START TRANSACTION语句：</p>
+<p>START TRANSACTION;<br>SELECT @A:=SUM(salary) FROM table1 WHERE type=1;<br>UPDATE table2 SET summary=@A WHERE type=1;<br>COMMIT;<br>使用START TRANSACTION，autocommit仍然被禁用，直到您使用COMMIT或ROLLBACK结束事务为止。然后autocommit模式恢复到原来的状态。</p>
+<p>BEGIN和BEGIN WORK被作为START TRANSACTION的别名受到支持，用于对事务进行初始化。START TRANSACTION是标准的SQL语法，并且是启动一个ad-hoc事务的推荐方法。BEGIN语句与BEGIN关键词的使用不同。BEGIN关键词可以启动一个BEGIN…END复合语句。后者不会开始一项事务。</p>
+<p>您也可以按照如下方法开始一项事务：</p>
+<p>START TRANSACTION WITH CONSISTENT SNAPSHOT;<br>WITH CONSISTENT SNAPSHOT子句用于启动一个一致的读取，用于具有此类功能的存储引擎。目前，该子句只适用于InnoDB，该子句的效果与发布一个START TRANSACTION，后面跟一个来自任何InnoDB表的SELECT的效果一样。</p>
+<p>开始一项事务会造成一个隐含的UNLOCK TABLES被执行。</p>
+<p>为了获得最好的结果，事务应只使用由单一事务存储引擎管理的表执行。否则，会出现以下问题：</p>
+<p>如果您使用的表来自多个事务安全型存储引擎（例如InnoDB），并且事务隔离等级不是SERIALIZABLE，则有可能当一个事务提交时，其它正在进行中的、使用同样的表的事务将只会发生由第一个事务产生的变更。也就是，用混合引擎不能保证事务的原子性，并会造成不一致。（如果混合引擎事务不经常有，则您可以根据需要使用SET TRANSACTION ISOLATION LEVEL把隔离等级设置到SERIALIZABLE。）</p>
+<p>如果您在事务中使用非事务安全型表，则对这些表的任何变更被立刻存储，不论autocommit模式的状态如何。</p>
+<p>如果您在更新了事务中一个事务表之后，发布一个ROLLBACK语句，则会出现一个ER_WARNING_NOT_COMPLETE_ROLLBACK警告。对事务安全型表的变更会被回滚，但是非事务安全型表没有发生任何改变。</p>
+<p>每个事务被存储在一个组块中的二进制日志中，在COMMIT之上。其中被回滚的事务不被计入日志。（例外情况：对非事务表的更改不会被回滚。如果一个被回滚的事务包括对非事务表的更改，则整个事务使用一个ROLLBACK语句计入日志末端，以确保对这些表的更改进行复制。）</p>
+<p>您可以使用SET TRANSACTION ISOLATION LEVEL更改事务的隔离等级。</p>
+<p>2.4.2 SAVEPOINT和ROLLBACK TO SAVEPOINT语法</p>
+<p>SAVEPOINT identifier<br>ROLLBACK [WORK] TO SAVEPOINT identifier<br>RELEASE SAVEPOINT identifier<br>InnoDB支持SQL语句SAVEPOINT, ROLLBACK TO SAVEPOINT, RELEASE SAVEPOINT和可选的用于ROLLBACK的WORK关键词。</p>
+<p>SAVEPOINT语句用于用标识符名称设置命名一个事务保存点。如果当前事务有一个同样名称的保存点，则旧的保存点被删除，新的保存点就会被设置。</p>
+<p>ROLLBACK TO SAVEPOINT语句会向以命名的保存点回滚一个事务。如果在保存点被设置后，当前事务对行进行了更改，则这些更改会在回滚中被撤销。但是，InnoDB不会释放被存储在保存点之后的存储器中的行锁定。（注意，对于新插入的行，锁定信息被存储在行中的事务ID承载；锁定没有被分开存储在存储器中。在这种情况下，行锁定在撤销中被释放。）在被命名的保存点之后设置的保存点被删除。</p>
+<p>如果语句返回以下错误，则意味着不存在带有指定名称的保存点：</p>
+<p>ERROR 1181: Got error 153 during ROLLBACK<br>RELEASE SAVEPOINT语句会从当前事务的一组保存点中删除已命名的保存点，不出现提交或回滚。如果保存点不存在，会出现错误。</p>
+<p>如果您执行COMMIT或执行不能命名保存点的ROLLBACK，则当前事务的所有保存点被删除。</p>
+<p>2.4.3 LOCK TABLES和UNLOCK TABLES语法</p>
+<p>LOCK TABLES<br>    tbl_name [AS alias] {READ [LOCAL] | [LOW_PRIORITY] WRITE}<br>    [, tbl_name [AS alias] {READ [LOCAL] | [LOW_PRIORITY] WRITE}] …<br>LOCK TABLES可以锁定用于当前线程的表。如果表被其它线程锁定，则造成堵塞，直到可以获取所有锁定为止。UNLOCK TABLES可以释放被当前线程保持的任何锁定。当线程发布另一个LOCK TABLES时，或当与服务器的连接被关闭时，所有由当前线程锁定的表被隐含地解锁。</p>
+<p>表锁定只用于防止其它客户端进行不正当地读取和写入。保持锁定（即使是读取锁定）的客户端可以进行表层级的操作，比如DROP TABLE。</p>
+<p>2.4.4 SET TRANSACTION语法</p>
+<p>SET [GLOBAL | SESSION] TRANSACTION ISOLATION LEVEL<br>{ READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE }<br>本语句用于设置事务隔离等级，用于下一个事务或者当前会话。</p>
+<p>在默认情况下，SET TRANSACTION会为下一个（还未开始）事务设置隔离等级。如果您使用GLOBAL关键词，则语句会设置全局性的默认事务等级，用于从该点以后创建的所有新连接，且原有的连接不受影响。要进行此操作，您需要SUPER权限。使用SESSION关键词可以设置默认事务等级，用于对当前连接执行所有将来事务。</p>
+<p>2.4.5 XA事务SQL语法<br>要在MySQL中执行XA事务，应使用以下语句：<br>XA {START|BEGIN} xid [JOIN|RESUME]<br>XA END xid [SUSPEND [FOR MIGRATE]]<br>XA PREPARE xid<br>XA COMMIT xid [ONE PHASE]<br>XA ROLLBACK xid<br>XA RECOVER<br>对于XA START，JOIN和RESUME子句不被支持。<br>对于XA END，SUSPEND [FOR MIGRATE]子句不被支持。<br>每个XA语句以XA关键词为开头，多数语句要求一个xid值。xid是XA事务的标识符，它指示该语句适用于哪个事务。xid值由客户端提供，或由MySQL服务器生成。xid值包含一到三个部分：<br>xid: gtrid [, bqual [, formatID ]]<br>gtrid是一个全局事务标识符，bqual是一个分支限定符，formatID是一个用于标识由gtrid和bqual值使用的格式的数字。根据语法，bqual和formatID是可选的。如果没有给定，默认的bqual值是’’，默认的fromatID值是1。<br>gtrid和bqual必须为字符串文字，每个的长度最多为64字节（不是字符）。gtrid和bqual可以用多种方法指定。您可以使用带引号的字符串(‘ab’)，十六进制字符串(0x6162, X’ab’)，或位值(b’nnnn’)。<br>formatID是一个无符号的整数。<br>2.5 数据库管理语句<br>2.5.1 账户管理语句<br>1） CREATE USER语法<br>CREATE USER user [IDENTIFIED BY [PASSWORD] ‘password’]<br>    [, user [IDENTIFIED BY [PASSWORD] ‘password’]] …<br>CREATE USER用于创建新的MySQL账户。要使用CREATE USER，您必须拥有mysql数据库的全局CREATE USER权限，或拥有INSERT权限。对于每个账户，CREATE USER会在mysql.user表中创建一个新记录。如果试图建立一个已经存在的账户，则会报错。<br>使用可选的IDENTIFIED BY子句，可以为账户给定一个密码。举例如下：<br>创建一个已经使用sha256_password认证的插件和密码设置为’new-password’的账户’jeffrey’@’localhost’，要求每隔180天建立一个新的密码：<br>CREATE USER ‘jeffrey’@’localhost’<br>  IDENTIFIED WITH sha256_password BY ‘new-password’<br>  PASSWORD EXPIRE INTERVAL 180 DAY;<br>2） DROP USER语法<br>DROP USER user [, user] …<br>DROP USER语句用于删除一个或多个MySQL账户。要使用DROP USER，您必须拥有mysql数据库的全局CREATE USER权限或DELETE权限。<br>3） GRANT和REVOKE语法<br>GRANT priv_type [(column_list)] [, priv_type [(column_list)]] …<br>    ON [object_type] {tbl_name | <em> | </em>.<em> | db_name.</em>}<br>    TO user [IDENTIFIED BY [PASSWORD] ‘password’]<br>        [, user [IDENTIFIED BY [PASSWORD] ‘password’]] …<br>    [REQUIRE<br>        NONE |<br>        [{SSL| X509}]<br>        [CIPHER ‘cipher’ [AND]]<br>        [ISSUER ‘issuer’ [AND]]<br>        [SUBJECT ‘subject’]]<br>    [WITH with_option [with_option] …]<br>object_type =<br>    TABLE<br>  | FUNCTION<br>  | PROCEDURE<br>with_option =<br>    GRANT OPTION<br>  | MAX_QUERIES_PER_HOUR count<br>  | MAX_UPDATES_PER_HOUR count<br>  | MAX_CONNECTIONS_PER_HOUR count<br>  | MAX_USER_CONNECTIONS count<br>REVOKE priv_type [(column_list)] [, priv_type [(column_list)]] …<br>    ON [object_type] {tbl_name | <em> | </em>.<em> | db_name.</em>}<br>    FROM user [, user] …<br>REVOKE ALL PRIVILEGES, GRANT OPTION FROM user [, user] …<br>GRANT和REVOKE语句允许系统管理员创建MySQL用户账户，授予权限和撤销权限。<br>4） RENAME USER语法<br>RENAME USER old_user TO new_user<br>    [, old_user TO new_user] …<br>RENAME USER语句用于对原有MySQL账户进行重命名。要使用RENAME USER，您必须拥有全局CREATE USER权限或mysql数据库UPDATE权限。如果旧 账户不存在或者新账户已存在，则会出现错误。old_user和new_user值的给定方法与GRANT语句一样。<br>例如：<br>RENAME USER ‘jeffrey’@’localhost’ TO ‘jeff’@’127.0.0.1’;<br>5） SET PASSWORD语法<br>SET PASSWORD = PASSWORD(‘some password’);<br>SET PASSWORD FOR user = PASSWORD(‘some password’);<br>SET PASSWORD语句用于向一个原有MySQL用户账户赋予密码。<br>第一个语法是为当前用户设置密码，其中使用一个非匿名账户连接到服务器上的任何客户即都可以更改该账户的密码。<br>第二个语法是为当前服务器主机上的一个特定账户设置密码。只有拥有mysql数据库UPDATE权限的客户端可以这么做。user值应以为固定格式user_name@host_name，此处user_name和host_name与mysql.user表登录项的User和Host列中列出的完全一样。<br>2.5.2 表维护语句<br>1） ANALYZE TABLE语法<br>ANALYZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] …<br>本语句用于分析和存储表的关键字分布。在分析期间，使用读取锁定对表MyISAM， BDB和InnoDB表进行锁定。对于MyISAM表，本语句与使用myisamchk –analyze相当。<br>当您对除常数以外的对象执行联合时，MySQL使用已存储的关键字分布来决定，表按什么顺序进行联合。<br>ANALYZE TABLE语句会返回一个含有下列的结果集：<br>此处输入图片的描述<br>2） CHECK TABLE语法<br>CHECK TABLE tbl_name [, tbl_name] … [option] …<br>option = {QUICK | FAST | MEDIUM | EXTENDED | CHANGED}<br>CHECK TABLE对MyISAM和InnoDB表执行检查。对于MyISAM表，关键字统计数据在检查的同时也被更新。<br>CHECK TABLE也可以检查视图是否有错误，比如在视图定义中被引用的表已不存在。<br>CHECK TABLE语句会返回一个含有以下列的结果集：<br>此处输入图片的描述<br>3） CHECKSUM TABLE语法<br>CHECKSUM TABLE tbl_name [, tbl_name] … [ QUICK | EXTENDED ]<br>报告表的校验和。<br>4） OPTIMIZE TABLE语法<br>OPTIMIZE [LOCAL | NO_WRITE_TO_BINLOG] TABLE tbl_name [, tbl_name] …<br>如果您已经删除了表的一大部分，或者如果您已经对含有可变长度行的表（含有VARCHAR，BLOB或TEXT列的表）进行了很多更改，则应使用OPTIMIZE TABLE。被删除的记录被保存在链接清单中，后续的INSERT操作会重新使用旧的记录位置。您可以使用OPTIMIZE TABLE来重新利用未使用的空间，并整理数据文件碎片。<br>在多数的设置中，您根本不需要运行OPTIMIZE TABLE。即使您对可变长度的行进行了大量的更新，您也不需要经常运行，只对特定的表每周一次或每月一次执行该语句即可。<br>5） REPAIR TABLE语法<br>REPAIR [LOCAL | NO_WRITE_TO_BINLOG] TABLE<br>    tbl_name [, tbl_name] … [QUICK] [EXTENDED] [USE_FRM]<br>REPAIR TABLE用于修复被破坏的表。默认情况下，REPAIR TABLE与myisamchk –recover tbl_name具有相同的效果。REPAIR TABLE对MyISAM和ARCHIVE表起作用。<br>通常，您基本上不必运行此语句。但是，如果’灾难’真的发生，REPAIR TABLE很有可能从MyISAM表中找回所有数据。如果您的表经常被破坏，您应该尽力找到原因，以避免使用REPAIR TALBE。<br>本语句会返回一个含有以下列的结果集：<br>此处输入图片的描述<br>2.5.3 SET语法<br>SET variable_assignment [, variable_assignment] …<br>variable_assignment:<br>      user_var_name = expr<br>    | [GLOBAL | SESSION] system_var_name = expr<br>    | @@[global. | session.]system_var_name = expr<br>SET用于设置不同类型的变量，这些变量会影响服务器或客户端的操作。SET可以用于向用户变量或系统变量赋值。<br>2.5.4 SHOW语法<br>1） SHOW CHARACTER SET语法<br>SHOW CHARACTER SET [LIKE ‘pattern’];<br>SHOW CHARACTER SET语句用于显示所有可用的字符集。如果选定LIKE子句，该子句用于指定哪些字符集名称可以匹配。<br>2） SHOW COLLATION语法<br>SHOW COLLATION [LIKE ‘pattern’];<br>默认情况下，SHOW COLLATION语句输出所有可用的字符集。该语句如果设置可选LIKE子句，那么pattern将指定哪些归类名可以匹配。<br>3） SHOW COLUMNS语法<br>SHOW [FULL] COLUMNS FROM tbl_name [FROM db_name] [LIKE ‘pattern’];<br>SHOW COLUMNS显示在一个给定表中的各列的信息。对于视图，本语句也起作用。<br>4） SHOW CREATE DATABASE语法<br>SHOW CREATE {DATABASE | SCHEMA} db_name;<br>显示CREATE DATABASE语句创建的给定数据库。也可以使用SHOW CREATE SCHEMA。<br>5） SHOW CREATE TABLE语法<br>SHOW CREATE TABLE tbl_name;<br>显示CREATE TABLE语句创建的给定表格。本语句对视图也起作用。<br>6） SHOW DATABASES语法<br>SHOW {DATABASES | SCHEMAS} [LIKE ‘pattern’];<br>SHOW DATABASES可以列举在MySQL服务器主机上的所有数据库。您也可以使用mysqlshow命令得到此数据库清单。您只能看到您拥有的权限可以允许看到的的数据库，除非您拥有全局SHOW DATABASES权限。<br>如果服务器以–skip-show-database选项方式启动，那么您根本不能使用本语句，除非您拥有SHOW DATABASES权限。<br>7） SHOW ENGINE语法<br>SHOW ENGINE engine_name {LOGS | STATUS };<br>SHOW ENGINE显示存储引擎的日志或状态信息。<br>8） SHOW ENGINES语法<br>SHOW [STORAGE] ENGINES;<br>SHOW ENGINES显示存储引擎的状态信息。对于检查一个存储引擎是否被支持，或者对于查看默认引擎是什么，本语句十分有用。<br>9） SHOW ERRORS语法<br>SHOW ERRORS [LIMIT [offset,] row_count];<br>SHOW COUNT(*) ERRORS;<br>本语句与SHOW WARNINGS接近，不过该语句只显示错误，并不同时显示错误、警告和注意信息。<br>10） SHOW GRANTS语法<br>SHOW GRANTS FOR user;<br>本语句列出了在为MySQL用户账户复制权限时必须发布的GRANT语句。<br>11） SHOW INDEX语法<br>SHOW INDEX FROM tbl_name [FROM db_name];<br>SHOW INDEX会返回表索引信息。其格式与ODBC中的SQLStatistics调用相似。<br>12） SHOW INNODB STATUS语法<br>SHOW INNODB STATUS;<br>在MySQL 5.1中，等价于SHOW ENGINE INNODB STATUS，但不赞成使用后者。<br>13） SHOW LOGS语法<br>SHOW [BDB] LOGS;<br>14） SHOW OPEN TABLES语法<br>SHOW OPEN TABLES [FROM db_name] [LIKE ‘pattern’];<br>SHOW OPEN TABLES列举当前在表缓存中被打开的非TEMPORARY表<br>15） SHOW PRIVILEGES语法<br>SHOW PRIVILEGES;<br>SHOW PRIVILEGES显示MySQL服务器支持的系统权限列表。确切的输出内容需要根据您的服务器的版本而定。</p>
+<p>16） SHOW PROCESSLIST语法</p>
+<p>SHOW [FULL] PROCESSLIST;<br>SHOW PROCESSLIST显示正在运行的线程。您也可以使用mysqladmin processlist语句得到此信息。如果您有SUPER权限，您可以看到所有线程，否则，您只能看到您自己的线程（也就是，与您正在使用的MySQL账户相关的线程）。<br>17） SHOW STATUS语法<br>SHOW [GLOBAL | SESSION] STATUS [LIKE ‘pattern’];<br>SHOW STATUS提供服务器状态信息。此信息也可以使用mysqladmin extended-status命令获得。<br>18） SHOW TABLE STATUS语法<br>SHOW TABLE STATUS [FROM db_name] [LIKE ‘pattern’];<br>SHOW TABLE STATUS的性质与SHOW TABLE的类似；不过，可以提供每个表的大量信息。您也可以使用mysqlshow –status db_name命令得到此信息列表。本语句也显示视图信息。<br>19） SHOW TABLES语法<br>SHOW [FULL] TABLES [FROM db_name] [LIKE ‘pattern’];<br>SHOW TABLES列举了给定数据库中的非TEMPORARY表。您也可以使用mysqlshow db_name命令得到此列表。<br>本命令也列举数据库中的视图。支持FULL修改符，这样SHOW FULL TABLES就可以显示到第二个输出列。对于一个表，第二列的值为BASE TABLE；对于一个视图，第二列的值为VIEW。<br>注释：如果您对一个表没有权限，则该表不会在来自SHOW TABLES或mysqlshow db_name命令的输出中显示。<br>20） SHOW TRIGGERS语法<br>SHOW TRIGGERS [FROM db_name] [LIKE expr];<br>SHOW TRIGGERS列出了目前被MySQL服务器定义的触发程序。<br>2.5.5 其他管理语句<br>1） CACHE INDEX语法<br>CACHE INDEX<br>  tbl_index_list [, tbl_index_list] …<br>  IN key_cache_name<br>tbl_index_list:<br>  tbl_name [[INDEX|KEY] (index_name[, index_name] …)]<br>CACHE INDEX语句把表索引分配给某个关键缓存。该语句只用于MyISAM表。<br>2） FLUSH语法<br>FLUSH [LOCAL | NO_WRITE_TO_BINLOG] flush_option [, flush_option] …<br>如果您想要清除MySQL使用部分的内部缓存，您应该使用FLUSH语句。要执行FLUSH，您必须拥有RELOAD权限。<br>3） KILL语法<br>KILL [CONNECTION | QUERY] thread_id;<br>每个与mysqld的连接都在一个独立的线程里运行，您可以使用SHOW PROCESSLIST语句查看哪些线程正在运行，并使用KILL thread_id语句终止其中一个线程。<br>KILL允许可选参数CONNECTION或QUERY修改符：<br>KILL CONNECTION与不含修改符的KILL一样：它会终止与给定的thread_id有关的连接。<br>KILL QUERY会终止当前与正在执行的语句的连接，但是会保持连接的原状。<br>如果您拥有PROCESS权限，则您可以查看所有线程。如果您拥有SUPER权限，您可以终止所有线程和语句。否则，您只能查看和终止您自己的线程和语句。<br>您也可以使用mysqladmin processlist和mysqladmin kill命令来检查和终止线程。<br>4） LOAD INDEX INTO CACHE语法<br>LOAD INDEX INTO CACHE<br>  tbl_index_list [, tbl_index_list] …<br>tbl_index_list:<br>  tbl_name<br>    [[INDEX|KEY] (index_name[, index_name] …)]<br>    [IGNORE LEAVES]<br>LOAD INDEX INTO CACHE语句会把一个表索引预载入到某个关键缓存中。<br>5） RESET语法<br>RESET reset_option [, reset_option] …<br>RESET语句被用于清除不同的服务器操作的状态。它也作为FLUSH语句的更强大的版本。<br>为了执行RESET，您必须拥有RELOAD权限。<br>reset_option可以为以下的任何一项：<br>MASTER可以删除列于索引文件中的所有二进制日志，把二进制日志索引文件重新设置为空，并创建一个新的二进制日志文件。（在以前版本的MySQL中，被称为FLUSH MASTER。）<br>QUERY CACHE 从查询缓存中取消所有的查询结果。<br>SLAVE可以使从属服务器忘记其在主服务器二进制日志中的复制位置，另外，也可以通过删除原有的中继日志文件和开始一个新文件来重新设置中继日志。<br>2.6 复制语句<br>2.6.1 用于控制主服务器的SQL语句<br>1） PURGE MASTER LOGS语法<br>PURGE {MASTER | BINARY} LOGS TO ‘log_name’;<br>PURGE {MASTER | BINARY} LOGS BEFORE ‘date’;<br>首先介绍什么是二进制日志。二进制日志是一组记录MySQL服务器进行数据修改时的信息文件；该日志由一组二进制文件和索引文件组成。<br>那么PURGE MASTER LOGS语法就是用于删除列于在指定的日志或日期之前的日志索引中的所有二进制日志。这些被删除的日志文件也会被移出索引文件的记录列表，以致指定的日志文件被排在日志列表首部。<br>2） RESET MASTER语法<br>RESET MASTER;<br>可以删除列于索引文件中的所有二进制日志，把二进制日志索引文件重新设置为空，并创建一个新的二进制日志文件。<br>3） SET SQL_LOG_BIN语法<br>SET SQL_LOG_BIN = {0|1};<br>如果客户端使用一个有SUPER权限的账户连接，则可以禁用或启用当前连接的二进制日志记录。如果客户端没有此权限，则语句被拒绝，并伴随错误提示。<br>4） SHOW BINLOG EVENTS语法<br>SHOW BINLOG EVENTS<br>   [IN ‘log_name’] [FROM pos] [LIMIT [offset,] row_count]<br>用于显示二进制日志中的事件。如果您不指定’log_name’，则显示第一个二进制日志。<br>5） SHOW MASTER LOGS语法<br>SHOW MASTER LOGS;<br>SHOW BINARY LOGS;<br>用于列出服务器中的二进制日志文件。<br>6） SHOW MASTER STATUS语法<br>SHOW MASTER STATUS;<br>用于提供主服务器上二进制日志文件的状态信息。需要有SUPER或者REPLICATION CLIENT权限才能执行该语句。<br>7） SHOW SLAVE HOSTS语法<br>SHOW SLAVE HOSTS;<br>用于显示当前使用主服务器注册的克隆从属服务器的清单。不以–report-host=slave_name选项为开头的从属服务器不会显示在本清单中。<br>2.5.2 用于控制从服务器的SQL语句<br>1） CHANGE MASTER TO语法<br>CHANGE MASTER TO master_def [, master_def] …<br>master_def:<br>      MASTER_HOST = ‘host_name’<br>    | MASTER_USER = ‘user_name’<br>    | MASTER_PASSWORD = ‘password’<br>    | MASTER_PORT = port_num<br>    | MASTER_CONNECT_RETRY = count<br>    | MASTER_LOG_FILE = ‘master_log_name’<br>    | MASTER_LOG_POS = master_log_pos<br>    | RELAY_LOG_FILE = ‘relay_log_name’<br>    | RELAY_LOG_POS = relay_log_pos<br>    | MASTER_SSL = {0|1}<br>    | MASTER_SSL_CA = ‘ca_file_name’<br>    | MASTER_SSL_CAPATH = ‘ca_directory_name’<br>    | MASTER_SSL_CERT = ‘cert_file_name’<br>    | MASTER_SSL_KEY = ‘key_file_name’<br>    | MASTER_SSL_CIPHER = ‘cipher_list’<br>可以更改从属服务器用于与主服务器进行连接和通讯的参数。<br>MASTER_USER, MASTER_PASSWORD,MASTER_SSL,MASTER_SSL_CA,MASTER_SSL_CAPATH, MASTER_SSL_CERT,MASTER_SSL_KEY和MASTER_SSL_CIPHER这些参数用于向从属服务器提供有关如何与主服务器连接的信息。</p>
+<p>即使对于在编译时没有SSL支持的从属服务器，SSL选项(MASTER_SSL, MASTER_SSL_CA, MASTER_SSL_CAPATH, MASTER_SSL_CERT, MASTER_SSL_KEY和MASTER_SSL_CIPHER)也可以被更改。它们被保存到master.info文件中，但是会被忽略，直到您使用SSL支持已启用的服务器。<br>2） MASTER_POS_WAIT()语法<br>SELECT MASTER_POS_WAIT(‘master_log_file’, master_log_pos);<br>该语法实际上是一个函数，而不是一个语句。它被用于确认从属服务器已读取并执行最后到达主服务器上二进制日志的给定位置。<br>3 RESET SLAVE语法<br>RESET SLAVE;<br>用于让从属服务器忘记其在主服务器的二进制日志中的复制位置。本语句被用于进行一个明确的启动：它会删除master.info和relay-log.info文件，以及所有的中继日志，并启动一个新的中继日志。<br>注释：所有的中继日志被删除，即使它们没有被从属服务器SQL线程完全的执行。（如果您已经发布了一个STOP SLAVE语句或如果从属服务器的载入量很大，那么以上情况将会发生在从属服务器上。）<br>存储在master.info文件中的连接信息通过使用在对应的启动选项中指定的值，被立即重新设置了。此信息包括主服务器主机、主服务器接口、主服务器用户和主服务器密码等值。当从属服务器SQL线程被中止时，它位于正在复制的临时表的中，当发布RESET SLAVE语句时，已被复制的临时表在从属服务器中被删除。<br>4） SET GLOBAL SQL_SLAVE_SKIP_COUNTER语法<br>SET GLOBAL SQL_SLAVE_SKIP_COUNTER = n;<br>该语句作用是跳过来自主服务器上的n个事件，一般有效作用于当复制被某个语句终止的时候还原。<br>仅当从属线程没有正在运行时，本语句是有效的，否则会产生错误。<br>5） START SLAVE语法<br>START SLAVE [thread_type [, thread_type] … ]<br>START SLAVE [SQL_THREAD] UNTIL<br>    MASTER_LOG_FILE = ‘log_name’, MASTER_LOG_POS = log_pos<br>START SLAVE [SQL_THREAD] UNTIL<br>    RELAY_LOG_FILE = ‘log_name’, RELAY_LOG_POS = log_pos<br>thread_type: IO_THREAD | SQL_THREAD<br>不含任何可选参数的START SLAVE会同时启动两个从属服务器线程。I/O线程从主服务器中读取查询事件，并把它们存储在中继日志中，SQL线程读取中继日志并执行查询。START SLAVE语句要求SUPER权限。<br>6） STOP SLAVE语法<br>STOP SLAVE [thread_type [, thread_type] … ]<br>thread_type: IO_THREAD | SQL_THREAD<br>用于中止从属服务器线程。STOP SLAVE的执行要求具有SUPER权限。<br>和START SLAVE相似，本语句在使用时可以添加IO_THREAD和SQL_THREAD选项，指明将被中止的线程。<br>在以前版本的MySQL中，本语句被称为SLAVE STOP，在MySQL 5.1中仍然接受这种用法，以便与以前版本兼容，但是现在不赞成使用该语句。<br>2.7 用于预处理语句的SQL语法<br>预处理语句的SQL语法基于以下三个SQL语句：<br>PREPARE stmt_name FROM preparable_stmt;<br>EXECUTE stmt_name [USING @var_name [, @var_name] …];<br>{DEALLOCATE | DROP} PREPARE stmt_name;<br>PREPARE语句用于准备一个语句，并赋予它一个名称stmt_name，借此在以后引用该语句。<br>语句名称不区分大小写。preparable_stmt可以是一个文字字符串，也可以是一个包含了语句文本的用户变量。如果是文本，那么必须展现一个单一的SQL语句，而不是多个语句。使用本语句，?字符可以被用于标记参数，以指示当您执行查询时，数据值在哪里与查询结合在一起。?字符不应加引号，即使您想要把它们与字符串值结合在一起，也不要加引号。参数标记符只能被用于数据值应该出现的地方，不用于SQL关键词和标识符等。<br>如果带有此名称的预备语句已经存在，则在新的语言被预备以前，它会被隐含地解除分配。这意味着，如果新语句包含一个错误并且不能被预备，则会返回一个错误，并且不存在带有给定名称语句。<br>预备语句用于客户端内部会话：<br>在此会话内，如果语句被创建，那么其它客户端看不到它。<br>在预备了一个语句后，您可使用一个EXECUTE语句（该语句引用了预制语句名称）来执行它。如果预制语句包含任何参数标记符，则您必须提供一个列举了用户变量（其中包含要与参数结合的值）的USING子句。参数值只能由用户变量提供，USING子句必须准确地指明用户变量。用户变量的数目与语句中的参数标记符的数量一样多。<br>您可以多次执行一个给定的预制语句，在每次执行前，把不同的变量传递给它，或把变量设置为不同的值。<br>要对一个预制语句解除分配，需使用DEALLOCATE PREPARE语句。尝试在解除分配后执行一个预制语句会导致错误。<br>如果您终止了一个客户端会话，同时没有对以前已预制的语句解除分配，则服务器会自动解除分配。<br>以下SQL语句可以被用在预制语句中：CREATE TABLE, DELETE, DO, INSERT, REPLACE, SELECT, SET, UPDATE和多数的SHOW语句。目前不支持其它语句。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://ycomer.com/2017/09/02/Express/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="浪子膏">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="董方园网络blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="董方园网络blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/02/Express/" itemprop="url">
+                  express
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T23:57:02Z">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/09/02/Express/" class="leancloud_visitors" data-flag-title="express">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>enctype</p>
+<p>When the value of the method attribute is post, enctype is the MIME type of content that is used to submit the form to the server. Possible values are:</p>
+<ul>
+<li>application/x-www-form-urlencoded: The default value if the attribute is not specified.</li>
+<li>multipart/form-data: The value used for an <code>&lt;input&gt;</code> element with the type attribute set to “file”.</li>
+<li>text/plain (HTML5)<br>This value can be overridden by a formenctype attribute on a <code>&lt;button&gt;</code> or<code>&lt;input&gt;</code>element.</li>
+</ul>
+<p>MVC</p>
+<p>User–&gt;Router–&gt;Controller–&gt;Model–&gt;View–&gt;User</p>
 
           
         
@@ -910,7 +1650,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -946,7 +1686,7 @@
                src="/images/avatar.jpg"
                alt="浪子膏" />
           <p class="site-author-name" itemprop="name">浪子膏</p>
-          <p class="site-description motion-element" itemprop="description">一个正在填坑的font-ender</p>
+          <p class="site-description motion-element" itemprop="description">一个正在填坑的front-ender</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
